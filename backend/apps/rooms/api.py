@@ -6,6 +6,7 @@ from ninja.errors import HttpError
 from apps.quizzes.models import QuizPack, QuizQuestion
 
 from .models import GameRound, GameSession, Participant, Room
+from .services import approved_question_count, broadcast_room_state, serialize_room
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -73,13 +74,6 @@ def _clean_nickname(nickname: str) -> str:
     return cleaned
 
 
-def _approved_question_count(pack: QuizPack) -> int:
-    return QuizQuestion.objects.filter(
-        question_packs__pack=pack,
-        status=QuizQuestion.Status.APPROVED,
-    ).count()
-
-
 def _get_question_count(settings: dict, approved_count: int) -> int:
     raw_count = settings.get("question_count", approved_count)
 
@@ -103,50 +97,12 @@ def _require_host(request, room: Room) -> None:
         raise HttpError(403, "Invalid host token.")
 
 
-def _serialize_room(room: Room) -> dict:
-    session = getattr(room, "game_session", None)
-    pack = session.quiz_pack if session else None
-
-    return {
-        "code": room.code,
-        "status": room.status,
-        "quiz_pack": (
-            {
-                "id": pack.id,
-                "name": pack.name,
-                "approved_question_count": _approved_question_count(pack),
-            }
-            if pack
-            else None
-        ),
-        "game": (
-            {
-                "status": session.status,
-                "current_round_index": session.current_round_index,
-                "total_rounds": session.rounds.count(),
-            }
-            if session
-            else None
-        ),
-        "participants": [
-            {
-                "id": participant.id,
-                "nickname": participant.nickname,
-                "score": participant.score,
-                "is_host": participant.is_host,
-            }
-            for participant in room.participants.order_by("-is_host", "joined_at", "id")
-        ],
-        "settings": room.settings,
-    }
-
-
 @router.post("/rooms", response=CreateRoomOut)
 def create_room(request, payload: CreateRoomIn):
     nickname = _clean_nickname(payload.host_nickname)
     quiz_pack = get_object_or_404(QuizPack, id=payload.quiz_pack_id, is_public=True)
 
-    if _approved_question_count(quiz_pack) == 0:
+    if approved_question_count(quiz_pack) == 0:
         raise HttpError(400, "Quiz pack has no approved questions.")
 
     with transaction.atomic():
@@ -168,7 +124,7 @@ def create_room(request, payload: CreateRoomIn):
         )
 
     return {
-        "room": _serialize_room(room),
+        "room": serialize_room(room),
         "host_token": room.host_token,
         "participant_token": participant.session_token,
     }
@@ -180,7 +136,7 @@ def get_room(request, code: str):
         Room.objects.prefetch_related("participants").select_related("game_session__quiz_pack"),
         code=code.upper(),
     )
-    return _serialize_room(room)
+    return serialize_room(room)
 
 
 @router.post("/rooms/{code}/join", response=JoinRoomOut)
@@ -198,11 +154,12 @@ def join_room(request, code: str, payload: JoinRoomIn):
                 nickname=nickname,
                 session_token=generate_token("participant"),
             )
+            transaction.on_commit(lambda: broadcast_room_state(room.code))
     except IntegrityError as exc:
         raise HttpError(409, "Nickname is already taken in this room.") from exc
 
     return {
-        "room": _serialize_room(room),
+        "room": serialize_room(room),
         "participant_token": participant.session_token,
     }
 
@@ -253,9 +210,10 @@ def start_game(request, code: str):
                 for index, question in enumerate(selected_questions)
             ]
         )
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
 
     room = Room.objects.prefetch_related("participants", "game_session__rounds").select_related(
         "game_session__quiz_pack"
     ).get(id=room.id)
 
-    return {"room": _serialize_room(room)}
+    return {"room": serialize_room(room)}
