@@ -1,0 +1,36 @@
+[project]
+name = "guess-song-backend"
+version = "0.1.0"
+description = "Django backend for Guess Song"
+requires-python = ">=3.12"
+dependencies = [
+    "celery>=5.4.0",
+    "channels>=4.1.0",
+    "channels-redis>=4.2.0",
+    "django>=5.0,<6.0",
+    "django-cors-headers>=4.4.0",
+    "django-environ>=0.11.2",
+    "django-ninja>=1.3.0",
+    "gunicorn>=22.0.0",
+    "psycopg[binary]>=3.2.0",
+    "redis>=5.0.0",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-django>=4.8.0",
+    "ruff>=0.5.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.local"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
