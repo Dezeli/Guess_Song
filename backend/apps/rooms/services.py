@@ -92,7 +92,7 @@ def serialize_room(room: Room) -> dict:
                 "nickname": participant.nickname,
                 "score": participant.score,
                 "is_host": participant.is_host,
-                "is_active": participant.is_active,
+                "status": participant.status,
                 "left_at": participant.left_at.isoformat() if participant.left_at else None,
             }
             for participant in room.participants.order_by("-is_host", "joined_at", "id")

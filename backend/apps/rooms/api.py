@@ -36,7 +36,7 @@ class ParticipantOut(Schema):
     nickname: str
     score: int
     is_host: bool
-    is_active: bool
+    status: str
     left_at: str | None
 
 
@@ -86,6 +86,10 @@ class JoinRoomOut(Schema):
 
 
 class LeaveRoomOut(Schema):
+    room: RoomOut
+
+
+class ParticipantStatusOut(Schema):
     room: RoomOut
 
 
@@ -155,6 +159,13 @@ def _require_participant(request, room: Room) -> Participant:
     ).first()
     if not participant:
         raise HttpError(403, "Invalid participant token.")
+    return participant
+
+
+def _require_active_participant(request, room: Room) -> Participant:
+    participant = _require_participant(request, room)
+    if participant.status != Participant.Status.ACTIVE:
+        raise HttpError(403, "Participant is not active.")
     return participant
 
 
@@ -254,10 +265,59 @@ def leave_room(request, code: str):
         room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
         participant = _require_participant(request, room)
 
-        if participant.is_active:
+        if participant.status != Participant.Status.LEFT:
+            participant.status = Participant.Status.LEFT
             participant.is_active = False
             participant.left_at = timezone.now()
-            participant.save(update_fields=["is_active", "left_at"])
+            participant.save(update_fields=["status", "is_active", "left_at"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/away", response=ParticipantStatusOut)
+def set_participant_away(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.status == Participant.Status.LEFT:
+            raise HttpError(400, "Left participants cannot become away.")
+
+        if participant.status != Participant.Status.AWAY:
+            participant.status = Participant.Status.AWAY
+            participant.is_active = True
+            participant.save(update_fields=["status", "is_active"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/active", response=ParticipantStatusOut)
+def set_participant_active(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.status == Participant.Status.LEFT:
+            raise HttpError(400, "Left participants cannot become active.")
+
+        if participant.status != Participant.Status.ACTIVE:
+            participant.status = Participant.Status.ACTIVE
+            participant.is_active = True
+            participant.save(update_fields=["status", "is_active"])
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
 
@@ -400,7 +460,7 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
 
     with transaction.atomic():
         room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
-        participant = _require_participant(request, room)
+        participant = _require_active_participant(request, room)
 
         if room.status != Room.Status.PLAYING:
             raise HttpError(400, "Room is not playing.")

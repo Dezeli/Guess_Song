@@ -7,6 +7,8 @@ import {
   leaveRoom,
   listQuizPacks,
   moveToNextRound,
+  setParticipantActive,
+  setParticipantAway,
   startCurrentRound,
   startGame,
   submitAnswer,
@@ -65,7 +67,22 @@ function App() {
 
   const isHost = Boolean(hostToken && room);
   const currentRound = room?.game?.current_round ?? null;
-  const canSubmit = Boolean(participantToken && currentRound?.started_at && !currentRound.ended_at);
+  const currentParticipant = useMemo(() => {
+    if (!room) {
+      return null;
+    }
+    if (hostToken) {
+      return room.participants.find((participant) => participant.is_host) ?? null;
+    }
+    return room.participants.find((participant) => participant.nickname === joinNickname) ?? null;
+  }, [hostToken, joinNickname, room]);
+  const canSubmit = Boolean(
+    participantToken
+      && currentRound?.started_at
+      && !currentRound.ended_at
+      && currentParticipant?.status !== "AWAY"
+      && currentParticipant?.status !== "LEFT",
+  );
   const hostAction = getHostAction(room?.status, currentRound?.started_at ?? null);
 
   const orderedParticipants = useMemo(
@@ -269,6 +286,28 @@ function App() {
     }
   }
 
+  async function handleSetAway() {
+    if (!room || !participantToken) {
+      return;
+    }
+
+    const updated = await runAction(() => setParticipantAway(room.code, participantToken), "Set away.");
+    if (updated) {
+      setRoom(updated.room);
+    }
+  }
+
+  async function handleSetActive() {
+    if (!room || !participantToken) {
+      return;
+    }
+
+    const updated = await runAction(() => setParticipantActive(room.code, participantToken), "Back to active.");
+    if (updated) {
+      setRoom(updated.room);
+    }
+  }
+
   if (!room) {
     return (
       <main className="app-shell compact-shell">
@@ -446,6 +485,17 @@ function App() {
           <button type="button" className="secondary" onClick={handleReset}>
             Clear Local View
           </button>
+          {participantToken ? (
+            currentParticipant?.status === "AWAY" ? (
+              <button type="button" className="secondary" onClick={handleSetActive}>
+                Back
+              </button>
+            ) : (
+              <button type="button" className="secondary" onClick={handleSetAway}>
+                Away
+              </button>
+            )
+          ) : null}
           <button type="button" className="secondary" onClick={handleLeaveRoom}>
             Leave Room
           </button>
@@ -500,7 +550,15 @@ function App() {
 
         <div className="panel">
           <h2>Submit Answer</h2>
-          <p className="muted">{getAnswerHint(Boolean(participantToken), room.status, currentRound?.started_at ?? null, currentRound?.ended_at ?? null)}</p>
+          <p className="muted">
+            {getAnswerHint(
+              Boolean(participantToken),
+              room.status,
+              currentRound?.started_at ?? null,
+              currentRound?.ended_at ?? null,
+              currentParticipant?.status ?? null,
+            )}
+          </p>
           <form onSubmit={handleSubmitAnswer} className="stack">
             <input
               value={answer}
@@ -524,11 +582,12 @@ function App() {
           <h2>Players</h2>
           <ul className="scoreboard">
             {orderedParticipants.map((participant) => (
-              <li key={participant.id} className={participant.is_active === false ? "inactive" : undefined}>
+              <li key={participant.id} className={participant.status !== "ACTIVE" ? "inactive" : undefined}>
                 <span>
                   {participant.nickname}
                   {participant.is_host ? " (host)" : ""}
-                  {participant.is_active === false ? " (left)" : ""}
+                  {participant.status === "AWAY" ? " (away)" : ""}
+                  {participant.status === "LEFT" ? " (left)" : ""}
                 </span>
                 <strong>{participant.score}</strong>
               </li>
@@ -566,9 +625,21 @@ function getStageTitle(status: string, startedAt: string | null) {
   return "Game finished";
 }
 
-function getAnswerHint(hasToken: boolean, status: string, startedAt: string | null, endedAt: string | null) {
+function getAnswerHint(
+  hasToken: boolean,
+  status: string,
+  startedAt: string | null,
+  endedAt: string | null,
+  participantStatus: string | null,
+) {
   if (!hasToken) {
     return "Join or create a room before submitting.";
+  }
+  if (participantStatus === "AWAY") {
+    return "You are away. Switch back before submitting.";
+  }
+  if (participantStatus === "LEFT") {
+    return "You have left this room.";
   }
   if (status === "waiting") {
     return "The host needs to start the game first.";

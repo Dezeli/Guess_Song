@@ -20,11 +20,17 @@ class Room(models.Model):
 
 
 class Participant(models.Model):
+    class Status(models.TextChoices):
+        ACTIVE = "ACTIVE", "Active"
+        AWAY = "AWAY", "Away"
+        LEFT = "LEFT", "Left"
+
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="participants")
     nickname = models.CharField(max_length=40)
     session_token = models.CharField(max_length=128, unique=True)
     score = models.IntegerField(default=0)
     is_host = models.BooleanField(default=False)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.ACTIVE)
     is_active = models.BooleanField(default=True)
     joined_at = models.DateTimeField(auto_now_add=True)
     last_seen_at = models.DateTimeField(null=True, blank=True)

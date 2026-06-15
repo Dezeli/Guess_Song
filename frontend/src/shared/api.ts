@@ -69,6 +69,20 @@ export function leaveRoom(code: string, participantToken: string) {
   });
 }
 
+export function setParticipantAway(code: string, participantToken: string) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/away`, {
+    method: "POST",
+    headers: { "X-Participant-Token": participantToken },
+  });
+}
+
+export function setParticipantActive(code: string, participantToken: string) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/active`, {
+    method: "POST",
+    headers: { "X-Participant-Token": participantToken },
+  });
+}
+
 export function startGame(code: string, hostToken: string) {
   return request<{ room: RoomState }>(`/api/rooms/${code}/start`, {
     method: "POST",

@@ -56,6 +56,15 @@ label {
   font-weight: 700;
 }
 
+label.checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+label.checkbox-row input {
+  width: auto;
+}
+
 h1,
 h2,
 p {

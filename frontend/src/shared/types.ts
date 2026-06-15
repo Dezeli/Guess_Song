@@ -11,7 +11,7 @@ export type Participant = {
   nickname: string;
   score: number;
   is_host: boolean;
-  is_active: boolean;
+  status: "ACTIVE" | "AWAY" | "LEFT";
   left_at: string | null;
 };
 

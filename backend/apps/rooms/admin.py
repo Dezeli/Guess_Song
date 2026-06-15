@@ -20,8 +20,8 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ["nickname", "room", "score", "is_host", "is_active", "joined_at", "left_at"]
-    list_filter = ["is_host", "is_active", "joined_at"]
+    list_display = ["nickname", "room", "score", "is_host", "status", "joined_at", "left_at"]
+    list_filter = ["is_host", "status", "joined_at"]
     search_fields = ["nickname", "room__code", "session_token"]
     autocomplete_fields = ["room"]
 
@@ -34,7 +34,14 @@ class GameRoundInline(admin.TabularInline):
 
 @admin.register(GameSession)
 class GameSessionAdmin(admin.ModelAdmin):
-    list_display = ["room", "quiz_pack", "status", "current_round_index", "started_at", "finished_at"]
+    list_display = [
+        "room",
+        "quiz_pack",
+        "status",
+        "current_round_index",
+        "started_at",
+        "finished_at",
+    ]
     list_filter = ["status", "started_at"]
     search_fields = ["room__code", "quiz_pack__name"]
     autocomplete_fields = ["room", "quiz_pack"]
