@@ -169,6 +169,14 @@ def _require_active_participant(request, room: Room) -> Participant:
     return participant
 
 
+def _is_room_joinable(room: Room) -> bool:
+    if room.status == Room.Status.WAITING:
+        return True
+    if room.status == Room.Status.PLAYING:
+        return bool(room.settings.get("allow_late_join", True))
+    return False
+
+
 def _get_current_round_or_400(session: GameSession) -> GameRound:
     round_obj = session.rounds.select_related(
         "question",
@@ -239,7 +247,7 @@ def join_room(request, code: str, payload: JoinRoomIn):
     nickname = _clean_nickname(payload.nickname)
     room = get_object_or_404(Room, code=code.upper())
 
-    if room.status != Room.Status.WAITING:
+    if not _is_room_joinable(room):
         raise HttpError(400, "Room is not joinable.")
 
     try:
