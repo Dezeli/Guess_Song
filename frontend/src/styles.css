@@ -317,6 +317,24 @@ h2 {
   list-style: none;
 }
 
+.team-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.team-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
 .scoreboard li {
   display: flex;
   align-items: center;

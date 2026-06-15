@@ -6,6 +6,7 @@ from .models import (
     GameSession,
     Participant,
     Room,
+    RoomTeam,
     RoundAnswerFieldState,
     RoundSkipVote,
 )
@@ -15,6 +16,12 @@ class ParticipantInline(admin.TabularInline):
     model = Participant
     extra = 0
     readonly_fields = ["joined_at", "last_seen_at", "left_at"]
+    autocomplete_fields = ["team"]
+
+
+class RoomTeamInline(admin.TabularInline):
+    model = RoomTeam
+    extra = 0
 
 
 @admin.register(Room)
@@ -23,14 +30,31 @@ class RoomAdmin(admin.ModelAdmin):
     list_filter = ["status", "created_at"]
     search_fields = ["code", "host_token"]
     readonly_fields = ["created_at"]
-    inlines = [ParticipantInline]
+    inlines = [RoomTeamInline, ParticipantInline]
 
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ["nickname", "room", "score", "is_host", "status", "joined_at", "left_at"]
+    list_display = [
+        "nickname",
+        "room",
+        "team",
+        "score",
+        "is_host",
+        "status",
+        "joined_at",
+        "left_at",
+    ]
     list_filter = ["is_host", "status", "joined_at"]
-    search_fields = ["nickname", "room__code", "session_token"]
+    search_fields = ["nickname", "room__code", "team__name", "session_token"]
+    autocomplete_fields = ["room", "team"]
+
+
+@admin.register(RoomTeam)
+class RoomTeamAdmin(admin.ModelAdmin):
+    list_display = ["name", "room", "order", "score"]
+    list_filter = ["room"]
+    search_fields = ["name", "room__code"]
     autocomplete_fields = ["room"]
 
 

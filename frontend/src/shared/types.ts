@@ -9,6 +9,8 @@ export type QuizPack = {
 export type Participant = {
   id: number;
   nickname: string;
+  team_id: number | null;
+  team_name: string | null;
   score: number;
   is_host: boolean;
   status: "ACTIVE" | "AWAY" | "LEFT";
@@ -75,6 +77,13 @@ export type RoomState = {
     current_round: CurrentRound | null;
   } | null;
   participants: Participant[];
+  teams: Array<{
+    id: number;
+    name: string;
+    order: number;
+    score: number;
+    participant_count: number;
+  }>;
   settings: RoomSettings;
 };
 

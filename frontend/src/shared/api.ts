@@ -55,10 +55,10 @@ export function getRoom(code: string) {
   return request<RoomState>(`/api/rooms/${code}`);
 }
 
-export function joinRoom(code: string, nickname: string) {
+export function joinRoom(code: string, nickname: string, teamId?: number | null) {
   return request<JoinRoomResponse>(`/api/rooms/${code}/join`, {
     method: "POST",
-    body: { nickname },
+    body: { nickname, team_id: teamId ?? null },
   });
 }
 

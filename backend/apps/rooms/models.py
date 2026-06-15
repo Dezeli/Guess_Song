@@ -19,6 +19,22 @@ class Room(models.Model):
         return self.code
 
 
+class RoomTeam(models.Model):
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="teams")
+    name = models.CharField(max_length=40)
+    order = models.PositiveSmallIntegerField(default=0)
+    score = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ["room", "order", "id"]
+        constraints = [
+            models.UniqueConstraint(fields=["room", "order"], name="unique_room_team_order")
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.name} ({self.room})"
+
+
 class Participant(models.Model):
     class Status(models.TextChoices):
         ACTIVE = "ACTIVE", "Active"
@@ -26,6 +42,13 @@ class Participant(models.Model):
         LEFT = "LEFT", "Left"
 
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="participants")
+    team = models.ForeignKey(
+        RoomTeam,
+        on_delete=models.SET_NULL,
+        related_name="participants",
+        null=True,
+        blank=True,
+    )
     nickname = models.CharField(max_length=40)
     session_token = models.CharField(max_length=128, unique=True)
     score = models.IntegerField(default=0)

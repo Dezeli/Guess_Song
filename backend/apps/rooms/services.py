@@ -21,6 +21,7 @@ def get_room_for_state(code: str) -> Room:
     return (
         Room.objects.prefetch_related(
             "participants",
+            "teams",
             "game_session__rounds__answer_fields",
             "game_session__rounds__question__youtube_candidate",
         )
@@ -144,12 +145,30 @@ def serialize_room(room: Room) -> dict:
             {
                 "id": participant.id,
                 "nickname": participant.nickname,
+                "team_id": participant.team_id,
+                "team_name": participant.team.name if participant.team else None,
                 "score": participant.score,
                 "is_host": participant.is_host,
                 "status": participant.status,
                 "left_at": participant.left_at.isoformat() if participant.left_at else None,
             }
-            for participant in room.participants.order_by("-is_host", "joined_at", "id")
+            for participant in room.participants.select_related("team").order_by(
+                "-is_host",
+                "joined_at",
+                "id",
+            )
+        ],
+        "teams": [
+            {
+                "id": team.id,
+                "name": team.name,
+                "order": team.order,
+                "score": team.score,
+                "participant_count": team.participants.exclude(
+                    status=Participant.Status.LEFT,
+                ).count(),
+            }
+            for team in room.teams.order_by("order", "id")
         ],
         "settings": room.settings,
     }

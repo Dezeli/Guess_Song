@@ -16,6 +16,7 @@ from .models import (
     GameSession,
     Participant,
     Room,
+    RoomTeam,
     RoundAnswerFieldState,
     RoundSkipVote,
 )
@@ -40,11 +41,14 @@ class CreateRoomIn(Schema):
 
 class JoinRoomIn(Schema):
     nickname: str
+    team_id: int | None = None
 
 
 class ParticipantOut(Schema):
     id: int
     nickname: str
+    team_id: int | None
+    team_name: str | None
     score: int
     is_host: bool
     status: str
@@ -55,6 +59,14 @@ class QuizPackSummaryOut(Schema):
     id: int
     name: str
     approved_question_count: int
+
+
+class RoomTeamOut(Schema):
+    id: int
+    name: str
+    order: int
+    score: int
+    participant_count: int
 
 
 class CurrentRoundOut(Schema):
@@ -85,6 +97,7 @@ class RoomOut(Schema):
     quiz_pack: QuizPackSummaryOut | None
     game: GameStateOut | None
     participants: list[ParticipantOut]
+    teams: list[RoomTeamOut]
     settings: dict
 
 
@@ -342,6 +355,56 @@ def _schedule_advance_after_reveal(room: Room, session: GameSession, round_obj: 
     )
 
 
+def _create_room_teams(room: Room, settings: dict) -> None:
+    if settings.get("play_mode") != "TEAM":
+        return
+
+    for index in range(int(settings.get("team_count", 2))):
+        RoomTeam.objects.create(room=room, name=f"Team {index + 1}", order=index + 1)
+
+
+def _get_join_team(room: Room, settings: dict, team_id: int | None) -> RoomTeam | None:
+    if settings.get("play_mode") != "TEAM":
+        return None
+
+    if settings.get("team_assign_mode") == "RANDOM":
+        return None
+
+    if team_id is None:
+        raise HttpError(400, "team_id is required for team self-select rooms.")
+
+    team = RoomTeam.objects.filter(room=room, id=team_id).first()
+    if not team:
+        raise HttpError(400, "Invalid team_id for this room.")
+    return team
+
+
+def _assign_random_teams(room: Room) -> None:
+    if room.settings.get("play_mode") != "TEAM":
+        return
+    if room.settings.get("team_assign_mode") != "RANDOM":
+        return
+
+    teams = list(room.teams.order_by("order", "id"))
+    if not teams:
+        return
+
+    participants = list(
+        room.participants.filter(team__isnull=True)
+        .exclude(status=Participant.Status.LEFT)
+        .order_by("id")
+    )
+    for participant in participants:
+        team = min(
+            teams,
+            key=lambda candidate: candidate.participants.exclude(
+                status=Participant.Status.LEFT,
+            ).count(),
+        )
+        participant.team = team
+        participant.save(update_fields=["team"])
+
+
 @router.post("/rooms", response=CreateRoomOut)
 def create_room(request, payload: CreateRoomIn):
     nickname = _clean_nickname(payload.host_nickname)
@@ -357,8 +420,16 @@ def create_room(request, payload: CreateRoomIn):
             host_token=generate_token("host"),
             settings=settings,
         )
+        _create_room_teams(room, settings)
+        host_team = None
+        if (
+            settings.get("play_mode") == "TEAM"
+            and settings.get("team_assign_mode") == "SELF_SELECT"
+        ):
+            host_team = room.teams.order_by("order", "id").first()
         participant = Participant.objects.create(
             room=room,
+            team=host_team,
             nickname=nickname,
             session_token=generate_token("participant"),
             is_host=True,
@@ -392,11 +463,13 @@ def join_room(request, code: str, payload: JoinRoomIn):
 
     if not _is_room_joinable(room):
         raise HttpError(400, "Room is not joinable.")
+    team = _get_join_team(room, room.settings, payload.team_id)
 
     try:
         with transaction.atomic():
             participant = Participant.objects.create(
                 room=room,
+                team=team,
                 nickname=nickname,
                 session_token=generate_token("participant"),
             )
@@ -520,6 +593,7 @@ def start_game(request, code: str):
             raise HttpError(400, "Quiz pack has no approved questions.")
 
         selected_questions = approved_questions[:question_count]
+        _assign_random_teams(room)
 
         room.status = Room.Status.PLAYING
         room.save(update_fields=["status"])

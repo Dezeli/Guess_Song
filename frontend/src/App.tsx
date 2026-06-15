@@ -51,6 +51,9 @@ function App() {
   const [hostNickname, setHostNickname] = useState("Host");
   const [joinCode, setJoinCode] = useState(savedRoomCode);
   const [joinNickname, setJoinNickname] = useState("Player");
+  const [joinPreviewRoom, setJoinPreviewRoom] = useState<RoomSettings | null>(null);
+  const [joinPreviewTeams, setJoinPreviewTeams] = useState<Array<{ id: number; name: string }>>([]);
+  const [selectedJoinTeamId, setSelectedJoinTeamId] = useState<number | null>(null);
   const [questionCount, setQuestionCount] = useState(2);
   const [answerLimitMode, setAnswerLimitMode] = useState<AnswerLimitMode>("FIVE_SECONDS");
   const [playMode, setPlayMode] = useState<PlayMode>("SOLO");
@@ -204,7 +207,7 @@ function App() {
   async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
     const joined = await runAction(
-      () => joinRoom(joinCode.trim().toUpperCase(), joinNickname),
+      () => joinRoom(joinCode.trim().toUpperCase(), joinNickname, selectedJoinTeamId),
       "Joined room.",
     );
 
@@ -223,7 +226,9 @@ function App() {
     }
     const loaded = await runAction(() => getRoom(joinCode.trim().toUpperCase()), "Room loaded.");
     if (loaded) {
-      setRoom(loaded);
+      setJoinPreviewRoom(loaded.settings);
+      setJoinPreviewTeams(loaded.teams.map((team) => ({ id: team.id, name: team.name })));
+      setSelectedJoinTeamId(loaded.teams[0]?.id ?? null);
     }
   }
 
@@ -468,6 +473,21 @@ function App() {
                 Nickname
                 <input value={joinNickname} onChange={(event) => setJoinNickname(event.target.value)} />
               </label>
+              {joinPreviewRoom?.play_mode === "TEAM" && joinPreviewRoom.team_assign_mode === "SELF_SELECT" ? (
+                <label>
+                  Team
+                  <select
+                    value={selectedJoinTeamId ?? ""}
+                    onChange={(event) => setSelectedJoinTeamId(Number(event.target.value))}
+                  >
+                    {joinPreviewTeams.map((team) => (
+                      <option key={team.id} value={team.id}>
+                        {team.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ) : null}
               <div className="button-row">
                 <button type="submit">Join Room</button>
                 <button type="button" className="secondary" onClick={handleRestoreRoom}>
@@ -629,12 +649,25 @@ function App() {
 
         <div className="panel">
           <h2>Players</h2>
+          {room.teams.length ? (
+            <ul className="team-list">
+              {room.teams.map((team) => (
+                <li key={team.id}>
+                  <span>{team.name}</span>
+                  <strong>
+                    {team.participant_count} players / {team.score}
+                  </strong>
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <ul className="scoreboard">
             {orderedParticipants.map((participant) => (
               <li key={participant.id} className={participant.status !== "ACTIVE" ? "inactive" : undefined}>
                 <span>
                   {participant.nickname}
                   {participant.is_host ? " (host)" : ""}
+                  {participant.team_name ? ` / ${participant.team_name}` : ""}
                   {participant.status === "AWAY" ? " (away)" : ""}
                   {participant.status === "LEFT" ? " (left)" : ""}
                 </span>
