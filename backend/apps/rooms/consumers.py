@@ -41,3 +41,6 @@ class RoomConsumer(AsyncJsonWebsocketConsumer):
 
     async def room_state(self, event: dict) -> None:
         await self.send_json({"type": "room_state", "room": event["room"]})
+
+    async def round_started(self, event: dict) -> None:
+        await self.send_json({"type": "round_started", "round": event["round"]})

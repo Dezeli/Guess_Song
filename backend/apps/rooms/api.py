@@ -1,12 +1,19 @@
 from django.db import IntegrityError, transaction
 from django.shortcuts import get_object_or_404
+from django.utils import timezone
 from ninja import Router, Schema
 from ninja.errors import HttpError
 
 from apps.quizzes.models import QuizPack, QuizQuestion
 
 from .models import GameRound, GameSession, Participant, Room
-from .services import approved_question_count, broadcast_room_state, serialize_room
+from .services import (
+    approved_question_count,
+    broadcast_room_state,
+    broadcast_round_started,
+    serialize_public_round,
+    serialize_room,
+)
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -35,10 +42,23 @@ class QuizPackSummaryOut(Schema):
     approved_question_count: int
 
 
+class CurrentRoundOut(Schema):
+    round_id: int
+    round_index: int
+    question_id: int
+    youtube_video_id: str
+    start_time_seconds: int
+    play_duration_seconds: int
+    difficulty: str
+    started_at: str | None
+    ended_at: str | None
+
+
 class GameStateOut(Schema):
     status: str
     current_round_index: int
     total_rounds: int
+    current_round: CurrentRoundOut | None
 
 
 class RoomOut(Schema):
@@ -62,6 +82,14 @@ class JoinRoomOut(Schema):
 
 
 class StartGameOut(Schema):
+    room: RoomOut
+
+
+class RoundStartedOut(Schema):
+    round: CurrentRoundOut
+
+
+class NextRoundOut(Schema):
     room: RoomOut
 
 
@@ -95,6 +123,17 @@ def _require_host(request, room: Room) -> None:
         raise HttpError(401, "X-Host-Token header is required.")
     if not room.host_token or host_token != room.host_token:
         raise HttpError(403, "Invalid host token.")
+
+
+def _get_current_round_or_400(session: GameSession) -> GameRound:
+    round_obj = session.rounds.select_related(
+        "question",
+        "question__youtube_candidate",
+    ).filter(round_index=session.current_round_index).first()
+
+    if not round_obj:
+        raise HttpError(400, "Current round does not exist.")
+    return round_obj
 
 
 @router.post("/rooms", response=CreateRoomOut)
@@ -215,5 +254,73 @@ def start_game(request, code: str):
     room = Room.objects.prefetch_related("participants", "game_session__rounds").select_related(
         "game_session__quiz_pack"
     ).get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/rounds/current/start", response=RoundStartedOut)
+def start_current_round(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.PLAYING:
+            raise HttpError(400, "Room is not playing.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        if session.status != GameSession.Status.PLAYING:
+            raise HttpError(400, "Game session is not playing.")
+
+        round_obj = _get_current_round_or_400(session)
+        if round_obj.ended_at:
+            raise HttpError(400, "Current round has already ended.")
+
+        if not round_obj.started_at:
+            round_obj.started_at = timezone.now()
+            round_obj.save(update_fields=["started_at"])
+
+        transaction.on_commit(lambda: broadcast_round_started(room.code, round_obj))
+
+    return {"round": serialize_public_round(round_obj)}
+
+
+@router.post("/rooms/{code}/rounds/next", response=NextRoundOut)
+def move_to_next_round(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.PLAYING:
+            raise HttpError(400, "Room is not playing.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        if session.status != GameSession.Status.PLAYING:
+            raise HttpError(400, "Game session is not playing.")
+
+        current_round = _get_current_round_or_400(session)
+        if not current_round.ended_at:
+            current_round.ended_at = timezone.now()
+            current_round.save(update_fields=["ended_at"])
+
+        total_rounds = session.rounds.count()
+        next_round_index = session.current_round_index + 1
+
+        if next_round_index >= total_rounds:
+            now = timezone.now()
+            session.status = GameSession.Status.FINISHED
+            session.finished_at = now
+            session.save(update_fields=["status", "finished_at"])
+            room.status = Room.Status.FINISHED
+            room.save(update_fields=["status"])
+        else:
+            session.current_round_index = next_round_index
+            session.save(update_fields=["current_round_index"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
