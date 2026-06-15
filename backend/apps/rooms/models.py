@@ -25,8 +25,10 @@ class Participant(models.Model):
     session_token = models.CharField(max_length=128, unique=True)
     score = models.IntegerField(default=0)
     is_host = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     joined_at = models.DateTimeField(auto_now_add=True)
     last_seen_at = models.DateTimeField(null=True, blank=True)
+    left_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         constraints = [

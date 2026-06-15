@@ -4,6 +4,7 @@ import {
   createRoom,
   getRoom,
   joinRoom,
+  leaveRoom,
   listQuizPacks,
   moveToNextRound,
   startCurrentRound,
@@ -222,6 +223,18 @@ function App() {
     setMessage("Local room state cleared.");
   }
 
+  async function handleLeaveRoom() {
+    if (!room || !participantToken) {
+      handleReset();
+      return;
+    }
+
+    const left = await runAction(() => leaveRoom(room.code, participantToken), "Left room.");
+    if (left) {
+      handleReset();
+    }
+  }
+
   if (!room) {
     return (
       <main className="app-shell compact-shell">
@@ -309,7 +322,10 @@ function App() {
             <strong data-state={socketStatus}>{socketStatus}</strong>
           </div>
           <button type="button" className="secondary" onClick={handleReset}>
-            Leave Local View
+            Clear Local View
+          </button>
+          <button type="button" className="secondary" onClick={handleLeaveRoom}>
+            Leave Room
           </button>
         </div>
       </header>
@@ -386,10 +402,11 @@ function App() {
           <h2>Players</h2>
           <ul className="scoreboard">
             {orderedParticipants.map((participant) => (
-              <li key={participant.id}>
+              <li key={participant.id} className={participant.is_active === false ? "inactive" : undefined}>
                 <span>
                   {participant.nickname}
                   {participant.is_host ? " (host)" : ""}
+                  {participant.is_active === false ? " (left)" : ""}
                 </span>
                 <strong>{participant.score}</strong>
               </li>

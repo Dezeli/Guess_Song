@@ -6,7 +6,7 @@ from .models import AnswerSubmission, GameRound, GameSession, Participant, Room
 class ParticipantInline(admin.TabularInline):
     model = Participant
     extra = 0
-    readonly_fields = ["joined_at", "last_seen_at"]
+    readonly_fields = ["joined_at", "last_seen_at", "left_at"]
 
 
 @admin.register(Room)
@@ -20,8 +20,8 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ["nickname", "room", "score", "is_host", "joined_at", "last_seen_at"]
-    list_filter = ["is_host", "joined_at"]
+    list_display = ["nickname", "room", "score", "is_host", "is_active", "joined_at", "left_at"]
+    list_filter = ["is_host", "is_active", "joined_at"]
     search_fields = ["nickname", "room__code", "session_token"]
     autocomplete_fields = ["room"]
 

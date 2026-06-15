@@ -286,6 +286,14 @@ h2 {
   background: #f9fafb;
 }
 
+.scoreboard li.inactive {
+  color: #9ca3af;
+}
+
+.scoreboard li.inactive strong {
+  color: #9ca3af;
+}
+
 @media (max-width: 820px) {
   .app-shell {
     padding: 18px;

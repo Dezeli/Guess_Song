@@ -11,6 +11,8 @@ export type Participant = {
   nickname: string;
   score: number;
   is_host: boolean;
+  is_active: boolean;
+  left_at: string | null;
 };
 
 export type CurrentRound = {

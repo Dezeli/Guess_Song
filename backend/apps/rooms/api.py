@@ -35,6 +35,8 @@ class ParticipantOut(Schema):
     nickname: str
     score: int
     is_host: bool
+    is_active: bool
+    left_at: str | None
 
 
 class QuizPackSummaryOut(Schema):
@@ -80,6 +82,10 @@ class CreateRoomOut(Schema):
 class JoinRoomOut(Schema):
     room: RoomOut
     participant_token: str
+
+
+class LeaveRoomOut(Schema):
+    room: RoomOut
 
 
 class StartGameOut(Schema):
@@ -238,6 +244,27 @@ def join_room(request, code: str, payload: JoinRoomIn):
         "room": serialize_room(room),
         "participant_token": participant.session_token,
     }
+
+
+@router.post("/rooms/{code}/leave", response=LeaveRoomOut)
+def leave_room(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.is_active:
+            participant.is_active = False
+            participant.left_at = timezone.now()
+            participant.save(update_fields=["is_active", "left_at"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
 
 
 @router.post("/rooms/{code}/start", response=StartGameOut)
