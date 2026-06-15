@@ -13,7 +13,8 @@ class ParticipantInline(admin.TabularInline):
 class RoomAdmin(admin.ModelAdmin):
     list_display = ["code", "status", "created_at", "expires_at"]
     list_filter = ["status", "created_at"]
-    search_fields = ["code"]
+    search_fields = ["code", "host_token"]
+    readonly_fields = ["created_at"]
     inlines = [ParticipantInline]
 
 
