@@ -6,10 +6,8 @@ import {
   joinRoom,
   leaveRoom,
   listQuizPacks,
-  moveToNextRound,
   setParticipantActive,
   setParticipantAway,
-  startCurrentRound,
   startGame,
   submitAnswer,
 } from "./shared/api";
@@ -83,7 +81,7 @@ function App() {
       && currentParticipant?.status !== "AWAY"
       && currentParticipant?.status !== "LEFT",
   );
-  const hostAction = getHostAction(room?.status, currentRound?.started_at ?? null);
+  const hostAction = getHostAction(room?.status);
 
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
@@ -227,25 +225,9 @@ function App() {
     }
 
     if (room.status === "waiting") {
-      const started = await runAction(() => startGame(room.code, hostToken), "Game started. Now start the round.");
+      const started = await runAction(() => startGame(room.code, hostToken), "Game started.");
       if (started) {
         setRoom(started.room);
-      }
-      return;
-    }
-
-    if (room.status === "playing" && !currentRound?.started_at) {
-      await runAction(() => startCurrentRound(room.code, hostToken), "Round started. Players can answer now.");
-      return;
-    }
-
-    if (room.status === "playing") {
-      const next = await runAction(() => moveToNextRound(room.code, hostToken), "Moved to next round.");
-      if (next) {
-        setRoom(next.room);
-        setAnswer("");
-        setLastAnswerResult(null);
-        setLastRoundStarted(null);
       }
     }
   }
@@ -509,7 +491,13 @@ function App() {
           <div className="stage-header">
             <div>
               <p className="eyebrow">{room.status}</p>
-              <h2>{getStageTitle(room.status, currentRound?.started_at ?? null)}</h2>
+              <h2>
+                {getStageTitle(
+                  room.status,
+                  currentRound?.started_at ?? null,
+                  currentRound?.ended_at ?? null,
+                )}
+              </h2>
             </div>
             <strong className="round-counter">
               {room.game ? `${Math.min(room.game.current_round_index + 1, room.game.total_rounds)} / ${room.game.total_rounds}` : "-"}
@@ -535,7 +523,7 @@ function App() {
               type="button"
               className="primary-action"
               onClick={handleHostPrimaryAction}
-              disabled={room.status === "finished"}
+              disabled={room.status !== "waiting"}
             >
               {hostAction}
             </button>
@@ -599,27 +587,27 @@ function App() {
   );
 }
 
-function getHostAction(status: string | undefined, startedAt: string | null) {
+function getHostAction(status: string | undefined) {
   if (status === "waiting") {
     return "Start Game";
   }
-  if (status === "playing" && !startedAt) {
-    return "Start Round";
-  }
   if (status === "playing") {
-    return "Next Round";
+    return "Game Running";
   }
   return "Game Finished";
 }
 
-function getStageTitle(status: string, startedAt: string | null) {
+function getStageTitle(status: string, startedAt: string | null, endedAt: string | null) {
   if (status === "waiting") {
     return "Waiting for players";
   }
   if (status === "playing" && !startedAt) {
-    return "Round is ready";
+    return "Starting soon";
   }
-  if (status === "playing") {
+  if (status === "playing" && endedAt) {
+    return "Revealing answer";
+  }
+  if (status === "playing" && startedAt) {
     return "Round is live";
   }
   return "Game finished";
@@ -645,10 +633,10 @@ function getAnswerHint(
     return "The host needs to start the game first.";
   }
   if (!startedAt) {
-    return "The host needs to start the round first.";
+    return "The round will start automatically.";
   }
   if (endedAt) {
-    return "This round is closed. Wait for the next round.";
+    return "Answer reveal is in progress. The next round will start automatically.";
   }
   return "Answers are open.";
 }

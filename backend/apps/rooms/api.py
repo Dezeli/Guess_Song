@@ -16,6 +16,7 @@ from .services import (
     serialize_public_round,
     serialize_room,
 )
+from .tasks import start_round_task
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -375,7 +376,8 @@ def start_game(request, code: str):
 
         session.status = GameSession.Status.PLAYING
         session.current_round_index = 0
-        session.save(update_fields=["status", "current_round_index"])
+        session.started_at = timezone.now()
+        session.save(update_fields=["status", "current_round_index", "started_at"])
 
         GameRound.objects.bulk_create(
             [
@@ -383,7 +385,14 @@ def start_game(request, code: str):
                 for index, question in enumerate(selected_questions)
             ]
         )
+        countdown_sec = int(room.settings.get("countdown_sec", 3))
         transaction.on_commit(lambda: broadcast_room_state(room.code))
+        transaction.on_commit(
+            lambda: start_round_task.apply_async(
+                args=[room.id, 0],
+                countdown=countdown_sec,
+            )
+        )
 
     room = Room.objects.prefetch_related("participants", "game_session__rounds").select_related(
         "game_session__quiz_pack"
