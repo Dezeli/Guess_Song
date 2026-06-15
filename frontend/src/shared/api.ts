@@ -2,6 +2,7 @@ import type {
   CreateRoomResponse,
   JoinRoomResponse,
   QuizPack,
+  RoomSettings,
   RoomState,
   SubmitAnswerResponse,
 } from "./types";
@@ -42,7 +43,7 @@ export function listQuizPacks() {
 export function createRoom(input: {
   quiz_pack_id: number;
   host_nickname: string;
-  settings: Record<string, unknown>;
+  settings: RoomSettings;
 }) {
   return request<CreateRoomResponse>("/api/rooms", {
     method: "POST",

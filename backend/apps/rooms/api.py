@@ -7,6 +7,7 @@ from ninja.errors import HttpError
 from apps.core.text import normalize_answer
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
+from .game_settings import normalize_room_settings
 from .models import AnswerSubmission, GameRound, GameSession, Participant, Room
 from .services import (
     approved_question_count,
@@ -23,7 +24,7 @@ router = Router(tags=["rooms"])
 class CreateRoomIn(Schema):
     quiz_pack_id: int
     host_nickname: str
-    settings: dict = {}
+    settings: dict | None = None
 
 
 class JoinRoomIn(Schema):
@@ -183,6 +184,7 @@ def _score_answer(is_correct: bool) -> int:
 def create_room(request, payload: CreateRoomIn):
     nickname = _clean_nickname(payload.host_nickname)
     quiz_pack = get_object_or_404(QuizPack, id=payload.quiz_pack_id, is_public=True)
+    settings = normalize_room_settings(payload.settings)
 
     if approved_question_count(quiz_pack) == 0:
         raise HttpError(400, "Quiz pack has no approved questions.")
@@ -191,7 +193,7 @@ def create_room(request, payload: CreateRoomIn):
         room = Room.objects.create(
             code=generate_room_code(),
             host_token=generate_token("host"),
-            settings=payload.settings,
+            settings=settings,
         )
         participant = Participant.objects.create(
             room=room,
@@ -202,7 +204,7 @@ def create_room(request, payload: CreateRoomIn):
         GameSession.objects.create(
             room=room,
             quiz_pack=quiz_pack,
-            settings=payload.settings,
+            settings=settings,
         )
 
     return {
@@ -427,7 +429,10 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                 score_awarded=score_awarded,
             )
         except IntegrityError as exc:
-            raise HttpError(409, "Participant has already submitted an answer for this round.") from exc
+            raise HttpError(
+                409,
+                "Participant has already submitted an answer for this round.",
+            ) from exc
 
         if submission.score_awarded:
             participant.score += submission.score_awarded

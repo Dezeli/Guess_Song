@@ -12,7 +12,17 @@ import {
   submitAnswer,
 } from "./shared/api";
 import { openRoomSocket } from "./shared/roomSocket";
-import type { QuizPack, RoomSocketMessage } from "./shared/types";
+import type {
+  AnswerFields,
+  AnswerLimitMode,
+  BalanceMode,
+  ItemMode,
+  PlayMode,
+  QuizPack,
+  RoomSettings,
+  RoomSocketMessage,
+  TeamAssignMode,
+} from "./shared/types";
 import { useRoomStore } from "./stores/roomStore";
 
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
@@ -40,6 +50,15 @@ function App() {
   const [joinCode, setJoinCode] = useState(savedRoomCode);
   const [joinNickname, setJoinNickname] = useState("Player");
   const [questionCount, setQuestionCount] = useState(2);
+  const [answerLimitMode, setAnswerLimitMode] = useState<AnswerLimitMode>("FIVE_SECONDS");
+  const [playMode, setPlayMode] = useState<PlayMode>("SOLO");
+  const [teamAssignMode, setTeamAssignMode] = useState<TeamAssignMode>("SELF_SELECT");
+  const [teamCount, setTeamCount] = useState(2);
+  const [itemMode, setItemMode] = useState<ItemMode>("OFF");
+  const [answerFields, setAnswerFields] = useState<AnswerFields>("TITLE_ONLY");
+  const [balanceMode, setBalanceMode] = useState<BalanceMode>("OFF");
+  const [allowLateJoin, setAllowLateJoin] = useState(true);
+  const [roundTimeLimitSec, setRoundTimeLimitSec] = useState(20);
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
   const socketRef = useRef<WebSocket | null>(null);
@@ -124,12 +143,27 @@ function App() {
       return;
     }
 
+    const settings: RoomSettings = {
+      question_count: questionCount,
+      answer_limit_mode: answerLimitMode,
+      play_mode: playMode,
+      team_assign_mode: teamAssignMode,
+      team_count: teamCount,
+      item_mode: itemMode,
+      answer_fields: answerFields,
+      balance_mode: answerLimitMode === "FIRST_ONLY" ? balanceMode : "OFF",
+      allow_late_join: allowLateJoin,
+      round_time_limit_sec: roundTimeLimitSec,
+      reveal_duration_sec: 3,
+      countdown_sec: 3,
+    };
+
     const created = await runAction(
       () =>
         createRoom({
           quiz_pack_id: selectedPackId,
           host_nickname: hostNickname,
-          settings: { question_count: questionCount },
+          settings,
         }),
       "Room created.",
     );
@@ -275,6 +309,94 @@ function App() {
                   value={questionCount}
                   onChange={(event) => setQuestionCount(Number(event.target.value))}
                 />
+              </label>
+              <label>
+                Answer limit
+                <select
+                  value={answerLimitMode}
+                  onChange={(event) => setAnswerLimitMode(event.target.value as AnswerLimitMode)}
+                >
+                  <option value="FIRST_ONLY">First only</option>
+                  <option value="FIVE_SECONDS">Five seconds</option>
+                  <option value="ALL_CORRECT">All correct</option>
+                </select>
+              </label>
+              <label>
+                Answer fields
+                <select
+                  value={answerFields}
+                  onChange={(event) => setAnswerFields(event.target.value as AnswerFields)}
+                >
+                  <option value="TITLE_ONLY">Title only</option>
+                  <option value="TITLE_AND_ARTIST">Title + artist</option>
+                </select>
+              </label>
+              <label>
+                Play mode
+                <select value={playMode} onChange={(event) => setPlayMode(event.target.value as PlayMode)}>
+                  <option value="SOLO">Solo</option>
+                  <option value="TEAM">Team</option>
+                </select>
+              </label>
+              {playMode === "TEAM" ? (
+                <>
+                  <label>
+                    Team assignment
+                    <select
+                      value={teamAssignMode}
+                      onChange={(event) => setTeamAssignMode(event.target.value as TeamAssignMode)}
+                    >
+                      <option value="SELF_SELECT">Self select</option>
+                      <option value="RANDOM">Random</option>
+                    </select>
+                  </label>
+                  <label>
+                    Teams
+                    <input
+                      min={2}
+                      max={4}
+                      type="number"
+                      value={teamCount}
+                      onChange={(event) => setTeamCount(Number(event.target.value))}
+                    />
+                  </label>
+                </>
+              ) : null}
+              <label>
+                Round time
+                <input
+                  min={5}
+                  max={120}
+                  type="number"
+                  value={roundTimeLimitSec}
+                  onChange={(event) => setRoundTimeLimitSec(Number(event.target.value))}
+                />
+              </label>
+              <label>
+                Item mode
+                <select value={itemMode} onChange={(event) => setItemMode(event.target.value as ItemMode)}>
+                  <option value="OFF">Off</option>
+                  <option value="ON">On</option>
+                </select>
+              </label>
+              <label>
+                Balance mode
+                <select
+                  value={answerLimitMode === "FIRST_ONLY" ? balanceMode : "OFF"}
+                  onChange={(event) => setBalanceMode(event.target.value as BalanceMode)}
+                  disabled={answerLimitMode !== "FIRST_ONLY"}
+                >
+                  <option value="OFF">Off</option>
+                  <option value="ON">On</option>
+                </select>
+              </label>
+              <label className="checkbox-row">
+                <input
+                  type="checkbox"
+                  checked={allowLateJoin}
+                  onChange={(event) => setAllowLateJoin(event.target.checked)}
+                />
+                Allow late join
               </label>
               <button type="submit">Create Room</button>
             </form>

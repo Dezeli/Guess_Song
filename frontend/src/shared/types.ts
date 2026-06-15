@@ -27,6 +27,28 @@ export type CurrentRound = {
   ended_at: string | null;
 };
 
+export type AnswerLimitMode = "FIRST_ONLY" | "FIVE_SECONDS" | "ALL_CORRECT";
+export type PlayMode = "SOLO" | "TEAM";
+export type TeamAssignMode = "SELF_SELECT" | "RANDOM";
+export type ItemMode = "OFF" | "ON";
+export type AnswerFields = "TITLE_ONLY" | "TITLE_AND_ARTIST";
+export type BalanceMode = "OFF" | "ON";
+
+export type RoomSettings = {
+  question_count: number;
+  answer_limit_mode: AnswerLimitMode;
+  play_mode: PlayMode;
+  team_assign_mode: TeamAssignMode;
+  team_count: number;
+  item_mode: ItemMode;
+  answer_fields: AnswerFields;
+  balance_mode: BalanceMode;
+  allow_late_join: boolean;
+  round_time_limit_sec: number;
+  reveal_duration_sec: number;
+  countdown_sec: number;
+};
+
 export type RoomState = {
   code: string;
   status: string;
@@ -42,7 +64,7 @@ export type RoomState = {
     current_round: CurrentRound | null;
   } | null;
   participants: Participant[];
-  settings: Record<string, unknown>;
+  settings: RoomSettings;
 };
 
 export type CreateRoomResponse = {
