@@ -84,6 +84,7 @@ export type SubmitAnswerResponse = {
   is_correct: boolean;
   score_awarded: number;
   total_score: number;
+  matched_fields: string[];
 };
 
 export type RoomSocketMessage =

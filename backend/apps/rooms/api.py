@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.db import IntegrityError, transaction
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
@@ -8,7 +10,15 @@ from apps.core.text import normalize_answer
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
 from .game_settings import normalize_room_settings
-from .models import AnswerSubmission, GameRound, GameSession, Participant, Room, RoundSkipVote
+from .models import (
+    AnswerSubmission,
+    GameRound,
+    GameSession,
+    Participant,
+    Room,
+    RoundAnswerFieldState,
+    RoundSkipVote,
+)
 from .services import (
     approved_question_count,
     broadcast_room_state,
@@ -116,6 +126,7 @@ class SubmitAnswerOut(Schema):
     is_correct: bool
     score_awarded: int
     total_score: int
+    matched_fields: list[str]
 
 
 class SkipRoundOut(Schema):
@@ -195,15 +206,80 @@ def _get_current_round_or_400(session: GameSession) -> GameRound:
     return round_obj
 
 
-def _is_correct_answer(question: QuizQuestion, normalized_answer: str) -> bool:
+def _answer_matches_field(question: QuizQuestion, field_type: str, normalized_answer: str) -> bool:
+    fallback_value = (
+        question.answer_title
+        if field_type == RoundAnswerFieldState.FieldType.TITLE
+        else question.answer_artist
+    )
+    if normalize_answer(fallback_value) == normalized_answer:
+        return True
+
     return QuizAnswerAlias.objects.filter(
         question=question,
+        answer_type=field_type,
         normalized_value=normalized_answer,
     ).exists()
 
 
-def _score_answer(is_correct: bool) -> int:
-    return 100 if is_correct else 0
+def _answer_fields_for_settings(settings: dict) -> list[str]:
+    if settings.get("answer_fields") == "TITLE_AND_ARTIST":
+        return [RoundAnswerFieldState.FieldType.TITLE, RoundAnswerFieldState.FieldType.ARTIST]
+    return [RoundAnswerFieldState.FieldType.TITLE]
+
+
+def _get_or_create_field_state(
+    round_obj: GameRound,
+    field_type: str,
+) -> RoundAnswerFieldState:
+    field_state, _ = RoundAnswerFieldState.objects.select_for_update().get_or_create(
+        round=round_obj,
+        field_type=field_type,
+    )
+    return field_state
+
+
+def _is_field_open_for_acceptance(
+    field_state: RoundAnswerFieldState,
+    answer_limit_mode: str,
+    now,
+) -> bool:
+    if field_state.closed_at:
+        return False
+
+    if answer_limit_mode == "FIVE_SECONDS" and field_state.first_correct_at:
+        if now - field_state.first_correct_at > timedelta(seconds=5):
+            field_state.closed_at = field_state.first_correct_at + timedelta(seconds=5)
+            field_state.save(update_fields=["closed_at"])
+            return False
+
+    return True
+
+
+def _participant_already_accepted(
+    round_obj: GameRound,
+    participant: Participant,
+    field_type: str,
+) -> bool:
+    return AnswerSubmission.objects.filter(
+        round=round_obj,
+        participant=participant,
+        answer_type=field_type,
+        is_accepted=True,
+    ).exists()
+
+
+def _accepted_count(round_obj: GameRound, field_type: str) -> int:
+    return (
+        AnswerSubmission.objects.filter(
+            round=round_obj,
+            answer_type=field_type,
+            is_accepted=True,
+        )
+        .values("participant_id")
+        .distinct()
+        .count()
+    )
 
 
 def _active_skip_target_count(room: Room) -> int:
@@ -532,26 +608,61 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
             raise HttpError(400, "Current round has already ended.")
 
         normalized_answer = normalize_answer(answer)
-        is_correct = _is_correct_answer(round_obj.question, normalized_answer)
-        score_awarded = _score_answer(is_correct)
+        answer_limit_mode = room.settings.get("answer_limit_mode", "FIVE_SECONDS")
+        answer_fields = _answer_fields_for_settings(room.settings)
+        now = timezone.now()
+        score_awarded = 0
+        matched_fields: list[str] = []
+        is_correct = False
 
-        try:
-            submission = AnswerSubmission.objects.create(
+        for field_type in answer_fields:
+            field_state = _get_or_create_field_state(round_obj, field_type)
+            field_correct = _answer_matches_field(round_obj.question, field_type, normalized_answer)
+            field_accepted = False
+
+            if field_correct:
+                is_correct = True
+
+            if (
+                field_correct
+                and _is_field_open_for_acceptance(field_state, answer_limit_mode, now)
+                and not _participant_already_accepted(round_obj, participant, field_type)
+            ):
+                if answer_limit_mode == "FIRST_ONLY" and field_state.first_correct_at:
+                    field_accepted = False
+                else:
+                    field_accepted = True
+                    matched_fields.append(field_type)
+                    score_awarded += 1
+
+                    if not field_state.first_correct_at:
+                        field_state.first_correct_at = now
+
+                    if answer_limit_mode == "FIRST_ONLY":
+                        field_state.closed_at = now
+                    elif answer_limit_mode == "ALL_CORRECT":
+                        target_count = Participant.objects.filter(
+                            room=room,
+                            status=Participant.Status.ACTIVE,
+                        ).count()
+                        if _accepted_count(round_obj, field_type) + 1 >= target_count:
+                            field_state.closed_at = now
+
+                    field_state.save(update_fields=["first_correct_at", "closed_at"])
+
+            AnswerSubmission.objects.create(
                 round=round_obj,
                 participant=participant,
                 answer_raw=answer,
+                answer_type=field_type,
                 normalized_answer=normalized_answer,
-                is_correct=is_correct,
-                score_awarded=score_awarded,
+                is_correct=field_correct,
+                is_accepted=field_accepted,
+                score_awarded=1 if field_accepted else 0,
             )
-        except IntegrityError as exc:
-            raise HttpError(
-                409,
-                "Participant has already submitted an answer for this round.",
-            ) from exc
 
-        if submission.score_awarded:
-            participant.score += submission.score_awarded
+        if score_awarded:
+            participant.score += score_awarded
             participant.save(update_fields=["score"])
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
@@ -560,6 +671,7 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         "is_correct": is_correct,
         "score_awarded": score_awarded,
         "total_score": participant.score,
+        "matched_fields": matched_fields,
     }
 
 

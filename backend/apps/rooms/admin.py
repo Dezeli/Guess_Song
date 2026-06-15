@@ -1,6 +1,14 @@
 from django.contrib import admin
 
-from .models import AnswerSubmission, GameRound, GameSession, Participant, Room, RoundSkipVote
+from .models import (
+    AnswerSubmission,
+    GameRound,
+    GameSession,
+    Participant,
+    Room,
+    RoundAnswerFieldState,
+    RoundSkipVote,
+)
 
 
 class ParticipantInline(admin.TabularInline):
@@ -61,13 +69,15 @@ class AnswerSubmissionAdmin(admin.ModelAdmin):
     list_display = [
         "round",
         "participant",
+        "answer_type",
         "answer_raw",
         "is_correct",
+        "is_accepted",
         "score_awarded",
         "response_time_ms",
         "submitted_at",
     ]
-    list_filter = ["is_correct", "submitted_at"]
+    list_filter = ["answer_type", "is_correct", "is_accepted", "submitted_at"]
     search_fields = ["answer_raw", "normalized_answer", "participant__nickname"]
     autocomplete_fields = ["round", "participant"]
 
@@ -78,3 +88,11 @@ class RoundSkipVoteAdmin(admin.ModelAdmin):
     list_filter = ["created_at"]
     search_fields = ["round__session__room__code", "participant__nickname"]
     autocomplete_fields = ["round", "participant"]
+
+
+@admin.register(RoundAnswerFieldState)
+class RoundAnswerFieldStateAdmin(admin.ModelAdmin):
+    list_display = ["round", "field_type", "first_correct_at", "closed_at", "revealed_at"]
+    list_filter = ["field_type", "closed_at", "revealed_at"]
+    search_fields = ["round__session__room__code"]
+    autocomplete_fields = ["round"]

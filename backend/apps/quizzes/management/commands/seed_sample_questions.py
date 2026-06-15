@@ -162,13 +162,19 @@ class Command(BaseCommand):
             )
             created_questions += int(question_created)
 
-            for alias in [item["title"], item["artist"], *item["aliases"]]:
+            for alias in [item["title"], *item["aliases"]]:
                 QuizAnswerAlias.objects.get_or_create(
                     question=question,
-                    answer_type=QuizAnswerAlias.AnswerType.FULL,
+                    answer_type=QuizAnswerAlias.AnswerType.TITLE,
                     normalized_value=normalize_answer(alias),
                     defaults={"value": alias},
                 )
+            QuizAnswerAlias.objects.get_or_create(
+                question=question,
+                answer_type=QuizAnswerAlias.AnswerType.ARTIST,
+                normalized_value=normalize_answer(item["artist"]),
+                defaults={"value": item["artist"]},
+            )
 
             QuizPackQuestion.objects.get_or_create(
                 pack=pack,

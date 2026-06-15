@@ -608,8 +608,11 @@ function App() {
           </form>
           {lastAnswerResult ? (
             <p className={lastAnswerResult.is_correct ? "result correct" : "result wrong"}>
-              {lastAnswerResult.is_correct ? "Correct" : "Wrong"} / +{lastAnswerResult.score_awarded} / total{" "}
-              {lastAnswerResult.total_score}
+              {lastAnswerResult.is_correct ? "Correct" : "Wrong"} /{" "}
+              {lastAnswerResult.matched_fields.length
+                ? lastAnswerResult.matched_fields.join(", ")
+                : "no accepted field"}{" "}
+              / +{lastAnswerResult.score_awarded} / total {lastAnswerResult.total_score}
             </p>
           ) : null}
         </div>
