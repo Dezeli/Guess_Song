@@ -543,6 +543,16 @@ function App() {
                 Start {currentRound.start_time_seconds}s / Play {currentRound.play_duration_seconds}s
               </p>
               <p>Difficulty {currentRound.difficulty}</p>
+              {currentRound.answer_fields.length ? (
+                <ul className="answer-fields">
+                  {currentRound.answer_fields.map((field) => (
+                    <li key={field.field_type} className={field.is_revealed ? "revealed" : undefined}>
+                      <span>{field.field_type}</span>
+                      <strong>{field.is_revealed ? field.answer : field.is_open ? "hidden" : "closed"}</strong>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ) : (
             <p className="muted">No round has been selected yet.</p>

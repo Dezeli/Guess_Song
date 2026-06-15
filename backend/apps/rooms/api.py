@@ -26,7 +26,7 @@ from .services import (
     serialize_public_round,
     serialize_room,
 )
-from .tasks import end_round_task, start_round_task
+from .tasks import advance_round_task, close_answer_field_task, end_round_task, start_round_task
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -69,6 +69,7 @@ class CurrentRoundOut(Schema):
     ended_at: str | None
     skip_count: int
     skip_target_count: int
+    answer_fields: list[dict]
 
 
 class GameStateOut(Schema):
@@ -250,7 +251,8 @@ def _is_field_open_for_acceptance(
     if answer_limit_mode == "FIVE_SECONDS" and field_state.first_correct_at:
         if now - field_state.first_correct_at > timedelta(seconds=5):
             field_state.closed_at = field_state.first_correct_at + timedelta(seconds=5)
-            field_state.save(update_fields=["closed_at"])
+            field_state.revealed_at = field_state.closed_at
+            field_state.save(update_fields=["closed_at", "revealed_at"])
             return False
 
     return True
@@ -304,6 +306,39 @@ def _current_skip_count(round_obj: GameRound) -> int:
 def _schedule_round_end(room: Room, round_obj: GameRound) -> None:
     transaction.on_commit(
         lambda: end_round_task.apply_async(args=[room.id, round_obj.round_index])
+    )
+
+
+def _schedule_answer_field_close(round_obj: GameRound, field_type: str) -> None:
+    transaction.on_commit(
+        lambda: close_answer_field_task.apply_async(
+            args=[round_obj.id, field_type],
+            countdown=5,
+        )
+    )
+
+
+def _configured_field_states_revealed(round_obj: GameRound, settings: dict) -> bool:
+    configured_fields = _answer_fields_for_settings(settings)
+    return not RoundAnswerFieldState.objects.filter(
+        round=round_obj,
+        field_type__in=configured_fields,
+        revealed_at__isnull=True,
+    ).exists()
+
+
+def _schedule_advance_after_reveal(room: Room, session: GameSession, round_obj: GameRound) -> None:
+    reveal_duration_sec = int(
+        session.settings.get(
+            "reveal_duration_sec",
+            room.settings.get("reveal_duration_sec", 3),
+        )
+    )
+    transaction.on_commit(
+        lambda: advance_round_task.apply_async(
+            args=[room.id, round_obj.round_index],
+            countdown=reveal_duration_sec,
+        )
     )
 
 
@@ -614,6 +649,8 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         score_awarded = 0
         matched_fields: list[str] = []
         is_correct = False
+        for field_type in answer_fields:
+            _get_or_create_field_state(round_obj, field_type)
 
         for field_type in answer_fields:
             field_state = _get_or_create_field_state(round_obj, field_type)
@@ -637,9 +674,12 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
 
                     if not field_state.first_correct_at:
                         field_state.first_correct_at = now
+                        if answer_limit_mode == "FIVE_SECONDS":
+                            _schedule_answer_field_close(round_obj, field_type)
 
                     if answer_limit_mode == "FIRST_ONLY":
                         field_state.closed_at = now
+                        field_state.revealed_at = now
                     elif answer_limit_mode == "ALL_CORRECT":
                         target_count = Participant.objects.filter(
                             room=room,
@@ -647,8 +687,18 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                         ).count()
                         if _accepted_count(round_obj, field_type) + 1 >= target_count:
                             field_state.closed_at = now
+                            field_state.revealed_at = now
 
-                    field_state.save(update_fields=["first_correct_at", "closed_at"])
+                    field_state.save(update_fields=["first_correct_at", "closed_at", "revealed_at"])
+
+                    if (
+                        field_state.revealed_at
+                        and _configured_field_states_revealed(round_obj, room.settings)
+                        and not round_obj.ended_at
+                    ):
+                        round_obj.ended_at = now
+                        round_obj.save(update_fields=["ended_at"])
+                        _schedule_advance_after_reveal(room, session, round_obj)
 
             AnswerSubmission.objects.create(
                 round=round_obj,

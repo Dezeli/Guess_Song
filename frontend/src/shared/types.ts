@@ -27,6 +27,15 @@ export type CurrentRound = {
   ended_at: string | null;
   skip_count: number;
   skip_target_count: number;
+  answer_fields: Array<{
+    field_type: "title" | "artist";
+    is_open: boolean;
+    is_revealed: boolean;
+    first_correct_at: string | null;
+    closed_at: string | null;
+    revealed_at: string | null;
+    answer: string | null;
+  }>;
 };
 
 export type AnswerLimitMode = "FIRST_ONLY" | "FIVE_SECONDS" | "ALL_CORRECT";

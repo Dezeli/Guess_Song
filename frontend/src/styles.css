@@ -265,6 +265,29 @@ h2 {
   margin-bottom: 0;
 }
 
+.answer-fields {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.answer-fields li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #f9fafb;
+  color: #6b7280;
+}
+
+.answer-fields li.revealed {
+  background: #dcfce7;
+  color: #166534;
+}
+
 .muted {
   color: #6b7280;
 }

@@ -3,7 +3,7 @@ from channels.layers import get_channel_layer
 
 from apps.quizzes.models import QuizPack, QuizQuestion
 
-from .models import GameRound, Participant, Room
+from .models import GameRound, Participant, Room, RoundAnswerFieldState
 
 
 def room_group_name(code: str) -> str:
@@ -21,6 +21,7 @@ def get_room_for_state(code: str) -> Room:
     return (
         Room.objects.prefetch_related(
             "participants",
+            "game_session__rounds__answer_fields",
             "game_session__rounds__question__youtube_candidate",
         )
         .select_related("game_session__quiz_pack")
@@ -46,6 +47,7 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         room=round_obj.session.room,
         status=Participant.Status.AWAY,
     ).count()
+    answer_fields = _serialize_answer_fields(round_obj)
 
     return {
         "round_id": round_obj.id,
@@ -59,7 +61,45 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         "ended_at": round_obj.ended_at.isoformat() if round_obj.ended_at else None,
         "skip_count": min(manual_skip_count + away_skip_count, skip_target_count),
         "skip_target_count": skip_target_count,
+        "answer_fields": answer_fields,
     }
+
+
+def _serialize_answer_fields(round_obj: GameRound) -> list[dict]:
+    configured_fields = ["title"]
+    if round_obj.session.settings.get("answer_fields") == "TITLE_AND_ARTIST":
+        configured_fields.append("artist")
+
+    states = {state.field_type: state for state in round_obj.answer_fields.all()}
+    payload = []
+    for field_type in configured_fields:
+        state = states.get(field_type)
+        revealed_at = state.revealed_at if state else None
+        answer = None
+        if revealed_at:
+            answer = (
+                round_obj.question.answer_title
+                if field_type == RoundAnswerFieldState.FieldType.TITLE
+                else round_obj.question.answer_artist
+            )
+
+        payload.append(
+            {
+                "field_type": field_type,
+                "is_open": not state.closed_at if state else True,
+                "is_revealed": bool(revealed_at),
+                "first_correct_at": (
+                    state.first_correct_at.isoformat()
+                    if state and state.first_correct_at
+                    else None
+                ),
+                "closed_at": state.closed_at.isoformat() if state and state.closed_at else None,
+                "revealed_at": revealed_at.isoformat() if revealed_at else None,
+                "answer": answer,
+            }
+        )
+
+    return payload
 
 
 def get_current_round(session) -> GameRound | None:
