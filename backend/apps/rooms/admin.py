@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AnswerSubmission, GameRound, GameSession, Participant, Room
+from .models import AnswerSubmission, GameRound, GameSession, Participant, Room, RoundSkipVote
 
 
 class ParticipantInline(admin.TabularInline):
@@ -69,4 +69,12 @@ class AnswerSubmissionAdmin(admin.ModelAdmin):
     ]
     list_filter = ["is_correct", "submitted_at"]
     search_fields = ["answer_raw", "normalized_answer", "participant__nickname"]
+    autocomplete_fields = ["round", "participant"]
+
+
+@admin.register(RoundSkipVote)
+class RoundSkipVoteAdmin(admin.ModelAdmin):
+    list_display = ["round", "participant", "created_at"]
+    list_filter = ["created_at"]
+    search_fields = ["round__session__room__code", "participant__nickname"]
     autocomplete_fields = ["round", "participant"]

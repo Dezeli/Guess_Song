@@ -25,6 +25,8 @@ export type CurrentRound = {
   difficulty: string;
   started_at: string | null;
   ended_at: string | null;
+  skip_count: number;
+  skip_target_count: number;
 };
 
 export type AnswerLimitMode = "FIRST_ONLY" | "FIVE_SECONDS" | "ALL_CORRECT";

@@ -2,12 +2,14 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   createRoom,
+  forceSkipCurrentRound,
   getRoom,
   joinRoom,
   leaveRoom,
   listQuizPacks,
   setParticipantActive,
   setParticipantAway,
+  skipCurrentRound,
   startGame,
   submitAnswer,
 } from "./shared/api";
@@ -80,6 +82,12 @@ function App() {
       && !currentRound.ended_at
       && currentParticipant?.status !== "AWAY"
       && currentParticipant?.status !== "LEFT",
+  );
+  const canSkipRound = Boolean(
+    participantToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
+  );
+  const canForceSkipRound = Boolean(
+    hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
   );
   const hostAction = getHostAction(room?.status);
 
@@ -287,6 +295,28 @@ function App() {
     const updated = await runAction(() => setParticipantActive(room.code, participantToken), "Back to active.");
     if (updated) {
       setRoom(updated.room);
+    }
+  }
+
+  async function handleSkipRound() {
+    if (!room || !participantToken) {
+      return;
+    }
+
+    const skipped = await runAction(() => skipCurrentRound(room.code, participantToken), "Skip vote submitted.");
+    if (skipped) {
+      setRoom(skipped.room);
+    }
+  }
+
+  async function handleForceSkipRound() {
+    if (!room || !hostToken) {
+      return;
+    }
+
+    const skipped = await runAction(() => forceSkipCurrentRound(room.code, hostToken), "Round skipped.");
+    if (skipped) {
+      setRoom(skipped.room);
     }
   }
 
@@ -533,6 +563,24 @@ function App() {
 
           {lastRoundStarted ? (
             <p className="message compact">Round {lastRoundStarted.round_index + 1} started. Answers are open.</p>
+          ) : null}
+
+          {currentRound?.started_at && !currentRound.ended_at ? (
+            <div className="button-row round-actions">
+              <button type="button" className="secondary" onClick={handleSkipRound} disabled={!canSkipRound}>
+                Skip {currentRound.skip_count} / {currentRound.skip_target_count}
+              </button>
+              {isHost ? (
+                <button
+                  type="button"
+                  className="secondary danger"
+                  onClick={handleForceSkipRound}
+                  disabled={!canForceSkipRound}
+                >
+                  Force Skip
+                </button>
+              ) : null}
+            </div>
           ) : null}
         </div>
 

@@ -3,7 +3,7 @@ from channels.layers import get_channel_layer
 
 from apps.quizzes.models import QuizPack, QuizQuestion
 
-from .models import GameRound, Room
+from .models import GameRound, Participant, Room
 
 
 def room_group_name(code: str) -> str:
@@ -35,6 +35,18 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
     question = round_obj.question
     candidate = question.youtube_candidate
 
+    skip_target_count = Participant.objects.filter(
+        room=round_obj.session.room,
+        status__in=[Participant.Status.ACTIVE, Participant.Status.AWAY],
+    ).count()
+    manual_skip_count = round_obj.skip_votes.filter(
+        participant__status=Participant.Status.ACTIVE,
+    ).count()
+    away_skip_count = Participant.objects.filter(
+        room=round_obj.session.room,
+        status=Participant.Status.AWAY,
+    ).count()
+
     return {
         "round_id": round_obj.id,
         "round_index": round_obj.round_index,
@@ -45,6 +57,8 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         "difficulty": question.difficulty,
         "started_at": round_obj.started_at.isoformat() if round_obj.started_at else None,
         "ended_at": round_obj.ended_at.isoformat() if round_obj.ended_at else None,
+        "skip_count": min(manual_skip_count + away_skip_count, skip_target_count),
+        "skip_target_count": skip_target_count,
     }
 
 

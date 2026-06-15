@@ -8,7 +8,7 @@ from apps.core.text import normalize_answer
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
 from .game_settings import normalize_room_settings
-from .models import AnswerSubmission, GameRound, GameSession, Participant, Room
+from .models import AnswerSubmission, GameRound, GameSession, Participant, Room, RoundSkipVote
 from .services import (
     approved_question_count,
     broadcast_room_state,
@@ -16,7 +16,7 @@ from .services import (
     serialize_public_round,
     serialize_room,
 )
-from .tasks import start_round_task
+from .tasks import end_round_task, start_round_task
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -57,6 +57,8 @@ class CurrentRoundOut(Schema):
     difficulty: str
     started_at: str | None
     ended_at: str | None
+    skip_count: int
+    skip_target_count: int
 
 
 class GameStateOut(Schema):
@@ -114,6 +116,10 @@ class SubmitAnswerOut(Schema):
     is_correct: bool
     score_awarded: int
     total_score: int
+
+
+class SkipRoundOut(Schema):
+    room: RoomOut
 
 
 def _clean_nickname(nickname: str) -> str:
@@ -198,6 +204,31 @@ def _is_correct_answer(question: QuizQuestion, normalized_answer: str) -> bool:
 
 def _score_answer(is_correct: bool) -> int:
     return 100 if is_correct else 0
+
+
+def _active_skip_target_count(room: Room) -> int:
+    return Participant.objects.filter(
+        room=room,
+        status__in=[Participant.Status.ACTIVE, Participant.Status.AWAY],
+    ).count()
+
+
+def _current_skip_count(round_obj: GameRound) -> int:
+    room = round_obj.session.room
+    manual_skip_count = round_obj.skip_votes.filter(
+        participant__status=Participant.Status.ACTIVE,
+    ).count()
+    away_skip_count = Participant.objects.filter(
+        room=room,
+        status=Participant.Status.AWAY,
+    ).count()
+    return min(manual_skip_count + away_skip_count, _active_skip_target_count(room))
+
+
+def _schedule_round_end(room: Room, round_obj: GameRound) -> None:
+    transaction.on_commit(
+        lambda: end_round_task.apply_async(args=[room.id, round_obj.round_index])
+    )
 
 
 @router.post("/rooms", response=CreateRoomOut)
@@ -303,6 +334,14 @@ def set_participant_away(request, code: str):
             participant.status = Participant.Status.AWAY
             participant.is_active = True
             participant.save(update_fields=["status", "is_active"])
+
+        if room.status == Room.Status.PLAYING:
+            session = GameSession.objects.select_for_update().get(room=room)
+            if session.status == GameSession.Status.PLAYING:
+                round_obj = _get_current_round_or_400(session)
+                if round_obj.started_at and not round_obj.ended_at:
+                    if _current_skip_count(round_obj) >= _active_skip_target_count(room):
+                        _schedule_round_end(room, round_obj)
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
 
@@ -522,3 +561,74 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         "score_awarded": score_awarded,
         "total_score": participant.score,
     }
+
+
+@router.post("/rooms/{code}/rounds/current/skip", response=SkipRoundOut)
+def skip_current_round(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.status == Participant.Status.LEFT:
+            raise HttpError(403, "Left participants cannot vote to skip.")
+
+        if room.status != Room.Status.PLAYING:
+            raise HttpError(400, "Room is not playing.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        if session.status != GameSession.Status.PLAYING:
+            raise HttpError(400, "Game session is not playing.")
+
+        round_obj = _get_current_round_or_400(session)
+        if not round_obj.started_at:
+            raise HttpError(400, "Current round has not started.")
+        if round_obj.ended_at:
+            raise HttpError(400, "Current round has already ended.")
+
+        if participant.status == Participant.Status.ACTIVE:
+            try:
+                RoundSkipVote.objects.create(round=round_obj, participant=participant)
+            except IntegrityError:
+                pass
+
+        if _current_skip_count(round_obj) >= _active_skip_target_count(room):
+            _schedule_round_end(room, round_obj)
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/rounds/current/force-skip", response=SkipRoundOut)
+def force_skip_current_round(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.PLAYING:
+            raise HttpError(400, "Room is not playing.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        if session.status != GameSession.Status.PLAYING:
+            raise HttpError(400, "Game session is not playing.")
+
+        round_obj = _get_current_round_or_400(session)
+        if not round_obj.started_at:
+            raise HttpError(400, "Current round has not started.")
+        if round_obj.ended_at:
+            raise HttpError(400, "Current round has already ended.")
+
+        _schedule_round_end(room, round_obj)
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "game_session__rounds__question__youtube_candidate",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}

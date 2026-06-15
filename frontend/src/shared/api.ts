@@ -90,6 +90,20 @@ export function startGame(code: string, hostToken: string) {
   });
 }
 
+export function skipCurrentRound(code: string, participantToken: string) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/rounds/current/skip`, {
+    method: "POST",
+    headers: { "X-Participant-Token": participantToken },
+  });
+}
+
+export function forceSkipCurrentRound(code: string, hostToken: string) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/rounds/current/force-skip`, {
+    method: "POST",
+    headers: { "X-Host-Token": hostToken },
+  });
+}
+
 export function startCurrentRound(code: string, hostToken: string) {
   return request(`/api/rooms/${code}/rounds/current/start`, {
     method: "POST",

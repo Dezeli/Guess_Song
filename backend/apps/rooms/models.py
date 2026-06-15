@@ -91,6 +91,28 @@ class GameRound(models.Model):
         return f"{self.session} round {self.round_index}"
 
 
+class RoundSkipVote(models.Model):
+    round = models.ForeignKey(GameRound, on_delete=models.CASCADE, related_name="skip_votes")
+    participant = models.ForeignKey(
+        Participant,
+        on_delete=models.CASCADE,
+        related_name="round_skip_votes",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["round", "created_at"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["round", "participant"],
+                name="unique_round_participant_skip_vote",
+            )
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.participant} skip / {self.round}"
+
+
 class AnswerSubmission(models.Model):
     round = models.ForeignKey(GameRound, on_delete=models.CASCADE, related_name="submissions")
     participant = models.ForeignKey(
