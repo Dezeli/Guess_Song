@@ -14,7 +14,7 @@ import { openRoomSocket } from "./shared/roomSocket";
 import type { QuizPack, RoomSocketMessage } from "./shared/types";
 import { useRoomStore } from "./stores/roomStore";
 
-const savedRoomCode = localStorage.getItem("guess_song_room_code") ?? "";
+const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
 
 function App() {
   const {
@@ -46,6 +46,7 @@ function App() {
   const isHost = Boolean(hostToken && room);
   const currentRound = room?.game?.current_round ?? null;
   const canSubmit = Boolean(participantToken && currentRound?.started_at && !currentRound.ended_at);
+  const hostAction = getHostAction(room?.status, currentRound?.started_at ?? null);
 
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
@@ -88,6 +89,20 @@ function App() {
       socketRef.current = null;
     };
   }, [room?.code, setLastRoundStarted, setRoom, setSocketStatus]);
+
+  useEffect(() => {
+    if (!room?.code) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      void getRoom(room.code)
+        .then((latestRoom) => setRoom(latestRoom))
+        .catch(() => undefined);
+    }, 1000);
+
+    return () => window.clearInterval(intervalId);
+  }, [room?.code, setRoom]);
 
   async function runAction<T>(action: () => Promise<T>, successMessage: string) {
     setMessage("");
@@ -154,33 +169,32 @@ function App() {
     }
   }
 
-  async function handleStartGame() {
+  async function handleHostPrimaryAction() {
     if (!room || !hostToken) {
       return;
     }
-    const started = await runAction(() => startGame(room.code, hostToken), "Game started.");
-    if (started) {
-      setRoom(started.room);
-    }
-  }
 
-  async function handleStartRound() {
-    if (!room || !hostToken) {
+    if (room.status === "waiting") {
+      const started = await runAction(() => startGame(room.code, hostToken), "Game started. Now start the round.");
+      if (started) {
+        setRoom(started.room);
+      }
       return;
     }
-    await runAction(() => startCurrentRound(room.code, hostToken), "Round started.");
-  }
 
-  async function handleNextRound() {
-    if (!room || !hostToken) {
+    if (room.status === "playing" && !currentRound?.started_at) {
+      await runAction(() => startCurrentRound(room.code, hostToken), "Round started. Players can answer now.");
       return;
     }
-    const next = await runAction(() => moveToNextRound(room.code, hostToken), "Moved to next round.");
-    if (next) {
-      setRoom(next.room);
-      setAnswer("");
-      setLastAnswerResult(null);
-      setLastRoundStarted(null);
+
+    if (room.status === "playing") {
+      const next = await runAction(() => moveToNextRound(room.code, hostToken), "Moved to next round.");
+      if (next) {
+        setRoom(next.room);
+        setAnswer("");
+        setLastAnswerResult(null);
+        setLastRoundStarted(null);
+      }
     }
   }
 
@@ -208,185 +222,225 @@ function App() {
     setMessage("Local room state cleared.");
   }
 
+  if (!room) {
+    return (
+      <main className="app-shell compact-shell">
+        <header className="topbar">
+          <div>
+            <p className="eyebrow">Guess Song</p>
+            <h1>Create or Join a Room</h1>
+          </div>
+        </header>
+
+        <section className="layout">
+          <div className="panel">
+            <h2>Create Room</h2>
+            <form onSubmit={handleCreateRoom} className="stack">
+              <label>
+                Quiz pack
+                <select
+                  value={selectedPackId ?? ""}
+                  onChange={(event) => setSelectedPackId(Number(event.target.value))}
+                >
+                  {quizPacks.map((pack) => (
+                    <option key={pack.id} value={pack.id}>
+                      {pack.name} ({pack.approved_question_count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Host nickname
+                <input value={hostNickname} onChange={(event) => setHostNickname(event.target.value)} />
+              </label>
+              <label>
+                Questions
+                <input
+                  min={1}
+                  max={20}
+                  type="number"
+                  value={questionCount}
+                  onChange={(event) => setQuestionCount(Number(event.target.value))}
+                />
+              </label>
+              <button type="submit">Create Room</button>
+            </form>
+          </div>
+
+          <div className="panel">
+            <h2>Join Room</h2>
+            <form onSubmit={handleJoinRoom} className="stack">
+              <label>
+                Room code
+                <input
+                  value={joinCode}
+                  onChange={(event) => setJoinCode(event.target.value.toUpperCase())}
+                  placeholder="ABC123"
+                />
+              </label>
+              <label>
+                Nickname
+                <input value={joinNickname} onChange={(event) => setJoinNickname(event.target.value)} />
+              </label>
+              <div className="button-row">
+                <button type="submit">Join Room</button>
+                <button type="button" className="secondary" onClick={handleRestoreRoom}>
+                  Load Room
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        {message ? <p className="message">{message}</p> : null}
+      </main>
+    );
+  }
+
   return (
     <main className="app-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Guess Song</p>
-          <h1>Music Quiz Control Room</h1>
+          <p className="eyebrow">Room {room.code}</p>
+          <h1>{room.quiz_pack?.name ?? "Music Quiz"}</h1>
         </div>
-        <div className="connection">
-          <span>Socket</span>
-          <strong data-state={socketStatus}>{socketStatus}</strong>
+        <div className="button-row">
+          <div className="connection">
+            <span>Sync</span>
+            <strong data-state={socketStatus}>{socketStatus}</strong>
+          </div>
+          <button type="button" className="secondary" onClick={handleReset}>
+            Leave Local View
+          </button>
         </div>
       </header>
 
-      <section className="layout">
-        <div className="panel">
-          <h2>Create Room</h2>
-          <form onSubmit={handleCreateRoom} className="stack">
-            <label>
-              Quiz pack
-              <select
-                value={selectedPackId ?? ""}
-                onChange={(event) => setSelectedPackId(Number(event.target.value))}
-              >
-                {quizPacks.map((pack) => (
-                  <option key={pack.id} value={pack.id}>
-                    {pack.name} ({pack.approved_question_count})
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Host nickname
-              <input value={hostNickname} onChange={(event) => setHostNickname(event.target.value)} />
-            </label>
-            <label>
-              Questions
-              <input
-                min={1}
-                max={20}
-                type="number"
-                value={questionCount}
-                onChange={(event) => setQuestionCount(Number(event.target.value))}
-              />
-            </label>
-            <button type="submit">Create</button>
-          </form>
-        </div>
-
-        <div className="panel">
-          <h2>Join Room</h2>
-          <form onSubmit={handleJoinRoom} className="stack">
-            <label>
-              Room code
-              <input
-                value={joinCode}
-                onChange={(event) => setJoinCode(event.target.value.toUpperCase())}
-                placeholder="ABC123"
-              />
-            </label>
-            <label>
-              Nickname
-              <input value={joinNickname} onChange={(event) => setJoinNickname(event.target.value)} />
-            </label>
-            <div className="button-row">
-              <button type="submit">Join</button>
-              <button type="button" className="secondary" onClick={handleRestoreRoom}>
-                Load
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
       {message ? <p className="message">{message}</p> : null}
 
-      {room ? (
-        <section className="room-grid">
-          <div className="panel room-summary">
-            <div className="room-header">
-              <div>
-                <p className="eyebrow">Room</p>
-                <h2>{room.code}</h2>
-              </div>
-              <button type="button" className="secondary" onClick={handleReset}>
-                Clear
-              </button>
+      <section className="room-focus">
+        <div className="panel stage-panel">
+          <div className="stage-header">
+            <div>
+              <p className="eyebrow">{room.status}</p>
+              <h2>{getStageTitle(room.status, currentRound?.started_at ?? null)}</h2>
             </div>
-            <dl className="facts">
-              <div>
-                <dt>Status</dt>
-                <dd>{room.status}</dd>
-              </div>
-              <div>
-                <dt>Pack</dt>
-                <dd>{room.quiz_pack?.name ?? "-"}</dd>
-              </div>
-              <div>
-                <dt>Round</dt>
-                <dd>
-                  {room.game ? `${room.game.current_round_index + 1} / ${room.game.total_rounds || "-"}` : "-"}
-                </dd>
-              </div>
-            </dl>
-
-            {isHost ? (
-              <div className="host-controls">
-                <button type="button" onClick={handleStartGame} disabled={room.status !== "waiting"}>
-                  Start Game
-                </button>
-                <button type="button" onClick={handleStartRound} disabled={room.status !== "playing"}>
-                  Start Round
-                </button>
-                <button type="button" onClick={handleNextRound} disabled={room.status !== "playing"}>
-                  Next
-                </button>
-              </div>
-            ) : null}
+            <strong className="round-counter">
+              {room.game ? `${Math.min(room.game.current_round_index + 1, room.game.total_rounds)} / ${room.game.total_rounds}` : "-"}
+            </strong>
           </div>
 
-          <div className="panel">
-            <h2>Current Round</h2>
-            {currentRound ? (
-              <div className="round-box">
-                <p>
-                  Video ID <strong>{currentRound.youtube_video_id}</strong>
-                </p>
-                <p>
-                  Start {currentRound.start_time_seconds}s · Play {currentRound.play_duration_seconds}s
-                </p>
-                <p>Difficulty {currentRound.difficulty}</p>
-                <p>Started {currentRound.started_at ? "yes" : "no"}</p>
-              </div>
-            ) : (
-              <p className="muted">No round selected.</p>
-            )}
-            {lastRoundStarted ? (
-              <p className="message compact">Round {lastRoundStarted.round_index + 1} started.</p>
-            ) : null}
-          </div>
-
-          <div className="panel">
-            <h2>Submit Answer</h2>
-            <form onSubmit={handleSubmitAnswer} className="stack">
-              <input
-                value={answer}
-                onChange={(event) => setAnswer(event.target.value)}
-                placeholder="Type song title or alias"
-                disabled={!canSubmit}
-              />
-              <button type="submit" disabled={!canSubmit}>
-                Submit
-              </button>
-            </form>
-            {lastAnswerResult ? (
-              <p className={lastAnswerResult.is_correct ? "result correct" : "result wrong"}>
-                {lastAnswerResult.is_correct ? "Correct" : "Wrong"} · +{lastAnswerResult.score_awarded} · total{" "}
-                {lastAnswerResult.total_score}
+          {currentRound ? (
+            <div className="round-box">
+              <p>
+                YouTube video ID <strong>{currentRound.youtube_video_id}</strong>
               </p>
-            ) : null}
-          </div>
+              <p>
+                Start {currentRound.start_time_seconds}s / Play {currentRound.play_duration_seconds}s
+              </p>
+              <p>Difficulty {currentRound.difficulty}</p>
+            </div>
+          ) : (
+            <p className="muted">No round has been selected yet.</p>
+          )}
 
-          <div className="panel">
-            <h2>Scoreboard</h2>
-            <ul className="scoreboard">
-              {orderedParticipants.map((participant) => (
-                <li key={participant.id}>
-                  <span>
-                    {participant.nickname}
-                    {participant.is_host ? " (host)" : ""}
-                  </span>
-                  <strong>{participant.score}</strong>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      ) : null}
+          {isHost ? (
+            <button
+              type="button"
+              className="primary-action"
+              onClick={handleHostPrimaryAction}
+              disabled={room.status === "finished"}
+            >
+              {hostAction}
+            </button>
+          ) : (
+            <p className="muted">Waiting for the host.</p>
+          )}
+
+          {lastRoundStarted ? (
+            <p className="message compact">Round {lastRoundStarted.round_index + 1} started. Answers are open.</p>
+          ) : null}
+        </div>
+
+        <div className="panel">
+          <h2>Submit Answer</h2>
+          <p className="muted">{getAnswerHint(Boolean(participantToken), room.status, currentRound?.started_at ?? null, currentRound?.ended_at ?? null)}</p>
+          <form onSubmit={handleSubmitAnswer} className="stack">
+            <input
+              value={answer}
+              onChange={(event) => setAnswer(event.target.value)}
+              placeholder="Try LOVE DIVE for the first sample question"
+              disabled={!canSubmit}
+            />
+            <button type="submit" disabled={!canSubmit || !answer.trim()}>
+              Submit Answer
+            </button>
+          </form>
+          {lastAnswerResult ? (
+            <p className={lastAnswerResult.is_correct ? "result correct" : "result wrong"}>
+              {lastAnswerResult.is_correct ? "Correct" : "Wrong"} / +{lastAnswerResult.score_awarded} / total{" "}
+              {lastAnswerResult.total_score}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="panel">
+          <h2>Players</h2>
+          <ul className="scoreboard">
+            {orderedParticipants.map((participant) => (
+              <li key={participant.id}>
+                <span>
+                  {participant.nickname}
+                  {participant.is_host ? " (host)" : ""}
+                </span>
+                <strong>{participant.score}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </main>
   );
+}
+
+function getHostAction(status: string | undefined, startedAt: string | null) {
+  if (status === "waiting") {
+    return "Start Game";
+  }
+  if (status === "playing" && !startedAt) {
+    return "Start Round";
+  }
+  if (status === "playing") {
+    return "Next Round";
+  }
+  return "Game Finished";
+}
+
+function getStageTitle(status: string, startedAt: string | null) {
+  if (status === "waiting") {
+    return "Waiting for players";
+  }
+  if (status === "playing" && !startedAt) {
+    return "Round is ready";
+  }
+  if (status === "playing") {
+    return "Round is live";
+  }
+  return "Game finished";
+}
+
+function getAnswerHint(hasToken: boolean, status: string, startedAt: string | null, endedAt: string | null) {
+  if (!hasToken) {
+    return "Join or create a room before submitting.";
+  }
+  if (status === "waiting") {
+    return "The host needs to start the game first.";
+  }
+  if (!startedAt) {
+    return "The host needs to start the round first.";
+  }
+  if (endedAt) {
+    return "This round is closed. Wait for the next round.";
+  }
+  return "Answers are open.";
 }
 
 export default App;

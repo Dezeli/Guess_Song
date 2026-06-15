@@ -79,6 +79,11 @@ h2 {
   padding: 28px;
 }
 
+.compact-shell {
+  display: grid;
+  align-content: center;
+}
+
 .topbar {
   display: flex;
   align-items: flex-end;
@@ -129,6 +134,12 @@ h2 {
   margin-top: 16px;
 }
 
+.room-focus {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  gap: 16px;
+}
+
 .panel {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -165,6 +176,37 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
+}
+
+.stage-panel {
+  grid-row: span 2;
+}
+
+.stage-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stage-header h2 {
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.round-counter {
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.primary-action {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 16px;
+  font-size: 17px;
 }
 
 .room-summary h2 {
@@ -251,7 +293,8 @@ h2 {
 
   .topbar,
   .layout,
-  .room-grid {
+  .room-grid,
+  .room-focus {
     grid-template-columns: 1fr;
   }
 

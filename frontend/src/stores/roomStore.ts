@@ -22,32 +22,32 @@ type RoomStore = {
 
 export const useRoomStore = create<RoomStore>((set) => ({
   room: null,
-  hostToken: localStorage.getItem("guess_song_host_token"),
-  participantToken: localStorage.getItem("guess_song_participant_token"),
+  hostToken: sessionStorage.getItem("guess_song_host_token"),
+  participantToken: sessionStorage.getItem("guess_song_participant_token"),
   socketStatus: "idle",
   lastRoundStarted: null,
   lastAnswerResult: null,
   setRoom: (room) => {
     if (room) {
-      localStorage.setItem("guess_song_room_code", room.code);
+      sessionStorage.setItem("guess_song_room_code", room.code);
     } else {
-      localStorage.removeItem("guess_song_room_code");
+      sessionStorage.removeItem("guess_song_room_code");
     }
     set({ room });
   },
   setHostToken: (token) => {
     if (token) {
-      localStorage.setItem("guess_song_host_token", token);
+      sessionStorage.setItem("guess_song_host_token", token);
     } else {
-      localStorage.removeItem("guess_song_host_token");
+      sessionStorage.removeItem("guess_song_host_token");
     }
     set({ hostToken: token });
   },
   setParticipantToken: (token) => {
     if (token) {
-      localStorage.setItem("guess_song_participant_token", token);
+      sessionStorage.setItem("guess_song_participant_token", token);
     } else {
-      localStorage.removeItem("guess_song_participant_token");
+      sessionStorage.removeItem("guess_song_participant_token");
     }
     set({ participantToken: token });
   },
@@ -55,9 +55,9 @@ export const useRoomStore = create<RoomStore>((set) => ({
   setLastRoundStarted: (lastRoundStarted) => set({ lastRoundStarted }),
   setLastAnswerResult: (lastAnswerResult) => set({ lastAnswerResult }),
   reset: () => {
-    localStorage.removeItem("guess_song_room_code");
-    localStorage.removeItem("guess_song_host_token");
-    localStorage.removeItem("guess_song_participant_token");
+    sessionStorage.removeItem("guess_song_room_code");
+    sessionStorage.removeItem("guess_song_host_token");
+    sessionStorage.removeItem("guess_song_participant_token");
     set({
       room: null,
       hostToken: null,
