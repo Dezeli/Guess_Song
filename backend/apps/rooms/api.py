@@ -4,9 +4,10 @@ from django.utils import timezone
 from ninja import Router, Schema
 from ninja.errors import HttpError
 
-from apps.quizzes.models import QuizPack, QuizQuestion
+from apps.core.text import normalize_answer
+from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
-from .models import GameRound, GameSession, Participant, Room
+from .models import AnswerSubmission, GameRound, GameSession, Participant, Room
 from .services import (
     approved_question_count,
     broadcast_room_state,
@@ -93,6 +94,16 @@ class NextRoundOut(Schema):
     room: RoomOut
 
 
+class SubmitAnswerIn(Schema):
+    answer: str
+
+
+class SubmitAnswerOut(Schema):
+    is_correct: bool
+    score_awarded: int
+    total_score: int
+
+
 def _clean_nickname(nickname: str) -> str:
     cleaned = " ".join(nickname.strip().split())
     if not cleaned:
@@ -125,6 +136,21 @@ def _require_host(request, room: Room) -> None:
         raise HttpError(403, "Invalid host token.")
 
 
+def _require_participant(request, room: Room) -> Participant:
+    participant_token = request.headers.get("X-Participant-Token")
+
+    if not participant_token:
+        raise HttpError(401, "X-Participant-Token header is required.")
+
+    participant = Participant.objects.filter(
+        room=room,
+        session_token=participant_token,
+    ).first()
+    if not participant:
+        raise HttpError(403, "Invalid participant token.")
+    return participant
+
+
 def _get_current_round_or_400(session: GameSession) -> GameRound:
     round_obj = session.rounds.select_related(
         "question",
@@ -134,6 +160,17 @@ def _get_current_round_or_400(session: GameSession) -> GameRound:
     if not round_obj:
         raise HttpError(400, "Current round does not exist.")
     return round_obj
+
+
+def _is_correct_answer(question: QuizQuestion, normalized_answer: str) -> bool:
+    return QuizAnswerAlias.objects.filter(
+        question=question,
+        normalized_value=normalized_answer,
+    ).exists()
+
+
+def _score_answer(is_correct: bool) -> int:
+    return 100 if is_correct else 0
 
 
 @router.post("/rooms", response=CreateRoomOut)
@@ -324,3 +361,55 @@ def move_to_next_round(request, code: str):
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/rounds/current/answers", response=SubmitAnswerOut)
+def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
+    answer = payload.answer.strip()
+    if not answer:
+        raise HttpError(400, "Answer is required.")
+
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if room.status != Room.Status.PLAYING:
+            raise HttpError(400, "Room is not playing.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        if session.status != GameSession.Status.PLAYING:
+            raise HttpError(400, "Game session is not playing.")
+
+        round_obj = _get_current_round_or_400(session)
+        if not round_obj.started_at:
+            raise HttpError(400, "Current round has not started.")
+        if round_obj.ended_at:
+            raise HttpError(400, "Current round has already ended.")
+
+        normalized_answer = normalize_answer(answer)
+        is_correct = _is_correct_answer(round_obj.question, normalized_answer)
+        score_awarded = _score_answer(is_correct)
+
+        try:
+            submission = AnswerSubmission.objects.create(
+                round=round_obj,
+                participant=participant,
+                answer_raw=answer,
+                normalized_answer=normalized_answer,
+                is_correct=is_correct,
+                score_awarded=score_awarded,
+            )
+        except IntegrityError as exc:
+            raise HttpError(409, "Participant has already submitted an answer for this round.") from exc
+
+        if submission.score_awarded:
+            participant.score += submission.score_awarded
+            participant.save(update_fields=["score"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    return {
+        "is_correct": is_correct,
+        "score_awarded": score_awarded,
+        "total_score": participant.score,
+    }
