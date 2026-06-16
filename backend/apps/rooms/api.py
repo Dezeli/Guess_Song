@@ -297,6 +297,36 @@ def _accepted_count(round_obj: GameRound, field_type: str) -> int:
     )
 
 
+def _team_already_awarded(round_obj: GameRound, team: RoomTeam, field_type: str) -> bool:
+    return AnswerSubmission.objects.filter(
+        round=round_obj,
+        participant__team=team,
+        answer_type=field_type,
+        score_awarded__gt=0,
+    ).exists()
+
+
+def _award_score(
+    room: Room,
+    participant: Participant,
+    round_obj: GameRound,
+    field_type: str,
+) -> int:
+    if room.settings.get("play_mode") == "TEAM":
+        if not participant.team_id:
+            return 0
+        team = RoomTeam.objects.select_for_update().get(id=participant.team_id)
+        if _team_already_awarded(round_obj, team, field_type):
+            return 0
+        team.score += 1
+        team.save(update_fields=["score"])
+        return 1
+
+    participant.score += 1
+    participant.save(update_fields=["score"])
+    return 1
+
+
 def _active_skip_target_count(room: Room) -> int:
     return Participant.objects.filter(
         room=room,
@@ -723,6 +753,7 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         score_awarded = 0
         matched_fields: list[str] = []
         is_correct = False
+        total_score = participant.team.score if participant.team else participant.score
         for field_type in answer_fields:
             _get_or_create_field_state(round_obj, field_type)
 
@@ -730,6 +761,7 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
             field_state = _get_or_create_field_state(round_obj, field_type)
             field_correct = _answer_matches_field(round_obj.question, field_type, normalized_answer)
             field_accepted = False
+            field_score_awarded = 0
 
             if field_correct:
                 is_correct = True
@@ -744,7 +776,13 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                 else:
                     field_accepted = True
                     matched_fields.append(field_type)
-                    score_awarded += 1
+                    field_score_awarded = _award_score(room, participant, round_obj, field_type)
+                    score_awarded += field_score_awarded
+                    if room.settings.get("play_mode") == "TEAM" and participant.team_id:
+                        participant.team.refresh_from_db(fields=["score"])
+                        total_score = participant.team.score
+                    else:
+                        total_score = participant.score
 
                     if not field_state.first_correct_at:
                         field_state.first_correct_at = now
@@ -782,19 +820,15 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                 normalized_answer=normalized_answer,
                 is_correct=field_correct,
                 is_accepted=field_accepted,
-                score_awarded=1 if field_accepted else 0,
+                score_awarded=field_score_awarded,
             )
-
-        if score_awarded:
-            participant.score += score_awarded
-            participant.save(update_fields=["score"])
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
 
     return {
         "is_correct": is_correct,
         "score_awarded": score_awarded,
-        "total_score": participant.score,
+        "total_score": total_score,
         "matched_fields": matched_fields,
     }
 
