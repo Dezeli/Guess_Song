@@ -91,11 +91,13 @@ export type CreateRoomResponse = {
   room: RoomState;
   host_token: string;
   participant_token: string;
+  participant_id: number;
 };
 
 export type JoinRoomResponse = {
   room: RoomState;
   participant_token: string;
+  participant_id: number;
 };
 
 export type SubmitAnswerResponse = {

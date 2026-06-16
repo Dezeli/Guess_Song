@@ -105,11 +105,13 @@ class CreateRoomOut(Schema):
     room: RoomOut
     host_token: str
     participant_token: str
+    participant_id: int
 
 
 class JoinRoomOut(Schema):
     room: RoomOut
     participant_token: str
+    participant_id: int
 
 
 class LeaveRoomOut(Schema):
@@ -474,6 +476,7 @@ def create_room(request, payload: CreateRoomIn):
         "room": serialize_room(room),
         "host_token": room.host_token,
         "participant_token": participant.session_token,
+        "participant_id": participant.id,
     }
 
 
@@ -510,6 +513,7 @@ def join_room(request, code: str, payload: JoinRoomIn):
     return {
         "room": serialize_room(room),
         "participant_token": participant.session_token,
+        "participant_id": participant.id,
     }
 
 

@@ -34,12 +34,14 @@ function App() {
     room,
     hostToken,
     participantToken,
+    participantId,
     socketStatus,
     lastAnswerResult,
     lastRoundStarted,
     setRoom,
     setHostToken,
     setParticipantToken,
+    setParticipantId,
     setSocketStatus,
     setLastAnswerResult,
     setLastRoundStarted,
@@ -74,11 +76,11 @@ function App() {
     if (!room) {
       return null;
     }
-    if (hostToken) {
-      return room.participants.find((participant) => participant.is_host) ?? null;
+    if (participantId) {
+      return room.participants.find((participant) => participant.id === participantId) ?? null;
     }
-    return room.participants.find((participant) => participant.nickname === joinNickname) ?? null;
-  }, [hostToken, joinNickname, room]);
+    return null;
+  }, [participantId, room]);
   const canSubmit = Boolean(
     participantToken
       && currentRound?.started_at
@@ -198,6 +200,7 @@ function App() {
       setRoom(created.room);
       setHostToken(created.host_token);
       setParticipantToken(created.participant_token);
+      setParticipantId(created.participant_id);
       setJoinCode(created.room.code);
       setLastAnswerResult(null);
       setLastRoundStarted(null);
@@ -215,6 +218,7 @@ function App() {
       setRoom(joined.room);
       setHostToken(null);
       setParticipantToken(joined.participant_token);
+      setParticipantId(joined.participant_id);
       setLastAnswerResult(null);
       setLastRoundStarted(null);
     }

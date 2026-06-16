@@ -8,12 +8,14 @@ type RoomStore = {
   room: RoomState | null;
   hostToken: string | null;
   participantToken: string | null;
+  participantId: number | null;
   socketStatus: SocketStatus;
   lastRoundStarted: CurrentRound | null;
   lastAnswerResult: SubmitAnswerResponse | null;
   setRoom: (room: RoomState | null) => void;
   setHostToken: (token: string | null) => void;
   setParticipantToken: (token: string | null) => void;
+  setParticipantId: (id: number | null) => void;
   setSocketStatus: (status: SocketStatus) => void;
   setLastRoundStarted: (round: CurrentRound | null) => void;
   setLastAnswerResult: (result: SubmitAnswerResponse | null) => void;
@@ -24,6 +26,7 @@ export const useRoomStore = create<RoomStore>((set) => ({
   room: null,
   hostToken: sessionStorage.getItem("guess_song_host_token"),
   participantToken: sessionStorage.getItem("guess_song_participant_token"),
+  participantId: Number(sessionStorage.getItem("guess_song_participant_id")) || null,
   socketStatus: "idle",
   lastRoundStarted: null,
   lastAnswerResult: null,
@@ -51,6 +54,14 @@ export const useRoomStore = create<RoomStore>((set) => ({
     }
     set({ participantToken: token });
   },
+  setParticipantId: (id) => {
+    if (id) {
+      sessionStorage.setItem("guess_song_participant_id", String(id));
+    } else {
+      sessionStorage.removeItem("guess_song_participant_id");
+    }
+    set({ participantId: id });
+  },
   setSocketStatus: (socketStatus) => set({ socketStatus }),
   setLastRoundStarted: (lastRoundStarted) => set({ lastRoundStarted }),
   setLastAnswerResult: (lastAnswerResult) => set({ lastAnswerResult }),
@@ -58,10 +69,12 @@ export const useRoomStore = create<RoomStore>((set) => ({
     sessionStorage.removeItem("guess_song_room_code");
     sessionStorage.removeItem("guess_song_host_token");
     sessionStorage.removeItem("guess_song_participant_token");
+    sessionStorage.removeItem("guess_song_participant_id");
     set({
       room: null,
       hostToken: null,
       participantToken: null,
+      participantId: null,
       socketStatus: "idle",
       lastRoundStarted: null,
       lastAnswerResult: null,
