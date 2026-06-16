@@ -220,6 +220,32 @@ h2 {
   font-size: 30px;
 }
 
+.stage-status {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.stage-timer {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.stage-timer span {
+  color: #d1d5db;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.stage-timer strong {
+  font-size: 22px;
+}
+
 .round-counter {
   border-radius: 8px;
   padding: 10px 12px;

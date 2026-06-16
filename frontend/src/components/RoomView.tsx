@@ -23,6 +23,8 @@ type RoomViewProps = {
   playerMessage: string;
   room: RoomState;
   socketStatus: string;
+  timerLabel: string | null;
+  timerSeconds: number | null;
   onAnswerChange: (answer: string) => void;
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
@@ -53,6 +55,8 @@ export function RoomView({
   playerMessage,
   room,
   socketStatus,
+  timerLabel,
+  timerSeconds,
   onAnswerChange,
   onForceSkipRound,
   onHostPrimaryAction,
@@ -113,6 +117,8 @@ export function RoomView({
           lastRoundStarted={lastRoundStarted}
           roundLabel={roundLabel}
           roomStatus={room.status}
+          timerLabel={timerLabel}
+          timerSeconds={timerSeconds}
           playerHostRef={playerHostRef}
           playerMessage={playerMessage}
           onForceSkipRound={onForceSkipRound}

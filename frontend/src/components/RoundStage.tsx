@@ -12,6 +12,8 @@ type RoundStageProps = {
   lastRoundStarted: CurrentRound | null;
   roundLabel: string;
   roomStatus: string;
+  timerLabel: string | null;
+  timerSeconds: number | null;
   playerHostRef: RefObject<HTMLDivElement>;
   playerMessage: string;
   onForceSkipRound: () => void;
@@ -30,6 +32,8 @@ export function RoundStage({
   lastRoundStarted,
   roundLabel,
   roomStatus,
+  timerLabel,
+  timerSeconds,
   playerHostRef,
   playerMessage,
   onForceSkipRound,
@@ -50,7 +54,15 @@ export function RoundStage({
             )}
           </h2>
         </div>
-        <strong className="round-counter">{roundLabel}</strong>
+        <div className="stage-status">
+          {timerLabel && timerSeconds !== null ? (
+            <div className="stage-timer">
+              <span>{timerLabel}</span>
+              <strong>{timerSeconds}초</strong>
+            </div>
+          ) : null}
+          <strong className="round-counter">{roundLabel}</strong>
+        </div>
       </div>
 
       {currentRound ? (

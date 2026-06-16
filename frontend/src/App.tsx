@@ -21,6 +21,7 @@ import type {
   AnswerFields,
   AnswerLimitMode,
   BalanceMode,
+  CurrentRound,
   ItemMode,
   PlayMode,
   QuizPack,
@@ -73,6 +74,7 @@ function App() {
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
   const [playerMessage, setPlayerMessage] = useState("");
+  const [nowMs, setNowMs] = useState(Date.now());
   const socketRef = useRef<WebSocket | null>(null);
   const playerHostRef = useRef<HTMLDivElement | null>(null);
   const youtubePlayerRef = useRef<YT.Player | null>(null);
@@ -104,6 +106,10 @@ function App() {
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
     [room],
   );
+  const roundTimer = useMemo(
+    () => getRoundTimer(currentRound, room?.settings ?? null, nowMs),
+    [currentRound, nowMs, room?.settings],
+  );
 
   useEffect(() => {
     void listQuizPacks()
@@ -112,6 +118,14 @@ function App() {
         setSelectedPackId(packs[0]?.id ?? null);
       })
       .catch((error) => setMessage(error instanceof Error ? error.message : "문제팩을 불러오지 못했습니다."));
+  }, []);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setNowMs(Date.now());
+    }, 1000);
+
+    return () => window.clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
@@ -262,7 +276,7 @@ function App() {
       balance_mode: answerLimitMode === "FIRST_ONLY" ? balanceMode : "OFF",
       allow_late_join: allowLateJoin,
       round_time_limit_sec: roundTimeLimitSec,
-      reveal_duration_sec: 3,
+      reveal_duration_sec: 5,
       countdown_sec: 3,
     };
 
@@ -528,6 +542,8 @@ function App() {
       playerMessage={playerMessage}
       room={room}
       socketStatus={socketStatus}
+      timerLabel={roundTimer.label}
+      timerSeconds={roundTimer.seconds}
       onAnswerChange={setAnswer}
       onForceSkipRound={handleForceSkipRound}
       onHostPrimaryAction={handleHostPrimaryAction}
@@ -540,6 +556,34 @@ function App() {
       onSubmitAnswer={handleSubmitAnswer}
     />
   );
+}
+
+function getRoundTimer(
+  currentRound: CurrentRound | null | undefined,
+  settings: RoomSettings | null,
+  nowMs: number,
+) {
+  if (!currentRound || !settings) {
+    return { label: null, seconds: null };
+  }
+
+  if (currentRound.ended_at) {
+    const revealEndsAt = new Date(currentRound.ended_at).getTime() + settings.reveal_duration_sec * 1000;
+    return {
+      label: "다음 라운드까지",
+      seconds: Math.max(0, Math.ceil((revealEndsAt - nowMs) / 1000)),
+    };
+  }
+
+  if (currentRound.started_at) {
+    const roundEndsAt = new Date(currentRound.started_at).getTime() + settings.round_time_limit_sec * 1000;
+    return {
+      label: "남은 시간",
+      seconds: Math.max(0, Math.ceil((roundEndsAt - nowMs) / 1000)),
+    };
+  }
+
+  return { label: null, seconds: null };
 }
 
 function getAnswerHint(

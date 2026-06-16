@@ -19,7 +19,7 @@ DEFAULT_ROOM_SETTINGS: dict[str, Any] = {
     "balance_mode": "OFF",
     "allow_late_join": True,
     "round_time_limit_sec": 20,
-    "reveal_duration_sec": 3,
+    "reveal_duration_sec": 5,
     "countdown_sec": 3,
 }
 
