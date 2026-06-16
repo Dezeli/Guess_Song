@@ -1,5 +1,6 @@
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
+from django.utils import timezone
 
 from apps.quizzes.models import QuizPack, QuizQuestion
 
@@ -122,6 +123,7 @@ def serialize_room(room: Room) -> dict:
     return {
         "code": room.code,
         "status": room.status,
+        "server_time": timezone.now().isoformat(),
         "quiz_pack": (
             {
                 "id": pack.id,

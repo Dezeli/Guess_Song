@@ -106,9 +106,22 @@ function App() {
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
     [room],
   );
+  const serverTimeOffsetMs = useMemo(() => {
+    if (!room?.server_time) {
+      return 0;
+    }
+
+    return new Date(room.server_time).getTime() - Date.now();
+  }, [room?.server_time]);
   const roundTimer = useMemo(
-    () => getRoundTimer(currentRound, room?.settings ?? null, room?.game?.first_round_starts_at, nowMs),
-    [currentRound, nowMs, room?.game?.first_round_starts_at, room?.settings],
+    () =>
+      getRoundTimer(
+        currentRound,
+        room?.settings ?? null,
+        room?.game?.first_round_starts_at,
+        nowMs + serverTimeOffsetMs,
+      ),
+    [currentRound, nowMs, room?.game?.first_round_starts_at, room?.settings, serverTimeOffsetMs],
   );
 
   useEffect(() => {

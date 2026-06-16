@@ -95,6 +95,7 @@ class GameStateOut(Schema):
 class RoomOut(Schema):
     code: str
     status: str
+    server_time: str
     quiz_pack: QuizPackSummaryOut | None
     game: GameStateOut | None
     participants: list[ParticipantOut]

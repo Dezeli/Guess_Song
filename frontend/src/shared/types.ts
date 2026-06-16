@@ -65,6 +65,7 @@ export type RoomSettings = {
 export type RoomState = {
   code: string;
   status: string;
+  server_time: string;
   quiz_pack: {
     id: number;
     name: string;
