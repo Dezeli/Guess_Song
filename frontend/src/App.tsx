@@ -30,6 +30,32 @@ import { useRoomStore } from "./stores/roomStore";
 
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
 
+let youtubeApiPromise: Promise<void> | null = null;
+
+function loadYouTubeApi() {
+  if (window.YT?.Player) {
+    return Promise.resolve();
+  }
+
+  if (!youtubeApiPromise) {
+    youtubeApiPromise = new Promise((resolve) => {
+      const existingCallback = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        existingCallback?.();
+        resolve();
+      };
+
+      if (!document.querySelector("script[src='https://www.youtube.com/iframe_api']")) {
+        const script = document.createElement("script");
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
+      }
+    });
+  }
+
+  return youtubeApiPromise;
+}
+
 function App() {
   const {
     room,
@@ -69,7 +95,11 @@ function App() {
   const [roundTimeLimitSec, setRoundTimeLimitSec] = useState(20);
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
+  const [playerMessage, setPlayerMessage] = useState("");
   const socketRef = useRef<WebSocket | null>(null);
+  const playerHostRef = useRef<HTMLDivElement | null>(null);
+  const youtubePlayerRef = useRef<YT.Player | null>(null);
+  const clipStopTimerRef = useRef<number | null>(null);
 
   const isHost = Boolean(hostToken && room);
   const currentRound = room?.game?.current_round ?? null;
@@ -96,6 +126,7 @@ function App() {
     hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
   );
   const hostAction = getHostAction(room?.status);
+  const isCurrentRoundRevealed = Boolean(currentRound?.ended_at);
 
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
@@ -172,6 +203,64 @@ function App() {
       .then((identity) => setParticipantId(identity.participant_id))
       .catch(() => undefined);
   }, [participantId, participantToken, room?.code, setParticipantId]);
+
+  useEffect(() => {
+    if (!currentRound || !playerHostRef.current) {
+      return;
+    }
+
+    let isCurrent = true;
+
+    void loadYouTubeApi().then(() => {
+      if (!isCurrent) {
+        return;
+      }
+      if (!playerHostRef.current) {
+        return;
+      }
+
+      if (!youtubePlayerRef.current) {
+        youtubePlayerRef.current = new window.YT.Player(playerHostRef.current, {
+          videoId: currentRound.youtube_video_id,
+          playerVars: {
+            controls: 1,
+            modestbranding: 1,
+            playsinline: 1,
+            rel: 0,
+            start: currentRound.start_time_seconds,
+          },
+          events: {
+            onReady: () => {
+              cueCurrentClip();
+              if (currentRound.started_at && !currentRound.ended_at) {
+                playCurrentClip();
+              }
+            },
+          },
+        });
+        return;
+      }
+
+      cueCurrentClip();
+      if (currentRound.started_at && !currentRound.ended_at) {
+        playCurrentClip();
+      }
+    });
+
+    if (currentRound.ended_at) {
+      stopCurrentClip();
+    }
+
+    return () => {
+      isCurrent = false;
+    };
+  }, [currentRound?.round_id, currentRound?.started_at, currentRound?.ended_at]);
+
+  useEffect(() => {
+    return () => {
+      stopCurrentClip();
+    };
+  }, []);
 
   async function runAction<T>(action: () => Promise<T>, successMessage: string) {
     setMessage("");
@@ -348,6 +437,44 @@ function App() {
     if (skipped) {
       setRoom(skipped.room);
     }
+  }
+
+  function cueCurrentClip() {
+    if (!currentRound || !youtubePlayerRef.current) {
+      return;
+    }
+
+    youtubePlayerRef.current.cueVideoById({
+      videoId: currentRound.youtube_video_id,
+      startSeconds: currentRound.start_time_seconds,
+    });
+    setPlayerMessage("");
+  }
+
+  function playCurrentClip() {
+    if (!currentRound || !youtubePlayerRef.current) {
+      return;
+    }
+
+    stopCurrentClip();
+    youtubePlayerRef.current.loadVideoById({
+      videoId: currentRound.youtube_video_id,
+      startSeconds: currentRound.start_time_seconds,
+    });
+    youtubePlayerRef.current.unMute();
+    youtubePlayerRef.current.playVideo();
+    setPlayerMessage("");
+    clipStopTimerRef.current = window.setTimeout(() => {
+      stopCurrentClip();
+    }, currentRound.play_duration_seconds * 1000);
+  }
+
+  function stopCurrentClip() {
+    if (clipStopTimerRef.current) {
+      window.clearTimeout(clipStopTimerRef.current);
+      clipStopTimerRef.current = null;
+    }
+    youtubePlayerRef.current?.stopVideo();
   }
 
   if (!room) {
@@ -581,13 +708,50 @@ function App() {
 
           {currentRound ? (
             <div className="round-box">
-              <p>
-                YouTube video ID <strong>{currentRound.youtube_video_id}</strong>
-              </p>
+              <div className="youtube-audio-player" aria-hidden="true">
+                <div className="youtube-player" ref={playerHostRef} />
+              </div>
+              {isCurrentRoundRevealed ? (
+                <iframe
+                  className="youtube-reveal-player"
+                  title="Revealed music video"
+                  src={`https://www.youtube.com/embed/${currentRound.youtube_video_id}?start=${currentRound.start_time_seconds}&rel=0`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="music-placeholder" aria-hidden="true">
+                  <span className="music-bars">
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                  </span>
+                  <strong>Music is playing</strong>
+                </div>
+              )}
               <p>
                 Start {currentRound.start_time_seconds}s / Play {currentRound.play_duration_seconds}s
               </p>
               <p>Difficulty {currentRound.difficulty}</p>
+              <button
+                type="button"
+                className="secondary"
+                onClick={() => {
+                  if (currentRound.started_at && !currentRound.ended_at) {
+                    if (!youtubePlayerRef.current) {
+                      setPlayerMessage("The player is loading.");
+                      return;
+                    }
+                    playCurrentClip();
+                  } else {
+                    setPlayerMessage("The clip plays after the round starts.");
+                  }
+                }}
+              >
+                Play Clip
+              </button>
+              {playerMessage ? <p className="muted">{playerMessage}</p> : null}
               {currentRound.answer_fields.length ? (
                 <ul className="answer-fields">
                   {currentRound.answer_fields.map((field) => (

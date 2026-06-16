@@ -261,6 +261,81 @@ h2 {
   gap: 8px;
 }
 
+.youtube-audio-player {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 320px;
+  height: 180px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.youtube-player {
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-player iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-reveal-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 8px;
+  background: #111827;
+}
+
+.music-placeholder {
+  min-height: 220px;
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 18px;
+  background: #111827;
+  color: #ffffff;
+  text-align: center;
+}
+
+.music-placeholder strong {
+  font-size: 20px;
+}
+
+.music-bars {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 7px;
+  height: 52px;
+}
+
+.music-bars i {
+  display: block;
+  width: 9px;
+  border-radius: 999px;
+  background: #60a5fa;
+}
+
+.music-bars i:nth-child(1) {
+  height: 26px;
+}
+
+.music-bars i:nth-child(2) {
+  height: 46px;
+}
+
+.music-bars i:nth-child(3) {
+  height: 34px;
+}
+
+.music-bars i:nth-child(4) {
+  height: 52px;
+}
+
 .round-box p {
   margin-bottom: 0;
 }
