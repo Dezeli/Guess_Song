@@ -13,6 +13,7 @@ env = environ.Env(
     CORS_ALLOWED_ORIGINS=(list, []),
     DATABASE_URL=(str, "postgres://guess_song:guess_song@postgres:5432/guess_song"),
     REDIS_URL=(str, "redis://redis:6379/0"),
+    YOUTUBE_API_KEY=(str, ""),
 )
 
 environ.Env.read_env(ROOT_DIR / ".env")
@@ -84,6 +85,7 @@ DATABASES = {
 }
 
 REDIS_URL = env("REDIS_URL")
+YOUTUBE_API_KEY = env("YOUTUBE_API_KEY")
 
 CHANNEL_LAYERS = {
     "default": {

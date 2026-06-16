@@ -3,7 +3,7 @@ from datetime import date
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from apps.catalog.models import Artist, Chart, ChartEntry, Track, TrackArtist, YouTubeCandidate
+from apps.catalog.models import Artist, Chart, ChartEntry, Song, SongArtist, YoutubeSource
 from apps.core.text import normalize_answer
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizPackQuestion, QuizQuestion
 
@@ -111,20 +111,26 @@ class Command(BaseCommand):
                     "country": "KR",
                 },
             )
-            track, _ = Track.objects.get_or_create(
+            song, _ = Song.objects.get_or_create(
                 isrc=item["isrc"],
                 defaults={
                     "title": item["title"],
                     "normalized_title": normalize_answer(item["title"]),
                     "primary_artist": artist,
                     "release_date": item["release_date"],
+                    "release_year": item["release_date"].year,
                     "duration_ms": item["duration_ms"],
+                    "canonical_provider": Song.MetadataProvider.MANUAL,
+                    "canonical_provider_track_id": item["isrc"],
+                    "metadata_confidence": 90,
+                    "approved": True,
+                    "playable": True,
                 },
             )
-            TrackArtist.objects.get_or_create(
-                track=track,
+            SongArtist.objects.get_or_create(
+                song=song,
                 artist=artist,
-                role=TrackArtist.Role.PRIMARY,
+                role=SongArtist.Role.PRIMARY,
                 defaults={"order": 0},
             )
             chart_entry, _ = ChartEntry.objects.get_or_create(
@@ -133,23 +139,25 @@ class Command(BaseCommand):
                 defaults={
                     "title_raw": item["title"],
                     "artist_raw": item["artist"],
-                    "track": track,
+                    "song": song,
                 },
             )
-            candidate, _ = YouTubeCandidate.objects.get_or_create(
+            source, _ = YoutubeSource.objects.get_or_create(
                 video_id=item["youtube_video_id"],
                 defaults={
-                    "track": track,
+                    "song": song,
                     "title": item["youtube_title"],
                     "channel_title": item["channel_title"],
                     "duration_seconds": item["duration_ms"] // 1000,
+                    "source_type": YoutubeSource.SourceType.OFFICIAL_MV,
+                    "priority": 10,
                     "official_score": 95,
-                    "review_status": YouTubeCandidate.ReviewStatus.AUTO_APPROVED,
+                    "status": YoutubeSource.Status.APPROVED,
                 },
             )
             question, question_created = QuizQuestion.objects.get_or_create(
-                track=track,
-                youtube_candidate=candidate,
+                song=song,
+                youtube_source=source,
                 defaults={
                     "source_chart_entry": chart_entry,
                     "start_time_seconds": item["start_time_seconds"],
@@ -184,6 +192,6 @@ class Command(BaseCommand):
 
         self.stdout.write(
             self.style.SUCCESS(
-                f"Seeded {len(SAMPLE_TRACKS)} sample tracks, {created_questions} new questions."
+                f"Seeded {len(SAMPLE_TRACKS)} sample songs, {created_questions} new questions."
             )
         )

@@ -1,5 +1,7 @@
 from ninja import Router, Schema
 
+from apps.catalog.models import YoutubeSource
+
 from .models import QuizPack
 
 router = Router(tags=["quizzes"])
@@ -31,14 +33,17 @@ class QuizPackDetail(Schema):
 
 @router.get("/quiz-packs", response=list[QuizPackListItem])
 def list_quiz_packs(request):
-    packs = QuizPack.objects.filter(is_public=True).prefetch_related("pack_questions__question")
+    packs = QuizPack.objects.filter(is_public=True).prefetch_related(
+        "pack_questions__question__song",
+        "pack_questions__question__youtube_source",
+    )
     result = []
 
     for pack in packs:
         approved_count = sum(
             1
             for link in pack.pack_questions.all()
-            if link.question.status == link.question.Status.APPROVED
+            if _is_playable_approved_question(link.question)
         )
         result.append(
             {
@@ -55,10 +60,10 @@ def list_quiz_packs(request):
 
 @router.get("/quiz-packs/{pack_id}", response=QuizPackDetail)
 def get_quiz_pack(request, pack_id: int):
-    pack = QuizPack.objects.prefetch_related("pack_questions__question").get(
-        id=pack_id,
-        is_public=True,
-    )
+    pack = QuizPack.objects.prefetch_related(
+        "pack_questions__question__song",
+        "pack_questions__question__youtube_source",
+    ).get(id=pack_id, is_public=True)
     questions = [
         {
             "id": link.question.id,
@@ -68,7 +73,7 @@ def get_quiz_pack(request, pack_id: int):
             "play_duration_seconds": link.question.play_duration_seconds,
         }
         for link in pack.pack_questions.all()
-        if link.question.status == link.question.Status.APPROVED
+        if _is_playable_approved_question(link.question)
     ]
 
     return {
@@ -78,3 +83,13 @@ def get_quiz_pack(request, pack_id: int):
         "is_public": pack.is_public,
         "questions": questions,
     }
+
+
+def _is_playable_approved_question(question) -> bool:
+    return (
+        question.status == question.Status.APPROVED
+        and question.song.approved
+        and question.song.playable
+        and not question.song.blocked
+        and question.youtube_source.status == YoutubeSource.Status.APPROVED
+    )

@@ -5,10 +5,10 @@ from .models import (
     Artist,
     Chart,
     ChartEntry,
-    Track,
-    TrackArtist,
-    TrackExternalId,
-    YouTubeCandidate,
+    Song,
+    SongArtist,
+    SongExternalId,
+    YoutubeSource,
 )
 
 
@@ -26,22 +26,31 @@ class AlbumAdmin(admin.ModelAdmin):
     search_fields = ["title", "normalized_title", "artist__name"]
 
 
-class TrackArtistInline(admin.TabularInline):
-    model = TrackArtist
+class SongArtistInline(admin.TabularInline):
+    model = SongArtist
     extra = 0
 
 
-class TrackExternalIdInline(admin.TabularInline):
-    model = TrackExternalId
+class SongExternalIdInline(admin.TabularInline):
+    model = SongExternalId
     extra = 0
 
 
-@admin.register(Track)
-class TrackAdmin(admin.ModelAdmin):
-    list_display = ["title", "primary_artist", "release_date", "duration_ms", "isrc"]
-    list_filter = ["release_date"]
+@admin.register(Song)
+class SongAdmin(admin.ModelAdmin):
+    list_display = [
+        "title",
+        "primary_artist",
+        "release_date",
+        "duration_ms",
+        "isrc",
+        "approved",
+        "playable",
+        "blocked",
+    ]
+    list_filter = ["approved", "playable", "blocked", "release_date", "canonical_provider"]
     search_fields = ["title", "normalized_title", "primary_artist__name", "isrc"]
-    inlines = [TrackArtistInline, TrackExternalIdInline]
+    inlines = [SongArtistInline, SongExternalIdInline]
 
 
 @admin.register(Chart)
@@ -53,22 +62,23 @@ class ChartAdmin(admin.ModelAdmin):
 
 @admin.register(ChartEntry)
 class ChartEntryAdmin(admin.ModelAdmin):
-    list_display = ["chart", "rank", "title_raw", "artist_raw", "track"]
+    list_display = ["chart", "rank", "title_raw", "artist_raw", "song"]
     list_filter = ["chart__source", "chart__chart_type", "chart__year"]
-    search_fields = ["title_raw", "artist_raw", "track__title", "track__primary_artist__name"]
-    autocomplete_fields = ["track"]
+    search_fields = ["title_raw", "artist_raw", "song__title", "song__primary_artist__name"]
+    autocomplete_fields = ["song"]
 
 
-@admin.register(YouTubeCandidate)
-class YouTubeCandidateAdmin(admin.ModelAdmin):
+@admin.register(YoutubeSource)
+class YoutubeSourceAdmin(admin.ModelAdmin):
     list_display = [
         "title",
-        "track",
+        "song",
         "channel_title",
+        "source_type",
         "duration_seconds",
         "official_score",
-        "review_status",
+        "status",
     ]
-    list_filter = ["review_status", "official_score"]
-    search_fields = ["title", "video_id", "channel_title", "track__title"]
-    autocomplete_fields = ["track"]
+    list_filter = ["status", "source_type", "official_score"]
+    search_fields = ["title", "video_id", "channel_title", "song__title"]
+    autocomplete_fields = ["song"]

@@ -6,6 +6,7 @@ from django.utils import timezone
 from ninja import Router, Schema
 from ninja.errors import HttpError
 
+from apps.catalog.models import YoutubeSource
 from apps.core.text import normalize_answer
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
@@ -220,7 +221,7 @@ def _is_room_joinable(room: Room) -> bool:
 def _get_current_round_or_400(session: GameSession) -> GameRound:
     round_obj = session.rounds.select_related(
         "question",
-        "question__youtube_candidate",
+        "question__youtube_source",
     ).filter(round_index=session.current_round_index).first()
 
     if not round_obj:
@@ -546,7 +547,7 @@ def leave_room(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
@@ -578,7 +579,7 @@ def set_participant_away(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
@@ -602,7 +603,7 @@ def set_participant_active(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
@@ -630,6 +631,10 @@ def start_game(request, code: str):
             QuizQuestion.objects.filter(
                 question_packs__pack=quiz_pack,
                 status=QuizQuestion.Status.APPROVED,
+                song__approved=True,
+                song__playable=True,
+                song__blocked=False,
+                youtube_source__status=YoutubeSource.Status.APPROVED,
             )
             .order_by("question_packs__order", "id")
             .distinct()
@@ -747,7 +752,7 @@ def move_to_next_round(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
@@ -898,7 +903,7 @@ def skip_current_round(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
@@ -928,7 +933,7 @@ def force_skip_current_round(request, code: str):
 
     room = Room.objects.prefetch_related(
         "participants",
-        "game_session__rounds__question__youtube_candidate",
+        "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}

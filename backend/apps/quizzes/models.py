@@ -25,9 +25,9 @@ class QuizQuestion(models.Model):
     class PromptType(models.TextChoices):
         AUDIO = "audio", "Audio"
 
-    track = models.ForeignKey("catalog.Track", on_delete=models.PROTECT, related_name="questions")
-    youtube_candidate = models.ForeignKey(
-        "catalog.YouTubeCandidate",
+    song = models.ForeignKey("catalog.Song", on_delete=models.PROTECT, related_name="questions")
+    youtube_source = models.ForeignKey(
+        "catalog.YoutubeSource",
         on_delete=models.PROTECT,
         related_name="questions",
     )

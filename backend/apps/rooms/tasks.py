@@ -207,7 +207,7 @@ def advance_round_task(room_id: int, round_index: int) -> None:
 def _get_locked_round(session: GameSession, round_index: int) -> GameRound | None:
     return (
         session.rounds.select_for_update()
-        .select_related("question", "question__youtube_candidate")
+        .select_related("question", "question__youtube_source")
         .filter(round_index=round_index)
         .first()
     )

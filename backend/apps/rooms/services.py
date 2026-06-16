@@ -2,6 +2,7 @@ from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 from django.utils import timezone
 
+from apps.catalog.models import YoutubeSource
 from apps.quizzes.models import QuizPack, QuizQuestion
 
 from .models import GameRound, Participant, Room, RoundAnswerFieldState
@@ -15,6 +16,10 @@ def approved_question_count(pack: QuizPack) -> int:
     return QuizQuestion.objects.filter(
         question_packs__pack=pack,
         status=QuizQuestion.Status.APPROVED,
+        song__approved=True,
+        song__playable=True,
+        song__blocked=False,
+        youtube_source__status=YoutubeSource.Status.APPROVED,
     ).count()
 
 
@@ -24,7 +29,7 @@ def get_room_for_state(code: str) -> Room:
             "participants",
             "teams",
             "game_session__rounds__answer_fields",
-            "game_session__rounds__question__youtube_candidate",
+            "game_session__rounds__question__youtube_source",
         )
         .select_related("game_session__quiz_pack")
         .get(code=code.upper())
@@ -36,7 +41,7 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         return None
 
     question = round_obj.question
-    candidate = question.youtube_candidate
+    source = question.youtube_source
 
     skip_target_count = Participant.objects.filter(
         room=round_obj.session.room,
@@ -55,7 +60,7 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         "round_id": round_obj.id,
         "round_index": round_obj.round_index,
         "question_id": question.id,
-        "youtube_video_id": candidate.video_id,
+        "youtube_video_id": source.video_id,
         "start_time_seconds": question.start_time_seconds,
         "play_duration_seconds": question.play_duration_seconds,
         "difficulty": question.difficulty,

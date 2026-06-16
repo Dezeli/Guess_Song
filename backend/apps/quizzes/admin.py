@@ -19,8 +19,8 @@ class QuizQuestionAdmin(admin.ModelAdmin):
         "play_duration_seconds",
     ]
     list_filter = ["difficulty", "status", "prompt_type"]
-    search_fields = ["answer_title", "answer_artist", "track__title", "track__primary_artist__name"]
-    autocomplete_fields = ["track", "youtube_candidate", "source_chart_entry"]
+    search_fields = ["answer_title", "answer_artist", "song__title", "song__primary_artist__name"]
+    autocomplete_fields = ["song", "youtube_source", "source_chart_entry"]
     inlines = [QuizAnswerAliasInline]
 
 
