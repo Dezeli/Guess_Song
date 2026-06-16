@@ -740,6 +740,10 @@ def move_to_next_round(request, code: str):
             session.save(update_fields=["current_round_index"])
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
+        if next_round_index < total_rounds:
+            transaction.on_commit(
+                lambda: start_round_task.apply_async(args=[room.id, next_round_index])
+            )
 
     room = Room.objects.prefetch_related(
         "participants",

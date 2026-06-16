@@ -5,6 +5,7 @@ import type { CurrentRound } from "../shared/types";
 type RoundStageProps = {
   currentRound: CurrentRound | null;
   hostAction: string;
+  hostActionDisabled: boolean;
   isHost: boolean;
   isRevealed: boolean;
   canForceSkipRound: boolean;
@@ -25,6 +26,7 @@ type RoundStageProps = {
 export function RoundStage({
   currentRound,
   hostAction,
+  hostActionDisabled,
   isHost,
   isRevealed,
   canForceSkipRound,
@@ -119,7 +121,7 @@ export function RoundStage({
           type="button"
           className="primary-action"
           onClick={onHostPrimaryAction}
-          disabled={roomStatus !== "waiting"}
+          disabled={hostActionDisabled}
         >
           {hostAction}
         </button>

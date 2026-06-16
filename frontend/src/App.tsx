@@ -10,6 +10,7 @@ import {
   joinRoom,
   leaveRoom,
   listQuizPacks,
+  moveToNextRound,
   setParticipantActive,
   setParticipantAway,
   skipCurrentRound,
@@ -101,6 +102,11 @@ function App() {
   );
   const canForceSkipRound = Boolean(
     hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
+  );
+  const hostActionDisabled = !(
+    hostToken
+    && room
+    && (room.status === "waiting" || (room.status === "playing" && currentRound?.ended_at))
   );
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
@@ -353,6 +359,14 @@ function App() {
       if (started) {
         setRoom(started.room);
       }
+      return;
+    }
+
+    if (room.status === "playing" && currentRound?.ended_at) {
+      const advanced = await runAction(() => moveToNextRound(room.code, hostToken), "다음 단계로 이동했습니다.");
+      if (advanced) {
+        setRoom(advanced.room);
+      }
     }
   }
 
@@ -545,6 +559,7 @@ function App() {
       canSubmit={canSubmit}
       currentParticipant={currentParticipant}
       currentRound={currentRound}
+      hostActionDisabled={hostActionDisabled}
       isHost={isHost}
       isRevealed={isCurrentRoundRevealed}
       lastAnswerResult={lastAnswerResult}

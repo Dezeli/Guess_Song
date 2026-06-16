@@ -13,6 +13,7 @@ type RoomViewProps = {
   canSubmit: boolean;
   currentParticipant: Participant | null;
   currentRound: CurrentRound | null;
+  hostActionDisabled: boolean;
   isHost: boolean;
   isRevealed: boolean;
   lastAnswerResult: SubmitAnswerResponse | null;
@@ -45,6 +46,7 @@ export function RoomView({
   canSubmit,
   currentParticipant,
   currentRound,
+  hostActionDisabled,
   isHost,
   isRevealed,
   lastAnswerResult,
@@ -109,7 +111,8 @@ export function RoomView({
       <section className="room-focus">
         <RoundStage
           currentRound={currentRound}
-          hostAction={getHostAction(room.status)}
+          hostAction={getHostAction(room, currentRound)}
+          hostActionDisabled={hostActionDisabled}
           isHost={isHost}
           isRevealed={isRevealed}
           canForceSkipRound={canForceSkipRound}
@@ -140,13 +143,20 @@ export function RoomView({
   );
 }
 
-function getHostAction(status: string | undefined) {
-  if (status === "waiting") {
+function getHostAction(room: RoomState, currentRound: CurrentRound | null) {
+  if (room.status === "waiting") {
     return "게임 시작";
   }
-  if (status === "playing") {
+
+  if (room.status === "playing" && currentRound?.ended_at) {
+    const isLastRound = currentRound.round_index + 1 >= (room.game?.total_rounds ?? 0);
+    return isLastRound ? "결과 보기" : "다음 라운드";
+  }
+
+  if (room.status === "playing") {
     return "게임 진행 중";
   }
+
   return "게임 종료";
 }
 
