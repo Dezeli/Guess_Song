@@ -27,7 +27,7 @@ export function AnswerPanel({
         <input
           value={answer}
           onChange={(event) => onAnswerChange(event.target.value)}
-          placeholder="정답을 입력하세요"
+          placeholder={canSubmit ? "정답을 입력하세요" : "제출할 수 없는 상태입니다"}
           disabled={!canSubmit}
         />
         <button type="submit" disabled={!canSubmit || !answer.trim()}>

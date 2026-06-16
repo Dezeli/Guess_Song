@@ -12,6 +12,7 @@ type RoundStageProps = {
   canSkipRound: boolean;
   lastRoundStarted: CurrentRound | null;
   roundLabel: string;
+  roundActionHint: string | null;
   roomStatus: string;
   timerLabel: string | null;
   timerSeconds: number | null;
@@ -33,6 +34,7 @@ export function RoundStage({
   canSkipRound,
   lastRoundStarted,
   roundLabel,
+  roundActionHint,
   roomStatus,
   timerLabel,
   timerSeconds,
@@ -150,6 +152,7 @@ export function RoundStage({
           ) : null}
         </div>
       ) : null}
+      {roundActionHint ? <p className="muted compact">{roundActionHint}</p> : null}
     </section>
   );
 }

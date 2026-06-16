@@ -92,13 +92,17 @@ function App() {
   const isCurrentRoundRevealed = Boolean(currentRound?.ended_at);
   const canSubmit = Boolean(
     participantToken
+      && room?.status === "playing"
       && currentRound?.started_at
       && !currentRound.ended_at
-      && currentParticipant?.status !== "AWAY"
-      && currentParticipant?.status !== "LEFT",
+      && currentParticipant?.status === "ACTIVE",
   );
   const canSkipRound = Boolean(
-    participantToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
+    participantToken
+      && room?.status === "playing"
+      && currentRound?.started_at
+      && !currentRound.ended_at
+      && currentParticipant?.status === "ACTIVE",
   );
   const canForceSkipRound = Boolean(
     hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
@@ -554,6 +558,13 @@ function App() {
         currentRound?.ended_at ?? null,
         currentParticipant?.status ?? null,
       )}
+      roundActionHint={getRoundActionHint(
+        Boolean(participantToken),
+        room.status,
+        currentRound?.started_at ?? null,
+        currentRound?.ended_at ?? null,
+        currentParticipant?.status ?? null,
+      )}
       canForceSkipRound={canForceSkipRound}
       canSkipRound={canSkipRound}
       canSubmit={canSubmit}
@@ -645,13 +656,47 @@ function getAnswerHint(
   if (status === "waiting") {
     return "방장이 게임을 시작해야 합니다.";
   }
+  if (status === "finished") {
+    return "게임이 종료되었습니다.";
+  }
   if (!startedAt) {
-    return "라운드가 자동으로 시작됩니다.";
+    return "라운드 시작 전입니다. 음악이 시작되면 제출할 수 있습니다.";
   }
   if (endedAt) {
-    return "정답 공개 중입니다. 다음 라운드가 자동으로 시작됩니다.";
+    return "정답 공개 중입니다. 이 라운드는 제출이 마감됐습니다.";
   }
   return "정답 입력이 열려 있습니다.";
+}
+
+function getRoundActionHint(
+  hasToken: boolean,
+  status: string,
+  startedAt: string | null,
+  endedAt: string | null,
+  participantStatus: string | null,
+) {
+  if (!hasToken) {
+    return null;
+  }
+  if (participantStatus === "AWAY") {
+    return "자리비움 상태에서는 스킵 투표를 할 수 없습니다.";
+  }
+  if (participantStatus === "LEFT") {
+    return "방을 나간 상태에서는 라운드 액션을 사용할 수 없습니다.";
+  }
+  if (status === "waiting") {
+    return "게임 시작 전에는 스킵할 수 없습니다.";
+  }
+  if (status === "finished") {
+    return "게임이 종료되어 라운드 액션이 닫혔습니다.";
+  }
+  if (!startedAt) {
+    return "라운드가 시작되면 스킵 투표가 열립니다.";
+  }
+  if (endedAt) {
+    return "정답 공개 중에는 스킵 투표가 마감됩니다.";
+  }
+  return null;
 }
 
 export default App;

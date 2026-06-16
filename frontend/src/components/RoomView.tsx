@@ -22,6 +22,7 @@ type RoomViewProps = {
   orderedParticipants: Participant[];
   playerHostRef: RefObject<HTMLDivElement>;
   playerMessage: string;
+  roundActionHint: string | null;
   room: RoomState;
   socketStatus: string;
   timerLabel: string | null;
@@ -55,6 +56,7 @@ export function RoomView({
   orderedParticipants,
   playerHostRef,
   playerMessage,
+  roundActionHint,
   room,
   socketStatus,
   timerLabel,
@@ -119,6 +121,7 @@ export function RoomView({
           canSkipRound={canSkipRound}
           lastRoundStarted={lastRoundStarted}
           roundLabel={roundLabel}
+          roundActionHint={roundActionHint}
           roomStatus={room.status}
           timerLabel={timerLabel}
           timerSeconds={timerSeconds}
