@@ -89,6 +89,7 @@ class GameStateOut(Schema):
     current_round_index: int
     total_rounds: int
     current_round: CurrentRoundOut | None
+    first_round_starts_at: str | None
 
 
 class RoomOut(Schema):
@@ -645,8 +646,18 @@ def start_game(request, code: str):
 
         session.status = GameSession.Status.PLAYING
         session.current_round_index = 0
-        session.started_at = timezone.now()
-        session.save(update_fields=["status", "current_round_index", "started_at"])
+        now = timezone.now()
+        countdown_sec = int(room.settings.get("countdown_sec", 3))
+        session.started_at = now
+        session.first_round_starts_at = now + timedelta(seconds=countdown_sec)
+        session.save(
+            update_fields=[
+                "status",
+                "current_round_index",
+                "started_at",
+                "first_round_starts_at",
+            ]
+        )
 
         GameRound.objects.bulk_create(
             [
@@ -654,7 +665,6 @@ def start_game(request, code: str):
                 for index, question in enumerate(selected_questions)
             ]
         )
-        countdown_sec = int(room.settings.get("countdown_sec", 3))
         transaction.on_commit(lambda: broadcast_room_state(room.code))
         transaction.on_commit(
             lambda: start_round_task.apply_async(

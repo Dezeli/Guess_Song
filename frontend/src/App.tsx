@@ -107,8 +107,8 @@ function App() {
     [room],
   );
   const roundTimer = useMemo(
-    () => getRoundTimer(currentRound, room?.settings ?? null, nowMs),
-    [currentRound, nowMs, room?.settings],
+    () => getRoundTimer(currentRound, room?.settings ?? null, room?.game?.first_round_starts_at, nowMs),
+    [currentRound, nowMs, room?.game?.first_round_starts_at, room?.settings],
   );
 
   useEffect(() => {
@@ -561,9 +561,21 @@ function App() {
 function getRoundTimer(
   currentRound: CurrentRound | null | undefined,
   settings: RoomSettings | null,
+  firstRoundStartsAt: string | null | undefined,
   nowMs: number,
 ) {
-  if (!currentRound || !settings) {
+  if (!settings) {
+    return { label: null, seconds: null };
+  }
+
+  if (currentRound && !currentRound.started_at && firstRoundStartsAt) {
+    return {
+      label: "시작까지",
+      seconds: Math.max(0, Math.ceil((new Date(firstRoundStartsAt).getTime() - nowMs) / 1000)),
+    };
+  }
+
+  if (!currentRound) {
     return { label: null, seconds: null };
   }
 

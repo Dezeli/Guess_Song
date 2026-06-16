@@ -75,6 +75,7 @@ export type RoomState = {
     current_round_index: number;
     total_rounds: number;
     current_round: CurrentRound | null;
+    first_round_starts_at: string | null;
   } | null;
   participants: Participant[];
   teams: Array<{

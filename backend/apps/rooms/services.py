@@ -137,6 +137,11 @@ def serialize_room(room: Room) -> dict:
                 "current_round_index": session.current_round_index,
                 "total_rounds": session.rounds.count(),
                 "current_round": serialize_public_round(current_round),
+                "first_round_starts_at": (
+                    session.first_round_starts_at.isoformat()
+                    if session.first_round_starts_at
+                    else None
+                ),
             }
             if session
             else None

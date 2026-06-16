@@ -87,6 +87,7 @@ class GameSession(models.Model):
     current_round_index = models.PositiveSmallIntegerField(default=0)
     settings = models.JSONField(default=dict, blank=True)
     started_at = models.DateTimeField(null=True, blank=True)
+    first_round_starts_at = models.DateTimeField(null=True, blank=True)
     finished_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self) -> str:
