@@ -85,22 +85,40 @@ class Chart(models.Model):
         DIGITAL_YEARLY = "digital_yearly", "Digital yearly"
         DIGITAL_MONTHLY = "digital_monthly", "Digital monthly"
         DIGITAL_WEEKLY = "digital_weekly", "Digital weekly"
+        SINGING_ROOM_WEEKLY = "singing_room_weekly", "Singing room weekly"
+        DOWNLOAD_WEEKLY = "download_weekly", "Download weekly"
+        BGM_WEEKLY = "bgm_weekly", "BGM weekly"
+        V_COLORING_WEEKLY = "v_coloring_weekly", "V coloring weekly"
+        BELL_WEEKLY = "bell_weekly", "Bell weekly"
+        RING_WEEKLY = "ring_weekly", "Ring weekly"
+        STREAMING_WEEKLY = "streaming_weekly", "Streaming weekly"
+        GLOBAL_KPOP_WEEKLY = "global_kpop_weekly", "Global K-pop weekly"
 
     source = models.CharField(max_length=30, choices=Source.choices)
     chart_type = models.CharField(max_length=50, choices=ChartType.choices)
     year = models.PositiveSmallIntegerField(db_index=True)
+    week = models.PositiveSmallIntegerField(null=True, blank=True, db_index=True)
     name = models.CharField(max_length=255, blank=True)
 
     class Meta:
         constraints = [
             models.UniqueConstraint(
                 fields=["source", "chart_type", "year"],
-                name="unique_chart_source_type_year",
-            )
+                condition=models.Q(week__isnull=True),
+                name="unique_chart_source_type_year_no_week",
+            ),
+            models.UniqueConstraint(
+                fields=["source", "chart_type", "year", "week"],
+                condition=models.Q(week__isnull=False),
+                name="unique_chart_source_type_year_week",
+            ),
         ]
 
     def __str__(self) -> str:
-        return self.name or f"{self.source} {self.chart_type} {self.year}"
+        base = self.name or f"{self.source} {self.chart_type} {self.year}"
+        if self.week is not None:
+            return f"{base} W{self.week}"
+        return base
 
 
 class ChartEntry(models.Model):

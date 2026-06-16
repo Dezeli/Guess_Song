@@ -46,8 +46,8 @@ class TrackAdmin(admin.ModelAdmin):
 
 @admin.register(Chart)
 class ChartAdmin(admin.ModelAdmin):
-    list_display = ["source", "chart_type", "year", "name"]
-    list_filter = ["source", "chart_type", "year"]
+    list_display = ["source", "chart_type", "year", "week", "name"]
+    list_filter = ["source", "chart_type", "year", "week"]
     search_fields = ["name"]
 
 
