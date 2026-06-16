@@ -100,6 +100,10 @@ export type JoinRoomResponse = {
   participant_id: number;
 };
 
+export type ParticipantIdentityResponse = {
+  participant_id: number;
+};
+
 export type SubmitAnswerResponse = {
   is_correct: boolean;
   score_awarded: number;

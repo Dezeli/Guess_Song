@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   createRoom,
   forceSkipCurrentRound,
+  getCurrentParticipant,
   getRoom,
   joinRoom,
   leaveRoom,
@@ -111,6 +112,16 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!savedRoomCode || room || (!participantToken && !hostToken)) {
+      return;
+    }
+
+    void getRoom(savedRoomCode)
+      .then((loadedRoom) => setRoom(loadedRoom))
+      .catch(() => undefined);
+  }, [hostToken, participantToken, room, setRoom]);
+
+  useEffect(() => {
     if (!room?.code) {
       return;
     }
@@ -151,6 +162,16 @@ function App() {
 
     return () => window.clearInterval(intervalId);
   }, [room?.code, setRoom]);
+
+  useEffect(() => {
+    if (!room?.code || !participantToken || participantId) {
+      return;
+    }
+
+    void getCurrentParticipant(room.code, participantToken)
+      .then((identity) => setParticipantId(identity.participant_id))
+      .catch(() => undefined);
+  }, [participantId, participantToken, room?.code, setParticipantId]);
 
   async function runAction<T>(action: () => Promise<T>, successMessage: string) {
     setMessage("");

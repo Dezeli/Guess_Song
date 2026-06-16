@@ -1,6 +1,7 @@
 import type {
   CreateRoomResponse,
   JoinRoomResponse,
+  ParticipantIdentityResponse,
   QuizPack,
   RoomSettings,
   RoomState,
@@ -53,6 +54,12 @@ export function createRoom(input: {
 
 export function getRoom(code: string) {
   return request<RoomState>(`/api/rooms/${code}`);
+}
+
+export function getCurrentParticipant(code: string, participantToken: string) {
+  return request<ParticipantIdentityResponse>(`/api/rooms/${code}/me`, {
+    headers: { "X-Participant-Token": participantToken },
+  });
 }
 
 export function joinRoom(code: string, nickname: string, teamId?: number | null) {

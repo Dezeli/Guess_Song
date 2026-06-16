@@ -114,6 +114,10 @@ class JoinRoomOut(Schema):
     participant_id: int
 
 
+class ParticipantIdentityOut(Schema):
+    participant_id: int
+
+
 class LeaveRoomOut(Schema):
     room: RoomOut
 
@@ -487,6 +491,13 @@ def get_room(request, code: str):
         code=code.upper(),
     )
     return serialize_room(room)
+
+
+@router.get("/rooms/{code}/me", response=ParticipantIdentityOut)
+def get_current_participant(request, code: str):
+    room = get_object_or_404(Room, code=code.upper())
+    participant = _require_participant(request, room)
+    return {"participant_id": participant.id}
 
 
 @router.post("/rooms/{code}/join", response=JoinRoomOut)
