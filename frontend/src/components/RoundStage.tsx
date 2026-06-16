@@ -60,10 +60,11 @@ export function RoundStage({
           </div>
           {isRevealed ? (
             <iframe
+              key={`${currentRound.round_id}-${currentRound.ended_at ?? "revealed"}`}
               className="youtube-reveal-player"
               title="Revealed music video"
-              src={`https://www.youtube.com/embed/${currentRound.youtube_video_id}?start=${currentRound.start_time_seconds}&rel=0`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              src={`https://www.youtube.com/embed/${currentRound.youtube_video_id}?start=${currentRound.start_time_seconds}&autoplay=1&playsinline=1&rel=0`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           ) : (
