@@ -98,6 +98,11 @@ h2 {
   align-content: center;
 }
 
+.lobby-shell {
+  display: grid;
+  align-content: center;
+}
+
 .topbar {
   display: flex;
   align-items: flex-end;
@@ -163,6 +168,12 @@ h2 {
 
 .stack {
   display: grid;
+  gap: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -258,7 +269,7 @@ h2 {
 
 .round-box {
   display: grid;
-  gap: 8px;
+  gap: 12px;
 }
 
 .youtube-audio-player {
@@ -336,6 +347,21 @@ h2 {
   height: 52px;
 }
 
+.round-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.round-meta span {
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .round-box p {
   margin-bottom: 0;
 }
@@ -402,12 +428,39 @@ h2 {
 
 .team-list li {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   border-radius: 8px;
   padding: 9px 12px;
   background: #eff6ff;
   color: #1d4ed8;
+}
+
+.team-list.primary-scoreboard li {
+  padding: 12px;
+}
+
+.team-list.primary-scoreboard span {
+  display: grid;
+  gap: 2px;
+}
+
+.team-list.primary-scoreboard small {
+  color: #3b82f6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.team-list.primary-scoreboard > li > strong {
+  font-size: 24px;
+}
+
+.subsection-title {
+  margin: 0 0 10px;
+  color: #4b5563;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 .scoreboard li {
@@ -418,6 +471,11 @@ h2 {
   border-radius: 8px;
   padding: 10px 12px;
   background: #f9fafb;
+}
+
+.participant-list li strong {
+  color: #6b7280;
+  font-size: 12px;
 }
 
 .scoreboard li.inactive {
@@ -446,6 +504,10 @@ h2 {
   }
 
   .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
     grid-template-columns: 1fr;
   }
 }

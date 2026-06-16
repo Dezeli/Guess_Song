@@ -1,6 +1,7 @@
 declare namespace YT {
   type PlayerVars = {
     controls?: 0 | 1;
+    disablekb?: 0 | 1;
     modestbranding?: 0 | 1;
     playsinline?: 0 | 1;
     rel?: 0 | 1;

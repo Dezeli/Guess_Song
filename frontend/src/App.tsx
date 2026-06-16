@@ -1,5 +1,7 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
+import { LobbyView } from "./components/LobbyView";
+import { RoomView } from "./components/RoomView";
 import {
   createRoom,
   forceSkipCurrentRound,
@@ -26,35 +28,10 @@ import type {
   RoomSocketMessage,
   TeamAssignMode,
 } from "./shared/types";
+import { loadYouTubeApi } from "./shared/youtubePlayer";
 import { useRoomStore } from "./stores/roomStore";
 
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
-
-let youtubeApiPromise: Promise<void> | null = null;
-
-function loadYouTubeApi() {
-  if (window.YT?.Player) {
-    return Promise.resolve();
-  }
-
-  if (!youtubeApiPromise) {
-    youtubeApiPromise = new Promise((resolve) => {
-      const existingCallback = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = () => {
-        existingCallback?.();
-        resolve();
-      };
-
-      if (!document.querySelector("script[src='https://www.youtube.com/iframe_api']")) {
-        const script = document.createElement("script");
-        script.src = "https://www.youtube.com/iframe_api";
-        document.head.appendChild(script);
-      }
-    });
-  }
-
-  return youtubeApiPromise;
-}
 
 function App() {
   const {
@@ -77,9 +54,9 @@ function App() {
 
   const [quizPacks, setQuizPacks] = useState<QuizPack[]>([]);
   const [selectedPackId, setSelectedPackId] = useState<number | null>(null);
-  const [hostNickname, setHostNickname] = useState("Host");
+  const [hostNickname, setHostNickname] = useState("방장");
   const [joinCode, setJoinCode] = useState(savedRoomCode);
-  const [joinNickname, setJoinNickname] = useState("Player");
+  const [joinNickname, setJoinNickname] = useState("참가자");
   const [joinPreviewRoom, setJoinPreviewRoom] = useState<RoomSettings | null>(null);
   const [joinPreviewTeams, setJoinPreviewTeams] = useState<Array<{ id: number; name: string }>>([]);
   const [selectedJoinTeamId, setSelectedJoinTeamId] = useState<number | null>(null);
@@ -101,17 +78,15 @@ function App() {
   const youtubePlayerRef = useRef<YT.Player | null>(null);
   const clipStopTimerRef = useRef<number | null>(null);
 
-  const isHost = Boolean(hostToken && room);
   const currentRound = room?.game?.current_round ?? null;
   const currentParticipant = useMemo(() => {
-    if (!room) {
+    if (!room || !participantId) {
       return null;
     }
-    if (participantId) {
-      return room.participants.find((participant) => participant.id === participantId) ?? null;
-    }
-    return null;
+    return room.participants.find((participant) => participant.id === participantId) ?? null;
   }, [participantId, room]);
+  const isHost = Boolean(hostToken && room);
+  const isCurrentRoundRevealed = Boolean(currentRound?.ended_at);
   const canSubmit = Boolean(
     participantToken
       && currentRound?.started_at
@@ -125,9 +100,6 @@ function App() {
   const canForceSkipRound = Boolean(
     hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
   );
-  const hostAction = getHostAction(room?.status);
-  const isCurrentRoundRevealed = Boolean(currentRound?.ended_at);
-
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
     [room],
@@ -139,7 +111,7 @@ function App() {
         setQuizPacks(packs);
         setSelectedPackId(packs[0]?.id ?? null);
       })
-      .catch((error) => setMessage(error instanceof Error ? error.message : "Failed to load packs"));
+      .catch((error) => setMessage(error instanceof Error ? error.message : "문제팩을 불러오지 못했습니다."));
   }, []);
 
   useEffect(() => {
@@ -212,10 +184,7 @@ function App() {
     let isCurrent = true;
 
     void loadYouTubeApi().then(() => {
-      if (!isCurrent) {
-        return;
-      }
-      if (!playerHostRef.current) {
+      if (!isCurrent || !playerHostRef.current) {
         return;
       }
 
@@ -223,7 +192,8 @@ function App() {
         youtubePlayerRef.current = new window.YT.Player(playerHostRef.current, {
           videoId: currentRound.youtube_video_id,
           playerVars: {
-            controls: 1,
+            controls: 0,
+            disablekb: 1,
             modestbranding: 1,
             playsinline: 1,
             rel: 0,
@@ -269,7 +239,7 @@ function App() {
       setMessage(successMessage);
       return result;
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Request failed");
+      setMessage(error instanceof Error ? error.message : "요청에 실패했습니다.");
       return null;
     }
   }
@@ -277,7 +247,7 @@ function App() {
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
     if (!selectedPackId) {
-      setMessage("Select a quiz pack first.");
+      setMessage("문제팩을 먼저 선택하세요.");
       return;
     }
 
@@ -303,7 +273,7 @@ function App() {
           host_nickname: hostNickname,
           settings,
         }),
-      "Room created.",
+      "방을 만들었습니다.",
     );
 
     if (created) {
@@ -321,7 +291,7 @@ function App() {
     event.preventDefault();
     const joined = await runAction(
       () => joinRoom(joinCode.trim().toUpperCase(), joinNickname, selectedJoinTeamId),
-      "Joined room.",
+      "방에 참가했습니다.",
     );
 
     if (joined) {
@@ -338,7 +308,7 @@ function App() {
     if (!joinCode.trim()) {
       return;
     }
-    const loaded = await runAction(() => getRoom(joinCode.trim().toUpperCase()), "Room loaded.");
+    const loaded = await runAction(() => getRoom(joinCode.trim().toUpperCase()), "방 정보를 불러왔습니다.");
     if (loaded) {
       setJoinPreviewRoom(loaded.settings);
       setJoinPreviewTeams(loaded.teams.map((team) => ({ id: team.id, name: team.name })));
@@ -352,7 +322,7 @@ function App() {
     }
 
     if (room.status === "waiting") {
-      const started = await runAction(() => startGame(room.code, hostToken), "Game started.");
+      const started = await runAction(() => startGame(room.code, hostToken), "게임을 시작했습니다.");
       if (started) {
         setRoom(started.room);
       }
@@ -367,7 +337,7 @@ function App() {
 
     const result = await runAction(
       () => submitAnswer(room.code, participantToken, answer),
-      "Answer submitted.",
+      "정답을 제출했습니다.",
     );
 
     if (result) {
@@ -380,7 +350,7 @@ function App() {
     reset();
     setJoinCode("");
     setAnswer("");
-    setMessage("Local room state cleared.");
+    setMessage("현재 화면 상태를 초기화했습니다.");
   }
 
   async function handleLeaveRoom() {
@@ -389,7 +359,7 @@ function App() {
       return;
     }
 
-    const left = await runAction(() => leaveRoom(room.code, participantToken), "Left room.");
+    const left = await runAction(() => leaveRoom(room.code, participantToken), "방에서 나갔습니다.");
     if (left) {
       handleReset();
     }
@@ -400,7 +370,7 @@ function App() {
       return;
     }
 
-    const updated = await runAction(() => setParticipantAway(room.code, participantToken), "Set away.");
+    const updated = await runAction(() => setParticipantAway(room.code, participantToken), "자리비움으로 변경했습니다.");
     if (updated) {
       setRoom(updated.room);
     }
@@ -411,7 +381,7 @@ function App() {
       return;
     }
 
-    const updated = await runAction(() => setParticipantActive(room.code, participantToken), "Back to active.");
+    const updated = await runAction(() => setParticipantActive(room.code, participantToken), "다시 참가 중입니다.");
     if (updated) {
       setRoom(updated.room);
     }
@@ -422,7 +392,7 @@ function App() {
       return;
     }
 
-    const skipped = await runAction(() => skipCurrentRound(room.code, participantToken), "Skip vote submitted.");
+    const skipped = await runAction(() => skipCurrentRound(room.code, participantToken), "스킵에 투표했습니다.");
     if (skipped) {
       setRoom(skipped.room);
     }
@@ -433,7 +403,7 @@ function App() {
       return;
     }
 
-    const skipped = await runAction(() => forceSkipCurrentRound(room.code, hostToken), "Round skipped.");
+    const skipped = await runAction(() => forceSkipCurrentRound(room.code, hostToken), "라운드를 스킵했습니다.");
     if (skipped) {
       setRoom(skipped.room);
     }
@@ -477,423 +447,99 @@ function App() {
     youtubePlayerRef.current?.stopVideo();
   }
 
+  function handlePlayClip() {
+    if (!currentRound?.started_at || currentRound.ended_at) {
+      setPlayerMessage("라운드가 시작되면 재생할 수 있습니다.");
+      return;
+    }
+    if (!youtubePlayerRef.current) {
+      setPlayerMessage("플레이어를 불러오는 중입니다.");
+      return;
+    }
+    playCurrentClip();
+  }
+
   if (!room) {
     return (
-      <main className="app-shell compact-shell">
-        <header className="topbar">
-          <div>
-            <p className="eyebrow">Guess Song</p>
-            <h1>Create or Join a Room</h1>
-          </div>
-        </header>
-
-        <section className="layout">
-          <div className="panel">
-            <h2>Create Room</h2>
-            <form onSubmit={handleCreateRoom} className="stack">
-              <label>
-                Quiz pack
-                <select
-                  value={selectedPackId ?? ""}
-                  onChange={(event) => setSelectedPackId(Number(event.target.value))}
-                >
-                  {quizPacks.map((pack) => (
-                    <option key={pack.id} value={pack.id}>
-                      {pack.name} ({pack.approved_question_count})
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Host nickname
-                <input value={hostNickname} onChange={(event) => setHostNickname(event.target.value)} />
-              </label>
-              <label>
-                Questions
-                <input
-                  min={1}
-                  max={20}
-                  type="number"
-                  value={questionCount}
-                  onChange={(event) => setQuestionCount(Number(event.target.value))}
-                />
-              </label>
-              <label>
-                Answer limit
-                <select
-                  value={answerLimitMode}
-                  onChange={(event) => setAnswerLimitMode(event.target.value as AnswerLimitMode)}
-                >
-                  <option value="FIRST_ONLY">First only</option>
-                  <option value="FIVE_SECONDS">Five seconds</option>
-                  <option value="ALL_CORRECT">All correct</option>
-                </select>
-              </label>
-              <label>
-                Answer fields
-                <select
-                  value={answerFields}
-                  onChange={(event) => setAnswerFields(event.target.value as AnswerFields)}
-                >
-                  <option value="TITLE_ONLY">Title only</option>
-                  <option value="TITLE_AND_ARTIST">Title + artist</option>
-                </select>
-              </label>
-              <label>
-                Play mode
-                <select value={playMode} onChange={(event) => setPlayMode(event.target.value as PlayMode)}>
-                  <option value="SOLO">Solo</option>
-                  <option value="TEAM">Team</option>
-                </select>
-              </label>
-              {playMode === "TEAM" ? (
-                <>
-                  <label>
-                    Team assignment
-                    <select
-                      value={teamAssignMode}
-                      onChange={(event) => setTeamAssignMode(event.target.value as TeamAssignMode)}
-                    >
-                      <option value="SELF_SELECT">Self select</option>
-                      <option value="RANDOM">Random</option>
-                    </select>
-                  </label>
-                  <label>
-                    Teams
-                    <input
-                      min={2}
-                      max={4}
-                      type="number"
-                      value={teamCount}
-                      onChange={(event) => setTeamCount(Number(event.target.value))}
-                    />
-                  </label>
-                </>
-              ) : null}
-              <label>
-                Round time
-                <input
-                  min={5}
-                  max={120}
-                  type="number"
-                  value={roundTimeLimitSec}
-                  onChange={(event) => setRoundTimeLimitSec(Number(event.target.value))}
-                />
-              </label>
-              <label>
-                Item mode
-                <select value={itemMode} onChange={(event) => setItemMode(event.target.value as ItemMode)}>
-                  <option value="OFF">Off</option>
-                  <option value="ON">On</option>
-                </select>
-              </label>
-              <label>
-                Balance mode
-                <select
-                  value={answerLimitMode === "FIRST_ONLY" ? balanceMode : "OFF"}
-                  onChange={(event) => setBalanceMode(event.target.value as BalanceMode)}
-                  disabled={answerLimitMode !== "FIRST_ONLY"}
-                >
-                  <option value="OFF">Off</option>
-                  <option value="ON">On</option>
-                </select>
-              </label>
-              <label className="checkbox-row">
-                <input
-                  type="checkbox"
-                  checked={allowLateJoin}
-                  onChange={(event) => setAllowLateJoin(event.target.checked)}
-                />
-                Allow late join
-              </label>
-              <button type="submit">Create Room</button>
-            </form>
-          </div>
-
-          <div className="panel">
-            <h2>Join Room</h2>
-            <form onSubmit={handleJoinRoom} className="stack">
-              <label>
-                Room code
-                <input
-                  value={joinCode}
-                  onChange={(event) => setJoinCode(event.target.value.toUpperCase())}
-                  placeholder="ABC123"
-                />
-              </label>
-              <label>
-                Nickname
-                <input value={joinNickname} onChange={(event) => setJoinNickname(event.target.value)} />
-              </label>
-              {joinPreviewRoom?.play_mode === "TEAM" && joinPreviewRoom.team_assign_mode === "SELF_SELECT" ? (
-                <label>
-                  Team
-                  <select
-                    value={selectedJoinTeamId ?? ""}
-                    onChange={(event) => setSelectedJoinTeamId(Number(event.target.value))}
-                  >
-                    {joinPreviewTeams.map((team) => (
-                      <option key={team.id} value={team.id}>
-                        {team.name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              ) : null}
-              <div className="button-row">
-                <button type="submit">Join Room</button>
-                <button type="button" className="secondary" onClick={handleRestoreRoom}>
-                  Load Room
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-        {message ? <p className="message">{message}</p> : null}
-      </main>
+      <LobbyView
+        allowLateJoin={allowLateJoin}
+        answerFields={answerFields}
+        answerLimitMode={answerLimitMode}
+        balanceMode={balanceMode}
+        hostNickname={hostNickname}
+        itemMode={itemMode}
+        joinCode={joinCode}
+        joinNickname={joinNickname}
+        joinPreviewRoom={joinPreviewRoom}
+        joinPreviewTeams={joinPreviewTeams}
+        message={message}
+        playMode={playMode}
+        questionCount={questionCount}
+        quizPacks={quizPacks}
+        roundTimeLimitSec={roundTimeLimitSec}
+        selectedJoinTeamId={selectedJoinTeamId}
+        selectedPackId={selectedPackId}
+        teamAssignMode={teamAssignMode}
+        teamCount={teamCount}
+        onAllowLateJoinChange={setAllowLateJoin}
+        onAnswerFieldsChange={setAnswerFields}
+        onAnswerLimitModeChange={setAnswerLimitMode}
+        onBalanceModeChange={setBalanceMode}
+        onCreateRoom={handleCreateRoom}
+        onHostNicknameChange={setHostNickname}
+        onItemModeChange={setItemMode}
+        onJoinCodeChange={setJoinCode}
+        onJoinNicknameChange={setJoinNickname}
+        onJoinRoom={handleJoinRoom}
+        onLoadRoom={handleRestoreRoom}
+        onPlayModeChange={setPlayMode}
+        onQuestionCountChange={setQuestionCount}
+        onRoundTimeLimitSecChange={setRoundTimeLimitSec}
+        onSelectedJoinTeamIdChange={setSelectedJoinTeamId}
+        onSelectedPackIdChange={setSelectedPackId}
+        onTeamAssignModeChange={setTeamAssignMode}
+        onTeamCountChange={setTeamCount}
+      />
     );
   }
 
   return (
-    <main className="app-shell">
-      <header className="topbar">
-        <div>
-          <p className="eyebrow">Room {room.code}</p>
-          <h1>{room.quiz_pack?.name ?? "Music Quiz"}</h1>
-        </div>
-        <div className="button-row">
-          <div className="connection">
-            <span>Sync</span>
-            <strong data-state={socketStatus}>{socketStatus}</strong>
-          </div>
-          <button type="button" className="secondary" onClick={handleReset}>
-            Clear Local View
-          </button>
-          {participantToken ? (
-            currentParticipant?.status === "AWAY" ? (
-              <button type="button" className="secondary" onClick={handleSetActive}>
-                Back
-              </button>
-            ) : (
-              <button type="button" className="secondary" onClick={handleSetAway}>
-                Away
-              </button>
-            )
-          ) : null}
-          <button type="button" className="secondary" onClick={handleLeaveRoom}>
-            Leave Room
-          </button>
-        </div>
-      </header>
-
-      {message ? <p className="message">{message}</p> : null}
-
-      <section className="room-focus">
-        <div className="panel stage-panel">
-          <div className="stage-header">
-            <div>
-              <p className="eyebrow">{room.status}</p>
-              <h2>
-                {getStageTitle(
-                  room.status,
-                  currentRound?.started_at ?? null,
-                  currentRound?.ended_at ?? null,
-                )}
-              </h2>
-            </div>
-            <strong className="round-counter">
-              {room.game ? `${Math.min(room.game.current_round_index + 1, room.game.total_rounds)} / ${room.game.total_rounds}` : "-"}
-            </strong>
-          </div>
-
-          {currentRound ? (
-            <div className="round-box">
-              <div className="youtube-audio-player" aria-hidden="true">
-                <div className="youtube-player" ref={playerHostRef} />
-              </div>
-              {isCurrentRoundRevealed ? (
-                <iframe
-                  className="youtube-reveal-player"
-                  title="Revealed music video"
-                  src={`https://www.youtube.com/embed/${currentRound.youtube_video_id}?start=${currentRound.start_time_seconds}&rel=0`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="music-placeholder" aria-hidden="true">
-                  <span className="music-bars">
-                    <i />
-                    <i />
-                    <i />
-                    <i />
-                  </span>
-                  <strong>Music is playing</strong>
-                </div>
-              )}
-              <p>
-                Start {currentRound.start_time_seconds}s / Play {currentRound.play_duration_seconds}s
-              </p>
-              <p>Difficulty {currentRound.difficulty}</p>
-              <button
-                type="button"
-                className="secondary"
-                onClick={() => {
-                  if (currentRound.started_at && !currentRound.ended_at) {
-                    if (!youtubePlayerRef.current) {
-                      setPlayerMessage("The player is loading.");
-                      return;
-                    }
-                    playCurrentClip();
-                  } else {
-                    setPlayerMessage("The clip plays after the round starts.");
-                  }
-                }}
-              >
-                Play Clip
-              </button>
-              {playerMessage ? <p className="muted">{playerMessage}</p> : null}
-              {currentRound.answer_fields.length ? (
-                <ul className="answer-fields">
-                  {currentRound.answer_fields.map((field) => (
-                    <li key={field.field_type} className={field.is_revealed ? "revealed" : undefined}>
-                      <span>{field.field_type}</span>
-                      <strong>{field.is_revealed ? field.answer : field.is_open ? "hidden" : "closed"}</strong>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          ) : (
-            <p className="muted">No round has been selected yet.</p>
-          )}
-
-          {isHost ? (
-            <button
-              type="button"
-              className="primary-action"
-              onClick={handleHostPrimaryAction}
-              disabled={room.status !== "waiting"}
-            >
-              {hostAction}
-            </button>
-          ) : (
-            <p className="muted">Waiting for the host.</p>
-          )}
-
-          {lastRoundStarted ? (
-            <p className="message compact">Round {lastRoundStarted.round_index + 1} started. Answers are open.</p>
-          ) : null}
-
-          {currentRound?.started_at && !currentRound.ended_at ? (
-            <div className="button-row round-actions">
-              <button type="button" className="secondary" onClick={handleSkipRound} disabled={!canSkipRound}>
-                Skip {currentRound.skip_count} / {currentRound.skip_target_count}
-              </button>
-              {isHost ? (
-                <button
-                  type="button"
-                  className="secondary danger"
-                  onClick={handleForceSkipRound}
-                  disabled={!canForceSkipRound}
-                >
-                  Force Skip
-                </button>
-              ) : null}
-            </div>
-          ) : null}
-        </div>
-
-        <div className="panel">
-          <h2>Submit Answer</h2>
-          <p className="muted">
-            {getAnswerHint(
-              Boolean(participantToken),
-              room.status,
-              currentRound?.started_at ?? null,
-              currentRound?.ended_at ?? null,
-              currentParticipant?.status ?? null,
-            )}
-          </p>
-          <form onSubmit={handleSubmitAnswer} className="stack">
-            <input
-              value={answer}
-              onChange={(event) => setAnswer(event.target.value)}
-              placeholder="Try LOVE DIVE for the first sample question"
-              disabled={!canSubmit}
-            />
-            <button type="submit" disabled={!canSubmit || !answer.trim()}>
-              Submit Answer
-            </button>
-          </form>
-          {lastAnswerResult ? (
-            <p className={lastAnswerResult.is_correct ? "result correct" : "result wrong"}>
-              {lastAnswerResult.is_correct ? "Correct" : "Wrong"} /{" "}
-              {lastAnswerResult.matched_fields.length
-                ? lastAnswerResult.matched_fields.join(", ")
-                : "no accepted field"}{" "}
-              / +{lastAnswerResult.score_awarded} / total {lastAnswerResult.total_score}
-            </p>
-          ) : null}
-        </div>
-
-        <div className="panel">
-          <h2>Players</h2>
-          {room.teams.length ? (
-            <ul className="team-list">
-              {room.teams.map((team) => (
-                <li key={team.id}>
-                  <span>{team.name}</span>
-                  <strong>
-                    {team.participant_count} players / {team.score}
-                  </strong>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-          <ul className="scoreboard">
-            {orderedParticipants.map((participant) => (
-              <li key={participant.id} className={participant.status !== "ACTIVE" ? "inactive" : undefined}>
-                <span>
-                  {participant.nickname}
-                  {participant.is_host ? " (host)" : ""}
-                  {participant.team_name ? ` / ${participant.team_name}` : ""}
-                  {participant.status === "AWAY" ? " (away)" : ""}
-                  {participant.status === "LEFT" ? " (left)" : ""}
-                </span>
-                <strong>{participant.score}</strong>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    </main>
+    <RoomView
+      answer={answer}
+      answerHint={getAnswerHint(
+        Boolean(participantToken),
+        room.status,
+        currentRound?.started_at ?? null,
+        currentRound?.ended_at ?? null,
+        currentParticipant?.status ?? null,
+      )}
+      canForceSkipRound={canForceSkipRound}
+      canSkipRound={canSkipRound}
+      canSubmit={canSubmit}
+      currentParticipant={currentParticipant}
+      currentRound={currentRound}
+      isHost={isHost}
+      isRevealed={isCurrentRoundRevealed}
+      lastAnswerResult={lastAnswerResult}
+      lastRoundStarted={lastRoundStarted}
+      message={message}
+      orderedParticipants={orderedParticipants}
+      playerHostRef={playerHostRef}
+      playerMessage={playerMessage}
+      room={room}
+      socketStatus={socketStatus}
+      onAnswerChange={setAnswer}
+      onForceSkipRound={handleForceSkipRound}
+      onHostPrimaryAction={handleHostPrimaryAction}
+      onLeaveRoom={handleLeaveRoom}
+      onPlayClip={handlePlayClip}
+      onReset={handleReset}
+      onSetActive={handleSetActive}
+      onSetAway={handleSetAway}
+      onSkipRound={handleSkipRound}
+      onSubmitAnswer={handleSubmitAnswer}
+    />
   );
-}
-
-function getHostAction(status: string | undefined) {
-  if (status === "waiting") {
-    return "Start Game";
-  }
-  if (status === "playing") {
-    return "Game Running";
-  }
-  return "Game Finished";
-}
-
-function getStageTitle(status: string, startedAt: string | null, endedAt: string | null) {
-  if (status === "waiting") {
-    return "Waiting for players";
-  }
-  if (status === "playing" && !startedAt) {
-    return "Starting soon";
-  }
-  if (status === "playing" && endedAt) {
-    return "Revealing answer";
-  }
-  if (status === "playing" && startedAt) {
-    return "Round is live";
-  }
-  return "Game finished";
 }
 
 function getAnswerHint(
@@ -904,24 +550,24 @@ function getAnswerHint(
   participantStatus: string | null,
 ) {
   if (!hasToken) {
-    return "Join or create a room before submitting.";
+    return "방을 만들거나 참가한 뒤 정답을 제출할 수 있습니다.";
   }
   if (participantStatus === "AWAY") {
-    return "You are away. Switch back before submitting.";
+    return "자리비움 상태입니다. 돌아온 뒤 제출하세요.";
   }
   if (participantStatus === "LEFT") {
-    return "You have left this room.";
+    return "이미 방에서 나갔습니다.";
   }
   if (status === "waiting") {
-    return "The host needs to start the game first.";
+    return "방장이 게임을 시작해야 합니다.";
   }
   if (!startedAt) {
-    return "The round will start automatically.";
+    return "라운드가 자동으로 시작됩니다.";
   }
   if (endedAt) {
-    return "Answer reveal is in progress. The next round will start automatically.";
+    return "정답 공개 중입니다. 다음 라운드가 자동으로 시작됩니다.";
   }
-  return "Answers are open.";
+  return "정답 입력이 열려 있습니다.";
 }
 
 export default App;
