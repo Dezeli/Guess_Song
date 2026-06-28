@@ -81,6 +81,10 @@ h1 {
   font-size: 32px;
 }
 
+.hot-reload-test-title {
+  color: #2563eb;
+}
+
 h2 {
   margin-bottom: 16px;
   font-size: 20px;

@@ -95,7 +95,7 @@ export function LobbyView({
       <header className="topbar">
         <div>
           <p className="eyebrow">Guess Song</p>
-          <h1>방 만들기 또는 참가</h1>
+          <h1 className="hot-reload-test-title">방 만들기 또는 참가</h1>
         </div>
       </header>
 
