@@ -1,5 +1,3 @@
-import type { RefObject } from "react";
-
 import type { CurrentRound } from "../shared/types";
 
 type RoundStageProps = {
@@ -16,11 +14,8 @@ type RoundStageProps = {
   roomStatus: string;
   timerLabel: string | null;
   timerSeconds: number | null;
-  playerHostRef: RefObject<HTMLDivElement>;
-  playerMessage: string;
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
-  onPlayClip: () => void;
   onSkipRound: () => void;
 };
 
@@ -38,11 +33,8 @@ export function RoundStage({
   roomStatus,
   timerLabel,
   timerSeconds,
-  playerHostRef,
-  playerMessage,
   onForceSkipRound,
   onHostPrimaryAction,
-  onPlayClip,
   onSkipRound,
 }: RoundStageProps) {
   return (
@@ -71,9 +63,6 @@ export function RoundStage({
 
       {currentRound ? (
         <div className="round-box">
-          <div className="youtube-audio-player" aria-hidden="true">
-            <div className="youtube-player" ref={playerHostRef} />
-          </div>
           {isRevealed ? (
             <iframe
               key={`${currentRound.round_id}-${currentRound.ended_at ?? "revealed"}`}
@@ -84,14 +73,26 @@ export function RoundStage({
               allowFullScreen
             />
           ) : (
-            <div className="music-placeholder" aria-hidden="true">
-              <span className="music-bars">
-                <i />
-                <i />
-                <i />
-                <i />
-              </span>
-              <strong>음악 재생 중</strong>
+            <div className="masked-youtube-shell">
+              {currentRound.started_at ? (
+                <iframe
+                  key={`${currentRound.round_id}-${currentRound.started_at}`}
+                  className="masked-youtube-player"
+                  title="Hidden music video"
+                  src={`https://www.youtube.com/embed/${currentRound.youtube_video_id}?start=${currentRound.start_time_seconds}&autoplay=1&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : null}
+              <div className="music-placeholder" aria-hidden="true">
+                <span className="music-bars">
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <strong>{currentRound.started_at ? "음악 재생 중" : "라운드 시작 대기 중"}</strong>
+              </div>
             </div>
           )}
           <div className="round-meta">
@@ -99,10 +100,6 @@ export function RoundStage({
             <span>재생 {currentRound.play_duration_seconds}초</span>
             <span>{currentRound.difficulty}</span>
           </div>
-          <button type="button" className="secondary" onClick={onPlayClip}>
-            클립 재생
-          </button>
-          {playerMessage ? <p className="muted">{playerMessage}</p> : null}
           {currentRound.answer_fields.length ? (
             <ul className="answer-fields">
               {currentRound.answer_fields.map((field) => (

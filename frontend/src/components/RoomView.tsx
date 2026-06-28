@@ -1,4 +1,4 @@
-import type { FormEvent, RefObject } from "react";
+import type { FormEvent } from "react";
 
 import type { CurrentRound, Participant, RoomState, SubmitAnswerResponse } from "../shared/types";
 import { AnswerPanel } from "./AnswerPanel";
@@ -20,8 +20,6 @@ type RoomViewProps = {
   lastRoundStarted: CurrentRound | null;
   message: string;
   orderedParticipants: Participant[];
-  playerHostRef: RefObject<HTMLDivElement>;
-  playerMessage: string;
   roundActionHint: string | null;
   room: RoomState;
   socketStatus: string;
@@ -31,7 +29,6 @@ type RoomViewProps = {
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
   onLeaveRoom: () => void;
-  onPlayClip: () => void;
   onReset: () => void;
   onSetActive: () => void;
   onSetAway: () => void;
@@ -54,8 +51,6 @@ export function RoomView({
   lastRoundStarted,
   message,
   orderedParticipants,
-  playerHostRef,
-  playerMessage,
   roundActionHint,
   room,
   socketStatus,
@@ -65,7 +60,6 @@ export function RoomView({
   onForceSkipRound,
   onHostPrimaryAction,
   onLeaveRoom,
-  onPlayClip,
   onReset,
   onSetActive,
   onSetAway,
@@ -125,11 +119,8 @@ export function RoomView({
           roomStatus={room.status}
           timerLabel={timerLabel}
           timerSeconds={timerSeconds}
-          playerHostRef={playerHostRef}
-          playerMessage={playerMessage}
           onForceSkipRound={onForceSkipRound}
           onHostPrimaryAction={onHostPrimaryAction}
-          onPlayClip={onPlayClip}
           onSkipRound={onSkipRound}
         />
         <AnswerPanel

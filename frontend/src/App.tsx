@@ -30,7 +30,6 @@ import type {
   RoomSocketMessage,
   TeamAssignMode,
 } from "./shared/types";
-import { loadYouTubeApi } from "./shared/youtubePlayer";
 import { useRoomStore } from "./stores/roomStore";
 
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
@@ -74,12 +73,8 @@ function App() {
   const [roundTimeLimitSec, setRoundTimeLimitSec] = useState(20);
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
-  const [playerMessage, setPlayerMessage] = useState("");
   const [nowMs, setNowMs] = useState(Date.now());
   const socketRef = useRef<WebSocket | null>(null);
-  const playerHostRef = useRef<HTMLDivElement | null>(null);
-  const youtubePlayerRef = useRef<YT.Player | null>(null);
-  const clipStopTimerRef = useRef<number | null>(null);
 
   const currentRound = room?.game?.current_round ?? null;
   const currentParticipant = useMemo(() => {
@@ -212,62 +207,6 @@ function App() {
       .then((identity) => setParticipantId(identity.participant_id))
       .catch(() => undefined);
   }, [participantId, participantToken, room?.code, setParticipantId]);
-
-  useEffect(() => {
-    if (!currentRound || !playerHostRef.current) {
-      return;
-    }
-
-    let isCurrent = true;
-
-    void loadYouTubeApi().then(() => {
-      if (!isCurrent || !playerHostRef.current) {
-        return;
-      }
-
-      if (!youtubePlayerRef.current) {
-        youtubePlayerRef.current = new window.YT.Player(playerHostRef.current, {
-          videoId: currentRound.youtube_video_id,
-          playerVars: {
-            controls: 0,
-            disablekb: 1,
-            modestbranding: 1,
-            playsinline: 1,
-            rel: 0,
-            start: currentRound.start_time_seconds,
-          },
-          events: {
-            onReady: () => {
-              cueCurrentClip();
-              if (currentRound.started_at && !currentRound.ended_at) {
-                playCurrentClip();
-              }
-            },
-          },
-        });
-        return;
-      }
-
-      cueCurrentClip();
-      if (currentRound.started_at && !currentRound.ended_at) {
-        playCurrentClip();
-      }
-    });
-
-    if (currentRound.ended_at) {
-      stopCurrentClip();
-    }
-
-    return () => {
-      isCurrent = false;
-    };
-  }, [currentRound?.round_id, currentRound?.started_at, currentRound?.ended_at]);
-
-  useEffect(() => {
-    return () => {
-      stopCurrentClip();
-    };
-  }, []);
 
   async function runAction<T>(action: () => Promise<T>, successMessage: string) {
     setMessage("");
@@ -454,56 +393,6 @@ function App() {
     }
   }
 
-  function cueCurrentClip() {
-    if (!currentRound || !youtubePlayerRef.current) {
-      return;
-    }
-
-    youtubePlayerRef.current.cueVideoById({
-      videoId: currentRound.youtube_video_id,
-      startSeconds: currentRound.start_time_seconds,
-    });
-    setPlayerMessage("");
-  }
-
-  function playCurrentClip() {
-    if (!currentRound || !youtubePlayerRef.current) {
-      return;
-    }
-
-    stopCurrentClip();
-    youtubePlayerRef.current.loadVideoById({
-      videoId: currentRound.youtube_video_id,
-      startSeconds: currentRound.start_time_seconds,
-    });
-    youtubePlayerRef.current.unMute();
-    youtubePlayerRef.current.playVideo();
-    setPlayerMessage("");
-    clipStopTimerRef.current = window.setTimeout(() => {
-      stopCurrentClip();
-    }, currentRound.play_duration_seconds * 1000);
-  }
-
-  function stopCurrentClip() {
-    if (clipStopTimerRef.current) {
-      window.clearTimeout(clipStopTimerRef.current);
-      clipStopTimerRef.current = null;
-    }
-    youtubePlayerRef.current?.stopVideo();
-  }
-
-  function handlePlayClip() {
-    if (!currentRound?.started_at || currentRound.ended_at) {
-      setPlayerMessage("라운드가 시작되면 재생할 수 있습니다.");
-      return;
-    }
-    if (!youtubePlayerRef.current) {
-      setPlayerMessage("플레이어를 불러오는 중입니다.");
-      return;
-    }
-    playCurrentClip();
-  }
-
   if (!room) {
     return (
       <LobbyView
@@ -577,8 +466,6 @@ function App() {
       lastRoundStarted={lastRoundStarted}
       message={message}
       orderedParticipants={orderedParticipants}
-      playerHostRef={playerHostRef}
-      playerMessage={playerMessage}
       room={room}
       socketStatus={socketStatus}
       timerLabel={roundTimer.label}
@@ -587,7 +474,6 @@ function App() {
       onForceSkipRound={handleForceSkipRound}
       onHostPrimaryAction={handleHostPrimaryAction}
       onLeaveRoom={handleLeaveRoom}
-      onPlayClip={handlePlayClip}
       onReset={handleReset}
       onSetActive={handleSetActive}
       onSetAway={handleSetAway}
