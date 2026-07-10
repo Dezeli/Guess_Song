@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "qZ5Blt7v1YQphgwvXPvG2x3-lxY",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zK0b5En9WzKPwSJ9hOf2g2gXHiQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "o9DhvbqYzns"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-25T05:02:00Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "G-DRAGON - TOO BAD (feat. Anderson .Paak) (Official Video)",
+        "description": "Listen to the Album “Übermensch\". OUT NOW! Stream: https://music.empi.re/gdum #GDRAGON #Übermensch 'G', 'A.P' “Let ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/o9DhvbqYzns/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/o9DhvbqYzns/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/o9DhvbqYzns/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-25T05:02:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "DhqCDrz42GW04fWTvZiCfBs41fk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "RKhsHGfrFmY"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-05T03:20:50Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - 삐딱하게(CROOKED) M/V",
+        "description": "Available on iTunes @ http://smarturl.it/GDCoupdetatPt2 #GDRAGON #GD #삐딱하게 #CROOKED More about BIGBANG ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/RKhsHGfrFmY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/RKhsHGfrFmY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/RKhsHGfrFmY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-09-05T03:20:50Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-WrYPccmmdq2dewuJR76kWsIyx8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NMjhjrBIrG8"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-31T09:00:07Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "G-DRAGON - POWER (Official Video)",
+        "description": "Listen to the single “POWER\". OUT NOW! Stream: https://music.empi.re/gdragonpower When G.D's in the house (Übermensch) ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NMjhjrBIrG8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NMjhjrBIrG8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NMjhjrBIrG8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-31T09:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kecj6pwWcLqa_V--qB-Iby92YO0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9kaCAbIXuyg"
+      },
+      "snippet": {
+        "publishedAt": "2017-06-08T09:00:01Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - &#39;무제(無題) (Untitled, 2014)&#39; M/V",
+        "description": "Available on iTunes @ smarturl.it/GDRAGON_KWONJIYONG Available on Apple Music @ smarturl.it/KWONJIYONG_GDRAGON ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9kaCAbIXuyg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9kaCAbIXuyg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9kaCAbIXuyg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-06-08T09:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SpCxbokVSk-hwmKMqKv83gR34p4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "rJnICByeL8Q"
+      },
+      "snippet": {
+        "publishedAt": "2012-08-24T15:00:14Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - ONE OF A KIND M/V",
+        "description": "Available on iTunes @ http://smarturl.it/GDoneofakind #GDRAGON #GD #BIGBANG #빅뱅 #ONEOFAKIND More about BIGBANG ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rJnICByeL8Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rJnICByeL8Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rJnICByeL8Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2012-08-24T15:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "DTpv3sbP5Or32h7JD2SpT_WQAvk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "t3ULhmadHkg"
+      },
+      "snippet": {
+        "publishedAt": "2012-09-16T15:00:21Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - CRAYON(크레용) M/V",
+        "description": "1ST MINI [ONE OF A KIND] Available on iTunes @ http://smarturl.it/GDoneofakind #GDRAGON #GD #BIGBANG #빅뱅 #CRAYON ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/t3ULhmadHkg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/t3ULhmadHkg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/t3ULhmadHkg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2012-09-16T15:00:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "l-IdROzr5iPcc2SYny-O7pamwc4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "doFK7Eanm3I"
+      },
+      "snippet": {
+        "publishedAt": "2013-11-13T11:08:04Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - 니가 뭔데(WHO YOU?) M/V",
+        "description": "Available on iTunes @ http://smarturl.it/GDCoupdetatPt1 Available on iTunes @ http://smarturl.it/GDCoupdetatPt2 #GDRAGON ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/doFK7Eanm3I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/doFK7Eanm3I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/doFK7Eanm3I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-11-13T11:08:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JU3LVrE0bLRjc5CuEF15HqCHQcY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "LOXEVd-Z7NE"
+      },
+      "snippet": {
+        "publishedAt": "2009-08-18T06:26:57Z",
+        "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+        "title": "G-DRAGON - HEARTBREAKER M/V",
+        "description": "Available on iTunes @ http://smarturl.it/G-DragonHeartBreaker #BIGBANG #빅뱅 #GDRAGON #GD #지드래곤 #HEARTBREAKER ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LOXEVd-Z7NE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LOXEVd-Z7NE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LOXEVd-Z7NE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "YG ENTERTAINMENT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-08-18T06:26:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rA9axC6fX6qlGlvjwlLAysA12TQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "I8I51kSq448"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-25T05:01:06Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "G-DRAGON - DRAMA (Official Video)",
+        "description": "Listen to the Album “Übermensch\". OUT NOW! Stream: https://music.empi.re/gdum #GDRAGON #Übermensch When every ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/I8I51kSq448/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/I8I51kSq448/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/I8I51kSq448/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-25T05:01:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3JEMjeNnYnAw0MMlDhU9Xz_VdxU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "C8T6771Sdj8"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-02T02:59:15Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - COUP D&#39;ETAT M/V",
+        "description": "G-DRAGON 2ND ALBUM [COUP D'ETAT] Available on iTunes @ http://smarturl.it/GDCoupdetatPt1 #GDRAGON #GD #BIGBANG ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/C8T6771Sdj8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/C8T6771Sdj8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/C8T6771Sdj8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-09-02T02:59:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HQxaCWDqMyjBQ-ae_KNAs1jLTWI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mrwnL62HObI"
+      },
+      "snippet": {
+        "publishedAt": "2013-04-19T14:59:56Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - 미치GO M/V",
+        "description": "NEW SINGLE [미치GO] #GDRAGON #GD #BIGBANG #빅뱅 #미치GO More about BIGBANG @ http://ygbigbang.com/ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mrwnL62HObI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mrwnL62HObI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mrwnL62HObI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-04-19T14:59:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "M503kh8MbFNFb8i3zT1dyXn7UFs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j57IzkTFnT8"
+      },
+      "snippet": {
+        "publishedAt": "2012-08-31T14:59:02Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - THAT XX (그 XX) M/V",
+        "description": "Available on iTunes @ http://smarturl.it/GDthatxx \"THAT XX\" is the first released single following the intro \"ONE OF A KIND\" from ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j57IzkTFnT8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j57IzkTFnT8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j57IzkTFnT8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2012-08-31T14:59:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "pC6eLCWVxg_xIiLcKGI5plWeSBg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PMwWxmrQSGE"
+      },
+      "snippet": {
+        "publishedAt": "2009-11-11T09:47:23Z",
+        "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+        "title": "G-DRAGON - A BOY(소년이여) M/V",
+        "description": "Available on iTunes @ http://smarturl.it/G-DragonHeartBreaker #BIGBANG #빅뱅 #GDRAGON #GD #지드래곤 #ABOY #소년이여 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PMwWxmrQSGE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PMwWxmrQSGE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PMwWxmrQSGE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "YG ENTERTAINMENT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-11-11T09:47:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-X7C7dsj6VA8BKXO9fyUvIZt8eA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iTJSbJtS8MU"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-11T09:00:56Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;WDA (Whole Different Animal) (Feat. G-DRAGON)&#39; MV",
+        "description": "aespa's 2nd album \"LEMONADE\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/LEMONADE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-11T09:00:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9q0C4HpxuEDQ8al6u9nzV4tLY_w",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8pin-6JrdHY"
+      },
+      "snippet": {
+        "publishedAt": "2009-09-29T09:49:25Z",
+        "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+        "title": "G-DRAGON - BREATHE M/V",
+        "description": "Available on iTunes @ http://smarturl.it/G-DragonHeartBreaker #BIGBANG #빅뱅 #GDRAGON #GD #지드래곤 #BREATHE More ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8pin-6JrdHY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8pin-6JrdHY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8pin-6JrdHY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "YG ENTERTAINMENT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-09-29T09:49:25Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dqit4dNcBRBPCB5yXpQQEoujV24",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FFbfq3-R73Y"
+      },
+      "snippet": {
+        "publishedAt": "2026-01-01T04:00:04Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "BIGBANG - 눈물뿐인 바보 G-DRAGON 2025 WORLD TOUR [Übermensch] IN SEOUL : ENCORE ver.",
+        "description": "GDRAGON #2025WORLDTOUR #Übermensch IN #SEOUL with #BIGBANG #TAEYANG #DAESUNG #눈물뿐인바보.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FFbfq3-R73Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FFbfq3-R73Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FFbfq3-R73Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-01-01T04:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ybRiaYx_TSjc8MULcG7We4R6odc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9bKSjRJhXwo"
+      },
+      "snippet": {
+        "publishedAt": "2017-09-15T02:34:40Z",
+        "channelId": "UC_h6ROHHAiqmKhXXppBXuqg",
+        "title": "G-DRAGON (feat. ROSÉ of BLACKPINK) - WITHOUT YOU (결국) MV",
+        "description": "G-DRAGON (feat. ROSÉ of BLACKPINK) - WITHOUT YOU (결국) MV —FOLLOW US— Instagram: @KpopGroupsCH Link: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9bKSjRJhXwo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9bKSjRJhXwo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9bKSjRJhXwo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KG ENTERTAINMENT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-09-15T02:34:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3UcCPltk9F1dKxl9zyTyRSdO0iE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1ZRb1we80kM"
+      },
+      "snippet": {
+        "publishedAt": "2014-11-20T14:59:58Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "GD X TAEYANG - GOOD BOY M/V",
+        "description": "New music video for GD X TAEYANG's single 'GOOD BOY' shot for the 2015 YTMAs and featured as a YouTube Music Moment.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1ZRb1we80kM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1ZRb1we80kM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1ZRb1we80kM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-11-20T14:59:58Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "f7YK1VF6MaIpmxOt2OOKkbHSSt0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "c3jK48Hy3u0"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-03T06:00:17Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "G-DRAGON - &#39;TOO BAD (feat. Anderson .Paak)&#39; Official Performance Video with RIEHATA",
+        "description": "G-DRAGON 'TOO BAD (feat. Anderson .Paak)' Official Performance Video with RIEHATA MV: https://youtu.be/o9DhvbqYzns ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/c3jK48Hy3u0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/c3jK48Hy3u0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/c3jK48Hy3u0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-03T06:00:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SABcTCP6x_IsKZEcHgWAgWLh7io",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "QtFNIZV_RO8"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-23T09:07:41Z",
+        "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+        "title": "[#2024MAMA] G-DRAGON (지드래곤) - HOME SWEET HOME (feat. 태양, 대성) | Mnet 241123 방송",
+        "description": "티빙에서 스트리밍 : https://tving.onelink.me/xHqC/30a78d6f 'Übermensch' HOME SWEET HOME (feat. 태양, 대성) by G-DRAGON ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QtFNIZV_RO8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QtFNIZV_RO8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QtFNIZV_RO8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Mnet K-POP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-23T09:07:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EmRR3cqod8ZscvJaiZIDDtQ6eTk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "D8t8A8E_Tqc"
+      },
+      "snippet": {
+        "publishedAt": "2015-08-04T15:07:10Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "BIGBANG(GD&amp;T.O.P) - 쩔어(ZUTTER) M/V",
+        "description": "Available on iTunes @ http://smarturl.it/BIGBANGMADE_E Available on Spotify @ http://sptfy.com/BIGBANGMADE_E #‎BIGBANG ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/D8t8A8E_Tqc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/D8t8A8E_Tqc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/D8t8A8E_Tqc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-08-04T15:07:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Z8ceP07eMkIQDIGn1y7KMQ46zhY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Mq-aVCUs2Q0"
+      },
+      "snippet": {
+        "publishedAt": "2014-12-17T18:36:57Z",
+        "channelId": "UC_TVqp_SyG6j5hG-xVRy95A",
+        "title": "Skrillex - Dirty Vibe with Diplo, CL, &amp; G-Dragon (OFFICIAL VIDEO)",
+        "description": "Directed by Lil' Internet \"Recess\" is available now. Support on: iTunes: http://smarturl.it/SkrillexRecess Beatport: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Mq-aVCUs2Q0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Mq-aVCUs2Q0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Mq-aVCUs2Q0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Skrillex",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-12-17T18:36:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "j_qTDv5-9yZmFVwmSklv7g6GWM8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JZWbZQI3-sw"
+      },
+      "snippet": {
+        "publishedAt": "2014-08-14T13:17:51Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON - &#39;삐딱하게(CROOKED)&#39; 0814 Mnet K-CON 2014",
+        "description": "Copyrightc2014 MNET Media Corp. & YG Entertainment Inc. All rights reserved. G-DRAGON - 삐딱하게(CROOKED) M/V ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JZWbZQI3-sw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JZWbZQI3-sw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JZWbZQI3-sw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-08-14T13:17:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iqUhYHLaOoIckM5waJrepneKI_0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fLi0EJfi_vg"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-22T05:00:11Z",
+        "channelId": "UCeU5qTuBiqTU5z-hyL6WITQ",
+        "title": "G-DRAGON - HOME SWEET HOME (Official Audio) (feat. TAEYANG &amp; DAESUNG)",
+        "description": "Listen to the single “HOME SWEET HOME (feat. TAEYANG & DAESUNG)\". OUT NOW! Stream: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fLi0EJfi_vg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fLi0EJfi_vg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fLi0EJfi_vg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OfficialGDRAGON",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-22T05:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "g4j6uvxUXeD_V8qmayG40vlLteE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fbM9tUR_vZg"
+      },
+      "snippet": {
+        "publishedAt": "2013-10-13T08:24:10Z",
+        "channelId": "UCzw-C7fNfs018R1FzIKnlaA",
+        "title": "G-DRAGON_1013_SBS Inkigayo_BLACK(Feat. JENNIE KIM of YG New Artist)",
+        "description": "Published on Oct. 13, 2013 Copyrightc2013 SBS Contents Hub Co., Ltd. & YG Entertainment Inc. All rights reserved. G-DRAGON ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fbM9tUR_vZg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fbM9tUR_vZg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fbM9tUR_vZg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-10-13T08:24:10Z"
+      }
+    }
+  ]
+}

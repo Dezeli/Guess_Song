@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IcXpUgasYBxsaXU6uoY0-NpqgTg",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 361620,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "D6WFcRShSHkUML0SSw_yrfMJVg4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wwIJO6D2Jak"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-08T13:24:12Z",
+        "channelId": "UC96yQCd6sDUNpe_ayDDIQ0A",
+        "title": "are we getting switchblade mv?🙏😭 tt: reijrvs_ #aespa #tydollasign",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wwIJO6D2Jak/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wwIJO6D2Jak/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wwIJO6D2Jak/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "@heyitsleslieann",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-08T13:24:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Y7IW9depa4V61xEDFWYXqE2HmW0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IPzv0xVWPTM"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-29T07:53:40Z",
+        "channelId": "UC92EGtl9Cs9mIF56LTZSM1Q",
+        "title": "aespa 에스파 &#39;SHAKIN&#39; MV ",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IPzv0xVWPTM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IPzv0xVWPTM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IPzv0xVWPTM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Miss Vlue",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-29T07:53:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "aC0QuweVVz9Gzl3Kqn-JALpyzQ0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1p7KrzY8MLM"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-03T20:44:10Z",
+        "channelId": "UC92EGtl9Cs9mIF56LTZSM1Q",
+        "title": "aespa 에스파 &#39;My Plan&#39; MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1p7KrzY8MLM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1p7KrzY8MLM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1p7KrzY8MLM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Miss Vlue",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-03T20:44:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-YsQcHr6HhdOe3h7-jBueJXWhIU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "X1wJl5WZ2Nw"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-18T11:17:44Z",
+        "channelId": "UChCfF6gKAa7qStBWSLA_j4Q",
+        "title": "aespa(에스파) &quot;armageddon&quot; mv with names",
+        "description": "THIS SONG IS NOT MINE. PLEASE SUPPORT THE ORIGINAL ORIGINAL MV: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/X1wJl5WZ2Nw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/X1wJl5WZ2Nw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/X1wJl5WZ2Nw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "abi",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-18T11:17:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "t0LfP3-TpvFyn7Cj6w3Vjvzb_Ws",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "T2oJaFc668Y"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-08T21:53:37Z",
+        "channelId": "UC81vBt21ZxW-Vy69_SjRhWw",
+        "title": "switchblade is so amazing thankgod its getting a mv #aespa #fyp #winyomis #tydollaign #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/T2oJaFc668Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/T2oJaFc668Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/T2oJaFc668Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "winyomis",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-08T21:53:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "y-iEz4eerDBNo17Hyx0SPXIJvjs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VA9yyIo58Ew"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-08T11:20:00Z",
+        "channelId": "UCYkGP-wbbbD-ET2Z1Lyfi2w",
+        "title": "[4K/60FPS] aespa 에스파 &#39;Spicy&#39; MV",
+        "description": "Please support the artist by watching the original MVs as well :) Original Video: https://www.youtube.com/watch?v=Os_heh8vPfs ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VA9yyIo58Ew/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VA9yyIo58Ew/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VA9yyIo58Ew/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Flashu",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-08T11:20:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "q3rDmJYZ6710OFmzLI3awziydJ8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Nh7xsUtEDvA"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-04T10:42:17Z",
+        "channelId": "UCA4uFOkeJPkpFV6EsncZzeA",
+        "title": "aespa 人気曲 MVメドレー【高音質】最新 #playlist",
+        "description": "aespaの人気曲MVのメドレーを作ってみました。 今後は他グループのも作っていく予定です。 チャンネル登録、高評価、 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Nh7xsUtEDvA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Nh7xsUtEDvA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Nh7xsUtEDvA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-POP  WORLD🔥  ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-04T10:42:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ffGiBSzSSA1Tx8qSivxk0cC8VyU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fU2UCSbtVFc"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-22T10:47:34Z",
+        "channelId": "UCvwsbjsBLQIJRJvmUClWMcQ",
+        "title": "aespa Whiplash MV but it&#39;s only KARINA lines",
+        "description": "aespa Karina lines in 'Whiplash' #aespa #karina #whiplash #newsong #newalbum #newrealese #my #mv #aespa #에스파 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fU2UCSbtVFc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fU2UCSbtVFc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fU2UCSbtVFc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "swoosh",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-22T10:47:34Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "z5B5nPKljrccCSzvVvOlitGCFeg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4WadHOrwa7M"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-14T11:05:45Z",
+        "channelId": "UCEiT8JftnVGMZJKUIucRZTg",
+        "title": "aespa 에스파 &#39;WDA (Whole Different Animal) (members version)&#39; MV",
+        "description": "Fanmade aespa's pre-release single \"WDA (Whole Different Animal) (Feat. G-DRAGON)\" is out! aespa 에스파 The 2nd Album ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4WadHOrwa7M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4WadHOrwa7M/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4WadHOrwa7M/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Stinky Stinky",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-14T11:05:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "IvGRUaIHnE6dlGbHz_LQ0eSrFk8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JgTbRotFjgw"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-10T06:27:19Z",
+        "channelId": "UCi_HP0i4IQZErgI0HL8ekDw",
+        "title": "Những MV kpop được quay ở ngoài Hàn Quốc #kpop #aespa #njz #enhypen #straykids #jennie #babymonster",
+        "description": "idea_@emmcitaz     intro_tylee.2k #buachongflop.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JgTbRotFjgw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JgTbRotFjgw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JgTbRotFjgw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Ninn",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-10T06:27:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Dc67Ln_AOtCG9rndsvTGfJWRmaw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EpceyqteRw8"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-11T11:00:06Z",
+        "channelId": "UCIqKBGHDq79t_R2XiEMfOJQ",
+        "title": "K-pop 4th Gen Girl Group MVs | (G)I-DLE, aespa , LE SSERAFIM, NewJeans, XG, IVE + MORE | Tyna Nguyễn",
+        "description": "Timestamps •♬•♫•. 00:00 CRAZY - LE SSERAFIM 02:46 SOMETHING AIN'T RIGHT - XG 05:56 별별별 (See that?) - NMIXX 09:03 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tyna Nguyễn",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-11T11:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "T5bq9Ju5vf0-4O1zfKTGYRTG_Io",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WxWXIUjyDoc"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-13T14:20:03Z",
+        "channelId": "UCRToJURWwJR6ERhJzxJmIFQ",
+        "title": "Aespa - &#39;Supernova&#39; But only Giselle",
+        "description": "aespa #aespasupernova #giselle #aespagiselle #kpop #comeback #supernova #mv Aespa giselle supernova lines /parts.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WxWXIUjyDoc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WxWXIUjyDoc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WxWXIUjyDoc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "StaySumin",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-13T14:20:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_DftTsO1m7f47vhSzrwlOrT2AXo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zfwmtnUla4U"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-15T02:59:47Z",
+        "channelId": "UCel5r4w0NtBwMwDnrBFOCYg",
+        "title": "aespa - &quot;Bite” MV",
+        "description": "Provided to YouTube by SM Entertainment Bite · aespa LEMONADE - The 2nd Album ℗ 2026 SM Entertainment Released on: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zfwmtnUla4U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zfwmtnUla4U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zfwmtnUla4U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Bitgkpop ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-15T02:59:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "eIX8rifQPTOOTnQvvh2sPOWCZ7Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "MtIVv53dj6I"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-29T09:00:11Z",
+        "channelId": "UC2zjne2yjqx1fZ19ixdsN5A",
+        "title": "世界に衝撃を与えたMVシーンがこちら #aespa",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MtIVv53dj6I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MtIVv53dj6I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MtIVv53dj6I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-POP情報局",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-29T09:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "74emyuSNyOPdyY48K-joDkP3_yA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VIv1276zTec"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-02T10:42:01Z",
+        "channelId": "UCyGoP00Ak7JjKUPCqbbZCOg",
+        "title": "aespa 에스파 &#39;SHAKIN&#39; MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VIv1276zTec/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VIv1276zTec/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VIv1276zTec/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Xari",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-02T10:42:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "fdeJiw4NVpezS6G87dNxPc4ioMA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "44AWsaSZKHA"
+      },
+      "snippet": {
+        "publishedAt": "2023-11-10T08:27:18Z",
+        "channelId": "UCBURM68cM3h_PEtwKxNaqfg",
+        "title": "【4K雙語字幕】aespa - Drama  (中字MV)",
+        "description": "aespa 에스파 _自製中字版 請勿二改二傳！！！！ 微博：JaxPOP ①如果你喜歡這部影片，不要忘記按喜歡 ☆if you like this video ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/44AWsaSZKHA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/44AWsaSZKHA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/44AWsaSZKHA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Jaxirius",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-11-10T08:27:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "i4xCzgPL_dt9DLMXTmQ8AbzYCs8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "l0MD2i_MrII"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-29T23:58:09Z",
+        "channelId": "UC92EGtl9Cs9mIF56LTZSM1Q",
+        "title": "aespa 에스파 &#39;Camouflage&#39; MV ",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/l0MD2i_MrII/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/l0MD2i_MrII/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/l0MD2i_MrII/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Miss Vlue",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-29T23:58:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iUBikakNOB895lneGpqu49x05zM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lNCJsVxsPOg"
+      },
+      "snippet": {
+        "publishedAt": "2024-06-11T05:21:33Z",
+        "channelId": "UCzCxJQoAqGwarxcinVbDk6w",
+        "title": "[Original MV]aespa 에스파 &#39;Supernova&#39;  short version",
+        "description": "aespa's 1st album \"Armageddon\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/Armageddon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lNCJsVxsPOg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lNCJsVxsPOg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lNCJsVxsPOg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "たけそーチャンネル",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-06-11T05:21:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XQNI2sCy7GNz6OEwksOI9DgP_Pc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bl2DRhaUquw"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-17T04:27:37Z",
+        "channelId": "UCel5r4w0NtBwMwDnrBFOCYg",
+        "title": "aespa - “Roll” MV",
+        "description": "aespa#lemonade#roll Provided to YouTube by SM Entertainment Roll · aespa LEMONADE - The 2nd Album (WINTER Special ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bl2DRhaUquw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bl2DRhaUquw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bl2DRhaUquw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Bitgkpop ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-17T04:27:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5R26pX2TojmB73hW6CGyS4sK-Xk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nVwjMHcUi50"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-05T09:10:37Z",
+        "channelId": "UCLTpztN7QhSeF_TTFZPAYGQ",
+        "title": "aespa 에스파 &#39;Rich Man&#39; Instrumental MV",
+        "description": "aespa #에스파 #RichMan aespa's 6th mini album \"Rich Man\" is out! aespa 에스파 'Rich Man' Instrumental MV This is not official ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nVwjMHcUi50/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nVwjMHcUi50/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nVwjMHcUi50/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "EYP Entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-05T09:10:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "V4QaV2Rx5ubDtQOv4nwrrXMbdjg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ry8Mu9C7xj4"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-11T09:17:14Z",
+        "channelId": "UChG6_x24JOBku9Q_lqUunmw",
+        "title": "aespa 에스파 &#39;Drift&#39; MV ",
+        "description": "A unofficial music video for aespa's 'Drift' Drift comes from 'Rich Man - The 7th Mini Album' Rich Man - tracklist Rich Man Drift ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ry8Mu9C7xj4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ry8Mu9C7xj4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ry8Mu9C7xj4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JustGnarly",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-11T09:17:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WtxW1-G0oVdAQxu4aO9AegA4JtA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "HxdO4P__Np0"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-03T12:15:23Z",
+        "channelId": "UCJX6h6LpJ7sMMZxnK_-mqTg",
+        "title": "aespa 에스파 &#39;We Go&#39; MV",
+        "description": "aespa #에스파 #aespasm #sm #sm_entertainment #aespawego #karina #giselle #winter #ningning this music video is fanmade ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HxdO4P__Np0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HxdO4P__Np0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HxdO4P__Np0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa Official",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-03T12:15:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_njjOLPzgAtSRH05JOCVZrLe0ls",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "cuUaZZhatKY"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-08T12:35:03Z",
+        "channelId": "UCkLgrZibu0mZdR3N2jTk2GQ",
+        "title": "kpop behind the scenes vs mv || #babymonster #straykids #enhypen #aespa #illit #fyp  #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cuUaZZhatKY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cuUaZZhatKY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cuUaZZhatKY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Chaekie",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-08T12:35:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5fEvI7pNyCgGDbQlM_zhVcTgFK4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Js9qYBZCEvk"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-15T06:06:27Z",
+        "channelId": "UCjRj5eU01KDhpbq0IJycsuA",
+        "title": "Supernova monster👹 in illit mv 💀? #kpop #supernova #seventeen #illit #aespa #ticktock",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Js9qYBZCEvk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Js9qYBZCEvk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Js9qYBZCEvk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Stvrlight ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-15T06:06:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-WF5Ub8smF6nSMwtyLEBZ2rEGkg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "GZNBLIhqJS4"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-21T18:20:16Z",
+        "channelId": "UC7OYCrKJKoLunbDq7_VLy3g",
+        "title": "aespa - WHIPLASH - LINE DISTRIBUTION | Who Sings the Most? 🎤",
+        "description": "Curious about the line distribution in aespa's latest track, \"WHIPLASH\"? Watch as we reveal who gets the most lines and how the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GZNBLIhqJS4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GZNBLIhqJS4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GZNBLIhqJS4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-STAT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-21T18:20:16Z"
+      }
+    }
+  ]
+}

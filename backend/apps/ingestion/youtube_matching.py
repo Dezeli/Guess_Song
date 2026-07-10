@@ -3,6 +3,7 @@ import re
 import unicodedata
 from dataclasses import dataclass
 from datetime import datetime
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -17,8 +18,17 @@ USER_AGENT = "GuessSongYouTubeMatcher/0.1"
 AUTO_APPROVE_THRESHOLD = 90
 REVIEW_THRESHOLD = 50
 ARTIST_DISCOVERY_SCORE_THRESHOLD = 70
-ARTIST_DISCOVERY_PAGE_SIZE = 25
+ARTIST_DISCOVERY_PAGE_SIZE = 20
 ARTIST_DISCOVERY_CONTINUE_MIN_MATCHES = 13
+
+QUOTA_ERROR_REASONS = {
+    "dailyLimitExceeded",
+    "quotaExceeded",
+    "userRateLimitExceeded",
+}
+
+_current_api_key_index = 0
+_exhausted_api_key_indexes: set[int] = set()
 
 EXCLUDED_TERMS = [
     "cover",
@@ -129,6 +139,10 @@ class VideoSearchPage:
     total_results: int | None = None
 
 
+class YouTubeQuotaExhausted(RuntimeError):
+    """Raised when every configured YouTube API key has hit quota."""
+
+
 def find_youtube_match(title: str, artist: str, max_results: int = 8) -> MatchDecision:
     videos = search_videos(title=title, artist=artist, max_results=max_results)
     if not videos:
@@ -167,9 +181,7 @@ def find_youtube_match(title: str, artist: str, max_results: int = 8) -> MatchDe
 
 
 def search_videos(title: str, artist: str, max_results: int = 8) -> list[VideoCandidate]:
-    api_key = settings.YOUTUBE_API_KEY
-    if not api_key:
-        raise RuntimeError("YOUTUBE_API_KEY is not configured.")
+    _require_youtube_api_keys()
 
     query = f"{artist} {title} official"
     search_payload = _youtube_get(
@@ -180,7 +192,6 @@ def search_videos(title: str, artist: str, max_results: int = 8) -> list[VideoCa
             "q": query,
             "maxResults": max_results,
             "videoEmbeddable": "true",
-            "key": api_key,
         },
     )
     video_ids = [
@@ -196,9 +207,7 @@ def search_artist_mv_videos(
     max_results: int = ARTIST_DISCOVERY_PAGE_SIZE,
     page_token: str | None = None,
 ) -> VideoSearchPage:
-    api_key = settings.YOUTUBE_API_KEY
-    if not api_key:
-        raise RuntimeError("YOUTUBE_API_KEY is not configured.")
+    _require_youtube_api_keys()
 
     params = {
         "part": "snippet",
@@ -206,7 +215,6 @@ def search_artist_mv_videos(
         "q": build_artist_mv_query(artist),
         "maxResults": max_results,
         "videoEmbeddable": "true",
-        "key": api_key,
     }
     if page_token:
         params["pageToken"] = page_token
@@ -267,7 +275,6 @@ def _fetch_video_details(video_ids: list[str]) -> tuple[VideoCandidate, ...]:
         {
             "part": "snippet,contentDetails,statistics,status",
             "id": ",".join(video_ids),
-            "key": settings.YOUTUBE_API_KEY,
         },
     )
 
@@ -407,6 +414,35 @@ def _score_video(video: VideoCandidate, title: str, artist: str) -> MatchDecisio
 
 
 def _youtube_get(path: str, params: dict) -> dict:
+    global _current_api_key_index
+
+    api_keys = _configured_api_keys()
+    if not api_keys:
+        raise RuntimeError("No YouTube API key is configured.")
+
+    quota_errors = []
+    for key_index, key in _iter_available_api_keys(api_keys):
+        request_params = {**params, "key": key}
+        try:
+            payload = _youtube_get_with_key(path, request_params)
+            _current_api_key_index = key_index
+            return payload
+        except HTTPError as exc:
+            error_payload = _http_error_payload(exc)
+            if _is_quota_error(exc, error_payload):
+                _exhausted_api_key_indexes.add(key_index)
+                quota_errors.append(_youtube_error_reason(error_payload) or f"HTTP {exc.code}")
+                continue
+            reason = _youtube_error_reason(error_payload)
+            raise RuntimeError(
+                f"YouTube API request failed: HTTP {exc.code} {reason or exc.reason}"
+            ) from exc
+
+    detail = ", ".join(quota_errors) or "quota exhausted"
+    raise YouTubeQuotaExhausted(f"All configured YouTube API keys are exhausted: {detail}")
+
+
+def _youtube_get_with_key(path: str, params: dict) -> dict:
     url = f"{YOUTUBE_API_BASE}{path}?{urlencode(params)}"
     request = Request(
         url,
@@ -417,6 +453,68 @@ def _youtube_get(path: str, params: dict) -> dict:
     )
     with urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def _require_youtube_api_keys() -> None:
+    if not _configured_api_keys():
+        raise RuntimeError("YOUTUBE_API_KEY1 or YOUTUBE_API_KEY2 is not configured.")
+
+
+def _configured_api_keys() -> list[str]:
+    keys = list(getattr(settings, "YOUTUBE_API_KEYS", []))
+    legacy_key = getattr(settings, "YOUTUBE_API_KEY", "")
+    if legacy_key:
+        keys.append(legacy_key)
+
+    result = []
+    seen = set()
+    for key in keys:
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        result.append(key)
+    return result
+
+
+def _iter_available_api_keys(api_keys: list[str]):
+    key_count = len(api_keys)
+    for offset in range(key_count):
+        key_index = (_current_api_key_index + offset) % key_count
+        if key_index in _exhausted_api_key_indexes:
+            continue
+        yield key_index, api_keys[key_index]
+
+
+def _http_error_payload(exc: HTTPError) -> dict:
+    try:
+        raw_body = exc.read().decode("utf-8")
+    except Exception:
+        return {}
+    try:
+        return json.loads(raw_body)
+    except json.JSONDecodeError:
+        return {}
+
+
+def _is_quota_error(exc: HTTPError, payload: dict) -> bool:
+    if exc.code not in {403, 429}:
+        return False
+    reason = _youtube_error_reason(payload)
+    if reason in QUOTA_ERROR_REASONS:
+        return True
+    message = _youtube_error_message(payload).casefold()
+    return "quota" in message or "daily limit" in message
+
+
+def _youtube_error_reason(payload: dict) -> str:
+    errors = payload.get("error", {}).get("errors", [])
+    if errors:
+        return errors[0].get("reason", "")
+    return payload.get("error", {}).get("status", "")
+
+
+def _youtube_error_message(payload: dict) -> str:
+    return payload.get("error", {}).get("message", "")
 
 
 def _normalize(value: str) -> str:

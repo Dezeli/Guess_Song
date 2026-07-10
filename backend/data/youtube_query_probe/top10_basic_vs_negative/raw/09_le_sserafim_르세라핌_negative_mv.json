@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "U4MR9EUpTZubd6_eL2cW_Ygu3K0",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 145857,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Jzs168C1R2kZY_2NS0Zmp9JVYWA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Vo5UaqMlONc"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-25T20:51:59Z",
+        "channelId": "UChCfF6gKAa7qStBWSLA_j4Q",
+        "title": "le sserafim (르세라핌) &quot;spaghetti (feat. j-hope of BTS)&quot; mv with names",
+        "description": "THIS SONG IS NOT MINE. PLEASE SUPPORT THE ORIGINAL ORIGINAL VIDEO: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Vo5UaqMlONc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Vo5UaqMlONc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Vo5UaqMlONc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "abi",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-25T20:51:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "i1usTlgNSQaobBp8NNAIBPOBYyA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KvMbib5RAAs"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-10T11:38:43Z",
+        "channelId": "UCZNoyiLcpkQI833fv8dEl8g",
+        "title": "Simbol satanic ada di MV LE SSERAFIM??? #hybe #easy #lesserafim #bts #satanic #detektifastral",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KvMbib5RAAs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KvMbib5RAAs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KvMbib5RAAs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Detektif Astral",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-10T11:38:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "x5jbmrfDRdZR5teBBLpBBWUQ2O8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "qN5HOsTEJGg"
+      },
+      "snippet": {
+        "publishedAt": "2024-09-04T16:00:59Z",
+        "channelId": "UCkmuFzVGl8NMKFt7HOVil_A",
+        "title": "Every LE SSERAFIM MV, but it&#39;s only the song title",
+        "description": "If you're looking for a perfectly accurate version of this video this is not it. For the songs that don't say the title I've gone with either ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/qN5HOsTEJGg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/qN5HOsTEJGg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/qN5HOsTEJGg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-PopElle",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-09-04T16:00:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3MhpWDlS6pju1uxcXovohW5PrQc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mccjishJlE0"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-23T18:29:11Z",
+        "channelId": "UCiXosvlgoCoH5VLgwo9ju8w",
+        "title": "【最新】LE SSERAFIM(르세라핌)MVメドレー",
+        "description": "LE SSERAFIMのMVメドレーを作りました。 先日、さいたまスーパーアリーナにルセラ初ライブ行ってきたのですが、まさに圧巻 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mccjishJlE0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mccjishJlE0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mccjishJlE0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "きむすけ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-23T18:29:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_nGrqmmPVtWF0nSpqqGCJ7ls2K0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "2EclidLXTfE"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-24T15:00:04Z",
+        "channelId": "UCm-XztALJgIVERpVrD4_Kkg",
+        "title": "르세라핌 LE SSERAFIM &#39;Smart&#39; MV #4K 60F [2024.03.05]",
+        "description": "오리지널 비디오도 시청하여 아티스트를 응원해 주세요. 저작권 소유자 오리지널 비디오 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2EclidLXTfE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2EclidLXTfE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2EclidLXTfE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "화질개선",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-24T15:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "mj1yWegCqfZoMtxa98qATBW_wtE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "39Tm39_LiL0"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-24T14:24:47Z",
+        "channelId": "UCLTpztN7QhSeF_TTFZPAYGQ",
+        "title": "LE SSERAFIM (르세라핌) &#39;SPAGHETTI&#39; (feat. j-hop of BTS) OFFICIAL INSTRUMENTAL MV",
+        "description": "LE_SSERAFIM​ #르세라핌​ #EAT_IT_UP_SPAGHETTI​ LE SSERAFIM (르세라핌) 'SPAGHETTI' (feat. j-hop of BTS) OFFICIAL ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/39Tm39_LiL0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/39Tm39_LiL0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/39Tm39_LiL0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "EYP Entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-24T14:24:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5Hew9M109bGhHAnXh3-UcyNdufs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "spkPB_HW2dI"
+      },
+      "snippet": {
+        "publishedAt": "2024-03-07T12:00:47Z",
+        "channelId": "UCbcjOy1kPlF9ImUU3qW54hQ",
+        "title": "ranking LE SSERAFIM SMART MV outfits by price #lesserafim #kpop #outfit #trending #smart",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/spkPB_HW2dI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/spkPB_HW2dI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/spkPB_HW2dI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-pop Gene",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-03-07T12:00:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1K5F9sSMhG9Xr_uIzwQPpezM1TA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Xm6wBEkb6dY"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-20T10:37:00Z",
+        "channelId": "UC2i_4vjGibBN0cPe7v5oQpg",
+        "title": "【K-POP】LESSERAFIM(르세라핌) MV K-popメドレー",
+        "description": "lesserafim #kpop #music #video #르세라핌 【K-POP】LE SSERAFIM PLAYLIST メドレー   ようこそ！LE SSERAFIMのヒット ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Xm6wBEkb6dY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Xm6wBEkb6dY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Xm6wBEkb6dY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "【서주 한잔】ソジュハンザン",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-20T10:37:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Lg4iorYHt129o_LkV7scZSyM5M8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xqCvvJVe2Hg"
+      },
+      "snippet": {
+        "publishedAt": "2026-04-26T08:15:07Z",
+        "channelId": "UCgAMMwCevNzTZYrnYqN5v8w",
+        "title": "[MV] LE SSERAFIM - CELEBRATION（日本語字幕）",
+        "description": "韓国公開 2026.04.25 #LESSERAFIM #ルセラフィム #르세라핌 #CELEBRATION 和訳歌詞は、機械翻訳です。",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xqCvvJVe2Hg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xqCvvJVe2Hg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xqCvvJVe2Hg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ONCE 0724B",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-04-26T08:15:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GB0_1l-XMz8T9H7S6om9ZKuEFIc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "T7vX5sbXdBE"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-12T14:00:44Z",
+        "channelId": "UC9lN238_f3yjYSPipQX64_w",
+        "title": "Vejam o meu novo recat a LE SSERAFIM! #mv #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/T7vX5sbXdBE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/T7vX5sbXdBE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/T7vX5sbXdBE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Fʀᴀɴᴢ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-12T14:00:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BJVY7cg7OTU4KC0jcPLdQh6pL-M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tQgs6kGEtp8"
+      },
+      "snippet": {
+        "publishedAt": "2024-03-15T02:01:00Z",
+        "channelId": "UChyzKUf5pt3dfTS79Z19LLw",
+        "title": "every LE SSERAFIM mv but only the member with the LEAST lines",
+        "description": "yunjin nowhere to be found #lesserafim #sakura #chaewon #yunjin #kazuha #eunchae.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tQgs6kGEtp8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tQgs6kGEtp8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tQgs6kGEtp8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "erinr",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-03-15T02:01:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "R7KNwp_kuUAio5wX3UcJ6xKgUEg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "B9JXY_ZCr6Y"
+      },
+      "snippet": {
+        "publishedAt": "2024-09-08T09:59:59Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "[BEHIND THE SCENE] LE SSERAFIM (르세라핌) 4th Mini Album ‘CRAZY’ MV Shoot Sketch",
+        "description": "LE_SSERAFIM #르세라핌 공식 채널 #LE_SSERAFIM #르세라핌 OFFICIAL CHANNEL Connect with LE SSERAFIM: OFFICIAL ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/B9JXY_ZCr6Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/B9JXY_ZCr6Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/B9JXY_ZCr6Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-09-08T09:59:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wii4BYqR46YEp0YNd1DAYpeyFcI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fbfTGFxmj6g"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-24T12:26:08Z",
+        "channelId": "UC3EzFj65mlhSWGbB2khhfYA",
+        "title": "LE SSERAFIM (르세라핌) &#39;SPAGHETTI&#39; MV",
+        "description": "LE SSERAFIM (르세라핌) 'SPAGHETTI' MV (Member ver.) LE SSERAFIM 1st Single Album 'SPAGHETTI' is out! STREAM ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fbfTGFxmj6g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fbfTGFxmj6g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fbfTGFxmj6g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "zoneline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-24T12:26:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7xkomum45a9oBkioOTtgSpnW4vI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8yZwBnSrwqo"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-20T02:00:19Z",
+        "channelId": "UCA0mPc2lIDNCwdFKTURAY6Q",
+        "title": "If I were in LE SSERAFIM&#39;s EASY MV👀 #lesserafim #lesserafimeasy #makeitlookeasy #kpop #kpopidol",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8yZwBnSrwqo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8yZwBnSrwqo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8yZwBnSrwqo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Claudia Lau",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-20T02:00:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "s3VgUGePCrNP17HLdUId1nUnEJA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bJoEs1vn4jM"
+      },
+      "snippet": {
+        "publishedAt": "2024-06-02T12:44:59Z",
+        "channelId": "UCTzbyx4k9xj8i-SCyayoNgA",
+        "title": "#kpop #dance #mv #music #makeitlookeasy #le_sserafim #le_sserafim_easy",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bJoEs1vn4jM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bJoEs1vn4jM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bJoEs1vn4jM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Max Taiga",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-06-02T12:44:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wT6iVbB4W6V-CYZUWDSsZK5m2ZI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "duxpjSNyigM"
+      },
+      "snippet": {
+        "publishedAt": "2026-04-24T09:19:59Z",
+        "channelId": "UCm-XztALJgIVERpVrD4_Kkg",
+        "title": "르세라핌 LE SSERAFIM &#39;CELEBRATION (새로운 챕터로의 도약)&#39; MV #4K 60F [2022.10.16]",
+        "description": "오리지널 비디오도 시청하여 아티스트를 응원해 주세요. 저작권 소유자 오리지널 비디오 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/duxpjSNyigM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/duxpjSNyigM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/duxpjSNyigM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "화질개선",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-04-24T09:19:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3MIGl-_DGnc05TvzVeLky2G7k7c",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Hyvr2GMoxaQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-15T23:49:40Z",
+        "channelId": "UC2-BqV-MrfMx2LCidgY6Fpg",
+        "title": "LE SSERAFIM (르세라핌) ‘Ash’ OFFICIAL M/V",
+        "description": "LE SSERAFIM (르세라핌) 'Ash' OFFICIAL M/V That's only a fanmade M/V don't take it serious Please support me, I make FMV to ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hyvr2GMoxaQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hyvr2GMoxaQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hyvr2GMoxaQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LESSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-15T23:49:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "V9q8Z1lhlPSxR4ezxJYhj6P6g44",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9sbYEbNx0Xo"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T09:00:11Z",
+        "channelId": "UCIHxHWmFTvidBmiqrUS6MtQ",
+        "title": "LE SSERAFIM (르세라핌) &#39;CRAZY -Japanese ver.-&#39; Official MV",
+        "description": "LE SSERAFIM (르세라핌) 'CRAZY -Japanese ver.-' Official MV Visual Creative Coordinating : Yujoo Kim Style Directing : Yoon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9sbYEbNx0Xo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9sbYEbNx0Xo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9sbYEbNx0Xo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "CONNECT RECORDS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T09:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "frp7Yd0wDPAkSYkj8jsvEI7O34o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wL05tUHbMnk"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-19T14:24:17Z",
+        "channelId": "UCnATv309WzMjrGem8wUd5sg",
+        "title": "LE SSERAFIM (르세라핌) &#39;Saki’ OFFICIAL MV",
+        "description": "Not reel ! #kpop #twice #exploreاكسبلور #lessarafim #blackpink #اكسبلور #lesserafimyunjin #kpopgroups #newjeans ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wL05tUHbMnk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wL05tUHbMnk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wL05tUHbMnk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "☆𝐉𝐀𝐊𝐄☆",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-19T14:24:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-QBNX4YdZfinKad1DHBKNW0t9ZI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aFSozCVSU0g"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-14T22:21:01Z",
+        "channelId": "UChCfF6gKAa7qStBWSLA_j4Q",
+        "title": "le sserafim (르세라핌) &quot;different&quot; mv with names",
+        "description": "THIS SONG IS NOT MINE. PLEASE SUPPORT THE ORIGINAL ORIGINAL VIDEO: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aFSozCVSU0g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aFSozCVSU0g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aFSozCVSU0g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "abi",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-14T22:21:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Dc67Ln_AOtCG9rndsvTGfJWRmaw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EpceyqteRw8"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-11T11:00:06Z",
+        "channelId": "UCIqKBGHDq79t_R2XiEMfOJQ",
+        "title": "K-pop 4th Gen Girl Group MVs | (G)I-DLE, aespa , LE SSERAFIM, NewJeans, XG, IVE + MORE | Tyna Nguyễn",
+        "description": "Timestamps •♬•♫•. 00:00 CRAZY - LE SSERAFIM 02:46 SOMETHING AIN'T RIGHT - XG 05:56 별별별 (See that?) - NMIXX 09:03 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EpceyqteRw8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tyna Nguyễn",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-11T11:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a-6xSZnziREgFSAKKSTqx1qoLIM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-p0xE8Y-Rco"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-25T21:25:14Z",
+        "channelId": "UCkOkOLPm9qdOjxvzU05kyqg",
+        "title": "LE SSERAFIM (르세라핌) &#39;SPAGHETTI feat. j-hope of BTS MV vs Hearts2Hearts &#39;FOCUS&#39; MV #keşfetol #bts 💜",
+        "description": "kpop #lesserafim #hearts2hearts #spaghetti #jhope #bts #h2h #btsjhope #hope #focus #2025 #keşfetol #kpopshorts #kpopsongs ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-p0xE8Y-Rco/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-p0xE8Y-Rco/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-p0xE8Y-Rco/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "mesepeci alis",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-25T21:25:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "24k5mvldkVfZbLyf46zSj02Ru0U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fxvPQE5larU"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-26T12:22:00Z",
+        "channelId": "UClZZ_mJFLKhzu_yhpWjln0g",
+        "title": "LE SSERAFIM (르세라핌￼) ‘GOOD BONES’ OFFICIAL MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fxvPQE5larU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fxvPQE5larU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fxvPQE5larU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NJZ_FAN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-26T12:22:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hOb70lurQ0E2fS5Iv0h0kuOJrg4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3bIDiJQk0Wo"
+      },
+      "snippet": {
+        "publishedAt": "2022-05-08T08:25:17Z",
+        "channelId": "UCxpKXyZz9JnhvgJTVn4DgyA",
+        "title": "Lesserafim Garam in Enhypen - Drank Dazed MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3bIDiJQk0Wo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3bIDiJQk0Wo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3bIDiJQk0Wo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Kim Ahyeon",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-05-08T08:25:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nt6by1Zkm0D8LqZDVqZxsvERFzY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Gso7tYUuiHg"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-10T18:15:21Z",
+        "channelId": "UCsdeA7_XoqKob7DVdt3r9Ew",
+        "title": "Detalhes do MV Katseye, Illit e Le Sserafim",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Gso7tYUuiHg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Gso7tYUuiHg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Gso7tYUuiHg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tio Hoseok",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-10T18:15:21Z"
+      }
+    }
+  ]
+}

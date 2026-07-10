@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "GpRKjT0i_vU9R2mjVgoEj4xCehc",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qXDdfxXaNPJRr0K73u9Coy-sgfg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FFjDEkZg-54"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-06T09:00:01Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "i-dle (아이들) &#39;Gimme Dat Love&#39; Official Music Video",
+        "description": "i-dle (아이들) 'Gimme Dat Love' Official Music Video [  ] [We made] https://i-dle.lnk.to/Wemade Composed by Abraham Olaleye ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FFjDEkZg-54/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FFjDEkZg-54/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FFjDEkZg-54/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-06T09:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "tqtvNybQnpJ_C7G_pZ7QxdiPJIw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KAymeaEyPr8"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-15T15:00:20Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Revenge&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Revenge' Official Music Video [  ] [2] ▫Melon https://kko.to/REQ2P8KSY3 ▫https://ingrv.es/Two ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KAymeaEyPr8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KAymeaEyPr8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KAymeaEyPr8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-15T15:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "2bjuSXv8jrQr33FtmznfQq4uVRE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bUMLC9lCgHo"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-14T13:00:02Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "i-dle (아이들) &#39;Crow&#39; Official Music Video",
+        "description": "i-dle (아이들) 'Crow' Official Music Video [  ] [Crow] https://i-dle.lnk.to/Crow Composed by Mortal, Jumal of SMGS Lyrics by 소연 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bUMLC9lCgHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bUMLC9lCgHo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bUMLC9lCgHo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-14T13:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dhGNPmDhaHl0CL2A_XSzdvA7tKw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9mQk7Evt6Vs"
+      },
+      "snippet": {
+        "publishedAt": "2018-05-02T09:00:02Z",
+        "channelId": "UCweOkPb1wVVH0Q0Tlj4a5Pw",
+        "title": "[MV] (G)I-DLE ((여자)아이들) _ LATATA",
+        "description": "[MV] (G)I-DLE ((여자)아이들) _ LATATA *English subtitles are now available. :D (Please click on 'CC' button or activate 'Interactive ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9mQk7Evt6Vs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9mQk7Evt6Vs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9mQk7Evt6Vs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "1theK (원더케이)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-05-02T09:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "jGBR6NninNPoNXz_y0Ff7QUUSOs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "p4fGeXcJTsU"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-03T10:01:33Z",
+        "channelId": "UCfb-Ly0RXaUGxglFJmPji1g",
+        "title": "i-dle &#39; Invincible &#39; Animation M/V",
+        "description": "i-dle ' Invincible ' Animation M/V [Invincible] TV Animation『BEYBLADE X』Opening Theme 2025.10.24(JST) OA ＃101- ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/p4fGeXcJTsU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/p4fGeXcJTsU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/p4fGeXcJTsU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Warner Music Japan",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-03T10:01:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "O_5yYfsUeXicP5lfEPP0iAdfDz4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fCO7f0SmrDc"
+      },
+      "snippet": {
+        "publishedAt": "2022-10-17T09:04:23Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Nxde&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Nxde' Official Music Video Composed by 소연, Pop Time, Kako Lyrics by 소연 Arranged by Pop Time, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fCO7f0SmrDc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fCO7f0SmrDc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fCO7f0SmrDc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-10-17T09:04:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GIc1nXcbGJA35wuvWnSxDalW46U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hAONx6nuEgI"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-19T09:00:02Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "i-dle (아이들) &#39;Good Thing&#39; Official Music Video",
+        "description": "i-dle (아이들) 'Good Thing' Official Music Video [  ] [We_are] https://i-dle.lnk.to/We_are Composed by 소연, Pop Time, Daily, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hAONx6nuEgI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hAONx6nuEgI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hAONx6nuEgI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-19T09:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vvcJHWpA5jKnYjSaXTrrQimA1y8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OKNXn2qCEws"
+      },
+      "snippet": {
+        "publishedAt": "2018-08-14T09:00:03Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;한(一)(HANN(Alone))&#39; Official Music Video",
+        "description": "[Digital Single] (여자)아이들 - 한(一)(HANN((Alone) - Apple Music: https://apple.co/2vP28RP - Spotify: https://spoti.fi/2PdpNDC ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OKNXn2qCEws/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OKNXn2qCEws/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OKNXn2qCEws/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-08-14T09:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0VxfEIHpLQlT7oW35GUqs_gAQ9E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "rTKqSmX9XhQ"
+      },
+      "snippet": {
+        "publishedAt": "2024-07-08T09:00:07Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;클락션 (Klaxon)&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - '클락션 (Klaxon)' Official Music Video [  ] [I SWAY] ▫Melon https://kko.to/Rio1soyW1h ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rTKqSmX9XhQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rTKqSmX9XhQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rTKqSmX9XhQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-07-08T09:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zmL1Wgeoen_ATxEpAUMnDAr8b_s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aKPbqYkOGao"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-16T12:24:26Z",
+        "channelId": "UCFvkiR73kIrY48I9wDaEDgQ",
+        "title": "(여자)아이들((G)i-dle) - &#39;Revenge&#39; Official Music Video",
+        "description": "https://youtu.be/KAymeaEyPr8?si=D-wbAJlaSBh4wBnr 원본영상.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aKPbqYkOGao/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aKPbqYkOGao/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aKPbqYkOGao/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Baeyo",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-16T12:24:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "i1LBg3PmQhCLKXhckKLl6RCH-uU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6f3RzjXPQwA"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-29T09:00:06Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Super Lady&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Super Lady' Official Music Video [  ] [2] ▫Melon https://kko.to/REQ2P8KSY3 ▫https://ingrv.es/Two ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6f3RzjXPQwA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6f3RzjXPQwA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6f3RzjXPQwA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-29T09:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QQmTB137x-pJZZHH2crru1wND4c",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pCh3Kp6qxo8"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-14T00:00:10Z",
+        "channelId": "UCZW5lIUz93q_aZIkJPAC0IQ",
+        "title": "(G)I-DLE - I DO (Official Music Video)",
+        "description": "(G)I-DLE “I DO” OUT NOW - https://88rising.lnk.to/I-DO PRE-ORDER 'HEAT' EP, RELEASING GLOBALLY OCTOBER 5 at 5PM ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pCh3Kp6qxo8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pCh3Kp6qxo8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pCh3Kp6qxo8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "88rising",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-14T00:00:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "NIby4-BiseGW0FGhH_Mu2sRuxVI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DcxiggTs_q4"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-03T09:00:06Z",
+        "channelId": "UCFjdMq4oZfTEmOgZMYTFQOw",
+        "title": "i-dle &#39;どうしよっかな (Where Do We Go)&#39; M/V",
+        "description": "i-dle 'どうしよっかな (Where Do We Go)' M/V [  ] JAPAN 1st EP [i-dle] https://i-dlejp.lnk.to/idlejpep ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DcxiggTs_q4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DcxiggTs_q4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DcxiggTs_q4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-03T09:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4hcw6MQ2JGVRNBbFhVTflZjSgn8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7HDeem-JaSY"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-15T09:00:04Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;퀸카 (Queencard)&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - '퀸카 (Queencard)' Official Music Video [  ] [I feel] ▫Melon http://kko.to/VMbOLGvKmy ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7HDeem-JaSY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7HDeem-JaSY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7HDeem-JaSY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-15T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZlgoDtTpKoEI7n-AKj0xaXJJbnc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Jh4QFaPmdss"
+      },
+      "snippet": {
+        "publishedAt": "2022-03-14T09:00:15Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;TOMBOY&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'TOMBOY' Official Music Video Composed by 소연, Pop Time, JENCI Lyrics by 소연 Arranged by Pop ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Jh4QFaPmdss/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Jh4QFaPmdss/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Jh4QFaPmdss/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-03-14T09:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "jf_XY2FWG8YFIYQFcKKI1iMaQ5k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "z3szNvgQxHo"
+      },
+      "snippet": {
+        "publishedAt": "2021-01-11T09:00:14Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;화(火花)(HWAA)&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - '화(火花)(HWAA)' Official Music Video Composed by 소연, Pop Time Lyrics by 소연 Arranged by Pop ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z3szNvgQxHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z3szNvgQxHo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z3szNvgQxHo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-01-11T09:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rfQW6iA_3AAW4RguuC0uzLRn2QA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "I66oFXdf0KU"
+      },
+      "snippet": {
+        "publishedAt": "2019-06-26T09:00:20Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Uh-Oh&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Uh-Oh' ✓ Apple Music: https://apple.co/2XaY4LC ✓ Spotify: https://spoti.fi/2J5Rw72 ✓ Melon: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/I66oFXdf0KU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/I66oFXdf0KU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/I66oFXdf0KU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-06-26T09:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9lSY1gw06h9P_KnN51_nyxsmDkQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "baaNwRAhHBo"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-21T15:00:02Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Wife&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Wife' Official Music Video [  ] [Wife] ▫Melon https://kko.to/gnUSTNgeLO ▫Spotify https://spoti.fi/3HtWkla ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/baaNwRAhHBo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/baaNwRAhHBo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/baaNwRAhHBo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-21T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5ke8gyXK-rJrwEwmErH-8mPKS-k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "om3n2ni8luE"
+      },
+      "snippet": {
+        "publishedAt": "2020-04-06T09:00:01Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Oh my god&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Oh my god' Official Music Video Composed by 소연, 빅싼초(Yummy Tone) Lyrics by 소연 Arranged by 빅 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/om3n2ni8luE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/om3n2ni8luE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/om3n2ni8luE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-04-06T09:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UnU2NMTjih-VomRmmOhC2WJY2HY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6oanIo_2Z4Q"
+      },
+      "snippet": {
+        "publishedAt": "2019-11-03T15:00:00Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;LION&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'LION' Official Music Video ✓ Apple Music: https://apple.co/2BS8Jh8 ✓ Spotify: https://spoti.fi/2Pto6o8 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6oanIo_2Z4Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6oanIo_2Z4Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6oanIo_2Z4Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-11-03T15:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "uvc10s3x8EyqUDyj7-7y_6y4mRw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jaFIykKDWM4"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-05T15:00:01Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "i-dle (아이들) &#39;Gimme Dat Love&#39; M/V Teaser 3",
+        "description": "i-dle (아이들) 'Gimme Dat Love' M/V Teaser 3 i-dle (아이들) 9th Mini Album [We made] Pre-Save https://i-dle.lnk.to/Wemade ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jaFIykKDWM4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jaFIykKDWM4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jaFIykKDWM4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-05T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "uLI93VIN9nNNv2OAB-vtpF3kPLQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "p4RIhcY7V3c"
+      },
+      "snippet": {
+        "publishedAt": "2018-05-02T09:00:04Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;LATATA&#39; Official Music Video",
+        "description": "Apple Music: https://apple.co/2HJXflk Spotify: https://spoti.fi/2KHgPwa Melon: https://bit.ly/2rhaHlp (G)-I-DLE Official YouTube: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/p4RIhcY7V3c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/p4RIhcY7V3c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/p4RIhcY7V3c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-05-02T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-PXFLY8zCpyiTe1UhONij9TagNg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pS_dBL63oAc"
+      },
+      "snippet": {
+        "publishedAt": "2024-07-08T13:00:20Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "제주도 뱃고동 대신 울리는 (여자)아이들 클락션 (Klaxon)",
+        "description": "제주도 뱃고동 대신 울리는 (여자)아이들 클락션 (Klaxon) 제주서 찍은 곱닥허고 산도록헌 (여자)아이들 영상 왕봅서 [  ] [I SWAY] ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pS_dBL63oAc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pS_dBL63oAc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pS_dBL63oAc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-07-08T13:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "X_X5bLLaFZ3HGzH2_F6bBbesX9A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UDU9qgDTXsM"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-29T15:00:01Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "i-dle (아이들) &#39;Gimme Dat Love&#39; M/V Teaser 1",
+        "description": "i-dle (아이들) 'Gimme Dat Love' M/V Teaser 1 i-dle (아이들) 9th Mini Album [We made] Pre-Save https://i-dle.lnk.to/Wemade ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UDU9qgDTXsM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UDU9qgDTXsM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UDU9qgDTXsM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-29T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "TT1wpViOUIrwDWKLHE61CyRGmUc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "XZaBkbvteBc"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-09T15:00:08Z",
+        "channelId": "UCritGVo7pLJLUS8wEu32vow",
+        "title": "(여자)아이들((G)I-DLE) - &#39;Allergy&#39; Official Music Video",
+        "description": "(여자)아이들((G)I-DLE) - 'Allergy' Official Music Video Episode : '#Allergy' 화려한 피드 속 예쁘고, 섹시하고, 행복한 그들처럼 되고 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XZaBkbvteBc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XZaBkbvteBc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XZaBkbvteBc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "i-dle (아이들)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-09T15:00:08Z"
+      }
+    }
+  ]
+}

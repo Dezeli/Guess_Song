@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YoidmoJBiTyZALogIAZ1yUPqgKo",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "cNFm1P5VU3NCpGSJ29AlinQClhA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "TvVtYaqCni8"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-24T03:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;SPAGHETTI (feat. j-hope of BTS)&#39; OFFICIAL MV",
+        "description": "LE SSERAFIM (르세라핌) 'SPAGHETTI (feat. j-hope of BTS)' OFFICIAL MV https://le-sserafim.lnk.to/SPAGHETTI Creative ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TvVtYaqCni8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TvVtYaqCni8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TvVtYaqCni8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-24T03:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gc1KKfVqAvXJblt4AkXCe8xY1GE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "n6B5gQXlB-0"
+      },
+      "snippet": {
+        "publishedAt": "2024-08-30T03:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;CRAZY&#39; OFFICIAL MV",
+        "description": "LE SSERAFIM (르세라핌) 'CRAZY' OFFICIAL MV Creative Director : Nu Kim Visual Creative Coordinating : Yujoo Kim Style ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/n6B5gQXlB-0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/n6B5gQXlB-0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/n6B5gQXlB-0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-08-30T03:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "FEzSW-m2HJNdDN7upigFm0n7nz0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WAUSsfU00L0"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-25T13:01:06Z",
+        "channelId": "UCEIi7zFR_wE23jFncVtd6-A",
+        "title": "LE SSERAFIM(르세라핌) &#39;SPAGHETTI&#39; (4K) | STUDIO CHOOM ORIGINAL",
+        "description": "[STUDIO CHOOM ORIGINAL] LE SSERAFIM 'SPAGHETTI' [스튜디오 춤 오리지널] 르세라핌 '스파게티' 르세라핌표 SPAGHETTI ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WAUSsfU00L0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WAUSsfU00L0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WAUSsfU00L0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STUDIO CHOOM [스튜디오 춤]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-25T13:01:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "p52pa_s51dPUxc2egioD0TQKdmc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "V1Lr-_AxeR8"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-22T03:58:06Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;BOOMPALA&#39; OFFICIAL MV",
+        "description": "LE SSERAFIM (르세라핌) 'BOOMPALA' OFFICIAL MV https://le-sserafim.lnk.to/PUREFLOWpt1 Creative Directing : Gabriel Cho ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/V1Lr-_AxeR8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/V1Lr-_AxeR8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/V1Lr-_AxeR8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-22T03:58:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6dvxm2KdSP2wNmT7cm4FCoyQPvM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dzwuR99Ry98"
+      },
+      "snippet": {
+        "publishedAt": "2022-10-18T14:00:02Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "LE SSERAFIM (르세라핌) ‘ANTIFRAGILE’ Special Performance Video",
+        "description": "LE_SSERAFIM #르세라핌 공식 채널 #LE_SSERAFIM #르세라핌 OFFICIAL CHANNEL OFFICIAL INSTAGRAM ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dzwuR99Ry98/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dzwuR99Ry98/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dzwuR99Ry98/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-10-18T14:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XWJgSsxb_MmsPVDQRbMbQJqJo0g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "a2grcJdfXmY"
+      },
+      "snippet": {
+        "publishedAt": "2026-04-24T03:58:06Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;CELEBRATION&#39; OFFICIAL MV",
+        "description": "LE SSERAFIM (르세라핌) 'CELEBRATION' OFFICIAL MV ✰ 2nd Studio Album 'PUREFLOW' pt.1 2026.05.22 1PM (KST) | 12AM ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/a2grcJdfXmY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/a2grcJdfXmY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/a2grcJdfXmY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-04-24T03:58:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gbB_8TK2XCKy6xBQgiNZwDWuTH0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Hqvdr91LoSI"
+      },
+      "snippet": {
+        "publishedAt": "2022-05-03T14:00:22Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "LE SSERAFIM 르세라핌 Blue Flame @ LE SSERAFIM DEBUT SHOWCASE FEARLESS",
+        "description": "LE_SSERAFIM #DEBUT_SHOWCASE #FEARLESS #르세라핌 #데뷔쇼케이스 #LE_SSERAFIM #르세라핌 공식 채널 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hqvdr91LoSI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hqvdr91LoSI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hqvdr91LoSI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-05-03T14:00:22Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8q1LrDymmho4PHgrvAhBl3eHjuY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4vbDFu0PUew"
+      },
+      "snippet": {
+        "publishedAt": "2022-05-02T08:58:13Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM FEARLESS OFFICIAL M/V",
+        "description": "Creative Director : NU KIM Visual Creative : Yujoo Kim, Gabriel Cho, Yoon Cho, Sungwoong Moon Performance Director : Soyeon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4vbDFu0PUew/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4vbDFu0PUew/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4vbDFu0PUew/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-05-02T08:58:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UCcETB7QRXneJBiA_XYJc4aWNA8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "GvtNBLn6_Ik"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-22T13:00:31Z",
+        "channelId": "UCEIi7zFR_wE23jFncVtd6-A",
+        "title": "LE SSERAFIM(르세라핌) &#39;BOOMPALA&#39; (4K) | MOVE TO PERFORMANCE",
+        "description": "[MOVE TO PERFORMANCE] LE SSERAFIM 'BOOMPALA' [무브투퍼포먼스] 르세라핌 '붐팔라' 내 최애는 뭐냐면 흐음 붐팔라 무브투 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GvtNBLn6_Ik/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GvtNBLn6_Ik/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GvtNBLn6_Ik/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STUDIO CHOOM [스튜디오 춤]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-22T13:00:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "CnAKLunPMHqJTcWEoY1b3wIZgZs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KNexS61fjus"
+      },
+      "snippet": {
+        "publishedAt": "2024-03-05T14:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;Smart&#39; OFFICIAL MV",
+        "description": "Creative Director : NU KIM Visual Creative Coordinating : Yujoo Kim Style Directing : Yoon Cho, Soo Lee Brand Experience ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KNexS61fjus/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KNexS61fjus/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KNexS61fjus/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-03-05T14:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "KieTZC1E6Yd3SRdKPGgHFBTGrH4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4WZOjz193DE"
+      },
+      "snippet": {
+        "publishedAt": "2024-09-06T11:00:01Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "[LE▶️PLAY] ‘CRAZY’ MV reaction l 감탄사 가득한😆 백만 볼트 전기처럼 짜릿한 리액션!⚡️💡",
+        "description": "LE_SSERAFIM #르세라핌 공식 채널 #LE_SSERAFIM #르세라핌 OFFICIAL CHANNEL Connect with LE SSERAFIM: OFFICIAL ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4WZOjz193DE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4WZOjz193DE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4WZOjz193DE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-09-06T11:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rr35yxn0Z-6C7ufLRHBXI4ZqdQE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "r9AEGPB6qIU"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-14T03:58:07Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;HOT&#39; OFFICIAL MV",
+        "description": "LE SSERAFIM (르세라핌) 'HOT' OFFICIAL MV https://le-sserafim.lnk.to/HOT Visual Creative Team Leader : Yoon Cho Content ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/r9AEGPB6qIU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/r9AEGPB6qIU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/r9AEGPB6qIU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-14T03:58:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3VMVioMAR2lEgGo_HS5ujT3gkTk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VCm_5U3-W9c"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-20T08:00:00Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "LE SSERAFIM (르세라핌) ‘EASY’ 💃 @ THE GARAGE",
+        "description": "Studio : @THE GARAGE Videograph and Editing : KreativeBeno Production Coordinator : Arize Universe Performance Director ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VCm_5U3-W9c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VCm_5U3-W9c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VCm_5U3-W9c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-20T08:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vxyu-hAV6wYiro2BN7Ad5na7GZw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pyf8cbqyfPs"
+      },
+      "snippet": {
+        "publishedAt": "2022-10-16T14:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;ANTIFRAGILE&#39; OFFICIAL M/V",
+        "description": "Creative Director : NU KIM Visual Creative : Yujoo Kim, Gabriel Cho, Yoon Cho, Sungwoong Moon A&R : Kyuyoung Kim, Sewon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pyf8cbqyfPs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pyf8cbqyfPs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pyf8cbqyfPs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-10-16T14:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Nj295Pk4NGGxMBqOAwV0sYhZF_w",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-GetJ5lFebg"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-01T12:00:07Z",
+        "channelId": "UCTQVIXvcHrR9jYoJ6qaBAow",
+        "title": "[MOVE TO PERFORMANCE] LE SSERAFIM(르세라핌) - Come Over (4K)",
+        "description": "[무브투퍼포먼스] 르세라핌 - 컴 오버 [MOVE TO PERFORMANCE] LE SSERAFIM - Come Over 르세라핌의 재치와 무브투의 센스가 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-GetJ5lFebg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-GetJ5lFebg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-GetJ5lFebg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "M2",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-01T12:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hT5xzR5F5wUpHBWwp07pcomnFuI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "27C4pfRsf9g"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-10T14:58:06Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) x ILLIT (아일릿) x KATSEYE (캣츠아이) &#39;ICONIC BY MISTAKE&#39; Official MV",
+        "description": "LE SSERAFIM (르세라핌) x ILLIT (아일릿) x KATSEYE (캣츠아이) 'ICONIC BY MISTAKE' JUNE 12, 1PM KST / 12AM ET | JUNE 11 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/27C4pfRsf9g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/27C4pfRsf9g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/27C4pfRsf9g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-10T14:58:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8kh3e7o-lPIAtaIOb3Ikj4_AlMI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "p3EwqI_ReDM"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-20T13:03:10Z",
+        "channelId": "UCs-QBT4qkj_YiQw1ZntDO3g",
+        "title": "LE SSERAFIM (르세라핌) &#39;Swan Song&#39; l Original Stage",
+        "description": "Producer : Sungjin So Media Management : Hyungeun Kim, Jeonghwan Kim Production Director : Junsung Lee Creative Director ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/p3EwqI_ReDM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/p3EwqI_ReDM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/p3EwqI_ReDM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-20T13:03:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "D8IX8JxQKd7myAL3h1nPwDpIyxI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bNKXxwOQYB8"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-19T08:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;EASY&#39; OFFICIAL MV",
+        "description": "Creative Director : NU KIM Visual Creative Coordinating : Yujoo Kim Style Directing : Yoon Cho, Soo Lee Brand Experience ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bNKXxwOQYB8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bNKXxwOQYB8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bNKXxwOQYB8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-19T08:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "pdDHuTcIv_PjpyYgW1i6ULET0Jw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "2VAKcz9W4WM"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-15T13:00:04Z",
+        "channelId": "UCEIi7zFR_wE23jFncVtd6-A",
+        "title": "LE SSERAFIM(르세라핌) &#39;HOT&#39; (4K) | STUDIO CHOOM ORIGINAL",
+        "description": "[STUDIO CHOOM ORIGINAL] LE SSERAFIM 'HOT' [스튜디오 춤 오리지널] 르세라핌 '핫' 온 마음을 다해 사랑하는 초미녀들이 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2VAKcz9W4WM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2VAKcz9W4WM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2VAKcz9W4WM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STUDIO CHOOM [스튜디오 춤]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-15T13:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EjVtkCFtvzd-Z8y2phgHnNJjWaw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dZs_cLHfnNA"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-23T14:58:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) ‘이브, 프시케 그리고 푸른 수염의 아내’ OFFICIAL M/V",
+        "description": "Creative Director : NU KIM Visual Creative Operation Managing : Yujoo Kim Style Directing : Yoon Cho, Yuli Song Brand ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dZs_cLHfnNA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dZs_cLHfnNA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dZs_cLHfnNA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-23T14:58:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "VyukPSLkAwlNdTjgnaVf3MJ1i5A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NnTEZCxhxF4"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-03T14:00:15Z",
+        "channelId": "UCEIi7zFR_wE23jFncVtd6-A",
+        "title": "[BE ORIGINAL] LE SSERAFIM(르세라핌) &#39;UNFORGIVEN (feat. Nile Rodgers)&#39; (4K)",
+        "description": "[BE ORIGINAL] LE SSERAFIM 'UNFORGIVEN (feat. Nile Rodgers)' [비 오리지널] 르세라핌 '언포기븐 (feat. Nile Rodgers)' 새 시대 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NnTEZCxhxF4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NnTEZCxhxF4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NnTEZCxhxF4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STUDIO CHOOM [스튜디오 춤]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-03T14:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "q75CvqFG8BrQgel27LKmIyj2JIM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UBURTj20HXI"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-01T08:58:10Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;UNFORGIVEN (feat. Nile Rodgers)&#39; OFFICIAL M/V",
+        "description": "Creative Director : NU KIM Visual Creative Operation Managing : Yujoo Kim Style Directing : Yoon Cho, Yuli Song Brand ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UBURTj20HXI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UBURTj20HXI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UBURTj20HXI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-01T08:58:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hN9-YoTqhGOpbOQuxjURSG0vspQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nMx-tMPidK4"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-22T04:00:46Z",
+        "channelId": "UC-clMkTZa7k-FxmNgMjoCgQ",
+        "title": "iffy iffy",
+        "description": "Provided to YouTube by SOURCE MUSIC iffy iffy · LE SSERAFIM 'PUREFLOW' pt.1 ℗ SOURCE MUSIC Released on: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nMx-tMPidK4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nMx-tMPidK4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nMx-tMPidK4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LE SSERAFIM - Topic",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-22T04:00:46Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1b684zx0hJ_-Hs8C8Mxch9viROg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ccz123Jlflc"
+      },
+      "snippet": {
+        "publishedAt": "2022-11-13T14:58:07Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "LE SSERAFIM (르세라핌) &#39;Impurities&#39; OFFICIAL M/V",
+        "description": "Creative Director : NU KIM Visual Creative : Yujoo Kim, Gabriel Cho, Yoon Cho, Sungwoong Moon A&R : Kyuyoung Kim, Sewon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ccz123Jlflc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ccz123Jlflc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ccz123Jlflc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-11-13T14:58:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HSmquQSS08uhwucCpld4nXzsOsU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jJxMlmf58SM"
+      },
+      "snippet": {
+        "publishedAt": "2022-10-17T11:21:46Z",
+        "channelId": "UCTQVIXvcHrR9jYoJ6qaBAow",
+        "title": "[최초공개] LE SSERAFIM(르세라핌) - Good Parts (when the quality is bad but I am) | Mnet 221017 방송",
+        "description": "[LE SSERAFIM COMEBACK SHOW : ANTIFRAGILE] LE SSERAFIM - Good Parts (when the quality is bad but I am) [르세라핌 컴백 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jJxMlmf58SM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jJxMlmf58SM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jJxMlmf58SM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "M2",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-10-17T11:21:46Z"
+      }
+    }
+  ]
+}

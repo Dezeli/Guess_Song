@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dk3NEtMRHODMBEQ2ZjFOb1q8RfQ",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "G1jm-4ub1gLH5aqfl9yGk--iP5U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JIC3orh5cTo"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-18T13:46:28Z",
+        "channelId": "UCzh6F7jRxbjul7N8Ikza0xw",
+        "title": "RECORDING ❤️❤️😍😍#iu #dimashqudaibergen #leejieun #dq #behindthescene #mv #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JIC3orh5cTo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JIC3orh5cTo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JIC3orh5cTo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "k_tube777",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-18T13:46:28Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "woEDstW7vyLq5pmUeMO-3p1EL2w",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UCWFz7sELl4"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-11T14:49:37Z",
+        "channelId": "UCzh6F7jRxbjul7N8Ikza0xw",
+        "title": "SQUARE&#39;S DREAM💕#liveclip #iu #아이유 아이유 #iu #mv #kpop #singer #korea",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UCWFz7sELl4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UCWFz7sELl4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UCWFz7sELl4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "k_tube777",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-11T14:49:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_eiY4JmY_LPuRDjoMUR_bfEL63g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7es7QV3sbvg"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-23T22:15:43Z",
+        "channelId": "UCnwg2Z5uLaO_ipdakh_gJ6g",
+        "title": "iu and V&#39;s mv😭😭😭😭#kimtaehyung #iu #kpop #lovewinsall #mv #newsong #kpopedit",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7es7QV3sbvg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7es7QV3sbvg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7es7QV3sbvg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "kcdrama_diary",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-23T22:15:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Hwf0XjZZYZjZeARt8hw1xi7Z6bs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fJLD-0SSE-w"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-09T05:25:55Z",
+        "channelId": "UC6O4bfeHk8l9956Tw26_nSw",
+        "title": "#kimtaehyung #bts #IU #capcut #music #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fJLD-0SSE-w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fJLD-0SSE-w/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fJLD-0SSE-w/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JUNGKOOK923",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-09T05:25:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MZyhslqUJlwxSy8O2VEjD4rpQj4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "TgyKn6dyU84"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-10T03:02:00Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#mv #animation #뮤직비디오 #iu #kpop #아이유 #edit #drawing #홀씨",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TgyKn6dyU84/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TgyKn6dyU84/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TgyKn6dyU84/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-10T03:02:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ISPA9uFbum2xDonWvIJbJqt_Vwg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VpJZ2-RM4us"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-10T02:39:35Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#mv #animation #뮤직비디오 #iu #kpop #아이유 #edit #coin #코인",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VpJZ2-RM4us/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VpJZ2-RM4us/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VpJZ2-RM4us/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-10T02:39:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "jICVkh4Rnbq6WWWKabC_VoxpgXs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "I4f2QQqimjk"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T03:31:51Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#아이유 #IU #뮤직비디오 #MV #라일락 #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/I4f2QQqimjk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/I4f2QQqimjk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/I4f2QQqimjk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T03:31:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "li3B23wYq_bsATITVCbugCPCpsI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zd70_I-HYh4"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T03:32:16Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#아이유 #IU #뮤직비디오 #MV #어푸 #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zd70_I-HYh4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zd70_I-HYh4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zd70_I-HYh4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T03:32:16Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "KqpxLq7l0LHGo14pkNLdPaB8IkU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "px0-QEYjXOw"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T03:30:14Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#아이유 #IU #뮤직비디오 #MV #좋은날 #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/px0-QEYjXOw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/px0-QEYjXOw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/px0-QEYjXOw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T03:30:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "23zG3dz77N59-dO7pW2ZVCLmdyY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UKFK6NYAKag"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-13T02:47:07Z",
+        "channelId": "UCl94sqrIAds8fS4AwfiYSlA",
+        "title": "IU×チャウヌはヤバすぎる #kpop #カムバック #新曲MV",
+        "description": "IU #カムバック #チャウヌ #出演 #mv #新曲 #kpopニュース.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UKFK6NYAKag/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UKFK6NYAKag/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UKFK6NYAKag/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "あいらぶkpop",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-13T02:47:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9kmri0Gu2qb292S7JvjUnLXV4JE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "F7TCdQTUJPI"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-30T13:06:11Z",
+        "channelId": "UCx6zUvTW41EVgK4XSj1ceFA",
+        "title": "Iu is this an ad or part of the MV?#iu #tiktok #mv #kpop #eunwoo #ytshorts",
+        "description": "Iu is this an ad or part of the MV?#iu #tiktok #mv #kpop #eunwoo #ytshorts.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F7TCdQTUJPI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F7TCdQTUJPI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F7TCdQTUJPI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLUEME_EDITS ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-30T13:06:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6GYo85xhecYjMMd1YdbSWxtD-tc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7vOBuz7LJc0"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-24T10:24:20Z",
+        "channelId": "UCdn0AyHxs-ofLXf-IUp_zkw",
+        "title": "love wins all edit #iu #v #lunaflmsz #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7vOBuz7LJc0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7vOBuz7LJc0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7vOBuz7LJc0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "lunaflmsz ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-24T10:24:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "M8RTrzTb43UzkAFJBY1svaAPL9A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pw-wmTksmec"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-25T09:00:38Z",
+        "channelId": "UCdFUs-kDn1WRAhBl9oIzXjA",
+        "title": "テテがIUのMVに出演した理由 뷔가 아이유MV에 출연한 이유 #iu #bts #v",
+        "description": "iu #bts #v.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pw-wmTksmec/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pw-wmTksmec/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pw-wmTksmec/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "韓流MC",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-25T09:00:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "cC6xuB43uHKGnOPgdhWvyJlfQ1I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eSSFaW9L5x8"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-24T22:00:17Z",
+        "channelId": "UCc2aYg5AmttEyzTPewTy5Mg",
+        "title": "아이유 ‘Love wins all’ 1분 듣기💙#MV #IU #V #lovewinsall",
+        "description": "아이유노래 #아이유 #IU #lovewinsall #뷔 #V #노래추천 #99_playlist.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eSSFaW9L5x8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eSSFaW9L5x8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eSSFaW9L5x8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Bornin1999_playlist",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-24T22:00:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "axMg_CsaZpw1iU-n0gtKgZHWad0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "0acN5mYdx_E"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T03:33:26Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#아이유 #IU #뮤직비디오 #MV #분홍신 #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/0acN5mYdx_E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/0acN5mYdx_E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/0acN5mYdx_E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T03:33:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gfy6y2irlZcHuyL9XVs_z3LsB5s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UAP8NFw6sMk"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-09T06:53:48Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#mv #뮤직비디오 #animation #kpop #크레용팝 #빙빙 #BingBing #MV #iu #아이유",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UAP8NFw6sMk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UAP8NFw6sMk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UAP8NFw6sMk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-09T06:53:48Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Sg2LU9J9_wg2kbD0zOMhexQvj-o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "O_yCNNwrM90"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-09T14:07:20Z",
+        "channelId": "UCzh6F7jRxbjul7N8Ikza0xw",
+        "title": "The Beginning❤️😍#dimash #iu #mv #drama #family",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/O_yCNNwrM90/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/O_yCNNwrM90/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/O_yCNNwrM90/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "k_tube777",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-09T14:07:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ixFn7_9xeD8szpNrVMAeXJeZlP8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wvzM4DvR7o0"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-02T03:32:51Z",
+        "channelId": "UC0NVRK28Z9mUiYQISFsyyrQ",
+        "title": "#아이유 #IU #뮤직비디오 #MV #너랑나 #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wvzM4DvR7o0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wvzM4DvR7o0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wvzM4DvR7o0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "코리아데일리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-02T03:32:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "uFq1yzGvvjW_Ps3xMj4oKkVKRH4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "TM8ay39v-YE"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-05T12:22:57Z",
+        "channelId": "UCh6jzfH2QOFsgW7weZeKHDg",
+        "title": "포기 하지 않았던 소녀 #top #blueming #mv #iu #아이유 #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TM8ay39v-YE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TM8ay39v-YE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TM8ay39v-YE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "속보장인",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-05T12:22:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "FnoU-S4tcYmJ62GXe8-uPau473o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kzuocN6ie5g"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-02T04:59:06Z",
+        "channelId": "UCfmU9Z6ZtzcTI59Q-tloU4g",
+        "title": "taehyung  in iu&#39;s MV 🤔what&#39;s going on here?😨😵‍💫#bts #lovebtsarmybts #iu #thv #nawcat#mv  #army",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kzuocN6ie5g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kzuocN6ie5g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kzuocN6ie5g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Nawsh!n",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-02T04:59:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "2EREVut1WNCUcLwvGbxXv88QMVM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "h20lsudrDwg"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-29T15:38:00Z",
+        "channelId": "UCHZzkHk_tSsDTvkzuSAWyEQ",
+        "title": "아이유, &#39;미인&#39; MV 공개!! 차은우와 빛나는 비주얼 합!! #아이유 #차은우 #미인 #카리나 #에스파",
+        "description": "2025'년 05월 29일 케이팝 트렌드 및 이슈 키워드 순위입니다. 구독과 좋아요는 많은 힘이 됩니다 :) 시청해주셔서 감사합니다! #KPOP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/h20lsudrDwg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/h20lsudrDwg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/h20lsudrDwg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "케이팝 트렌드 KPOP Trend",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-29T15:38:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ukZcRo5Or2NUXKdNmkZwZLLxIBE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hBOvATKLVvE"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-16T09:56:08Z",
+        "channelId": "UCqDMbqduXmablV92aA4nj1w",
+        "title": "#iu (Holssi) #mv 💫💜 #клип IU# Holssi",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hBOvATKLVvE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hBOvATKLVvE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hBOvATKLVvE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sabr🐰",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-16T09:56:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vsQ0n3o4y9VKyHH4Ja04-IgbBfA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yDM5bs-UWWQ"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-24T00:54:10Z",
+        "channelId": "UCsFjkhfV9fVZPY5zHGtP_Lg",
+        "title": "#lovewinsall #iu #taehyung #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yDM5bs-UWWQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yDM5bs-UWWQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yDM5bs-UWWQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "elmyrys",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-24T00:54:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HSdYNljnVYlAcw0M_lc18CeOkhA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3cXHMgSekaU"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-01T06:00:00Z",
+        "channelId": "UCiEEF51uRAeZeCo8CJFhGWw",
+        "title": "[스페셜 MV] 아이유(IU) - 밤 산책 | 폭싹 속았수다 | 넷플릭스",
+        "description": "《폭싹 속았수다》, 지금 넷플릭스에서 시청하세요: https://www.netflix.com/title/81681535 《폭싹 속았수다》의 스페셜 MV, 아이유 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3cXHMgSekaU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3cXHMgSekaU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3cXHMgSekaU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Netflix Korea 넷플릭스 코리아",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-01T06:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "elZI_eTm_xUNTA6I3A2lIIv9V6s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yrGbD3ADlQc"
+      },
+      "snippet": {
+        "publishedAt": "2023-04-08T09:00:06Z",
+        "channelId": "UCLkAepWjdylmXSltofFvsYQ",
+        "title": "[EPISODE] Agust D ‘사람 Pt.2 (feat. 아이유)’ MV Shoot Sketch - BTS (방탄소년단)",
+        "description": "BTSEPISODE #AgustD #D_DAY #사람_Pt2 #People_Pt2 #SUGA #슈가 #BTS #방탄소년단 Connect with BTS: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yrGbD3ADlQc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yrGbD3ADlQc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yrGbD3ADlQc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BANGTANTV",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-04-08T09:00:06Z"
+      }
+    }
+  ]
+}

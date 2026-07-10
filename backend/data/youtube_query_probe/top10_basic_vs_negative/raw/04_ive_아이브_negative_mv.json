@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sjh1oQMA3MjmVumf8dXppNPeIQM",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 470595,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "idzwSBhwoXtIO7OUkuBX7d1xkyE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "HRrsuctf1JY"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-27T02:10:43Z",
+        "channelId": "UCiXosvlgoCoH5VLgwo9ju8w",
+        "title": "【最新】IVE(아이브)MVメドレー",
+        "description": "kpop #ive #mv #メドレー.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HRrsuctf1JY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HRrsuctf1JY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HRrsuctf1JY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "きむすけ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-27T02:10:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WdBJAEneRgkOyuok7Heq6a3R7k0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jm0sdH9vtlo"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-03T01:13:45Z",
+        "channelId": "UC-dxstNirbbJIWY-0owNNPw",
+        "title": "IVE (아이브) MV PLAYLIST 뮤비 모음 18곡 (2021 - 2026)",
+        "description": "IVE (아이브) MV PLAYLIST 뮤비 모음 22곡 (2021 - 2026) I apologize if the video is blurry. Some songs have been removed by us ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jm0sdH9vtlo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jm0sdH9vtlo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jm0sdH9vtlo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NEWWICE OFFICIAL YouTube Channel",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-03T01:13:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "94JIjcdf9dutrRleQ0abdfxb2sg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iYJNIS9rZs4"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-09T11:00:00Z",
+        "channelId": "UCkVpvSYSvf5RO1OtwWFz8XA",
+        "title": "[아이브] 갑자기 명령하는 장원영",
+        "description": "아이브 #ive #안유진 #가을 #레이 #장원영 #리즈 #이서 영상출처: IVE 아이브 MV 'BANG BANG' - Behind The Scenes.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iYJNIS9rZs4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iYJNIS9rZs4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iYJNIS9rZs4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "언제나리즈",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-09T11:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ePVm5RrY_DbSMa0sT04vrfbGVQ0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YlX3kTluqBU"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-26T01:00:06Z",
+        "channelId": "UCcB9M6F7n17BlbY2LUFvXIA",
+        "title": "[4K|60FPS] IVE 아이브 &#39;BLACKHOLE&#39; MV",
+        "description": "Original Video: https://youtu.be/1Lmy7qwmSMc.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YlX3kTluqBU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YlX3kTluqBU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YlX3kTluqBU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "WVSmooth",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-26T01:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LNkOAUO5bWpm7qOVqy-gxCiDdaI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jKbWN9qgeiY"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-22T09:00:31Z",
+        "channelId": "UCweOkPb1wVVH0Q0Tlj4a5Pw",
+        "title": "[MV] IVE(아이브) _ After LIKE",
+        "description": "[MV] IVE(아이브) _ After LIKE K-POP Wonderland, 1theK K-POP의 모든 즐거움을 1theK(원더케이)에서 만나보세요! :) Welcome to ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jKbWN9qgeiY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jKbWN9qgeiY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jKbWN9qgeiY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "1theK (원더케이)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-22T09:00:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "jILiXwTtqCKpN9cd-djTxI4I4UI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "l-Pq2dB5Mgk"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-28T12:05:09Z",
+        "channelId": "UCjQdtf_Qu-lAk6tRu_LmZ9g",
+        "title": "MV IVE 아이브 - Midnight Kiss [1080p HD Eng Sub CC]",
+        "description": "If You Like My Videos, Please Like & Subscribe.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/l-Pq2dB5Mgk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/l-Pq2dB5Mgk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/l-Pq2dB5Mgk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "WJverse Entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-28T12:05:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "xty4LrB5qESFvA4mhHjF93QH_2g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yytuJk2vsHM"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-05T15:54:38Z",
+        "channelId": "UCRBl62kBZL42zR2WMP1YG4g",
+        "title": "MV OUT NOW!!| #BABYMONSTER #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yytuJk2vsHM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yytuJk2vsHM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yytuJk2vsHM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PinksMonz",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-05T15:54:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YYF61LrFyLfe1sH5rQ8_UQjkmAg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "MlxCt4PO26s"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-21T08:49:16Z",
+        "channelId": "UCrM_8FPH53tY6eUPv1sbjzg",
+        "title": "Every IVE mv but only the title (Eleven - Attitude)",
+        "description": "Every IVE mv but only the title (Eleven - Attitude) Copyright Disclaimer Under Section 107 of the copyright Act 1976, allowance is ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MlxCt4PO26s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MlxCt4PO26s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MlxCt4PO26s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Choco chipz",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-21T08:49:16Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qZsQK9Crw30ke7kdan_lSGmoIlY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sm-OEunTfIg"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-08T23:00:57Z",
+        "channelId": "UCCdYcnsntSkFJyhn8vvidpA",
+        "title": "IVE 아이브 BANG BANG MV",
+        "description": "IVE_아이브__BANG_BANG__MV #IVE #BANG BANG #MV #2026 #K-POP.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sm-OEunTfIg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sm-OEunTfIg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sm-OEunTfIg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Vyltronia",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-08T23:00:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "oNvueCRmPS54u5xpSEopITevTv8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_m9BFThGAdQ"
+      },
+      "snippet": {
+        "publishedAt": "2026-01-01T02:41:02Z",
+        "channelId": "UCVfuhXm3E9BZtXFd2cqu8Qw",
+        "title": "【4K60fps HDR】IVE - REBEL HEART ｜高画質リマスター【Official MV】",
+        "description": "IVE 아이브 'REBEL HEART' MV (2026/1/1UP) 【4K60fps HDR】 に変更した高画質MVです。難しい話は抜きにして、公式CHより ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_m9BFThGAdQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_m9BFThGAdQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_m9BFThGAdQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "高画質K-POP_CH[4K60fpsHDR]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-01-01T02:41:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "d22KFiq0hKOrNHNlzDpttqGAlmg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NGweI2Fl7EA"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-11T02:05:20Z",
+        "channelId": "UC-5or5EljDZXa75KDpGO8Vg",
+        "title": "IVE MV再生回数ランキング✨#ive #yujin #gaeul #rei #wonyoung #liz #leeseo",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NGweI2Fl7EA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NGweI2Fl7EA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NGweI2Fl7EA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "すす【kpop】",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-11T02:05:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Rf-i5HomvwkBCHrG2iCJdwnn19I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YWrqwQRSdUo"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-10T13:55:26Z",
+        "channelId": "UCwUn8PdbShewvJna_CaJkyQ",
+        "title": "IVE TWIXTOR 4K BANG BANG MV",
+        "description": "Hi this is IVE TWIXTOR, I will be there if you subscribe to the channel. Credits are not required, you can tag me if you want to ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YWrqwQRSdUo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YWrqwQRSdUo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YWrqwQRSdUo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Vanessa Miko",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-10T13:55:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "VDYb48d6LlWdUsb-CqJqb_Cfavk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "O4FsTaoju9s"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-27T07:18:20Z",
+        "channelId": "UCBURM68cM3h_PEtwKxNaqfg",
+        "title": "【4K雙語字幕】IVE - XOXZ (中字MV)",
+        "description": "IVE 아이브 _自製中字版 請勿二改二傳！！！！ 微博：JaxPOP ①如果你喜歡這部影片，不要忘記按喜歡 ☆if you like this video ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/O4FsTaoju9s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/O4FsTaoju9s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/O4FsTaoju9s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Jaxirius",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-27T07:18:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MtXZonqR-r7jMThvvF5piB9kT0U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eRrb79DVJ2U"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-25T10:21:44Z",
+        "channelId": "UCZzj17HIjQDRHSVtEy27LuA",
+        "title": "IVE 아이브 &#39;GOTCHA (Baddest Eros)&#39; MV",
+        "description": "IVE 아이브 'GOTCHA (Baddest Eros)' MV #IVE #아이브 #アイヴ #GOTCHABaddestEros.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eRrb79DVJ2U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eRrb79DVJ2U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eRrb79DVJ2U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "iNSTIKYOU",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-25T10:21:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S25BVtarQ-xdRvvjcX4Eb60ot3U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ZLc3gedL7y4"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-09T11:09:41Z",
+        "channelId": "UCk3lfv_9rF4VnD3WTVMP4lA",
+        "title": "IVE 《BANG BANG》MV中字",
+        "description": "製作：橙汁@ShuMoka_영원히剪輯軟體：capcut 影片來源：https://youtu.be/9qkpcLK422o?si=d8XnULaZ9OCGbsWE 更多影片   ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZLc3gedL7y4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZLc3gedL7y4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZLc3gedL7y4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "橙汁",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-09T11:09:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "l4quG_aXToALp5ShLOGY6df8uok",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sm80MKtYXPM"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-03T09:00:04Z",
+        "channelId": "UCCy_q-N7F2FOIZ6ZggHIAKg",
+        "title": "IVE 아이브 ‘JIGSAW’ - Recording BEHIND",
+        "description": "IVE 7月テレ東系 ドラマ24 「ストレンジ - 伊藤潤二の夜も眠れぬ奇妙な話 -」Member COMMENT ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sm80MKtYXPM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sm80MKtYXPM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sm80MKtYXPM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sony Music (Japan)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-03T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "e6Vto_bSmlMWB6792ZNCihYt4qs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SKSMNYtDUQs"
+      },
+      "snippet": {
+        "publishedAt": "2026-03-12T10:13:01Z",
+        "channelId": "UCULUjMa5qHJ_heCHMrcrHiw",
+        "title": "IVE 아이브 &#39;Fireworks&#39; MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SKSMNYtDUQs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SKSMNYtDUQs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SKSMNYtDUQs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "DIVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-03-12T10:13:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "knaZNkTCTif_nfiuXADluwv7V04",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "a2BQilnvNzQ"
+      },
+      "snippet": {
+        "publishedAt": "2024-03-22T12:47:18Z",
+        "channelId": "UCbSMSECS_LtQ6D13ZUx0mXw",
+        "title": "Every IVE MV but only mamber with the &quot;least lines&quot; parts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/a2BQilnvNzQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/a2BQilnvNzQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/a2BQilnvNzQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Lyrical_universe5",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-03-22T12:47:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "B0C4kRZ7Zh-Nfwr0nsmD7toY2c4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DNGlDrRwTz8"
+      },
+      "snippet": {
+        "publishedAt": "2026-03-31T14:04:09Z",
+        "channelId": "UCA4uFOkeJPkpFV6EsncZzeA",
+        "title": "IVE  人気曲 MV メドレー  高音質【最新】#playlist",
+        "description": "IVEの人気曲MVのメドレーを作ってみました。 今後は他グループのも作っていく予定です。 チャンネル登録、高評価、コメントや ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DNGlDrRwTz8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DNGlDrRwTz8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DNGlDrRwTz8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-POP  WORLD🔥  ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-03-31T14:04:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EpGgVU34UBBlg68kkecF2RyaXRw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_Tnr5I5VTnU"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-15T13:40:15Z",
+        "channelId": "UCpoVpjQmAVlnmM0Y8htaPCQ",
+        "title": "レイがMVを日本で撮影した理由がエモい　#kpop #ive",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_Tnr5I5VTnU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_Tnr5I5VTnU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_Tnr5I5VTnU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Terminal 2",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-15T13:40:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dZH81NMZbBYuwxAK7EFXV9-CsvE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4OrPBSAzVwE"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-26T12:00:07Z",
+        "channelId": "UCjQdtf_Qu-lAk6tRu_LmZ9g",
+        "title": "MV IVE 아이브 - Wild Bird [1080p HD Eng Sub CC]",
+        "description": "If You Like My Edited Videos, Please Like & Subscribe.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4OrPBSAzVwE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4OrPBSAzVwE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4OrPBSAzVwE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "WJverse Entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-26T12:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "De0lxGAM6JeN5eJ3yLI1J05n1wE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SNIArfjNurA"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-12T16:08:27Z",
+        "channelId": "UCNAI1mh9xerVtkPb8z9mxHg",
+        "title": "IVE - &#39;TKO&#39; MV",
+        "description": "subscribe #tko#ive#kpop.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SNIArfjNurA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SNIArfjNurA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SNIArfjNurA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "♡Liz k-pop♡",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-12T16:08:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3VdEVjdp-zQHEMWgUEv3dzu-mU8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "E0qTXgtfaIA"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-18T15:35:47Z",
+        "channelId": "UCvW302il1vQEG5gtqSDcpHQ",
+        "title": "EVERY IVE MV BUT ITS ONLY THE MEMBER WITH THE LEAST LINES",
+        "description": "ive #kpop #kpopsurvivalshow #kpopedit #kpopidol #kpopdance #kpopmv #kpopshorts Please like and subscribe and comment ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/E0qTXgtfaIA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/E0qTXgtfaIA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/E0qTXgtfaIA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "luvjeong",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-18T15:35:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "CUemoG56AAjziojfy6ikph5R9vc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6R-Bo0IpTi8"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-25T07:30:07Z",
+        "channelId": "UCeGWHMarMyE4e1KjztJOhLQ",
+        "title": "&quot;IVE&quot; MV再生回数ランキング ③ #kpop",
+        "description": "VOICEVOX:四国めたん #IVE.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6R-Bo0IpTi8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6R-Bo0IpTi8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6R-Bo0IpTi8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "R-KPOP-Channel",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-25T07:30:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "DhaN4-CKPdsLgoueGD8L7uufLls",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "0kQ0i5NDr30"
+      },
+      "snippet": {
+        "publishedAt": "2026-04-16T09:00:02Z",
+        "channelId": "UCjQdtf_Qu-lAk6tRu_LmZ9g",
+        "title": "MV IVE 아이브 - Fireworks [1080p HD Eng Sub CC]",
+        "description": "If You Like My Edited Videos, Please Like & Subscribe.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/0kQ0i5NDr30/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/0kQ0i5NDr30/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/0kQ0i5NDr30/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "WJverse Entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-04-16T09:00:02Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "UPF4XezsysGLiEIk9RYmvtQeMtI",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "z_wrqTJNqPXbF7mT-VyVQnaN8xc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "B1ShLiq3EVc"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-25T09:00:05Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 ‘XOXZ’ MV",
+        "description": "STARSHIP SQUARE (Domestic) : https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global) : https://bit.ly/4i5Dl1g IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/B1ShLiq3EVc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/B1ShLiq3EVc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/B1ShLiq3EVc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-25T09:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Z0ksuoT4BZAoCJ8pUGqB1pJhjCs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6ZUIwj3FgUY"
+      },
+      "snippet": {
+        "publishedAt": "2023-04-10T09:00:10Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;I AM&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6ZUIwj3FgUY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6ZUIwj3FgUY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6ZUIwj3FgUY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-04-10T09:00:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nhuyIFbipNmHfOEhDCU3lMRObq4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9qkpcLK422o"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-09T09:01:11Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;BANG BANG&#39; MV",
+        "description": "STARSHIP SQUARE (Domestic) : https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global) : https://bit.ly/4i5Dl1g IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9qkpcLK422o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9qkpcLK422o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9qkpcLK422o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-09T09:01:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "cijmMR4kLQGgWIIUfKUxMb3A-yk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Y8JFxS1HlDo"
+      },
+      "snippet": {
+        "publishedAt": "2022-04-05T09:00:09Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;LOVE DIVE&#39; MV",
+        "description": "IVE Twitter : https://twitter.com/IVEstarship : https://twitter.com/IVE_twt : https://twitter.com/IVEstarship_JP IVE Instagram ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Y8JFxS1HlDo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Y8JFxS1HlDo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Y8JFxS1HlDo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-04-05T09:00:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3711ou5lZZh2ZoWp4N3XGgHt0Y8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "--FmExEAsM8"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-01T09:00:03Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;ELEVEN&#39; MV",
+        "description": "IVE Twitter : https://twitter.com/IVEstarship : https://twitter.com/IVE_twt : https://twitter.com/IVEstarship_JP IVE Instagram ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/--FmExEAsM8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/--FmExEAsM8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/--FmExEAsM8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-01T09:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YX5dnQxQ1qZ7jCtkwY8cGwFa5Wo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pG6iaOMV46I"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-27T09:00:35Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;Kitsch&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pG6iaOMV46I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pG6iaOMV46I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pG6iaOMV46I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-27T09:00:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "I2osTqvJOOpbkgo8btzmm-5UBzs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "38xYeot-ciM"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-03T09:00:06Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;ATTITUDE&#39; MV",
+        "description": "STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global): https://bit.ly/3JWPxm0 IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/38xYeot-ciM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/38xYeot-ciM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/38xYeot-ciM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-03T09:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Pj5CWU1MQB4bZh9VyH72cJJxi_I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "F0B7HDiY-10"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-22T09:00:04Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;After LIKE&#39; MV",
+        "description": "IVE Twitter : https://twitter.com/IVEstarship : https://twitter.com/IVE_twt : https://twitter.com/IVEstarship_JP IVE Instagram ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F0B7HDiY-10/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F0B7HDiY-10/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F0B7HDiY-10/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-22T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a2bittD7gVrGVk5d3N59-tphqpE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1Lmy7qwmSMc"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-23T09:00:12Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;BLACKHOLE&#39; MV",
+        "description": "STARSHIP SQUARE (Domestic) : https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global) : https://bit.ly/4i5Dl1g IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1Lmy7qwmSMc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1Lmy7qwmSMc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1Lmy7qwmSMc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-23T09:00:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8T0BQtscjsbYslwDztjQjUGU3kI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_ApV7Lm87cg"
+      },
+      "snippet": {
+        "publishedAt": "2023-10-06T04:00:01Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;Off The Record&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_ApV7Lm87cg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_ApV7Lm87cg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_ApV7Lm87cg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-10-06T04:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4YKvRB25r7HNp6rJNKpkcpGOMgM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "g36q0ZLvygQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-13T09:01:36Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;REBEL HEART&#39; MV",
+        "description": "STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global): https://bit.ly/3JWPxm0 IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/g36q0ZLvygQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/g36q0ZLvygQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/g36q0ZLvygQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-13T09:01:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kG5b0JSmn41JK7GIiuUjSj-Ghh0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "okVTSehE414"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-13T09:00:04Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;I WANT&#39; MV",
+        "description": "PEPSIxSTARSHIP] 2023 #PEPSI X #STARSHIP PEPSI PARTNER IVE 'I WANT' MV #IVE #아이브 #IWANT #펩시 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/okVTSehE414/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/okVTSehE414/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/okVTSehE414/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-13T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "baJFSwQXvRc7iAKyhdcY9LjJKNE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "07EzMbVH3QE"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-29T09:00:46Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;해야 (HEYA)&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/07EzMbVH3QE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/07EzMbVH3QE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/07EzMbVH3QE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-29T09:00:46Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PxP5jDsm6jkJM0-N1RD4kIdFe0A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fyk6vjwI3wc"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-08T05:00:04Z",
+        "channelId": "UC-Fnix71vRP64WXeo0ikd0Q",
+        "title": "IVE, David Guetta - Supernova Love Official Music Video",
+        "description": "IVE, David Guetta - Supernova Love Official Music Video Presented By \"THE COLLAB X\" Artists: IVE x DAVID GUETTA Composed ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fyk6vjwI3wc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fyk6vjwI3wc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fyk6vjwI3wc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-08T05:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0okVOjvUYgmsxfCRcOB3UGQBAmo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_Hu4GYtye5U"
+      },
+      "snippet": {
+        "publishedAt": "2023-09-25T09:00:04Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;Either Way’ MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_Hu4GYtye5U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_Hu4GYtye5U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_Hu4GYtye5U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-09-25T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PE4bctvca7RtW-UtQitO1kiICLU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NvoW-_PN5kE"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-24T02:00:32Z",
+        "channelId": "UC-Fnix71vRP64WXeo0ikd0Q",
+        "title": "IVE 아이브 &#39;ATTITUDE&#39; (MINIVE VER.) MV",
+        "description": "STARSHIP SQUARE (Domestic) : https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global) : https://bit.ly/4i5Dl1g IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NvoW-_PN5kE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NvoW-_PN5kE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NvoW-_PN5kE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-24T02:00:32Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "K4V2rGx5fsvv27G4R23Rki5z3Lk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hwKy53KI9zo"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-30T18:10:47Z",
+        "channelId": "UCd8VUUKiDKRIWmrydPlh_Xg",
+        "title": "IVE 아이브 &#39;Ice Queen&#39; MV",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hwKy53KI9zo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hwKy53KI9zo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hwKy53KI9zo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP JAPAN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-30T18:10:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "F3FZTu9fXH798EemS_sEYa7XZqM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "es9MaJPb_U8"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-20T14:00:49Z",
+        "channelId": "UC-Fnix71vRP64WXeo0ikd0Q",
+        "title": "IVE 아이브 &#39;REBEL HEART&#39; Performance Video",
+        "description": "STARSHIP SQUARE (Domestic) : https://bit.ly/3HtQ7GF STARSHIP SQUARE (Global) : https://bit.ly/3JWPxm0 IVE US EXCLUSIVE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/es9MaJPb_U8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/es9MaJPb_U8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/es9MaJPb_U8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-20T14:00:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "v2PUqXIOylE0Rp8DavKnLEOn_ZQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PGLx4V680J8"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-15T14:00:19Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;Accendio&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PGLx4V680J8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PGLx4V680J8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PGLx4V680J8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-15T14:00:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hNENnfVYlhSRZa4dkrKtV3clLZQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xU8mQMLx0tk"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-19T00:00:11Z",
+        "channelId": "UC-Fnix71vRP64WXeo0ikd0Q",
+        "title": "IVE 아이브 &#39;All Night (Feat. Saweetie)&#39; Official Music Video",
+        "description": "IVE 아이브 'All Night (Feat. Saweetie)' Official Music Video Listen to & Download \"All Night\" out now: https://ive.lnk.to/AllNight ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xU8mQMLx0tk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xU8mQMLx0tk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xU8mQMLx0tk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-19T00:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SverOCiTpnURzX2uXSM0nu-RuYc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Da4P2uT4mVc"
+      },
+      "snippet": {
+        "publishedAt": "2023-10-13T04:00:00Z",
+        "channelId": "UCYDmx2Sfpnaxg488yBpZIGg",
+        "title": "IVE 아이브 &#39;Baddie&#39; MV",
+        "description": "Listen & Download from: https://ive.lnk.to/IVESWITCH STARSHIP SQUARE (Domestic): https://bit.ly/3HtQ7GF STARSHIP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Da4P2uT4mVc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Da4P2uT4mVc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Da4P2uT4mVc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "STARSHIP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-10-13T04:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PkW6kDWhL0xNswWezh-aH_wpdJc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uVpGElT--E8"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-10T09:00:58Z",
+        "channelId": "UC-Fnix71vRP64WXeo0ikd0Q",
+        "title": "IVE 아이브 &#39;BANG BANG&#39; PERFORMANCE VIDEO",
+        "description": "STARSHIP SQUARE (Domestic) : https://www.starship-square.com STARSHIP SQUARE (Global) : https://bit.ly/4i5Dl1g IVE US ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uVpGElT--E8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uVpGElT--E8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uVpGElT--E8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IVE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-10T09:00:58Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "X2CK7MN5Oa5QZF8P9-UwUKemATQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "gC7cURZsiH8"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-16T12:00:07Z",
+        "channelId": "UCCy_q-N7F2FOIZ6ZggHIAKg",
+        "title": "IVE 아이브 &#39;Be Alright&#39; MV",
+        "description": "「Be Alright」 2025年7月16日(水) 先行配信 配信リンク： https://ive.lnk.to/qSldSj □IVE JAPAN 3rd EP『Be Alright』 発売 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gC7cURZsiH8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gC7cURZsiH8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gC7cURZsiH8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sony Music (Japan)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-16T12:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ncPPqnc3ueAULuQNoYDzMDsVnmY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ZcAqv354JeI"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-13T09:00:31Z",
+        "channelId": "UCweOkPb1wVVH0Q0Tlj4a5Pw",
+        "title": "[MV] IVE(아이브) _ I WANT",
+        "description": "[MV] IVE(아이브) _ I WANT K-POP Wonderland, 1theK K-POP의 모든 즐거움을 1theK(원더케이)에서 만나보세요! :) Welcome to the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZcAqv354JeI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZcAqv354JeI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZcAqv354JeI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "1theK (원더케이)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-13T09:00:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8O9x20WlliCMFc-2TjzvQYWh7l0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "trlOTS4nKO4"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-25T15:01:05Z",
+        "channelId": "UCCy_q-N7F2FOIZ6ZggHIAKg",
+        "title": "IVE 아이브 &#39;LUCID DREAM&#39; MV",
+        "description": "IVE JAPAN 4th EP『LUCID DREAM』 発売日：2026年5月27日(水)発売 CDご購入 : https://ive.lnk.to/J6P31j 配信リンク： ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/trlOTS4nKO4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/trlOTS4nKO4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/trlOTS4nKO4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sony Music (Japan)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-25T15:01:05Z"
+      }
+    }
+  ]
+}

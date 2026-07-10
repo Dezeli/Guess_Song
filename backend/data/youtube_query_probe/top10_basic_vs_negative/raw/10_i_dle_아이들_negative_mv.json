@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "46f3Uw9kVVdVQA02UJlf35Ssl6s",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 775221,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "sNWgN8ijjv8oYssLds-4BX7waL8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "a9zS8zlQIx4"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-11T21:43:52Z",
+        "channelId": "UChCfF6gKAa7qStBWSLA_j4Q",
+        "title": "i-dle (아이들) &quot;good thing&quot; mv with names",
+        "description": "THIS SONG IS NOT MINE. PLEASE SUPPORT THE ORIGINAL ORIGINAL VIDEO: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/a9zS8zlQIx4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/a9zS8zlQIx4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/a9zS8zlQIx4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "abi",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-11T21:43:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Uq59djkNMiplP2Zq7pvbNNpiPsA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j2P-SNgwe44"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-07T11:46:42Z",
+        "channelId": "UCiXosvlgoCoH5VLgwo9ju8w",
+        "title": "i-dle歴代MV再生回数TOP10 #kpop #idle #gidle #mv #아이들 #여자아이들",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j2P-SNgwe44/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j2P-SNgwe44/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j2P-SNgwe44/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "きむすけ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-07T11:46:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QO5SVdpZWBLc9m1AGFAbsR0CJ4M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uV9bPKiGLr0"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-21T12:01:46Z",
+        "channelId": "UC8d-6demkVnx9AuUUdP-_5A",
+        "title": "kpop爱豆拍mv是真的拼命啊，一定要保护好艺人啊！#kpop#mv#blackpink#bts#idle",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uV9bPKiGLr0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uV9bPKiGLr0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uV9bPKiGLr0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "追星巨有料",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-21T12:01:46Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "k4ypOeSyd0sjCcEyY6PFwuXh2uI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yvOjr0JVgNI"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-18T08:32:08Z",
+        "channelId": "UCBURM68cM3h_PEtwKxNaqfg",
+        "title": "【中韓字幕】(G)I-DLE - Revenge (中字MV 4K)",
+        "description": "GIDLE (여자)아이들_自製中字版請勿二改二傳！！！！ 微博：JaxPOP ①如果你喜歡這部影片，不要忘記按喜歡☆if you like this ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yvOjr0JVgNI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yvOjr0JVgNI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yvOjr0JVgNI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Jaxirius",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-18T08:32:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GMU5heyJXlOrnch-tWi3-Jfh2Ko",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Z6lMMHgBJgM"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-06T09:59:05Z",
+        "channelId": "UCTC4hCaYojbDzguNS9Tj91A",
+        "title": "idle主打歌MV上线，还有回归不大爆的风险吗 #kpop#idle #宋雨琦 #田小娟",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Z6lMMHgBJgM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Z6lMMHgBJgM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Z6lMMHgBJgM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "嗨皮娱乐坊",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-06T09:59:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "b-wdqeVsJU7i7eZp9VKC3znNU9Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_z8roAwsleE"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-24T11:15:04Z",
+        "channelId": "UCettufqRjQeDNTPUE_CwFew",
+        "title": "(G)I-DLE的每首MV在YouTube上都用时多久才破亿呢#gidle #mv #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_z8roAwsleE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_z8roAwsleE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_z8roAwsleE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "笑点轰炸机 LOLBomber",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-24T11:15:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wNyK0uDV8S2ZVdZNCocpzR8F8f8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "rHAO09rLKYI"
+      },
+      "snippet": {
+        "publishedAt": "2024-08-10T23:36:57Z",
+        "channelId": "UCIqKBGHDq79t_R2XiEMfOJQ",
+        "title": "(G)I-DLE MV Playlist 2024 Updated | Tyna Nguyễn",
+        "description": "Timestamps •♬•♫•. 00:00 Klaxon 03:06 Bloom 06:20 Fate 09:09 Super Lady 11:41 Wife 13:52 I Want That 17:12 Allergy 20:08 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rHAO09rLKYI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rHAO09rLKYI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rHAO09rLKYI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tyna Nguyễn",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-08-10T23:36:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7OTKVgHyRi4PCfNEeC30jGtxSqE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YrzFEtmDZRw"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-17T07:03:02Z",
+        "channelId": "UCGb2XXuC2vb2fNYx8zHQwDQ",
+        "title": "i-dle - TOP 10 Most Viewed MV (August 2025) #kpop #kpopshorts #idle #gidle",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YrzFEtmDZRw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YrzFEtmDZRw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YrzFEtmDZRw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Kpop Top List",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-17T07:03:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "AJgVtTDmJEfFv8TYoLVOc6zyIp0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tXVWfkClaz4"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-06T17:25:18Z",
+        "channelId": "UC7OYCrKJKoLunbDq7_VLy3g",
+        "title": "i-dle - Gimme Dat Love - LINE DISTRIBUTION | Who Sings the Most? 🎤",
+        "description": "Curious about the line distribution in i-dle's latest track, \"Gimme Dat Love\"? Watch as we reveal who gets the most lines and how ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tXVWfkClaz4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tXVWfkClaz4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tXVWfkClaz4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-STAT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-06T17:25:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "L_WDOmCG3QtsDhOMmbDvG04P1gg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "5OttiKy1iLY"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-08T12:00:06Z",
+        "channelId": "UCZh9-xBQcRQH1zpGAzGzatQ",
+        "title": "i-dle Gimme Dat Love + manifest Toz Pembe + dodree + ATEEZ Fallin + Radikal + SVT + NEXZ + PERSES MV",
+        "description": "Get all exclusive reactions in our patreon , check out the tiers and get to requests exclusive reactions by supporting our patreon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5OttiKy1iLY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5OttiKy1iLY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5OttiKy1iLY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Lenny Len",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-08T12:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "lUlGquuiOgCNZNgr1yPWBkQon28",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "513WXuUy9rg"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-30T10:30:45Z",
+        "channelId": "UCLr3mhJ4xp4NkyTUpKrb_lg",
+        "title": "idle MV里男主哪一位最惨#idle #宋雨琦 #叶舒华",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/513WXuUy9rg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/513WXuUy9rg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/513WXuUy9rg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "饭搭子是偶像",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-30T10:30:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iPLdO3MNfzV1XiJB_xLsM_odlRE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lvkgjOPb-3Y"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-19T08:59:52Z",
+        "channelId": "UCSHjAsVFGjThRHYLNZdWuuA",
+        "title": "Top 10 Most Viewed (G)i-dle MV #kpop #gidle",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lvkgjOPb-3Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lvkgjOPb-3Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lvkgjOPb-3Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Marina Music",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-19T08:59:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "KwSRhF0E-yTUl8i0iqPzwDy26H4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hI9d88ETPnQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-22T10:54:03Z",
+        "channelId": "UCyiXJ25h_cf0uaYyKI1Btug",
+        "title": "I-dle 아이들미연 드라마 같은 뮤비 주인공",
+        "description": "永遠前夜 #TENBLANK #아이들 #idle #미연 #MV #뮤직비디오.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hI9d88ETPnQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hI9d88ETPnQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hI9d88ETPnQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "최애일기",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-22T10:54:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XIVTQG8Smh_pSu7AKPLUGlBDJ5g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "BfAIVHVpE5U"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-10T11:00:19Z",
+        "channelId": "UCMtpBfXOQUakdHyY4U_r_FQ",
+        "title": "DIBALIK MV KPOP YANG MENGEJUTKAN FANS #IDLE #BLACKPINK #TXT #JUNGKOOK #TIKTOKTAINMENT",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BfAIVHVpE5U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BfAIVHVpE5U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BfAIVHVpE5U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "EBS FM",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-10T11:00:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UxaS2IyKf_47vqEi1eI9Iaei5ko",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aQIe_wete84"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-09T16:42:36Z",
+        "channelId": "UCNdJzod38HkMBm9RV3i3r4g",
+        "title": "Girlfriend #idle #gidle #kpop #trending #ytshorts #fyp #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aQIe_wete84/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aQIe_wete84/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aQIe_wete84/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Stay ⋆. ݁₊",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-09T16:42:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Mjy2P_KPVHmghb7KBe8II6fe0hc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wIglKJqbf_I"
+      },
+      "snippet": {
+        "publishedAt": "2024-08-07T10:41:56Z",
+        "channelId": "UCi3xs06A8YrvorTMToCbqXQ",
+        "title": "(G)-IDLE Revenge MV (Censored version) see description for more info",
+        "description": "I've made this for anyone who doesn't want to watch the original for sensitive reasons !! - I've censored the potentially triggering ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wIglKJqbf_I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wIglKJqbf_I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wIglKJqbf_I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Beau ♡",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-08-07T10:41:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "on0dFY73YTCbVyBCohGbbfD1wVU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "STHgd7q5dGA"
+      },
+      "snippet": {
+        "publishedAt": "2025-10-02T18:22:01Z",
+        "channelId": "UCM6Z4tDlaP75ngyzX4bcUJQ",
+        "title": "M.O - Yuqi #kpop #idle #mv #yuqi",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/STHgd7q5dGA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/STHgd7q5dGA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/STHgd7q5dGA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "𝐂𝐨𝐨𝐤𝐢𝐞 ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-10-02T18:22:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8l4U1YwupJWdIF4S9PB-u5mQL10",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SfrLG0M0AHk"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-25T08:38:49Z",
+        "channelId": "UCl0lXBAYcVAWPZXQfpHlmvg",
+        "title": "宋雨琦拍mv一秒变脸好可爱 #idle #宋雨琦 #kpop #yuqi",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SfrLG0M0AHk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SfrLG0M0AHk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SfrLG0M0AHk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "娱乐顶呱呱",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-25T08:38:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yqhiBAN73-Ulohp5Ock2Ka8Scz4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Gexr-UrnKJ4"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-06T08:13:27Z",
+        "channelId": "UCg8l2Extjk4_7Nwn56JfERA",
+        "title": "สมาชิก (G)I-DLE ออกเงินครึ่งนึงทำ MV &#39;Super Lady&#39; #g_i_dle #cube #cubeentertainment #kpop #thumbster",
+        "description": "ถ้าชอบคอนเทนต์อย่าลืมกด subscribe กันด้วยนะครับ! ติดตามคอนเทนต์อื่นๆ ได้ที่ facebook.com/thumbster @Thumbster ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Gexr-UrnKJ4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Gexr-UrnKJ4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Gexr-UrnKJ4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Thumbster",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-06T08:13:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Pgq0ZgO2yiYCmQhb2RdQuvlhiv0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "H1Eh5vEeG4I"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-16T02:00:03Z",
+        "channelId": "UC3zUvJK1xL2QwxKcKuAJ2LQ",
+        "title": "[4K 60FPS] i-dle (아이들) &#39;Crow&#39; MV",
+        "description": "Original MV : https://youtu.be/bUMLC9lCgHo?si=riWz_tUwoFKVkrQT Select this option to see my video in 60fps : • 720p60 (HD ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/H1Eh5vEeG4I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/H1Eh5vEeG4I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/H1Eh5vEeG4I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "natanworkspace",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-16T02:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "bx7HhQgs5PKvsyiMhBLCiJEV7YQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VP-0ts1NcfM"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-28T05:02:44Z",
+        "channelId": "UCB2UNKXHabdADBaGc0Kgp9w",
+        "title": "【『俺アラ』x i-dle】「ARISE」🎵 Official MV公開！",
+        "description": "idle #arise Official MV 📽️ MIYEONとSHUHUAに続き、ハンターとして合流するMINNIE、SOYEON、YUQI   完全体となっ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VP-0ts1NcfM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VP-0ts1NcfM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VP-0ts1NcfM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "俺だけレベルアップな件:ARISE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-28T05:02:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Y1BhWARPnSYugpBTnhDxQMb98v8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "QERRs6RRI0s"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-09T11:57:31Z",
+        "channelId": "UClJybOBKzE2b3k8tz2UVMKg",
+        "title": "【MV繁中字】 i-dle (아이들) - Girlfriend",
+        "description": "All rights belongs to their respective owners ①本站所有中字不是本人翻譯的，會在資訊欄附上出處②本影片如有侵權，麻煩請 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QERRs6RRI0s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QERRs6RRI0s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QERRs6RRI0s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "J ennie",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-09T11:57:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "fzt45ez3WsRbJUIF5N0YaBkntSM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yodKaZuNEHo"
+      },
+      "snippet": {
+        "publishedAt": "2024-01-29T14:27:23Z",
+        "channelId": "UCgAMMwCevNzTZYrnYqN5v8w",
+        "title": "[MV] (G)I-DLE - Super Lady（日本語字幕）",
+        "description": "韓国公開 2024.01.29 #(G)I-DLE #(여자)아이들 #SuperLady 和訳歌詞は、Uta bank様の歌詞をお借りしました。",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yodKaZuNEHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yodKaZuNEHo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yodKaZuNEHo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ONCE 0724B",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-01-29T14:27:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_nzNvbP5U9tIN6UKA2cIFdP7yNw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mcvLu9vcc0Y"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-01T06:00:38Z",
+        "channelId": "UCiVPco2hC8Ynux_qk84LEbg",
+        "title": "I-DLE 2025 MV EVOLUTION (2018-2025)",
+        "description": "(G)I-DLE 2025 MV EVOLUTION (2018-2025) I-DLE Official YouTube:/ @official_g_i_dle I-DLE Official X: https://x.com/G_I_DLE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mcvLu9vcc0Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mcvLu9vcc0Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mcvLu9vcc0Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Asian Girls Edition",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-01T06:00:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hhG8NwuORN3V7CASqvA7CFDmAEg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JbRHU3WhOGM"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-22T04:00:32Z",
+        "channelId": "UC8d-6demkVnx9AuUUdP-_5A",
+        "title": "idle最贵的mv是哪个？竟然还是idle成员自己出的钱！#idle#叶舒华#宋雨琦",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JbRHU3WhOGM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JbRHU3WhOGM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JbRHU3WhOGM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "追星巨有料",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-22T04:00:32Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "XqQB9diPuMe4hHKMtv6qDVL8GPc",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "x99P-5YbY8JU5yWzGxfEBILsIJg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JSFG-IE8n_c"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-07T05:00:06Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - like JENNIE (Official Video)",
+        "description": "Official music video for “like JENNIE” from the album 'Ruby' out now: https://jennie.lnk.to/ruby Directed by HANBAGO (HAN ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JSFG-IE8n_c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JSFG-IE8n_c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JSFG-IE8n_c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-07T05:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "KNjzkBEKNNB2V1LOhlkfCC6BSaM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bB3-CUMERIU"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-11T00:00:06Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - Mantra (Official Video)",
+        "description": "Official music video for “Mantra” by JENNIE out now: https://jennie.lnk.to/mantra 'Ruby' The 1st Studio Album out now: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bB3-CUMERIU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bB3-CUMERIU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bB3-CUMERIU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-11T00:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0CySvvZ40cy2OVnyoHLhtsgnVCc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "cXmYNmQ4BuM"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-25T05:00:34Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - ZEN (Official Video)",
+        "description": "Official music video for “ZEN” from the album 'Ruby' out now: https://jennie.lnk.to/ruby Directed by Cho Gi-Seok Follow JENNIE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cXmYNmQ4BuM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cXmYNmQ4BuM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cXmYNmQ4BuM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-25T05:00:34Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S3riq79fiEDNyxgrA3aQfmB_CoA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "23urWKmHS6o"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-31T05:00:06Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE &amp; Dominic Fike - Love Hangover (Official Video)",
+        "description": "Official music video for “Love Hangover” by JENNIE & Dominic Fike out now: https://jennie.lnk.to/lovehangover 'Ruby' The 1st ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/23urWKmHS6o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/23urWKmHS6o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/23urWKmHS6o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-31T05:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "f5hqZbhDfyeDPr7r4njMiC7dAu8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eWAdpUyzCkI"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-21T05:00:40Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE, Doechii - ExtraL (Official Video)",
+        "description": "Official music video for “ExtraL” by JENNIE & Doechii out now: https://jennie.lnk.to/extral 'Ruby' The 1st Studio Album out now: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eWAdpUyzCkI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eWAdpUyzCkI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eWAdpUyzCkI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-21T05:00:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rYBmctjMDe9ldEeBi-d5DxKCuW0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "b73BI9eUkjM"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-12T09:00:04Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "JENNIE - &#39;SOLO&#39; M/V",
+        "description": "JENNIE - SOLO 천진난만 청순가련 새침한 척 이젠 지쳐 나 귀찮아 매일 뭐 해 어디야 밥은 잘 자 Baby 자기 여보 보고 싶어 다 부질 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/b73BI9eUkjM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/b73BI9eUkjM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/b73BI9eUkjM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-12T09:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "cINDUOo_jEX03auwqSdknTb1Aco",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "XD00TJ-6WSw"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-12T15:00:44Z",
+        "channelId": "UCNYi_zGmR519r5gYdOKLTjQ",
+        "title": "JENNIE - like JENNIE (Official Live Performance Video l NPOP LIMITED EDITION - SIDE A)",
+        "description": "Official live performance video for “like JENNIE” from the album 'Ruby' out now: https://jennie.lnk.to/ruby NPOP LIMITED EDITION ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XD00TJ-6WSw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XD00TJ-6WSw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XD00TJ-6WSw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JENNIE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-12T15:00:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EULCdSVAONIe1WShxvVXqIMaPno",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lBimDKKNDDs"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-09T12:00:48Z",
+        "channelId": "UC_6KWajhpTGG3LFpBLqkqXg",
+        "title": "(4K) 제니(JENNIE) &#39;like JENNIE&#39; | NPOP LIMITED EDITION - SIDE A",
+        "description": "첫 번째 정규 앨범으로 돌아온 JENNIE! JENNIE의 매혹적인 'like JENNIE' 무대를 NPOP LIMITED EDITION - SIDE A에서 만나 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lBimDKKNDDs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lBimDKKNDDs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lBimDKKNDDs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NPOP",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-09T12:00:48Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "mH8bvL8RCec7kJ8vow6iw7jwuNA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eQNHDV7lKgE"
+      },
+      "snippet": {
+        "publishedAt": "2023-10-06T04:00:20Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "JENNIE - ‘You &amp; Me’ DANCE PERFORMANCE VIDEO",
+        "description": "JENNIE - You & Me You know I gotcha You know that I got you like that Ain't nobody gonna have your back like the way I do You ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eQNHDV7lKgE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eQNHDV7lKgE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eQNHDV7lKgE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-10-06T04:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ldv8xrl7oz_p54mBmKgwZA9arsQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ao2GsXHMD_4"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-26T04:00:11Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - Seoul City (Official Video)",
+        "description": "Official music video for “Seoul City” from the album 'Ruby' out now: https://jennie.lnk.to/ruby Production House: NEWYEAR* ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ao2GsXHMD_4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ao2GsXHMD_4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ao2GsXHMD_4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-26T04:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "R59s3guv7QgiXKhk104ifrNSMHo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xfqBQ2XhBCg"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-26T09:00:08Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "ZICO (지코) ‘SPOT! (feat. JENNIE)’ Official MV",
+        "description": "ZICO 11th Digital Single 'SPOT! (feat. JENNIE)' http://zico.lnk.to/SPOT #ZICO #지코 #JENNIE #제니 #SPOT #스팟 Credits: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xfqBQ2XhBCg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xfqBQ2XhBCg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xfqBQ2XhBCg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-26T09:00:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S0eUO1hOysT8r9Ujag79Tzus_CY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "V5bVtAej1hs"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-25T12:00:42Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - Mantra (Official Performance Video)",
+        "description": "Official performance video for “Mantra” by JENNIE out now: https://jennie.lnk.to/mantra Follow JENNIE - Instagram: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/V5bVtAej1hs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/V5bVtAej1hs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/V5bVtAej1hs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-25T12:00:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vUDs3lYhN1YnoNXYdxhE9ANE5cs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aS7al94FVbk"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-07T05:00:03Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE - like JENNIE (Official Lyric Video)",
+        "description": "Official lyric video for “like JENNIE” from the album 'Ruby' out now: https://jennie.lnk.to/ruby Follow JENNIE - Instagram: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aS7al94FVbk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aS7al94FVbk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aS7al94FVbk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-07T05:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PuVFBCNJ7OJSsgh1xYtjrCt-CSw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vdDuCvCrcKg"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-16T01:00:05Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "JENNIE - &#39;SOLO&#39; CHOREOGRAPHY UNEDITED VERSION",
+        "description": "[JENNIE - 'SOLO' CHOREOGRAPHY UNEDITED VERSION] #BLACKPINK #블랙핑크 #JENNIE #제니 #SOLO ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vdDuCvCrcKg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vdDuCvCrcKg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vdDuCvCrcKg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-16T01:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "2uGkFbS1HDnV6boezduAqADQCxU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "seARsMwjbEU"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-10T15:00:07Z",
+        "channelId": "UCN9_L9lA9kqJbGANLRus_1A",
+        "title": "JENNIE &amp; Dua Lipa - Handlebars (Official Video)",
+        "description": "Official music video for “Handlebars” from the album 'Ruby' out now: https://jennie.lnk.to/ruby Starring JENNIE & Dua Lipa Prod.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/seARsMwjbEU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/seARsMwjbEU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/seARsMwjbEU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JennieRubyJaneVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-10T15:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YfTMfvppM-dEEt_TeBT8-fDL7dk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "CgCVZdcKcqY"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-11T04:00:07Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "BLACKPINK - ‘뛰어(JUMP)’ M/V",
+        "description": "BLACKPINK - 뛰어(JUMP) I'm not that easy to tame You should see me under these lights All my tears turn to ice That's the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CgCVZdcKcqY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CgCVZdcKcqY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CgCVZdcKcqY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-11T04:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "RlpllQ91G5Q_-9OgApsgmAuqfMs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7CbnkWee3gs"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-22T05:00:06Z",
+        "channelId": "UCmP2erPUpdtotaV3UB-KxoA",
+        "title": "JENNIE (제니) &#39;Filter&#39; Official MV",
+        "description": "Listen 'Ruby' Album now: https://jennie.lnk.to/Ruby [Credits] Vocals & Composition/Lyrics: JENNIEProduction & Vocal Production: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7CbnkWee3gs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7CbnkWee3gs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7CbnkWee3gs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Oddatelier",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-22T05:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-vxJh01ua86xbZMGcd4W3BqdY9k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vHCOryn3Odk"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-07T13:42:14Z",
+        "channelId": "UCNYi_zGmR519r5gYdOKLTjQ",
+        "title": "LIKE JENNIE OUT NOW",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vHCOryn3Odk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vHCOryn3Odk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vHCOryn3Odk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JENNIE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-07T13:42:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Xtc-q0bZQSOqTNFHTdn5CBV_LnA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "l74IoKvRQtg"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-19T18:02:34Z",
+        "channelId": "UC9PkcKNbMsuMg7pRksKp0VQ",
+        "title": "JENNIE - like JENNIE / DANCE MIRRORED",
+        "description": "JENNIE #Ruby #likeJENNIE #jennie #jenniekim Support me - 2200170602367919 JENNIE like JENNIE dance JENNIE like ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/l74IoKvRQtg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/l74IoKvRQtg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/l74IoKvRQtg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "minimax",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-19T18:02:34Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "OeIdd4aQDtjXjEhtUx9RuewSGd4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WoGaQemdFWc"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-07T08:25:19Z",
+        "channelId": "UCGSTn0l9auCZnw0_7iOGciw",
+        "title": "이게 내 가치 | like JENNIE - JENNIE(제니)[가사해석/번역/lyrics]",
+        "description": "제니 #jennie #가사해석.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WoGaQemdFWc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WoGaQemdFWc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WoGaQemdFWc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "닉덤",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-07T08:25:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "fCylIXtcUV_Q-2vUzhBYH4kACB0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ihg1im1P64s"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-01T03:00:15Z",
+        "channelId": "UCKSeISfQsv3t7Y4R4_wuBAw",
+        "title": "🩵 이런, 또 저질러 버렸네 | JENNIE &amp; Dominic Fike - Love Hangover | 가사/해석/ENG",
+        "description": "광고문의: contact@umag.io • 개인문의: channelname.supernova@gmail.com JENNIE & Dominic FIke - Love Hangover 제니 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ihg1im1P64s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ihg1im1P64s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ihg1im1P64s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SUPERNOVA",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-01T03:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kNQAJg5kBSHiSiL2KQoZSH4c-LM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6DBtz2enWSA"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-07T08:28:51Z",
+        "channelId": "UCmth4hMyizG-_W9jidBqs_A",
+        "title": "JENNIE (제니) &#39;Like Jennie&#39; (Color Coded Lyrics)",
+        "description": "All Rights Administered by OA. Trust me, you don't want to miss this playlist!   Listen till the end and lose yourself in the music!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6DBtz2enWSA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6DBtz2enWSA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6DBtz2enWSA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Jaeguchi",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-07T08:28:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "h9AMjAkvVGU8giM3AQJGB0_lDGw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WsGSMeQv3fg"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-05T22:08:56Z",
+        "channelId": "UCkE85WQgVIBdl1iYS-sP8Tg",
+        "title": "밤에만 만날 수 있는 사이🌙 | JENNIE &amp; Tame Impala - Dracula [가사해석]",
+        "description": "blackpink #jennie #블랙핑크 #제니 #tameimpala #dracula #remix #가사해석 #노래.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WsGSMeQv3fg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WsGSMeQv3fg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WsGSMeQv3fg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "jenniebara",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-05T22:08:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "lSSsOtY6qJO19HaoEJXOr_8PjEc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mvnLt4dLwZQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-12-20T13:56:51Z",
+        "channelId": "UCpBlDSUyOpP1WqWVJxZpGLg",
+        "title": "[#MMA2025] 제니 - Seoul City + ZEN + like JENNIE  (4K) | #제니 #JENNIE #20251220",
+        "description": "제니 - Seoul City + ZEN + like JENNIE (4K) 🖥️ MMA2025 퍼포먼스 영상과 포토 다시 보기 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mvnLt4dLwZQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mvnLt4dLwZQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mvnLt4dLwZQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "멜론 Melon",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-12-20T13:56:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WbFRT9OP2M6X0shnR9dNdVPzpYo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FXoPu6PqPH4"
+      },
+      "snippet": {
+        "publishedAt": "2023-10-07T02:08:41Z",
+        "channelId": "UCc25IYDlzzCGpauP3uIVoIA",
+        "title": "세일러문으로 변신한 제니 ✨🌌  𝙅𝙀𝙉𝙉𝙄𝙀 - 𝙔𝙤𝙪 &amp; 𝙈𝙚 [한글 가사/해석]",
+        "description": "제니 #Blackpink #Jennie #블랙핑크 블랙핑크 콘서트에서 선공개됐을 때 부터 정식 발매 계에속 기다리던 유앤미(You and Me) ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FXoPu6PqPH4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FXoPu6PqPH4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FXoPu6PqPH4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "이상한 나라의 매디",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-10-07T02:08:41Z"
+      }
+    }
+  ]
+}

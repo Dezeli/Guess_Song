@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ryyQH8KGcI_gRAmDwThlMwsdRUo",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 268331,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SQUR9Ikx5ScatKHpQGdRFU6oyp8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WreNNw2ksKo"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-17T13:03:07Z",
+        "channelId": "UCmnrdrE5V5CKuu7x8_V1S9A",
+        "title": "NewJeans (뉴진스) &#39;Ditto&#39; Official MV (side A) (Boycott)",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WreNNw2ksKo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WreNNw2ksKo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WreNNw2ksKo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Newjeans boycott",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-17T13:03:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zU54koT346GipmIgn9xsmyI8n0o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "i_4Q2SajywU"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-29T09:00:36Z",
+        "channelId": "UC2i_4vjGibBN0cPe7v5oQpg",
+        "title": "【K-POP】NewJeans MV K-POPメドレー【KPOP PLAYLIST】",
+        "description": "newjeans #kpop #music #bgm 【K-POP】NewJeans MV K-POPメドレー【KPOP PLAYLIST】   ようこそ！この動画 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/i_4Q2SajywU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/i_4Q2SajywU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/i_4Q2SajywU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "【서주 한잔】ソジュハンザン",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-29T09:00:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "T_Ih678CnAWvg8a-p_1LDcss3VQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KY9S8Q9SNKg"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-08T17:41:44Z",
+        "channelId": "UCiXosvlgoCoH5VLgwo9ju8w",
+        "title": "【神曲】NewJeans大ヒットMVメドレー",
+        "description": "kpop #newjeans #mv #メドレー.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KY9S8Q9SNKg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KY9S8Q9SNKg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KY9S8Q9SNKg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "きむすけ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-08T17:41:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Uxe8fl7qdGtK0lt8FRyGiYdkTUE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FJONW4Uxdww"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-21T08:28:22Z",
+        "channelId": "UCitturmYaReYksSxQ5_Y8Ow",
+        "title": "Behind the scene vs M/V #jisoo #bts #jump #blackpink #mv #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FJONW4Uxdww/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FJONW4Uxdww/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FJONW4Uxdww/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ℯ𝓁𝓋𝒾𝓃𝒶",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-21T08:28:22Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "F8-xL542MXgZIkx5UFQCz9Ebx4I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3NmWsZol0Dc"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-24T05:08:39Z",
+        "channelId": "UCSI0kVufvLsYsBeZYIvX2IQ",
+        "title": "Jennie edit lipstick #kpop #lia #kpopidol #mv #twice #yuna #kpopsinger #newjeans #itzy #yunaitzy",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3NmWsZol0Dc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3NmWsZol0Dc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3NmWsZol0Dc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "tg entertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-24T05:08:39Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "lafrZhdJiZcDM84WjgDhUN7ZqVw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jFYZ1lwcvFw"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-25T18:26:03Z",
+        "channelId": "UCZgJVpSvDS5fbh7tiLjLqTQ",
+        "title": "Мин Хи Джин #kpop #newjeans #ive #mv #blackpink #newjeans_asap #뉴진스  #newjeans #bts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jFYZ1lwcvFw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jFYZ1lwcvFw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jFYZ1lwcvFw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "_ukirin_",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-25T18:26:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kDkUiAqyRouEchIS01yQBcNO4-E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "--MuJBfUZ-s"
+      },
+      "snippet": {
+        "publishedAt": "2026-06-30T07:15:26Z",
+        "channelId": "UCeKPcUMpCA7yArxSh-NOHXQ",
+        "title": "여름이었다... 🎐 청량함 한도초과 뉴진스(NewJeans) MV 플레이리스트",
+        "description": "[Tracklist] 00:00 Attention 02:55 Hype Boy 05:50 Cookie 09:43 ETA 12:12 Super Shy 15:22 OMG 18:54 Supernatural 22:02 ASAP ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/--MuJBfUZ-s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/--MuJBfUZ-s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/--MuJBfUZ-s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MxJin06",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-06-30T07:15:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qILPxnkkeGp6DbHrGEzMfyJG5AM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xWIH0XEbEGg"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-22T18:15:10Z",
+        "channelId": "UCegEWR7GXC0GvA7EeUyw4ww",
+        "title": "【playlist】NewJeans Title MV 뉴진스 타이틀곡 뮤비 모음",
+        "description": "00:00 Supernatural 03:07 Right Now 05:44 How Sweet 09:31 Bubble Gum 12:50 Our Night is more beautiful than your Day 16:05 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xWIH0XEbEGg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xWIH0XEbEGg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xWIH0XEbEGg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "비가내리고 음악이흐르면 | Like Rain Like Music",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-22T18:15:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "mIKF6LJ2yCj0eo3Rhn39hkKn2N8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SdHWUxsmfJM"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-20T17:48:55Z",
+        "channelId": "UChjaOANXImpcmeh-USZ250Q",
+        "title": "#kpop #mv #blackpink #twice #dance #straykids #itzy_borntobe #newjeans #itzy_untouchable #diy",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SdHWUxsmfJM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SdHWUxsmfJM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SdHWUxsmfJM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": " 𐙚Katy",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-20T17:48:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZqYwpMRv1PM8mboqu0gfIVfnWYc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "87GW404dLUE"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-20T11:32:36Z",
+        "channelId": "UCUS3vCC2L2pBHTQ1naXuTfg",
+        "title": "Idols &amp; actors who appeared in kpop mvs #kpop #mv #bts #newjeans #choihyunwook #alldayproject #gidle",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/87GW404dLUE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/87GW404dLUE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/87GW404dLUE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sugayalice",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-20T11:32:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "L9b4v5CRknS6mQBe8rTcZCRkN04",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yz9KBC_OPpY"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-13T10:04:39Z",
+        "channelId": "UCGoeuJo9yHWnN6CjbF6RRCg",
+        "title": "#kpop #뉴진스 #newjeans #mv #dance #키스오브라이프 #rem #kissoflife #shortsviral #motivation",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yz9KBC_OPpY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yz9KBC_OPpY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yz9KBC_OPpY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IsLåmic ChånnêL🔹",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-13T10:04:39Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wuqBJsfTqHNTdDW5wOjYK1bapkE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OqUgtWW_nkQ"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-24T10:09:38Z",
+        "channelId": "UC2B1ek2z9CkIPBWRO8iL8xw",
+        "title": "뉴진스 &#39;How Sweet&#39; MV 해린 CUT (HAERIN CUT)",
+        "description": "컴백 축하해!!! #뉴진스 #newjeans #버니즈 #bunnies #해린 #강해린 #haerin #뉴진스해린 #newjeanshaerin #howsweet #mv #CUT.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OqUgtWW_nkQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OqUgtWW_nkQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OqUgtWW_nkQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "블랙해린",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-24T10:09:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "IBrSQGIJJW2xlQn1w4Hj3YuYd9Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dlYFPFBcyk8"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-10T10:38:03Z",
+        "channelId": "UCxNIjt2c_Wgf8gRH7CFsGNw",
+        "title": "신곡 넘 기대중🫶🫶 #mv #newjeans #kpop #tv #アイヴ #아이브 #ive #blackpink #감사합니다 #aesthetic",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dlYFPFBcyk8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dlYFPFBcyk8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dlYFPFBcyk8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "채련",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-10T10:38:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zKcP9q6J9ebzp1WU__tMBLMn7-s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jaojQC3aLj4"
+      },
+      "snippet": {
+        "publishedAt": "2024-02-01T23:40:38Z",
+        "channelId": "UCBzU2EkxuTbCnPYSQMqkoCA",
+        "title": "GV!X “NewJeans” OFFICIAL MV",
+        "description": "Editor:Alice Animation cd: alice ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jaojQC3aLj4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jaojQC3aLj4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jaojQC3aLj4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ACE ENTERTAINMENT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-02-01T23:40:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yewM9YaUnF7tznTmb95E5O036O8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "cQUs2IJdh9Y"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-25T18:36:27Z",
+        "channelId": "UCIOiwiSv858W_u5g6sQhYQw",
+        "title": "I got flashbacks of me being traumatized by the mv 😭😭😭😭",
+        "description": "straykids #kpop #kpopgroup #boyband #kpopboyband #koreanpop #skz #comeback #music #musicvideo #stay #song #album ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cQUs2IJdh9Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cQUs2IJdh9Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cQUs2IJdh9Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Quokka Artist",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-25T18:36:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "OmZc0IrKHKtwG2obskLpY_LEm9E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "r8su3DuDB_c"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-08T11:00:29Z",
+        "channelId": "UCIqKBGHDq79t_R2XiEMfOJQ",
+        "title": "#13 KPOP PLAYLIST | BABYMONSTER, aespa, TREASURE, NewJeans, JENNIE | Tyna Nguyễn",
+        "description": "Timestamps •♬•♫•. 00:00 DRIP - BABYMONSTER 02:57 LAST NIGHT - TREASURE 05:54 Supernova - aespa 08:53 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/r8su3DuDB_c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/r8su3DuDB_c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/r8su3DuDB_c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tyna Nguyễn",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-08T11:00:29Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YpwWg1G-eBUMwD9qvVb9ITCsUUE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yB1zO0xWDxY"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-09T10:31:21Z",
+        "channelId": "UCEc6BZTJD_NPO5bfB9Mnt4g",
+        "title": "#kpop #mv #lesserafim #newjeans #newjeans_is_everywhere #뉴진스 #어도어 #ador #newjeans_bubblegum #fypシ",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yB1zO0xWDxY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yB1zO0xWDxY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yB1zO0xWDxY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "REDBLACK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-09T10:31:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_ZpEiG7Elj85ny7TmrBX5cypjb4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "E8fmmE0_5b0"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-07T12:44:04Z",
+        "channelId": "UCY2HXgBunJO-ASOE5uFVXZA",
+        "title": "【衝撃😱】NewJeansのMVに隠された深い意味とは #kpop #newjeans #njz",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/E8fmmE0_5b0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/E8fmmE0_5b0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/E8fmmE0_5b0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "K-POPの推し部屋",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-07T12:44:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SFQeX2i1kOEjIw5RU1QL_VPQUqQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vaVdzZ7ZTME"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-07T14:30:33Z",
+        "channelId": "UCTP8DMRC3oDZ8cGL1O9t9Mg",
+        "title": "Who owned Newjeans &#39;Bubble Gum&#39; #mv #newjeans #newjeans_is_everywhere #뉴진스 #bubblegum",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vaVdzZ7ZTME/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vaVdzZ7ZTME/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vaVdzZ7ZTME/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Mwiireu_Kpop 🧸",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-07T14:30:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0eo4WMrRW-tlnEOVZ2AdjEI2JAM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KtVjA7DhOwM"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-02T21:20:08Z",
+        "channelId": "UCcLZ69inQJdI8WJ6BOBxcLw",
+        "title": "izna na na na na (that is me ) #mv #n_a #이즈나 #izna #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KtVjA7DhOwM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KtVjA7DhOwM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KtVjA7DhOwM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Akezhan X",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-02T21:20:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zXZjwzSR0nAvP-cu3PHuD0TDcHY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uizWNNA8FLk"
+      },
+      "snippet": {
+        "publishedAt": "2025-12-30T19:51:41Z",
+        "channelId": "UCxzu-bGJgC6DKp1g0dfU2mw",
+        "title": "NewJeans (뉴진스) ‘Supernatural’ Official MV (BOYCOTT VER)",
+        "description": "NewJeans (뉴진스) 'Supernatural' Official MV (BOYCOTT VER) THIS IS A VERSION OF THE BOYCOTT MV SO THAT THE NEW ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uizWNNA8FLk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uizWNNA8FLk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uizWNNA8FLk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NEWJEANS_ADORBOYCOTT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-12-30T19:51:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SnnS6TWcQYbmVWso0tOhGC-mLb0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1hBAPiuD2I0"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-19T14:08:24Z",
+        "channelId": "UCOC81UyK8nKH5VRaUl-Gs9w",
+        "title": "#newjeans #mv #2022",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1hBAPiuD2I0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1hBAPiuD2I0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1hBAPiuD2I0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "nmixx twiceanditzy",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-19T14:08:24Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dMSPStcjXS0k1cvJEwEI8HMuE60",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yECSXnwUyOM"
+      },
+      "snippet": {
+        "publishedAt": "2024-09-11T09:05:55Z",
+        "channelId": "UCzd51uqh4zyzTUU6_hqDeVg",
+        "title": "Sutradara MV NewJeans Bongkar Kebohongan HYBE #NewJeans #BanHeeSooChannel #HYBE",
+        "description": "Sutradara MV NewJeans Bongkar Kebohongan HYBE Sutradara video musik NewJeans, Shin Woo Seok, kembali membuat ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yECSXnwUyOM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yECSXnwUyOM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yECSXnwUyOM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Kpop Inside",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-09-11T09:05:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UeTUEUlL2bYj6jPZuYoAKcZZaOk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "F0TZWnPHEtc"
+      },
+      "snippet": {
+        "publishedAt": "2024-08-10T05:30:10Z",
+        "channelId": "UCwxmjwYoqZxeTSYsTS228Zw",
+        "title": "hello fifty fifty #newjeans #뉴진스 #mv #kpop #lesserafim #하나 #hana #keena #문샤넬 #키나",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F0TZWnPHEtc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F0TZWnPHEtc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F0TZWnPHEtc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ada aja",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-08-10T05:30:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yAfw1siCLPeiyth1dooibTRGxbA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3g9RD-2ef4Y"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-07T16:23:46Z",
+        "channelId": "UC77SB3MoQ9QOaJVHbUno2Ug",
+        "title": "#twice #viral #kpop #twicealbum #twicecomeback #twicesana #twicemomo #kpop #mv #newjeans #뉴진스 #어도어",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3g9RD-2ef4Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3g9RD-2ef4Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3g9RD-2ef4Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "𝙏𝙒𝙄𝘾𝙀 𝙁𝙇𝙊𝙒𝙀𝙍",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-07T16:23:46Z"
+      }
+    }
+  ]
+}

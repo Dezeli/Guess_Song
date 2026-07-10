@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "UkITZu7v40MiRWikwup1G9s_v-M",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WjCnySxsSLBGbMBD7ylVtV0LiJg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kcelgrGY1h8"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-06T15:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;New Jeans&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'New Jeans' Official MV Producer: MIN HEE JIN Music Video Director: Youngeum Lee THE POWERPUFF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kcelgrGY1h8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kcelgrGY1h8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kcelgrGY1h8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-06T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WdUPlEh4vUCdHzwpLdUckforQdw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "js1CtxSY38I"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-21T15:00:14Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Attention&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Attention' Official MV OFFICIAL WEBSITE https://newjeans.kr/ Producer: MIN HEE JIN Music Video Director: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/js1CtxSY38I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/js1CtxSY38I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/js1CtxSY38I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-21T15:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WfvbX2uDwD1_c4Gg2K6-Te12ckg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jOTfBlKSQYY"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-21T03:58:10Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;ETA&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'ETA' Official MV Producer: MIN HEE JIN Music Video Director: Wooseok Shin In collaboration with Apple, this ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jOTfBlKSQYY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jOTfBlKSQYY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jOTfBlKSQYY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-21T03:58:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "20eJE-6vEAg3MTv8GBTUua_kHyo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ArmDp-zijuc"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-07T03:58:10Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Super Shy&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Super Shy' Official MV Producer: MIN HEE JIN Music Video Director: Heewon Shin 0:00 Super Shy 1:44 Join ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ArmDp-zijuc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ArmDp-zijuc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ArmDp-zijuc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-07T03:58:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1x2s7iXXW4K9vav-hPZUI5lqXww",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Q3K0TOvTOno"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-24T07:00:00Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;How Sweet&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'How Sweet' Official MV Producer: MIN HEE JIN Music Video Director: Heewon Shin © 2024 ADOR. All Rights ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Q3K0TOvTOno/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Q3K0TOvTOno/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Q3K0TOvTOno/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-24T07:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5dDX01N9RuV7JHu7vD3FgPTm73A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ZncbtRo7RXs"
+      },
+      "snippet": {
+        "publishedAt": "2024-06-21T04:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) ‘Supernatural’ Official MV (Part.1)",
+        "description": "NewJeans (뉴진스) 'Supernatural' Official MV (Part.1) Producer: MIN HEE JIN Music Video Director: Shin Dongle © 2024 ADOR.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZncbtRo7RXs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZncbtRo7RXs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZncbtRo7RXs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-06-21T04:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ttCM_YuND57DkYY3okmrqxSh5NM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sVTy_wmn5SU"
+      },
+      "snippet": {
+        "publishedAt": "2023-01-03T11:30:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;OMG&#39; Official MV (Performance ver.1)",
+        "description": "NewJeans (뉴진스) 'OMG' Official MV (Performance ver.1) Producer: MIN HEE JIN Music Video Director: Wooseok Shin ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sVTy_wmn5SU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sVTy_wmn5SU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sVTy_wmn5SU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-01-03T11:30:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YjeZ2-Q3ZfdmDr-RU_6-FerMu-0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9wUKhEgnllc"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-23T05:28:20Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hype Boy&#39; Official MV (DANIELLE&amp;HAERIN ver.)",
+        "description": "NewJeans (뉴진스) 'Hype Boy' Official MV (DANIELLE&HAERIN ver.) 유튜브 앱에서 시청하시면 더 편리하게 볼 수 있습니다.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9wUKhEgnllc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9wUKhEgnllc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9wUKhEgnllc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-23T05:28:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zkr6HWcgvhGpoPcfRMhDbsaqP5Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ft70sAYrFyY"
+      },
+      "snippet": {
+        "publishedAt": "2024-04-26T15:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Bubble Gum&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Bubble Gum' Official MV Producer: MIN HEE JIN Music Video Director: Youngeum Lee © 2024 ADOR.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ft70sAYrFyY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ft70sAYrFyY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ft70sAYrFyY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-04-26T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Dx5YwNCGtrm8stoM2QqQg428ySk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zsYSSVoQnP4"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-19T15:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Cool With You&#39; Official MV (side A)",
+        "description": "NewJeans (뉴진스) 'Cool With You' Official MV (side A) Producer: MIN HEE JIN Music Video Director: Wooseok Shin © 2023 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zsYSSVoQnP4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zsYSSVoQnP4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zsYSSVoQnP4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-19T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YqmbTRMsd4jKdnxhEZHiBsUUwA0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pSUydWEqKwE"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-19T09:00:03Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Ditto&#39; Official MV (side A)",
+        "description": "Producer: MIN HEE JIN Music Video Director: Wooseok Shin (DOLPHINERS FILM) c 2022 ADOR. All Rights Reserved. Connect ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pSUydWEqKwE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pSUydWEqKwE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pSUydWEqKwE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-19T09:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wnMOOlo_IKl76dZV4mrFivWl4p4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "m6pTbEz4w3o"
+      },
+      "snippet": {
+        "publishedAt": "2024-06-16T15:00:00Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Right Now&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Right Now' Official MV Producer: MIN HEE JIN Music Video Director: Youngeum Lee THE POWERPUFF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/m6pTbEz4w3o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/m6pTbEz4w3o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/m6pTbEz4w3o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-06-16T15:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "OyE-3JOcEB7_Fd5pW1dDgw8sIII",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "A4S8zl50AdM"
+      },
+      "snippet": {
+        "publishedAt": "2024-07-04T15:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) ‘Supernatural’ Official MV (Part.2)",
+        "description": "NewJeans (뉴진스) 'Supernatural' Official MV (Part.2) Producer: MIN HEE JIN Music Video Director: Shin Dongle © 2024 ADOR.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/A4S8zl50AdM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/A4S8zl50AdM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/A4S8zl50AdM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-07-04T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HsNnN7bQM-IvrnjCuzWEQX0bENE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "11cta61wi0g"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-18T09:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hype Boy&#39; Official MV (Performance ver.1)",
+        "description": "NewJeans (뉴진스) 'Hype Boy' Official MV (Performance ver.1) Producer: MIN HEE JIN Music Video Director: Dongle Shin ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/11cta61wi0g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/11cta61wi0g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/11cta61wi0g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-18T09:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "n8nElXU-cAp7eRqg24cLs5KUVRg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nJDMAjwxthM"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-19T15:00:06Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Cool With You&#39; &amp; &#39;Get Up&#39; Official MV (side B)",
+        "description": "NewJeans (뉴진스) 'Cool With You' & 'Get Up' Official MV (side B) Producer: MIN HEE JIN Music Video Director: Wooseok Shin ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nJDMAjwxthM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nJDMAjwxthM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nJDMAjwxthM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-19T15:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "s6bQaRpqMI2KfDenypn2Q_yNFZk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "s4Ow55AbdCg"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-24T15:00:02Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;ETA&#39; Official MV (Performance ver.)",
+        "description": "NewJeans (뉴진스) 'ETA' Official MV (Performance ver.) Producer: MIN HEE JIN Music Video Director: Wooseok Shin © 2023 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/s4Ow55AbdCg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/s4Ow55AbdCg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/s4Ow55AbdCg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-24T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "u7GXcBiLPE4BlkJvxl622Mz5KSM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jM-K-h9gUdM"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-23T05:28:28Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hype Boy&#39; Official MV (HANNI ver.)",
+        "description": "NewJeans (뉴진스) 'Hype Boy' Official MV (HANNI ver.) 유튜브 앱에서 시청하시면 더 편리하게 볼 수 있습니다. You can watch the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jM-K-h9gUdM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jM-K-h9gUdM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jM-K-h9gUdM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-23T05:28:28Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "piaXA4kTelKwOAUutFWZaYeweJI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "x8RIixqumUc"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-22T03:00:02Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Attention&#39; Official MV (Performance ver.)",
+        "description": "NewJeans (뉴진스) 'Attention' Official MV (Performance ver.) OFFICIAL WEBSITE https://newjeans.kr/ Producer: MIN HEE JIN ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/x8RIixqumUc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/x8RIixqumUc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/x8RIixqumUc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-22T03:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UTpqkiG6YR9Zi8zYKI24llkCbQA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "S4UEJePR0UE"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-24T09:00:01Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hype Boy&#39; Official MV (Performance ver.2)",
+        "description": "NewJeans (뉴진스) 'Hype Boy' Official MV (Performance ver.2) Producer: MIN HEE JIN Music Video Director: Dongle Shin ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/S4UEJePR0UE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/S4UEJePR0UE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/S4UEJePR0UE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-24T09:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "l0ouxK0zY0T6ZlGTuO-4efysBAQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VOmIplFAGeg"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-01T08:58:12Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Cookie&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Cookie' Official MV Producer: MIN HEE JIN Music Video Director: Dongle Shin c 2022 ADOR. All Rights ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VOmIplFAGeg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VOmIplFAGeg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VOmIplFAGeg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-01T08:58:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "d-szWpX6fuCzz-ir7T7pnIvz88M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dJdqn5v4Dkw"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-25T15:00:02Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;ASAP&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'ASAP' Official MV Producer: MIN HEE JIN Music Video Director: Jakyoung Kim © 2023 ADOR. All Rights ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dJdqn5v4Dkw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dJdqn5v4Dkw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dJdqn5v4Dkw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-25T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4ITwp02__La3gg19vuRpG2-mVV4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tVIXY14aJms"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-24T15:00:02Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hurt&#39; Official MV",
+        "description": "NewJeans (뉴진스) 'Hurt' Official MV OFFICIAL WEBSITE https://newjeans.kr/ Producer: MIN HEE JIN Music Video Director: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tVIXY14aJms/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tVIXY14aJms/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tVIXY14aJms/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-24T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dKEcdzixgSyWSbRAcXII7tnB--w",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "V37TaRdVUQY"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-19T09:00:12Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Ditto&#39; Official MV (side B)",
+        "description": "Producer: MIN HEE JIN Music Video Director: Wooseok Shin (DOLPHINERS FILM) c 2022 ADOR. All Rights Reserved. Connect ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/V37TaRdVUQY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/V37TaRdVUQY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/V37TaRdVUQY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-19T09:00:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Y1w9Kx3aCjZLES5Iyr2MoD_QSXQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Rrf8uQFvICE"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-23T05:28:15Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Hype Boy&#39; Official MV (MINJI ver.)",
+        "description": "NewJeans (뉴진스) 'Hype Boy' Official MV (MINJI ver.) 유튜브 앱에서 시청하시면 더 편리하게 볼 수 있습니다. You can watch the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Rrf8uQFvICE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Rrf8uQFvICE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Rrf8uQFvICE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-23T05:28:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rQzOwjc9tvdTVIcTF84-WrL1HsQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kKsivrgoyDw"
+      },
+      "snippet": {
+        "publishedAt": "2023-07-20T15:00:02Z",
+        "channelId": "UC3IZKseVpdzPSBaWxBxundA",
+        "title": "NewJeans (뉴진스) &#39;Cool With You&#39; Official MV (Performance ver.)",
+        "description": "NewJeans (뉴진스) 'Cool With You' Official MV (Performance ver.) Producer: MIN HEE JIN Music Video Director: Wooseok Shin ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kKsivrgoyDw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kKsivrgoyDw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kKsivrgoyDw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HYBE LABELS",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-07-20T15:00:02Z"
+      }
+    }
+  ]
+}

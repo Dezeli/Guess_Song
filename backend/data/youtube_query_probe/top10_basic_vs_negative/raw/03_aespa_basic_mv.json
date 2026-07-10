@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "NaHo_lPq3Xpb8prZdhbdb6gyxX4",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HXfJjqLGDmjaP98z5Jwd76fezcA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jWQx2f-CErU"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-21T09:00:42Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Whiplash&#39; MV",
+        "description": "aespa's 5th mini album \"Whiplash\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/Whiplash ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jWQx2f-CErU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jWQx2f-CErU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jWQx2f-CErU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-21T09:00:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zONvAkDFLkDphntZGdMnWhW8gh4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "83C3TZ4Zm_o"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-29T04:00:16Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;LEMONADE&#39; MV",
+        "description": "aespa's 2nd album \"LEMONADE\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/LEMONADE 'WDA ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/83C3TZ4Zm_o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/83C3TZ4Zm_o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/83C3TZ4Zm_o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-29T04:00:16Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "r25rIUnH4V3Cw2v-41dv2_ZrhkU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7aQ2uxgJbnY"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-24T15:00:21Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Rich Man&#39; Trailer | I am a Rich Man",
+        "description": "aespa's 6th mini album \"Rich Man\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/RichMan 'Rich ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7aQ2uxgJbnY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7aQ2uxgJbnY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7aQ2uxgJbnY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-24T15:00:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nCfedE6acwWaWWv7TxWpKxtwkjE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "M2WTUoy4y6E"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-27T03:59:07Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Dirty Work&#39; MV",
+        "description": "aespa's new single \"Dirty Work\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/DirtyWork 'Dirty Work' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/M2WTUoy4y6E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/M2WTUoy4y6E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/M2WTUoy4y6E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-27T03:59:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "IpXoKEikHO3ZgPJfud_d5hgNdzM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yMdAkGPOw50"
+      },
+      "snippet": {
+        "publishedAt": "2023-11-12T09:05:07Z",
+        "channelId": "UCIdbZR2ZZke-5fGr-JGIeIQ",
+        "title": "[4K] aespa(에스파) 뮤직비디오(MV) 모음 Drama ~ Black Mamba / 제목, 가사 첨부",
+        "description": "aespa(에스파) 뮤직비디오 모음 편집: 2023.11.12 01.Drama 02.Better Things 03.'Till We Meet Again 04.Thirsty 05.Spicy 06.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yMdAkGPOw50/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yMdAkGPOw50/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yMdAkGPOw50/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "미스타꽁",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-11-12T09:05:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-X7C7dsj6VA8BKXO9fyUvIZt8eA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iTJSbJtS8MU"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-11T09:00:56Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;WDA (Whole Different Animal) (Feat. G-DRAGON)&#39; MV",
+        "description": "aespa's 2nd album \"LEMONADE\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/LEMONADE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iTJSbJtS8MU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-11T09:00:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_6D7ONyI0zFkKMeXyMD_nGpN9EI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "i0RCcSBPjuU"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-04T15:00:23Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Thirsty&#39; Track Video",
+        "description": "aespa's 3rd Mini Album \"MY WORLD\" is out! Listen and download on your favorite platforms: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/i0RCcSBPjuU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/i0RCcSBPjuU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/i0RCcSBPjuU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-04T15:00:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0F9QJs3_lJNYPoYQsFN0Wz-MZ-g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nFYwcndNuOY"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-27T09:06:53Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Armageddon&#39; MV",
+        "description": "aespa's 1st album \"Armageddon\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/Armageddon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nFYwcndNuOY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nFYwcndNuOY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nFYwcndNuOY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-27T09:06:53Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6SgAbdlrkofUpQfzZwHM9fHpJms",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3CvJKTChsl4"
+      },
+      "snippet": {
+        "publishedAt": "2023-11-14T15:00:02Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Drama&#39; Performance Video",
+        "description": "aespa's 4th Mini Album \"Drama\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/DramaMiniAlbum ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3CvJKTChsl4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3CvJKTChsl4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3CvJKTChsl4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-11-14T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "axHldCSmhY9bZB59EnpyXcPcrpg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "phuiiNCxRMg"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-13T09:00:41Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Supernova&#39; MV",
+        "description": "aespa's 1st album \"Armageddon\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/Armageddon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/phuiiNCxRMg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/phuiiNCxRMg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/phuiiNCxRMg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-13T09:00:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "td8brm_gM4WsN-CdQpn7Ei2Wjyg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sU0FVs9Enq8"
+      },
+      "snippet": {
+        "publishedAt": "2024-05-15T15:00:49Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Licorice&#39; Universe",
+        "description": "aespa's 1st album \"Armageddon\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/Armageddon ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sU0FVs9Enq8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sU0FVs9Enq8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sU0FVs9Enq8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-05-15T15:00:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XU4K0F0YDO1PPd0bOxYssn0dFso",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Os_heh8vPfs"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-08T08:59:11Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Spicy&#39; MV",
+        "description": "aespa's 3rd Mini Album \"MY WORLD\" is out! Listen and download on your favorite platforms: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Os_heh8vPfs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Os_heh8vPfs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Os_heh8vPfs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-08T08:59:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UZZ4vU2Ipflbh8XjEVUVcJxC92g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1XZRhrt1Tkg"
+      },
+      "snippet": {
+        "publishedAt": "2023-06-06T15:00:02Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa &#39;Hold On Tight&#39; MV | Tetris Motion Picture Soundtrack",
+        "description": "aespa's new song 'Hold On Tight' (Tetris Motion Picture Soundtrack) is out! Listen and download on your favorite platform: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1XZRhrt1Tkg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1XZRhrt1Tkg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1XZRhrt1Tkg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-06-06T15:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WMGjC33PBmAhEtWAot1WL0Cv37Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4TWR90KJl84"
+      },
+      "snippet": {
+        "publishedAt": "2021-05-17T09:00:02Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Next Level&#39; MV",
+        "description": "aespa's new single \"Next Level\" is out! Listen and download on your favorite platform: https://smarturl.it/aespa_NextLevel ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4TWR90KJl84/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4TWR90KJl84/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4TWR90KJl84/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-05-17T09:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "bPN8jgAZuOsgZN9Ien4D7NeUqwY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xLAPpTflZmk"
+      },
+      "snippet": {
+        "publishedAt": "2026-05-23T09:00:03Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;WDA (Whole Different Animal) (Feat. G-DRAGON)&#39; Performance Video",
+        "description": "aespa's 2nd album \"LEMONADE\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/LEMONADE ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xLAPpTflZmk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xLAPpTflZmk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xLAPpTflZmk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-05-23T09:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EMgcxWwXUYBrWcpJbE7ABjiXVpM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "D8VEhcPeSlc"
+      },
+      "snippet": {
+        "publishedAt": "2023-11-10T04:59:09Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Drama&#39; MV",
+        "description": "aespa's 4th Mini Album \"Drama\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/DramaMiniAlbum ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/D8VEhcPeSlc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/D8VEhcPeSlc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/D8VEhcPeSlc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-11-10T04:59:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7gaKQ18xsH5ARodPbwVfhTj4xIQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "LdD_T8O89RQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-14T07:30:10Z",
+        "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+        "title": "[단독샷캠4K] 에스파 &#39;Dirty Work&#39; 단독샷 별도녹화│aespa ONE TAKE STAGE│@SBS Inkigayo 250713",
+        "description": "[단독샷캠4K] 에스파 'Dirty Work' 단독샷 별도녹화│aespa ONE TAKE STAGE│@SBS Inkigayo 250713 #인기가요 #에스파 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LdD_T8O89RQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LdD_T8O89RQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LdD_T8O89RQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SBSKPOP X INKIGAYO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-14T07:30:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "AhPSjtCJApgpiWjFblucliZhktU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "5oQVTnq-UKk"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-05T04:00:14Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Rich Man&#39; MV",
+        "description": "aespa's 6th mini album \"Rich Man\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/RichMan ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5oQVTnq-UKk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5oQVTnq-UKk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5oQVTnq-UKk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-05T04:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hegGLlqpuLdAUXmn9-vv7gJE8H0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tBMbAyqOLY8"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-08T11:01:36Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Dirty Work&#39; Choreography Video",
+        "description": "aespa's new single \"Dirty Work\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/DirtyWork 'Dirty Work' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tBMbAyqOLY8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tBMbAyqOLY8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tBMbAyqOLY8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-08T11:01:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qFS5TYp_bFmjOJVYhIQPH40Iiw0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ZeerrnuLi5E"
+      },
+      "snippet": {
+        "publishedAt": "2020-11-17T09:00:22Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Black Mamba&#39; MV",
+        "description": "Listen and download aespa's debut single \"Black Mamba\": https://smarturl.it/aespa_BlackMamba The Debut Stage ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZeerrnuLi5E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZeerrnuLi5E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZeerrnuLi5E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-11-17T09:00:22Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Rp1DQSFIeGqc-WDuwndfHfs_1aM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hb73cGFLzKk"
+      },
+      "snippet": {
+        "publishedAt": "2023-08-26T09:00:34Z",
+        "channelId": "UC9GtSLeksfK4yuJ_g1lgQbg",
+        "title": "aespa 에스파 &#39;Better Things&#39; Performance Video",
+        "description": "aespa's new single \"Better Things\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/BetterThings ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hb73cGFLzKk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hb73cGFLzKk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hb73cGFLzKk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "aespa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-08-26T09:00:34Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "R0JIpdx8M6glLePrnKBLizWCosY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "2iK3ccCsI6s"
+      },
+      "snippet": {
+        "publishedAt": "2024-07-03T09:00:05Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa エスパ &#39;Hot Mess&#39; MV",
+        "description": "aespa's Japan Debut Single \"Hot Mess\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/HTMSS ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2iK3ccCsI6s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2iK3ccCsI6s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2iK3ccCsI6s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-07-03T09:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Cu4rvQzb7TQmQ7yuskCDTOYkKt0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "acZ7A5w_kSE"
+      },
+      "snippet": {
+        "publishedAt": "2024-09-11T12:23:00Z",
+        "channelId": "UCQ8x6bj-tV8sedM4WaDhAYg",
+        "title": "KARINA 카리나 &#39;UP&#39; MV",
+        "description": "KARINA (카리나) - 'UP' Official M/V with fixed audio Karina - Up MV (Performance Ver.) (Full Audio) aespa's 1st album ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/acZ7A5w_kSE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/acZ7A5w_kSE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/acZ7A5w_kSE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "cherryteum",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-09-11T12:23:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ujiG9Q9l4ZXceXJB9qVG7SFQMrk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dYRITmpFbJ4"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-08T04:00:14Z",
+        "channelId": "UCEf_Bc-KVd7onSeifS3py9g",
+        "title": "aespa 에스파 &#39;Girls&#39; MV",
+        "description": "aespa's 2nd Mini Album \"Girls\" is out! Listen and download on your favorite platform: https://aespa.lnk.to/GirlsEP [Tracklist] 01 Girls ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dYRITmpFbJ4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dYRITmpFbJ4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dYRITmpFbJ4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SMTOWN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-08T04:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "D1VEmYK270kFq36qTz1tz3jK1Ts",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "MFFIGvQei74"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-21T06:47:55Z",
+        "channelId": "UC6xT4XeDSDPr9uGqv0fx34A",
+        "title": "aespa 에스파 &#39;Hold On Tight&#39; Live Clipㅣ2025 aespa LIVE TOUR &#39;SYNK : PARALLEL LINE ENCORE&#39;",
+        "description": "aespa #synk_parallelline #karina #giselle #winter #ningning.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MFFIGvQei74/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MFFIGvQei74/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MFFIGvQei74/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SYNK : aespaa",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-21T06:47:55Z"
+      }
+    }
+  ]
+}

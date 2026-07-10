@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "OyOSq-y1zfrFoKBdwxfXsMFkQM0",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "14tyiXN005j9u2HOzSzf71VlC9c",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eA0lHNZ1KCA"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-06T05:00:06Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ - toxic till the end (OFFICIAL MUSIC VIDEO)",
+        "description": "'rosie' - the first studio album by ROSÉ - out now download/stream: http://rosesarerosie.lnk.to/rosieID ROSÉ store exclusive 'rosie' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eA0lHNZ1KCA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eA0lHNZ1KCA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eA0lHNZ1KCA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-06T05:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "H_B66Mq1L6gEc-HLtzGEyKCJq1I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "CKZvWhCqx1s"
+      },
+      "snippet": {
+        "publishedAt": "2021-03-12T05:00:15Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "ROSÉ - &#39;On The Ground&#39; M/V",
+        "description": "ROSÉ - On The Ground My life's been magic seems fantastic I used to have a hole in the wall with a mattress It's funny when you ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CKZvWhCqx1s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CKZvWhCqx1s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CKZvWhCqx1s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-03-12T05:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-Qw-955Cr4mB-rYgConvWWSwiFk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ekr2nIex040"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-18T04:00:07Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ &amp; Bruno Mars - APT. (Official Music Video)",
+        "description": "ROSÉ & Bruno Mars - APT. Download/stream: https://rosesarerosie.lnk.to/APTID Order APT. single CD: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ekr2nIex040/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ekr2nIex040/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ekr2nIex040/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-18T04:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "OneFIaht7RXtoL6zAB55Aw22HCA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "K9_VFxzCuQ0"
+      },
+      "snippet": {
+        "publishedAt": "2021-04-04T15:00:06Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "ROSÉ - &#39;Gone&#39; M/V",
+        "description": "ROSÉ - Gone I thought that you remember but it seems that you forgot It's hard for me to blame you when you were already lost oh ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/K9_VFxzCuQ0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/K9_VFxzCuQ0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/K9_VFxzCuQ0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-04-04T15:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1GlndxmycnTEEJdvAjU4K6JxiCU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ia2Ph61bYzc"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-08T16:00:07Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ - Messy (From F1® The Movie) [Official Music Video]",
+        "description": "ROSÉ - Messy (From F1® The Movie) Download/stream: https://F1TheAlbum.lnk.to/MessyID 'F1 The Album' out now: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ia2Ph61bYzc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ia2Ph61bYzc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ia2Ph61bYzc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-08T16:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Qoq7nv0cUeBacN35lFnvJWX65ks",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wCFVFdhJdCo"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-09T13:04:05Z",
+        "channelId": "UCg86gCCgZGWkoHk8c015cQQ",
+        "title": "🥀 내 가장 예뻤던 시절을 망쳐놓은 그 X : ROSÉ - toxic till the end [가사/해석/lyrics]",
+        "description": "다들 이런 똥차 한명쯤은 인생에 있잖아요 아이러니하게도 왜 이런 사람한테 더 헤어나오기 힘들까요? 사실 보고싶었단 가사가 너무.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wCFVFdhJdCo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wCFVFdhJdCo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wCFVFdhJdCo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "때잉",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-09T13:04:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "mfM9VM47ugoneNlzB-aerJHCtso",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pZ1NdE69VTs"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-22T05:00:06Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ - number one girl (official music video)",
+        "description": "ROSÉ - number one girl download/stream: http://rosesarerosie.lnk.to/numberonegirlID 'rosie' - the first studio album by ROSÉ - out ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pZ1NdE69VTs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pZ1NdE69VTs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pZ1NdE69VTs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-22T05:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1_kn2xqT090Vjxb88sgTfgmp1o0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ih7Wwf4Fvn0"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-08T20:35:56Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "apt. till the end #rosie #rosiebyROSÉ #ROSÉ_rosie",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ih7Wwf4Fvn0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ih7Wwf4Fvn0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ih7Wwf4Fvn0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-08T20:35:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SKcrMjb0RBrDcXvg7CG1iAvCD6g",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "qCepOLkcF_A"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-13T01:00:07Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ - number one girl (performance video)",
+        "description": "'rosie' - the first studio album by ROSÉ - out now download/stream: http://rosesarerosie.lnk.to/rosieID ROSÉ store exclusive 'rosie' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/qCepOLkcF_A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/qCepOLkcF_A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/qCepOLkcF_A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-13T01:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JDrYdNn7EHsy4pd0XN5Q4vAbd-4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "XIKz-AyYPCw"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-14T02:59:00Z",
+        "channelId": "UCrDkAvwZum-UTjHmzDI2iIw",
+        "title": "ROSÉ &amp; PSY - APT. (live from 싸이흠뻑쇼 SUMMERSWAG 2025)",
+        "description": "ROSÉ & PSY - APT. (live from 싸이흠뻑쇼 SUMMERSWAG 2025) It truly was the biggest surprise appearance of 2025!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XIKz-AyYPCw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XIKz-AyYPCw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XIKz-AyYPCw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "officialpsy",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-14T02:59:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_O241HXC6wIqgQltIx5TcFlRt4Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "BfBjNogKZ-E"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-18T16:35:40Z",
+        "channelId": "UCPzjGcGQeC9BckS6a18sJMg",
+        "title": "❤️ 현시각 난리난 수능 금지곡 : ROSÉ &amp; Bruno Mars - APT. [가사/해석/자막/lyrics]",
+        "description": "팝송 #팝송추천 #수능금지곡 #로제 #플레이리스트 #playlist 구독과 좋아요는 큰 힘이 됩니다   Instagram ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BfBjNogKZ-E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BfBjNogKZ-E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BfBjNogKZ-E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "기몽초 ɢɪᴍᴏɴɢᴄʜᴏ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-18T16:35:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9VHFe2IDU6wy8solRpR3a7osqh8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "QXNKSCW-BOA"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-23T04:44:36Z",
+        "channelId": "UCg86gCCgZGWkoHk8c015cQQ",
+        "title": "로제가 우리에게 간절히 듣고 싶은 말 🌹: ROSÉ - number one girl [가사/해석/lyrics]",
+        "description": "로제 사랑해 number one girl official mv https://youtu.be/pZ1NdE69VTs?si=FPERl6agsHr5l1zd Source ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QXNKSCW-BOA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QXNKSCW-BOA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QXNKSCW-BOA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "때잉",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-23T04:44:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EIR-hAH_Rd6eIh0sErOWKdoSoXE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IW8qaemx74g"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-29T15:25:59Z",
+        "channelId": "UCeLPm9yH_a_QH8n6445G-Ow",
+        "title": "ROSÉ(로제) - APT. (Band VER.) (With. 이영지) [더 시즌즈-이영지의 레인보우] | KBS 241129 방송",
+        "description": "ROSÉ(로제) - APT. (Band VER.) (With. 이영지) Copyright c KBS. All rights reserved. 무단 전재, 재배포 및 이용(AI 학습 포함) 금지 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IW8qaemx74g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IW8qaemx74g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IW8qaemx74g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBS Kpop",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-29T15:25:59Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wthhv0jLhKA5Bp_q00L5-5myLZ4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vAgYV0p_GoE"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-29T16:10:56Z",
+        "channelId": "UCeLPm9yH_a_QH8n6445G-Ow",
+        "title": "ROSÉ (로제) - Too Good to Say Goodbye [더 시즌즈-이영지의 레인보우] | KBS 241129 방송",
+        "description": "ROSÉ (로제) - Too Good to Say Goodbye Copyright c KBS. All rights reserved. 무단 전재, 재배포 및 이용(AI 학습 포함) 금지 #더 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vAgYV0p_GoE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vAgYV0p_GoE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vAgYV0p_GoE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBS Kpop",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-29T16:10:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "m_K9TzMLT-0NS9ECinGO4nmwUVU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "z6CSW2yu8Mg"
+      },
+      "snippet": {
+        "publishedAt": "2021-03-22T15:00:28Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "ROSÉ - &#39;On The Ground&#39; Dance Performance",
+        "description": "로제 #ROSÉ #BLACKPINK #블랙핑크 #OnTheGround #DancePerformance #YG.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z6CSW2yu8Mg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z6CSW2yu8Mg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z6CSW2yu8Mg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-03-22T15:00:28Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "NJG9F5vPZwig8XVVTy7ThCoJMp8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OWcmqMzNzrU"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-15T05:52:08Z",
+        "channelId": "UCjPUznga3NMKD7nCfdow1AA",
+        "title": "Lisa removed something from Rosé armpit 🥹😱 #blackpink #rosé #lisa #shorts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OWcmqMzNzrU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OWcmqMzNzrU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OWcmqMzNzrU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLINK PETAL ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-15T05:52:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BWKFWJO63UbOUaqy8Ov22tNpVos",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Dw3JSLBNf04"
+      },
+      "snippet": {
+        "publishedAt": "2026-02-19T14:00:18Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ &amp; Bruno Mars - APT. (Live at the 68th Annual Grammy Awards)",
+        "description": "ROSÉ & Bruno Mars - APT. Download/stream: https://rosesarerosie.lnk.to/APTID 'rosie' - the first studio album by ROSÉ - out now ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Dw3JSLBNf04/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Dw3JSLBNf04/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Dw3JSLBNf04/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-02-19T14:00:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3rYUdeJ8a6r-DsqQTIneYs_Kzzw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YudHcBIxlYw"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-31T04:00:14Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "JISOO - ‘꽃(FLOWER)’ M/V",
+        "description": "JISOO - '꽃(FLOWER)' ABC 도레미만큼 착했던 나 그 눈빛이 싹 변했지 어쩌면 이 또한 나니까 난 파란 나비처럼 날아가 잡지 못한 건 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YudHcBIxlYw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YudHcBIxlYw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YudHcBIxlYw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-31T04:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ssJ4fppjgW3X9FLaIqnh2akxSUY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "A9oByH9Ci24"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-29T16:13:52Z",
+        "channelId": "UCeLPm9yH_a_QH8n6445G-Ow",
+        "title": "ROSÉ (로제) - number one girl [더 시즌즈-이영지의 레인보우] | KBS 241129 방송",
+        "description": "ROSÉ (로제) - number one girl Copyright c KBS. All rights reserved. 무단 전재, 재배포 및 이용(AI 학습 포함) 금지 #더시즌즈 #음악 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/A9oByH9Ci24/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/A9oByH9Ci24/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/A9oByH9Ci24/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBS Kpop",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-29T16:13:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rX_UDkx-1NBecI6kfO7lrhgCBOY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j7S_5VtXOvM"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-21T13:25:09Z",
+        "channelId": "UCPbHS9olnCOQrqMYolNn2ZA",
+        "title": "Rose “Jump” MV The Bts V/S Original #dreamy_iqra #blackpink #rosé #jump",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j7S_5VtXOvM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j7S_5VtXOvM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j7S_5VtXOvM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Dreamy_Iqra ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-21T13:25:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rMXjaNaob4te1yXAYN927c2IkaY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Zucxhm6RVbs"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-18T06:05:35Z",
+        "channelId": "UCF3_AdVxI4vEerZQPwD3lmg",
+        "title": "TOXIC TILL THE END behind the scenes vs MV ❤️‍🔥✨️ #rosie #blackpink #rosé #edit #shortsviral",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Zucxhm6RVbs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Zucxhm6RVbs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Zucxhm6RVbs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Berry🍒 B@ngpink stan",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-18T06:05:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qGxsNwfVfWLczt-dJKy7NoGwt8U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zrU3vvTuhRo"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-23T13:01:30Z",
+        "channelId": "UCBo1hnzxV9rz3WVsv__Rn1g",
+        "title": "ROSÉ - 3am (live performance)",
+        "description": "'rosie' - the first studio album by ROSÉ - out now download/stream: http://rosesarerosie.lnk.to/rosieID ROSÉ store exclusive 'rosie' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zrU3vvTuhRo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zrU3vvTuhRo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zrU3vvTuhRo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ROSÉ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-01-23T13:01:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "H0xj6w2vu5yxpgV6CgnM1oFm88M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-dyg7usX0nw"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-23T09:17:35Z",
+        "channelId": "UCRCtNhNlR3k_DfkIvAIvnlg",
+        "title": "로제가 브루노에게 들려줬던 아파트 데모",
+        "description": "영어 #영어표현 #영어인터뷰 #kpop #blackpink #블랙핑크 #로제 #아파트 #브루노마스.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-dyg7usX0nw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-dyg7usX0nw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-dyg7usX0nw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "단커피",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-23T09:17:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3mzuYcmp7_PCK1Y4N1u3J5wVmko",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "MCQlzqdldi4"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-12T05:32:00Z",
+        "channelId": "UC8-Th83bH_thdKZDJCrn88g",
+        "title": "ROSÉ: APT./toxic till the end Medley | The Tonight Show Starring Jimmy Fallon",
+        "description": "Musical guest ROSÉ performs a medley of \"APT.\" and \"toxic till the end\" for The Tonight Show. The Tonight Show Starring Jimmy ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MCQlzqdldi4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MCQlzqdldi4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MCQlzqdldi4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "The Tonight Show Starring Jimmy Fallon",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-12T05:32:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hVitrLBbU_Gn2uhwy29gmCLABP8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dyRsYk0LyA8"
+      },
+      "snippet": {
+        "publishedAt": "2020-10-02T04:00:13Z",
+        "channelId": "UCOmHUn--16B90oW2L6FRR3A",
+        "title": "BLACKPINK - &#39;Lovesick Girls&#39; M/V",
+        "description": "BLACKPINK - Lovesick Girls 영원한 밤 창문 없는 방에 우릴 가둔 love What can we say 매번 아파도 외치는 love 다치고 망가져도 나 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dyRsYk0LyA8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dyRsYk0LyA8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dyRsYk0LyA8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BLACKPINK",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-10-02T04:00:13Z"
+      }
+    }
+  ]
+}

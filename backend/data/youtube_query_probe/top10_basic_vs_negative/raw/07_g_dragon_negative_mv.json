@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Ry0k6Zi2jJLBltTknCHLJurAmbg",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 642532,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "T22Uqc44mhlsA3ibGhuk3Ye8ldk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NYR2ba-0KnU"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-07T17:33:07Z",
+        "channelId": "UCVXWAqcnFz7ZhyOE7kjWjbg",
+        "title": "지금도 상승하는 빅뱅 뮤비 [빅뱅/BIGBANG]",
+        "description": "케이팝 #kpop #bigbang #빅뱅 #mv #뮤비 #빅뱅뮤비 #bigbangmv #빅뱅컴백.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NYR2ba-0KnU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NYR2ba-0KnU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NYR2ba-0KnU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "시나 (SiNaH)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-07T17:33:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "glPN8Pt4hJy_4XXaXcb0v5qznlU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nImB7hEAzjU"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-20T15:56:50Z",
+        "channelId": "UCeWvFcQgSRHpFUoWhJcFQwg",
+        "title": "Superstar GD visit Malaysia KL? #hiphop #music #louisvuitton #kualalumpur #g dragon",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nImB7hEAzjU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nImB7hEAzjU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nImB7hEAzjU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "XiaoBao in SG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-20T15:56:50Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S9sipmalpP7S7fF2BZ_PqUT0Z2E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "81y2LPGpwOc"
+      },
+      "snippet": {
+        "publishedAt": "2025-07-27T13:40:41Z",
+        "channelId": "UCSB6tBe5yDMtixOfFYxbruQ",
+        "title": "Jennie and g dragon ahhh... 😫 #blackpink #bigbang #kpop #edit #gdragon #jennie #trendingshorts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/81y2LPGpwOc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/81y2LPGpwOc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/81y2LPGpwOc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Ahyeon Jennie area 💙",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-07-27T13:40:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EJ8JEiljygouyUYp1uxNCOm-aIU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NvIl8Q58aIQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-05T12:49:57Z",
+        "channelId": "UCNTM7oNafO8MfBpwvRUh_wA",
+        "title": "OMG the HK fams really did THAT for G-Dragon 😭👑This is what real love#gd#gdragon #hongkong#crayon",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NvIl8Q58aIQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NvIl8Q58aIQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NvIl8Q58aIQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "hazyy_tata",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-05T12:49:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0J0ZSSZb0sdt3B1FK4OGNqnz4KA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1uXw7N1YCUw"
+      },
+      "snippet": {
+        "publishedAt": "2025-03-23T02:38:04Z",
+        "channelId": "UCxR-Xb62cqinb6XV164VnLQ",
+        "title": "G-DRAGON、カリナのこと狙ってる！？　#kpop #aespa#gdragon #bigbang  #karina #jennie #blackpink",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1uXw7N1YCUw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1uXw7N1YCUw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1uXw7N1YCUw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KPOP総書記",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-03-23T02:38:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XhO6B5rQIdqCAefv_FZHzn3wMgA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ip00wz3J7Uc"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-10T02:12:49Z",
+        "channelId": "UCpvZvD96e_TBB8rXnYEdVpA",
+        "title": "GD very handsome!权志龙演唱会！G-DRAGON in Hong Kong權志龍香港演唱會 #gd #gdragon",
+        "description": "gd #gdragon #權志龍.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ip00wz3J7Uc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ip00wz3J7Uc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ip00wz3J7Uc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "BinObba",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-10T02:12:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Q1avrExLO3gdt4l3dy1XWOi5tjw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iqm9GlFG8os"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-20T21:19:41Z",
+        "channelId": "UCourpFlEyHG67SZMHCuIBHw",
+        "title": "#권지용 #gdragon #촬영 #mv  #kpop",
+        "description": "지용이는 촬영중....",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iqm9GlFG8os/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iqm9GlFG8os/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iqm9GlFG8os/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KOREANPOWER",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-20T21:19:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8oOlLX1oniI-OoVMJ4qU1xP7VEE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7hOEdLg8c8g"
+      },
+      "snippet": {
+        "publishedAt": "2024-11-08T01:02:35Z",
+        "channelId": "UCycYVLXWUJTPHKVvtF7ClFA",
+        "title": "G Dragon지드레곤 ‘POWER’ MV!! #GDragon#kpop#power#EMPIRE#mv#bigbang#지드래곤#지디",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7hOEdLg8c8g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7hOEdLg8c8g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7hOEdLg8c8g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "오본좌",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-11-08T01:02:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Ukk8D_kxSVO3JQGiWvYrNKgD7RI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NYvWB33Cxgo"
+      },
+      "snippet": {
+        "publishedAt": "2010-01-09T14:54:11Z",
+        "channelId": "UC8DXYFbjgZANyCzgEVVM37Q",
+        "title": "G-DRAGON-Breathe【日本語字幕・MV】",
+        "description": "BIGBANGのG-DRAGONのソロ曲「Breathe」の日本語字幕つきMVです。",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NYvWB33Cxgo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NYvWB33Cxgo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NYvWB33Cxgo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "For2Nc_",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-01-09T14:54:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wt-EDehLysq8fJCPUpCm2masMX4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "dspr71Phm7Q"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-20T13:50:00Z",
+        "channelId": "UCvjxJjSXhwpTUWTO6NMXnvA",
+        "title": "&quot;Missing You&quot; 지디 Gdragon #retro#vibes",
+        "description": "BIGBANG era G-Dragon's hidden gem song. #gd #gdragon #bigbang #kpop #MV #song #지디 #지드래곤 #빅뱅 #케이팝 #뮤직 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dspr71Phm7Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dspr71Phm7Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dspr71Phm7Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "LIKE ROSA IN CANADA",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-20T13:50:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "VhU-IKMpgjGeG_ps1mMCT-iW63U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vIZhk-31wnc"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-30T10:30:26Z",
+        "channelId": "UCE7TF9cxebNsJMX-W_xLJBQ",
+        "title": "HOME SWEET HOME-G-DRAGON(反転/速度:もっとゆっくり)#homesweethome #gdagon #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vIZhk-31wnc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vIZhk-31wnc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vIZhk-31wnc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ドットカラーダンススタジオ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-30T10:30:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XS_-L6qHFPhgt2cDTuR825aBl4I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lsKdtd8y0hA"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-03T01:05:00Z",
+        "channelId": "UCEN8TdvTKZqLqnVsWe7Bnxg",
+        "title": "Nonton Konser Ubermensch G-Dragon Jakarta Serasa Terapi Diri, Penuh Filosofi #gdragon #kpop #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lsKdtd8y0hA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lsKdtd8y0hA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lsKdtd8y0hA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ABIANDRA Official",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-03T01:05:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "etmAWDGWOnvVYxV1JANP1qRisr0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "phLeccND3Ek"
+      },
+      "snippet": {
+        "publishedAt": "2025-09-18T10:45:12Z",
+        "channelId": "UCMWCK6eKhTOqqBnEDsY6Phg",
+        "title": "[GD] 데뷔 이후 눈에 띄게 작아진 것?",
+        "description": "빅뱅 #지디 #지드래곤 #gdragon #bigbang #케이팝 #kpop #idol #아이돌 #korea #파워 #POWER #MV #비하인드.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/phLeccND3Ek/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/phLeccND3Ek/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/phLeccND3Ek/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "지디지디해",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-09-18T10:45:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Yc3iqm2HA66SNICwb2RFE87gCl0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Skzu6AHtKY0"
+      },
+      "snippet": {
+        "publishedAt": "2024-12-26T16:00:41Z",
+        "channelId": "UCMvBVe8WMQRnZh-Qq0moizQ",
+        "title": "Jennie x g-dragon me gustas edit #jennie #blackpink #gdragon #edit",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Skzu6AHtKY0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Skzu6AHtKY0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Skzu6AHtKY0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "𝓟𝑖𝑛𝑘𝐿𝑒𝑡𝑡𝑒𝑠 𝑄𝑢𝑒𝑒𝑛",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-12-26T16:00:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3m2GzOmNlfdIsjk8qIShLJLnfVM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PL_2_Aeum4w"
+      },
+      "snippet": {
+        "publishedAt": "2024-10-31T12:29:01Z",
+        "channelId": "UCs4WE1nXveTSMC_01Xnrn3w",
+        "title": "G-DRAGON -- POWER MV ( vietsub) cut",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PL_2_Aeum4w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PL_2_Aeum4w/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PL_2_Aeum4w/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Kwon Sandy",
+        "liveBroadcastContent": "none",
+        "publishTime": "2024-10-31T12:29:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_42TioyvaFZKgkyVIycySTD3aoI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wfRSKXAlMXA"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-02T13:05:01Z",
+        "channelId": "UCEN8TdvTKZqLqnVsWe7Bnxg",
+        "title": "G-Dragon Membungkuk Berkali-kali: Terima Kasih Masih Bersama BIGBANG #gdragon #toobad #mv #kpop",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wfRSKXAlMXA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wfRSKXAlMXA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wfRSKXAlMXA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ABIANDRA Official",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-02T13:05:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "NwZRWFCi5xrjquCLDF3nJSFmh-k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ykR8hH7qpUQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-25T07:12:47Z",
+        "channelId": "UCfJMH8w8LOK_RkOpd6s6ZMw",
+        "title": "G-DRAGON - TOO BAD (feat. Anderson .Paak)",
+        "description": "드디어 나왔다 G-DRAGON - TOO BAD (feat. Anderson .Paak) 출처 @OfficialGDRAGON #아이돌#라이브음악# ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ykR8hH7qpUQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ykR8hH7qpUQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ykR8hH7qpUQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "물맞댐",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-25T07:12:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "g0MYRvG5kT10rkwsFjqUKUIyhq8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "q-iL1vmqimM"
+      },
+      "snippet": {
+        "publishedAt": "2026-07-07T14:00:15Z",
+        "channelId": "UCBEOm2mbINrM5-4EG_f3bbQ",
+        "title": "oha jennie #keşfet #keşfetteyiz #keşfetedüş #jennie #blackpink #fyp #gdragon #ünlüolmak  #mv #trend",
+        "description": "gdragon ünlüolmak mv #keşfet​ #keşfetedüş​ #keşfetteyiz​ #keşfet​ #keşfetedüş​ #keşfetteyiz​ #keşfetteyim​ #keşfetteyiz​ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/q-iL1vmqimM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/q-iL1vmqimM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/q-iL1vmqimM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "𝗿𝘂𝗯𝗶𝗲𝘁𝘁𝗲𝗿⁴",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-07-07T14:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "72U3I1MtQaUfZktqGcm6qrAsfOg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UWLQ_gyPwio"
+      },
+      "snippet": {
+        "publishedAt": "2010-04-23T16:08:04Z",
+        "channelId": "UCLGaPj4O7Je-Qy5-h1gVLIw",
+        "title": "[Vietsub][YGVN] She&#39;s gone - G-Dragon (SAL - MV)",
+        "description": "The video credit goes to Babochorom @ Youtube --------------- OMG I was like screaming so loud while watching this. But I want to ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UWLQ_gyPwio/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UWLQ_gyPwio/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UWLQ_gyPwio/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ygvnsub",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-04-23T16:08:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hwUfRW6EWd2FlC6KrDSKsNchU2k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4Ai33VswzV0"
+      },
+      "snippet": {
+        "publishedAt": "2025-06-26T09:30:01Z",
+        "channelId": "UCqeN1LbrKssBqNQ6PC3NpoQ",
+        "title": "[4K 60FPS] G-DRAGON - THAT XX MV",
+        "description": "[4K 60FPS] G-DRAGON - THAT XX MV Remastered 4K video. All the videos have been color tuned. Select this option to see the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4Ai33VswzV0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4Ai33VswzV0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4Ai33VswzV0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "4K BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-06-26T09:30:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "aZEUpQjWw1jZ6xoYnpV0hITEq2M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "AaNBCpZDLrc"
+      },
+      "snippet": {
+        "publishedAt": "2025-04-21T13:01:12Z",
+        "channelId": "UCeiJPRJpY-hs0Jwj0nQdUQg",
+        "title": "빅뱅-TONIGHT #빅뱅 #투나잇 #bigbang #tonight #gdragon #gd #지드래곤 #top #mv",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AaNBCpZDLrc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AaNBCpZDLrc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AaNBCpZDLrc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "anxxx_vip",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-04-21T13:01:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LDE2GQ1TWJLmInXAuQjCNfIHIPU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1HUUlJX7Ws8"
+      },
+      "snippet": {
+        "publishedAt": "2025-02-24T12:07:12Z",
+        "channelId": "UCmyECMVaMVOaiXKBMuZLcpA",
+        "title": "GDRAGON “DRAMA” Muaic Clip 歌曲宣發 #bigbang #gdragon #kpop #mv #musicclip #promotionvideo",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1HUUlJX7Ws8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1HUUlJX7Ws8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1HUUlJX7Ws8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MAMAMIA STUDIO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-02-24T12:07:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dnJLshV7NKNykqdZSfT9_NPO4eQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "MtqqAyPM1Do"
+      },
+      "snippet": {
+        "publishedAt": "2012-09-18T06:01:07Z",
+        "channelId": "UC95SWt7AJJW4kBCv1rIllfA",
+        "title": "G-Dragon dressed as a girl - Secret -  New mv Crayon.wmv",
+        "description": "Hi everybody :) This is a video I made because I could see that people was shocked when they saw G Dragon desguised as a girl ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MtqqAyPM1Do/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MtqqAyPM1Do/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MtqqAyPM1Do/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Lor Amantea",
+        "liveBroadcastContent": "none",
+        "publishTime": "2012-09-18T06:01:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BsuaRvnbFgLWgDB8o1f5nUpQ1Tg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Hs6G3xw4DG0"
+      },
+      "snippet": {
+        "publishedAt": "2026-03-02T09:30:08Z",
+        "channelId": "UCqeN1LbrKssBqNQ6PC3NpoQ",
+        "title": "[4K 60FPS] G-DRAGON - CRAYON MV",
+        "description": "[4K 60FPS] G-DRAGON - CRAYON MV Remastered 4K video. All the videos have been color tuned. Select this option to see the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hs6G3xw4DG0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hs6G3xw4DG0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hs6G3xw4DG0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "4K BIGBANG",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-03-02T09:30:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QoT9Mk6jrmF445WfPtta6a66ZIc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nIHV7-aB7f4"
+      },
+      "snippet": {
+        "publishedAt": "2025-08-02T10:05:01Z",
+        "channelId": "UCEN8TdvTKZqLqnVsWe7Bnxg",
+        "title": "GD Tahu Kita Rindu BIGBANG: Kami akan Kembali, Bukan SAYA tapi KAMI! #gdragon #kpop #mv #comeback",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nIHV7-aB7f4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nIHV7-aB7f4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nIHV7-aB7f4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "ABIANDRA Official",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-08-02T10:05:01Z"
+      }
+    }
+  ]
+}

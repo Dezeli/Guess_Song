@@ -54,18 +54,24 @@ Then open:
 
 ## Current Project State
 
-This project is temporarily paused. The core game flow exists, and the backend
-data model was redesigned for a safer ingestion pipeline, but the full YouTube
-matching workflow is not yet operational because it depends on a YouTube Data API
-key and quota planning.
+The core game flow exists, and the backend data model was redesigned for a safer
+ingestion pipeline. The project resumed on 2026-07-10 with Bugs artist seed
+collection and artist-first YouTube discovery.
+
+The current collection goal is not strict official-only sourcing. The practical
+goal is to collect videos that are good enough for players to hear and guess:
+official MVs, official audio, topic/art tracks, lyric videos, and original-audio
+uploads can all be useful. Covers, karaoke, instrumental, remix/sped-up,
+reaction, fancam, shorts-like edits, playlists, and medleys remain risky.
 
 The latest design direction is:
 
 ```text
 artist seeds
--> YouTube official video discovery
--> Song + YoutubeSource promotion
--> quiz question approval
+-> YouTube playable video discovery
+-> review-friendly candidate storage
+-> Song + YoutubeSource + QuizQuestion promotion
+-> user report / admin correction loop
 ```
 
 The earlier idea was to collect many song candidates from public chart pages and
@@ -76,11 +82,11 @@ quota is the real bottleneck. With the default quota, `search.list` costs about
 The preferred direction is now artist-first:
 
 1. Build an `ArtistSeed` queue from public chart pages.
-2. Search YouTube by artist, for example `artist official`.
-3. Extract only clearly official playable videos.
-4. Automatically promote clear matches.
-5. Automatically reject clear non-matches.
-6. Send only ambiguous cases to review.
+2. Search YouTube by artist, for example `{artist} mv`.
+3. Store playable-looking candidates broadly enough for review.
+4. De-duplicate by YouTube video ID and normalized artist/title key.
+5. Generate editable title/artist answer candidates.
+6. Let admins approve, edit, reject, or merge duplicate candidates.
 
 ## Data Model Decisions
 
@@ -280,10 +286,11 @@ YouTube matching command, prepared but not fully used yet:
 docker compose run --rm backend python manage.py match_youtube_sources --dry-run --limit 20
 ```
 
-This requires:
+This requires one or more YouTube Data API keys:
 
 ```text
-YOUTUBE_API_KEY=
+YOUTUBE_API_KEY1=
+YOUTUBE_API_KEY2=
 ```
 
 Artist-first YouTube MV discovery:
@@ -291,6 +298,7 @@ Artist-first YouTube MV discovery:
 ```powershell
 docker compose run --rm backend python manage.py discover_youtube_artist_videos --dry-run --limit 3
 docker compose run --rm backend python manage.py discover_youtube_artist_videos --limit 10
+docker compose run --rm backend python manage.py discover_youtube_artist_videos --all --max-pages 3 --page-size 20 --continue-min 13
 ```
 
 The discovery command searches YouTube with:
@@ -302,18 +310,23 @@ The discovery command searches YouTube with:
 Default pagination policy:
 
 ```text
-page_size = 25
+page_size = 20
 score_threshold = 70
 continue_min = 13
 ```
 
-If 13 or more of the 25 results score at least 70, the command collects the
+If 13 or more of the 20 results score at least 70, the command collects the
 next page, up to `--max-pages`.
 
 Progress is tracked with `YoutubeArtistDiscoveryCursor` in Django admin. The
 artist queue itself is `ArtistSeed`: pending artists have `status = pending`,
 and searched artists are updated to `status = youtube_searched`. Running the
 same command the next day continues with the remaining pending artists.
+
+When multiple YouTube keys are configured, requests start with the first key and
+fall through to the next key if the current key hits a quota-style 403/429 error.
+If every configured key is exhausted, the command stops cleanly and leaves the
+current and remaining artists in `pending` state for the next run.
 
 Qualified videos are stored in `DiscoveredYoutubeVideo` with the minimum
 operational metadata needed for the quiz catalog pass:
@@ -329,6 +342,103 @@ uploaded_month
 The table also keeps `youtube_title`, `video_id`, `channel_title`, and
 `official_score` for review and deduplication. The release year/month currently
 comes from the YouTube upload date.
+
+Probe artist query variants without reusing API calls:
+
+```powershell
+docker compose run --rm backend python manage.py probe_youtube_artist_queries --limit 10 --max-results 25
+```
+
+The probe command caches raw YouTube `search.list` responses under
+`backend/data/youtube_query_probe/top10_basic_vs_negative/raw/` and reuses those
+JSON files on later runs unless `--force-fetch` is passed. It also writes
+`artists.csv`, `query_summary.csv`, `query_results.csv`, `manifest.json`, and
+`report.md`.
+
+## Resume Log 2026-07-10
+
+Local MVP checks passed:
+
+```text
+docker compose up --build -d
+docker compose exec backend python manage.py migrate
+docker compose exec backend python manage.py seed_sample_questions
+docker compose exec backend python manage.py check
+docker compose exec backend python manage.py makemigrations --check --dry-run --noinput
+docker compose exec backend python -m ruff check apps --exclude migrations
+docker compose exec frontend npm run build
+docker compose exec backend python manage.py test
+```
+
+The sample game flow was verified through API calls: room creation, game start,
+round start via Celery, answer submission, scoring, automatic finish, and
+WebSocket `room_state` delivery.
+
+Bugs quarterly artist seeds were collected with:
+
+```powershell
+docker compose exec backend python manage.py collect_bugs_quarterly_artist_seeds --start-year 2024 --end-year 2026 --rank-limit 100 --chart total --delay 1.5 --max-pages 8
+```
+
+Result:
+
+```text
+ArtistSeed total = 146
+pending before YouTube discovery = 146
+top seeds included DAY6, NewJeans, aespa, IVE, IU, ROSÉ, G-DRAGON, JENNIE,
+LE SSERAFIM, and i-dle.
+```
+
+YouTube query probing compared `{artist} mv` against a negative-term query for
+the top 10 seeds. The basic query was preferred: the negative-term query produced
+more shorts/fan/playlist-like contamination despite looking numerically strong.
+Probe outputs are stored under:
+
+```text
+backend/data/youtube_query_probe/top10_basic_vs_negative/
+```
+
+The first full artist discovery run used:
+
+```powershell
+docker compose exec backend python manage.py discover_youtube_artist_videos --all --max-pages 3 --page-size 20 --continue-min 13
+```
+
+Result before YouTube quota exhaustion:
+
+```text
+processed artists = 54
+searched pages = 86
+qualified videos = 923
+stored videos = 923
+review videos = 152
+failed = 0
+quota_exhausted = 1
+
+ArtistSeed total = 146
+youtube_searched = 54
+pending = 92
+DiscoveredYoutubeVideo total = 923
+discovered = 840
+review_required = 83
+cursor status = active
+```
+
+Next run can use the same discovery command; it will continue with pending
+artists such as ZICO, DOYOUNG, JAESSBEE, MAKTUB, Taylor Swift, Lee Young Ji,
+GroovyRoom, Mariah Carey, Ariana Grande, and Hanroro.
+
+Recommended next implementation pass:
+
+1. Build an admin-friendly candidate review loop that lets a reviewer listen,
+   guess, approve, edit title/artist, reject, or merge duplicates.
+2. Promote approved `DiscoveredYoutubeVideo` rows into `Artist`, `Song`,
+   `YoutubeSource`, `QuizQuestion`, and `QuizAnswerAlias`.
+3. Strengthen duplicate grouping and answer alias generation before broad
+   automatic promotion.
+4. Relax candidate storage around lyric/topic/playable original-audio videos,
+   while still strongly excluding cover, karaoke, instrumental, remix, reaction,
+   fancam, shorts-like edits, playlists, and medleys.
 
 ## Verification Notes
 

@@ -19,6 +19,7 @@ from apps.ingestion.youtube_matching import (
     ARTIST_DISCOVERY_PAGE_SIZE,
     ARTIST_DISCOVERY_SCORE_THRESHOLD,
     REVIEW_THRESHOLD,
+    YouTubeQuotaExhausted,
     build_artist_mv_query,
     score_artist_video,
     search_artist_mv_videos,
@@ -39,6 +40,11 @@ class Command(BaseCommand):
             type=int,
             default=10,
             help="Maximum number of artist seeds to process.",
+        )
+        parser.add_argument(
+            "--all",
+            action="store_true",
+            help="Process every pending artist seed until the queue or API quota is exhausted.",
         )
         parser.add_argument(
             "--max-pages",
@@ -72,7 +78,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         cursor_name = options["cursor"]
-        limit = max(options["limit"], 1)
+        process_all = options["all"] or options["limit"] <= 0
+        limit = None if process_all else max(options["limit"], 1)
         max_pages = max(options["max_pages"], 1)
         page_size = min(max(options["page_size"], 1), 50)
         score_threshold = min(max(options["score_threshold"], 0), 100)
@@ -123,6 +130,7 @@ class Command(BaseCommand):
             params={
                 "cursor": cursor_name,
                 "limit": limit,
+                "all": process_all,
                 "max_pages": max_pages,
                 "page_size": page_size,
                 "score_threshold": score_threshold,
@@ -140,19 +148,19 @@ class Command(BaseCommand):
             "review_videos": 0,
             "stored_videos": 0,
             "failed": 0,
+            "quota_exhausted": 0,
         }
 
-        seeds = ArtistSeed.objects.filter(
-            status=ArtistSeed.Status.PENDING,
-        ).order_by(
+        seeds = ArtistSeed.objects.filter(status=ArtistSeed.Status.PENDING).order_by(
             "-observed_weight_score",
             "-observed_count",
             "id",
-        )[:limit]
+        )
+        if not process_all:
+            seeds = seeds[:limit]
 
         try:
             for seed in seeds:
-                counters["processed"] += 1
                 try:
                     discovery = discover_artist_seed(
                         seed=seed,
@@ -161,6 +169,7 @@ class Command(BaseCommand):
                         score_threshold=score_threshold,
                         continue_min=continue_min,
                     )
+                    counters["processed"] += 1
                     counters["searched_pages"] += len(discovery["pages"])
                     counters["qualified_videos"] += discovery["qualified_video_count"]
                     counters["review_videos"] += discovery["review_video_count"]
@@ -223,7 +232,24 @@ class Command(BaseCommand):
                             "dry_run": dry_run,
                         },
                     )
+                except YouTubeQuotaExhausted as exc:
+                    counters["quota_exhausted"] = 1
+                    IngestionLog.objects.create(
+                        job=job,
+                        level=IngestionLog.Level.WARNING,
+                        message="Stopped YouTube artist discovery because API quota is exhausted.",
+                        context={
+                            "artist_seed_id": seed.id,
+                            "artist": seed.display_artist,
+                            "error": str(exc),
+                            "remaining_pending_count": ArtistSeed.objects.filter(
+                                status=ArtistSeed.Status.PENDING,
+                            ).count(),
+                        },
+                    )
+                    break
                 except Exception as exc:
+                    counters["processed"] += 1
                     counters["failed"] += 1
                     if not dry_run:
                         YoutubeArtistDiscoveryCursor.objects.filter(id=cursor.id).update(
@@ -261,11 +287,12 @@ class Command(BaseCommand):
             )
             if not dry_run:
                 cursor = YoutubeArtistDiscoveryCursor.objects.get(id=cursor.id)
-                cursor.status = (
-                    YoutubeArtistDiscoveryCursor.Status.COMPLETED
-                    if counters["processed"] == 0
-                    else YoutubeArtistDiscoveryCursor.Status.ACTIVE
-                )
+                if counters["quota_exhausted"]:
+                    cursor.status = YoutubeArtistDiscoveryCursor.Status.ACTIVE
+                elif counters["processed"] == 0:
+                    cursor.status = YoutubeArtistDiscoveryCursor.Status.COMPLETED
+                else:
+                    cursor.status = YoutubeArtistDiscoveryCursor.Status.ACTIVE
                 cursor.last_run_finished_at = timezone.now()
                 cursor.save(update_fields=["status", "last_run_finished_at", "updated_at"])
         except Exception as exc:
@@ -279,7 +306,8 @@ class Command(BaseCommand):
             self.style.SUCCESS(
                 "Processed {processed}, searched_pages {searched_pages}, "
                 "qualified_videos {qualified_videos}, stored_videos {stored_videos}, "
-                "review_videos {review_videos}, failed {failed}.".format(**counters)
+                "review_videos {review_videos}, failed {failed}, "
+                "quota_exhausted {quota_exhausted}.".format(**counters)
             )
         )
 

@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-07-10T14:22:05.426207+00:00",
+  "command": "probe_youtube_artist_queries",
+  "limit": 10,
+  "max_results": 25,
+  "query_types": [
+    "basic_mv",
+    "negative_mv"
+  ],
+  "negative_terms": [
+    "cover",
+    "lyrics",
+    "lyric",
+    "karaoke",
+    "reaction",
+    "fancam",
+    "shorts",
+    "teaser",
+    "커버",
+    "가사",
+    "노래방",
+    "직캠",
+    "쇼츠",
+    "티저"
+  ],
+  "fetched_search_responses": 0,
+  "cache_hit_search_responses": 20,
+  "artists": [
+    {
+      "rank": 1,
+      "artist_seed_id": 11,
+      "display_artist": "DAY6 (데이식스)",
+      "raw_artist": "DAY6 (데이식스)",
+      "observed_weight_score": 130,
+      "observed_count": 68,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 2,
+      "artist_seed_id": 20,
+      "display_artist": "NewJeans",
+      "raw_artist": "NewJeans",
+      "observed_weight_score": 91,
+      "observed_count": 57,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 3,
+      "artist_seed_id": 13,
+      "display_artist": "aespa",
+      "raw_artist": "aespa",
+      "observed_weight_score": 87,
+      "observed_count": 39,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 4,
+      "artist_seed_id": 14,
+      "display_artist": "IVE (아이브)",
+      "raw_artist": "IVE (아이브)",
+      "observed_weight_score": 71,
+      "observed_count": 43,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 5,
+      "artist_seed_id": 5,
+      "display_artist": "아이유(IU)",
+      "raw_artist": "아이유(IU)",
+      "observed_weight_score": 53,
+      "observed_count": 25,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 6,
+      "artist_seed_id": 93,
+      "display_artist": "로제(ROSÉ)",
+      "raw_artist": "로제(ROSÉ)",
+      "observed_weight_score": 49,
+      "observed_count": 23,
+      "observed_sample_count": 5,
+      "first_observed": "2024-12-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 7,
+      "artist_seed_id": 92,
+      "display_artist": "G-DRAGON",
+      "raw_artist": "G-DRAGON",
+      "observed_weight_score": 43,
+      "observed_count": 19,
+      "observed_sample_count": 5,
+      "first_observed": "2024-12-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 8,
+      "artist_seed_id": 22,
+      "display_artist": "제니 (JENNIE)",
+      "raw_artist": "제니 (JENNIE)",
+      "observed_weight_score": 40,
+      "observed_count": 18,
+      "observed_sample_count": 7,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 9,
+      "artist_seed_id": 4,
+      "display_artist": "LE SSERAFIM (르세라핌)",
+      "raw_artist": "LE SSERAFIM (르세라핌)",
+      "observed_weight_score": 39,
+      "observed_count": 17,
+      "observed_sample_count": 6,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    },
+    {
+      "rank": 10,
+      "artist_seed_id": 2,
+      "display_artist": "i-dle (아이들)",
+      "raw_artist": "i-dle (아이들)",
+      "observed_weight_score": 32,
+      "observed_count": 16,
+      "observed_sample_count": 8,
+      "first_observed": "2024-03-15",
+      "last_observed": "2025-12-15"
+    }
+  ]
+}
