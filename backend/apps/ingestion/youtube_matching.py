@@ -15,10 +15,14 @@ REQUEST_TIMEOUT_SECONDS = 15
 USER_AGENT = "GuessSongYouTubeMatcher/0.1"
 
 AUTO_APPROVE_THRESHOLD = 90
-REVIEW_THRESHOLD = 55
+REVIEW_THRESHOLD = 50
+ARTIST_DISCOVERY_SCORE_THRESHOLD = 70
+ARTIST_DISCOVERY_PAGE_SIZE = 25
+ARTIST_DISCOVERY_CONTINUE_MIN_MATCHES = 13
 
 EXCLUDED_TERMS = [
     "cover",
+    "커버",
     "reaction",
     "lyrics",
     "lyric",
@@ -33,13 +37,38 @@ EXCLUDED_TERMS = [
     "직캠",
     "shorts",
     "short",
+    "쇼츠",
     "teaser",
     "티저",
-    "dance practice",
     "stage",
     "무대",
-    "performance video",
+    "playlist",
+    "플레이리스트",
+    "모음",
 ]
+
+REVIEW_TERMS = [
+    "performance video",
+    "performance ver",
+    "performance version",
+    "dance practice",
+    "댄스 연습",
+    "dance ver",
+    "dance version",
+    "choreography video",
+    "track video",
+    "drama ver",
+    "drama version",
+]
+
+EXCLUDED_CHANNEL_TERMS = [
+    "japan",
+]
+
+EXCLUDED_TERMS.extend(["unofficial"])
+REVIEW_TERMS.extend(["visualizer"])
+REVIEW_TERMS.extend(["special clip"])
+EXCLUDED_CHANNEL_TERMS.extend(["fan channel"])
 
 OFFICIAL_TITLE_TERMS = [
     "official mv",
@@ -49,19 +78,21 @@ OFFICIAL_TITLE_TERMS = [
     "mv",
     "music video",
     "m/v",
+    "m v",
     "뮤직비디오",
 ]
 
 OFFICIAL_CHANNEL_TERMS = [
-    "official",
     "vevo",
     "hybe labels",
     "1thek",
+    "super sound bugs",
     "stone music",
     "genie music",
     "smtown",
     "jyp entertainment",
     "yg entertainment",
+    "starship",
     "starshiptv",
     "woolliment",
     "warner music",
@@ -89,6 +120,13 @@ class MatchDecision:
     reason: str = ""
     video: VideoCandidate | None = None
     review_candidates: tuple[dict, ...] = ()
+
+
+@dataclass(frozen=True)
+class VideoSearchPage:
+    videos: tuple[VideoCandidate, ...]
+    next_page_token: str | None = None
+    total_results: int | None = None
 
 
 def find_youtube_match(title: str, artist: str, max_results: int = 8) -> MatchDecision:
@@ -150,35 +188,51 @@ def search_videos(title: str, artist: str, max_results: int = 8) -> list[VideoCa
         for item in search_payload.get("items", [])
         if item.get("id", {}).get("videoId")
     ]
-    if not video_ids:
-        return []
+    return list(_fetch_video_details(video_ids))
 
-    video_payload = _youtube_get(
-        "/videos",
-        {
-            "part": "snippet,contentDetails,statistics,status",
-            "id": ",".join(video_ids),
-            "key": api_key,
-        },
+
+def search_artist_mv_videos(
+    artist: str,
+    max_results: int = ARTIST_DISCOVERY_PAGE_SIZE,
+    page_token: str | None = None,
+) -> VideoSearchPage:
+    api_key = settings.YOUTUBE_API_KEY
+    if not api_key:
+        raise RuntimeError("YOUTUBE_API_KEY is not configured.")
+
+    params = {
+        "part": "snippet",
+        "type": "video",
+        "q": build_artist_mv_query(artist),
+        "maxResults": max_results,
+        "videoEmbeddable": "true",
+        "key": api_key,
+    }
+    if page_token:
+        params["pageToken"] = page_token
+
+    search_payload = _youtube_get("/search", params)
+    video_ids = [
+        item.get("id", {}).get("videoId")
+        for item in search_payload.get("items", [])
+        if item.get("id", {}).get("videoId")
+    ]
+    page_info = search_payload.get("pageInfo", {})
+    total_results = _parse_int(page_info.get("totalResults"))
+
+    return VideoSearchPage(
+        videos=_fetch_video_details(video_ids),
+        next_page_token=search_payload.get("nextPageToken"),
+        total_results=total_results,
     )
 
-    videos = []
-    for item in video_payload.get("items", []):
-        snippet = item.get("snippet", {})
-        statistics = item.get("statistics", {})
-        content_details = item.get("contentDetails", {})
-        videos.append(
-            VideoCandidate(
-                video_id=item["id"],
-                title=snippet.get("title", ""),
-                channel_title=snippet.get("channelTitle", ""),
-                channel_id=snippet.get("channelId", ""),
-                duration_seconds=_parse_iso8601_duration(content_details.get("duration", "")),
-                view_count=_parse_int(statistics.get("viewCount")),
-                published_at=snippet.get("publishedAt"),
-            )
-        )
-    return videos
+
+def score_artist_video(video: VideoCandidate, artist: str) -> MatchDecision:
+    return _score_video(video, title="", artist=artist)
+
+
+def build_artist_mv_query(artist: str) -> str:
+    return f"{_display_artist_query_name(artist)} mv"
 
 
 def build_youtube_source_defaults(decision: MatchDecision) -> dict:
@@ -204,17 +258,57 @@ def build_youtube_source_defaults(decision: MatchDecision) -> dict:
     }
 
 
+def _fetch_video_details(video_ids: list[str]) -> tuple[VideoCandidate, ...]:
+    if not video_ids:
+        return ()
+
+    video_payload = _youtube_get(
+        "/videos",
+        {
+            "part": "snippet,contentDetails,statistics,status",
+            "id": ",".join(video_ids),
+            "key": settings.YOUTUBE_API_KEY,
+        },
+    )
+
+    videos = []
+    for item in video_payload.get("items", []):
+        snippet = item.get("snippet", {})
+        statistics = item.get("statistics", {})
+        content_details = item.get("contentDetails", {})
+        videos.append(
+            VideoCandidate(
+                video_id=item["id"],
+                title=snippet.get("title", ""),
+                channel_title=snippet.get("channelTitle", ""),
+                channel_id=snippet.get("channelId", ""),
+                duration_seconds=_parse_iso8601_duration(content_details.get("duration", "")),
+                view_count=_parse_int(statistics.get("viewCount")),
+                published_at=snippet.get("publishedAt"),
+            )
+        )
+    return tuple(videos)
+
+
 def _score_video(video: VideoCandidate, title: str, artist: str) -> MatchDecision:
     title_key = _normalize(title)
-    artist_key = _normalize(artist)
+    artist_aliases = _artist_aliases(artist)
     video_title_key = _normalize(video.title)
-    channel_key = _normalize(video.channel_title)
-    combined_key = f"{video_title_key} {channel_key}"
+    video_signal_title_key = _normalize_for_signal(video.title)
+    channel_key = _normalize_for_signal(video.channel_title)
+    combined_key = f"{video_title_key} {video_signal_title_key} {channel_key}"
 
-    if any(term in combined_key for term in EXCLUDED_TERMS):
+    if _has_excluded_term(combined_key):
         return MatchDecision(
             action="reject",
             reason="excluded_video_term",
+            official_score=0,
+            video=video,
+        )
+    if any(term in channel_key for term in EXCLUDED_CHANNEL_TERMS):
+        return MatchDecision(
+            action="reject",
+            reason="excluded_channel_term",
             official_score=0,
             video=video,
         )
@@ -229,20 +323,25 @@ def _score_video(video: VideoCandidate, title: str, artist: str) -> MatchDecisio
         score += 20
         reasons.append("loose_title_match")
 
-    if artist_key and (artist_key in video_title_key or artist_key in channel_key):
+    artist_matched = False
+    if _any_alias_in_text(artist_aliases, video_title_key, video_signal_title_key):
         score += 25
         reasons.append("artist_match")
-    elif _loose_contains(channel_key, artist_key):
+        artist_matched = True
+    elif _any_alias_in_text(artist_aliases, channel_key) or any(
+        _loose_contains(channel_key, alias) for alias in artist_aliases
+    ):
         score += 15
-        reasons.append("loose_artist_match")
+        reasons.append("channel_artist_match")
+        artist_matched = True
 
     source_type = None
     if channel_key.endswith(" topic") or " topic" in channel_key:
         score += 35
         source_type = YoutubeSource.SourceType.TOPIC_ART_TRACK
         reasons.append("topic_channel")
-    elif any(term in video_title_key for term in ["official mv", "official music video", "mv"]):
-        score += 25
+    elif _has_official_mv_signal(video_signal_title_key):
+        score += 35
         source_type = YoutubeSource.SourceType.OFFICIAL_MV
         reasons.append("official_mv_title")
     elif "official audio" in video_title_key or "audio" in video_title_key:
@@ -250,21 +349,41 @@ def _score_video(video: VideoCandidate, title: str, artist: str) -> MatchDecisio
         source_type = YoutubeSource.SourceType.OFFICIAL_AUDIO
         reasons.append("official_audio_title")
 
-    if any(term in channel_key for term in OFFICIAL_CHANNEL_TERMS):
+    if _has_official_channel_signal(channel_key):
         score += 20
         if source_type is None:
             source_type = YoutubeSource.SourceType.ARTIST_CHANNEL
         reasons.append("official_channel")
+    elif "official" in channel_key and _any_alias_in_text(artist_aliases, channel_key):
+        score += 20
+        if source_type is None:
+            source_type = YoutubeSource.SourceType.ARTIST_CHANNEL
+        reasons.append("artist_official_channel")
+    elif channel_key in artist_aliases or (
+        source_type == YoutubeSource.SourceType.OFFICIAL_MV
+        and _any_alias_in_text(artist_aliases, channel_key)
+    ):
+        score += 20
+        if source_type is None:
+            source_type = YoutubeSource.SourceType.ARTIST_CHANNEL
+        reasons.append("artist_channel")
 
-    if any(term in video_title_key for term in OFFICIAL_TITLE_TERMS):
+    if any(term in video_signal_title_key for term in OFFICIAL_TITLE_TERMS):
         score += 10
         reasons.append("official_title_signal")
 
-    if source_type is None and ("records" in channel_key or "entertainment" in channel_key):
+    if source_type is None and _has_label_channel_signal(channel_key):
         source_type = YoutubeSource.SourceType.LABEL_CHANNEL
         score += 10
         reasons.append("label_like_channel")
 
+    if any(term in combined_key for term in REVIEW_TERMS):
+        score = min(max(score, REVIEW_THRESHOLD), ARTIST_DISCOVERY_SCORE_THRESHOLD - 1)
+        reasons.append("review_video_term")
+
+    if not artist_matched:
+        score = min(score, REVIEW_THRESHOLD - 1)
+        reasons.append("no_artist_match")
     score = min(score, 100)
     reason = ",".join(reasons) or "weak_match"
 
@@ -307,6 +426,96 @@ def _normalize(value: str) -> str:
     return " ".join(normalized.split())
 
 
+def _normalize_for_signal(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value or "").casefold()
+    normalized = re.sub(r"[^\w]+", " ", normalized, flags=re.UNICODE)
+    return " ".join(normalized.split())
+
+
+def _has_excluded_term(value: str) -> bool:
+    for term in EXCLUDED_TERMS:
+        if term not in value:
+            continue
+        if term in {"playlist", "플레이리스트"}:
+            if any(pattern in value for pattern in ["mv playlist", "music video playlist"]):
+                return True
+            continue
+        return True
+    return any(pattern in value for pattern in ["노래모음", "모아보기", "뮤비 모음"])
+
+
+def _has_official_mv_signal(value: str) -> bool:
+    return (
+        "official mv" in value
+        or "official music video" in value
+        or "music video" in value
+        or "뮤직비디오" in value
+        or _has_token(value, "mv")
+        or ("m v" in value)
+    )
+
+
+def _has_official_channel_signal(value: str) -> bool:
+    return any(term in value for term in OFFICIAL_CHANNEL_TERMS) or _has_label_channel_signal(value)
+
+
+def _has_label_channel_signal(value: str) -> bool:
+    return (
+        "entertainment" in value
+        or "music" in value
+        or "records" in value
+        or "labels" in value
+        or "label" in value
+    )
+
+
+def _has_token(value: str, token: str) -> bool:
+    return token in value.split()
+
+
+def _artist_aliases(artist: str) -> tuple[str, ...]:
+    aliases = [_normalize(alias) for alias in _display_artist_aliases(artist)]
+    seen = set()
+    result = []
+    for alias in aliases:
+        if len(alias.replace(" ", "")) < 2 or alias in seen:
+            continue
+        seen.add(alias)
+        result.append(alias)
+    return tuple(result)
+
+
+def _display_artist_aliases(artist: str) -> tuple[str, ...]:
+    aliases = []
+    stripped = re.sub(r"[()[\]]+", " ", artist or "")
+    aliases.append(stripped)
+    for match in re.findall(r"\(([^)]*)\)|\[([^\]]*)\]", artist or ""):
+        aliases.extend(part for part in match if part)
+    aliases.extend(part for part in re.split(r"\s*[()/,&]\s*", artist or ""))
+
+    seen = set()
+    result = []
+    for alias in aliases:
+        alias = " ".join(alias.split())
+        normalized = _normalize(alias)
+        if len(normalized.replace(" ", "")) < 2 or normalized in seen:
+            continue
+        seen.add(normalized)
+        result.append(alias)
+    return tuple(result)
+
+
+def _display_artist_query_name(artist: str) -> str:
+    query_name = re.split(r"\s*[\[(]", artist or "", maxsplit=1)[0]
+    if not query_name.strip():
+        query_name = re.sub(r"[()[\]]+", " ", artist or "")
+    return " ".join(query_name.split())
+
+
+def _any_alias_in_text(aliases: tuple[str, ...], *texts: str) -> bool:
+    return any(alias and any(alias in text for text in texts) for alias in aliases)
+
+
 def _loose_contains(container: str, needle: str) -> bool:
     if not container or not needle:
         return False
@@ -315,10 +524,10 @@ def _loose_contains(container: str, needle: str) -> bool:
     return len(compact_needle) >= 3 and compact_needle in compact_container
 
 
-def _parse_int(value: str | None) -> int | None:
+def _parse_int(value: str | int | None) -> int | None:
     try:
         return int(value) if value is not None else None
-    except ValueError:
+    except (TypeError, ValueError):
         return None
 
 
