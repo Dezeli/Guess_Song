@@ -236,6 +236,26 @@ Collect artist seeds for the current Korean-focused set:
 docker compose run --rm backend python manage.py collect_bugs_artist_seeds --backfill --charts total k_ballad k_dance k_idol k_hiphop k_indie ost --delay 1.5
 ```
 
+Collect initial artist seeds from one quarterly representative Bugs weekly page
+per quarter:
+
+```powershell
+docker compose run --rm backend python manage.py collect_bugs_quarterly_artist_seeds --dry-run --max-pages 1
+docker compose run --rm backend python manage.py collect_bugs_quarterly_artist_seeds --start-year 2007 --end-year 2026 --rank-limit 100 --chart total --delay 1.5
+```
+
+The quarterly command samples March 15, June 15, September 15, and December 15
+for each year, using the Bugs weekly chart page containing that date. Future
+sample dates are skipped automatically.
+
+Rank weights:
+
+```text
+1-10: +5
+11-30: +3
+31-100: +1
+```
+
 Collect the later overseas/J-POP set:
 
 ```powershell
@@ -265,6 +285,50 @@ This requires:
 ```text
 YOUTUBE_API_KEY=
 ```
+
+Artist-first YouTube MV discovery:
+
+```powershell
+docker compose run --rm backend python manage.py discover_youtube_artist_videos --dry-run --limit 3
+docker compose run --rm backend python manage.py discover_youtube_artist_videos --limit 10
+```
+
+The discovery command searches YouTube with:
+
+```text
+{artist} mv
+```
+
+Default pagination policy:
+
+```text
+page_size = 25
+score_threshold = 70
+continue_min = 13
+```
+
+If 13 or more of the 25 results score at least 70, the command collects the
+next page, up to `--max-pages`.
+
+Progress is tracked with `YoutubeArtistDiscoveryCursor` in Django admin. The
+artist queue itself is `ArtistSeed`: pending artists have `status = pending`,
+and searched artists are updated to `status = youtube_searched`. Running the
+same command the next day continues with the remaining pending artists.
+
+Qualified videos are stored in `DiscoveredYoutubeVideo` with the minimum
+operational metadata needed for the quiz catalog pass:
+
+```text
+song_title
+artist_name
+youtube_url
+uploaded_year
+uploaded_month
+```
+
+The table also keeps `youtube_title`, `video_id`, `channel_title`, and
+`official_score` for review and deduplication. The release year/month currently
+comes from the YouTube upload date.
 
 ## Verification Notes
 

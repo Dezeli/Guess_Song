@@ -1,6 +1,13 @@
 from django.contrib import admin
 
-from .models import ArtistSeed, IngestionJob, IngestionLog, RawCandidate
+from .models import (
+    ArtistSeed,
+    DiscoveredYoutubeVideo,
+    IngestionJob,
+    IngestionLog,
+    RawCandidate,
+    YoutubeArtistDiscoveryCursor,
+)
 
 
 class IngestionLogInline(admin.TabularInline):
@@ -70,3 +77,43 @@ class ArtistSeedAdmin(admin.ModelAdmin):
     list_filter = ["source_type", "status", "first_observed_year", "last_observed_year"]
     search_fields = ["raw_artist", "raw_artist_key", "display_artist"]
     autocomplete_fields = ["job"]
+
+
+@admin.register(YoutubeArtistDiscoveryCursor)
+class YoutubeArtistDiscoveryCursorAdmin(admin.ModelAdmin):
+    list_display = [
+        "name",
+        "source_type",
+        "status",
+        "last_artist_name",
+        "processed_count",
+        "failed_count",
+        "last_run_started_at",
+        "last_run_finished_at",
+    ]
+    list_filter = ["source_type", "status", "last_run_started_at"]
+    search_fields = ["name", "last_artist_name", "last_artist_key"]
+    autocomplete_fields = ["last_artist_seed"]
+
+
+@admin.register(DiscoveredYoutubeVideo)
+class DiscoveredYoutubeVideoAdmin(admin.ModelAdmin):
+    list_display = [
+        "song_title",
+        "artist_name",
+        "uploaded_year",
+        "uploaded_month",
+        "official_score",
+        "status",
+        "youtube_url",
+    ]
+    list_filter = ["status", "uploaded_year", "uploaded_month", "official_score"]
+    search_fields = [
+        "song_title",
+        "artist_name",
+        "youtube_title",
+        "video_id",
+        "channel_title",
+    ]
+    autocomplete_fields = ["artist_seed", "job"]
+    readonly_fields = ["created_at", "updated_at"]
