@@ -2,6 +2,8 @@ import type {
   CreateRoomResponse,
   JoinRoomResponse,
   ParticipantIdentityResponse,
+  QualityReportReason,
+  QualityReportResponse,
   QuizPack,
   ReviewSession,
   RoomSettings,
@@ -134,6 +136,19 @@ export function submitAnswer(code: string, participantToken: string, answer: str
     method: "POST",
     headers: { "X-Participant-Token": participantToken },
     body: { answer },
+  });
+}
+
+export function reportCurrentRound(
+  code: string,
+  participantToken: string,
+  reason: QualityReportReason,
+  message: string,
+) {
+  return request<QualityReportResponse>(`/api/rooms/${code}/rounds/current/report`, {
+    method: "POST",
+    headers: { "X-Participant-Token": participantToken },
+    body: { reason, message },
   });
 }
 

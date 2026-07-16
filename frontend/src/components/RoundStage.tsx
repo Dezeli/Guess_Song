@@ -1,4 +1,6 @@
-import type { CurrentRound } from "../shared/types";
+import { useState } from "react";
+
+import type { CurrentRound, QualityReportReason } from "../shared/types";
 
 type RoundStageProps = {
   currentRound: CurrentRound | null;
@@ -16,8 +18,19 @@ type RoundStageProps = {
   timerSeconds: number | null;
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
+  onReportRound: (reason: QualityReportReason, detail: string) => void;
   onSkipRound: () => void;
+  reportMessage: string;
 };
+
+const REPORT_REASONS: Array<{ value: QualityReportReason; label: string }> = [
+  { value: "wrong_title", label: "Wrong title" },
+  { value: "wrong_artist", label: "Wrong artist" },
+  { value: "wrong_audio", label: "Wrong audio" },
+  { value: "unavailable", label: "Unavailable video" },
+  { value: "unofficial_video", label: "Unofficial video" },
+  { value: "other", label: "Other" },
+];
 
 export function RoundStage({
   currentRound,
@@ -35,8 +48,14 @@ export function RoundStage({
   timerSeconds,
   onForceSkipRound,
   onHostPrimaryAction,
+  onReportRound,
   onSkipRound,
+  reportMessage,
 }: RoundStageProps) {
+  const [reportReason, setReportReason] = useState<QualityReportReason>("wrong_audio");
+  const [reportDetail, setReportDetail] = useState("");
+  const canReport = Boolean(currentRound?.started_at);
+
   return (
     <section className="stage-panel panel">
       <div className="stage-header">
@@ -150,6 +169,47 @@ export function RoundStage({
         </div>
       ) : null}
       {roundActionHint ? <p className="muted compact">{roundActionHint}</p> : null}
+
+      {currentRound ? (
+        <div className="quality-report-box">
+          <h3>Report issue</h3>
+          <div className="form-grid">
+            <label>
+              Reason
+              <select
+                value={reportReason}
+                onChange={(event) => setReportReason(event.target.value as QualityReportReason)}
+              >
+                {REPORT_REASONS.map((reason) => (
+                  <option key={reason.value} value={reason.value}>
+                    {reason.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Details
+              <input
+                value={reportDetail}
+                onChange={(event) => setReportDetail(event.target.value)}
+                placeholder="Optional note"
+              />
+            </label>
+          </div>
+          <button
+            type="button"
+            className="secondary danger"
+            disabled={!canReport}
+            onClick={() => {
+              onReportRound(reportReason, reportDetail);
+              setReportDetail("");
+            }}
+          >
+            Submit report
+          </button>
+          {reportMessage ? <p className="message compact">{reportMessage}</p> : null}
+        </div>
+      ) : null}
     </section>
   );
 }

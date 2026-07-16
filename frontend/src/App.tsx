@@ -12,6 +12,7 @@ import {
   leaveRoom,
   listQuizPacks,
   moveToNextRound,
+  reportCurrentRound,
   setParticipantActive,
   setParticipantAway,
   skipCurrentRound,
@@ -26,6 +27,7 @@ import type {
   CurrentRound,
   ItemMode,
   PlayMode,
+  QualityReportReason,
   QuizPack,
   RoomSettings,
   RoomSocketMessage,
@@ -77,6 +79,7 @@ function App() {
   const [allowLateJoin, setAllowLateJoin] = useState(true);
   const [roundTimeLimitSec, setRoundTimeLimitSec] = useState(20);
   const [answer, setAnswer] = useState("");
+  const [reportMessage, setReportMessage] = useState("");
   const [message, setMessage] = useState("");
   const [nowMs, setNowMs] = useState(Date.now());
   const socketRef = useRef<WebSocket | null>(null);
@@ -334,11 +337,28 @@ function App() {
     }
   }
 
+  async function handleReportRound(reason: QualityReportReason, detail: string) {
+    if (!room || !participantToken) {
+      return;
+    }
+
+    const report = await runAction(
+      () => reportCurrentRound(room.code, participantToken, reason, detail),
+      "Report submitted.",
+    );
+    if (report) {
+      setReportMessage(
+        `Report recorded for ${report.target_type}. Current count: ${report.report_count}`,
+      );
+    }
+  }
+
   function handleReset() {
     socketRef.current?.close();
     reset();
     setJoinCode("");
     setAnswer("");
+    setReportMessage("");
     setMessage("현재 화면 상태를 초기화했습니다.");
   }
 
@@ -471,6 +491,7 @@ function App() {
       lastRoundStarted={lastRoundStarted}
       message={message}
       orderedParticipants={orderedParticipants}
+      reportMessage={reportMessage}
       room={room}
       socketStatus={socketStatus}
       timerLabel={roundTimer.label}
@@ -479,6 +500,7 @@ function App() {
       onForceSkipRound={handleForceSkipRound}
       onHostPrimaryAction={handleHostPrimaryAction}
       onLeaveRoom={handleLeaveRoom}
+      onReportRound={handleReportRound}
       onReset={handleReset}
       onSetActive={handleSetActive}
       onSetAway={handleSetAway}

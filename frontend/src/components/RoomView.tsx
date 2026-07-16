@@ -1,6 +1,12 @@
 import type { FormEvent } from "react";
 
-import type { CurrentRound, Participant, RoomState, SubmitAnswerResponse } from "../shared/types";
+import type {
+  CurrentRound,
+  Participant,
+  QualityReportReason,
+  RoomState,
+  SubmitAnswerResponse,
+} from "../shared/types";
 import { AnswerPanel } from "./AnswerPanel";
 import { PlayersPanel } from "./PlayersPanel";
 import { RoundStage } from "./RoundStage";
@@ -20,6 +26,7 @@ type RoomViewProps = {
   lastRoundStarted: CurrentRound | null;
   message: string;
   orderedParticipants: Participant[];
+  reportMessage: string;
   roundActionHint: string | null;
   room: RoomState;
   socketStatus: string;
@@ -29,6 +36,7 @@ type RoomViewProps = {
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
   onLeaveRoom: () => void;
+  onReportRound: (reason: QualityReportReason, detail: string) => void;
   onReset: () => void;
   onSetActive: () => void;
   onSetAway: () => void;
@@ -51,6 +59,7 @@ export function RoomView({
   lastRoundStarted,
   message,
   orderedParticipants,
+  reportMessage,
   roundActionHint,
   room,
   socketStatus,
@@ -60,6 +69,7 @@ export function RoomView({
   onForceSkipRound,
   onHostPrimaryAction,
   onLeaveRoom,
+  onReportRound,
   onReset,
   onSetActive,
   onSetAway,
@@ -121,7 +131,9 @@ export function RoomView({
           timerSeconds={timerSeconds}
           onForceSkipRound={onForceSkipRound}
           onHostPrimaryAction={onHostPrimaryAction}
+          onReportRound={onReportRound}
           onSkipRound={onSkipRound}
+          reportMessage={reportMessage}
         />
         <AnswerPanel
           answer={answer}

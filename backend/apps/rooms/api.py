@@ -8,6 +8,7 @@ from ninja.errors import HttpError
 
 from apps.catalog.models import YoutubeSource
 from apps.core.text import normalize_answer
+from apps.moderation.models import QualityReport
 from apps.quizzes.models import QuizAnswerAlias, QuizPack, QuizQuestion
 
 from .game_settings import normalize_room_settings
@@ -156,6 +157,17 @@ class SkipRoundOut(Schema):
     room: RoomOut
 
 
+class QualityReportIn(Schema):
+    reason: str
+    message: str = ""
+
+
+class QualityReportOut(Schema):
+    report_id: int
+    target_type: str
+    report_count: int
+
+
 def _clean_nickname(nickname: str) -> str:
     cleaned = " ".join(nickname.strip().split())
     if not cleaned:
@@ -163,6 +175,46 @@ def _clean_nickname(nickname: str) -> str:
     if len(cleaned) > 40:
         raise HttpError(400, "Nickname must be 40 characters or fewer.")
     return cleaned
+
+
+def _clean_report_reason(reason: str) -> str:
+    cleaned = reason.strip()
+    valid_reasons = {choice[0] for choice in QualityReport.Reason.choices}
+    if cleaned not in valid_reasons:
+        raise HttpError(400, "Invalid report reason.")
+    return cleaned
+
+
+def _report_target_type(reason: str) -> str:
+    if reason in {
+        QualityReport.Reason.WRONG_TITLE,
+        QualityReport.Reason.WRONG_ARTIST,
+    }:
+        return QualityReport.TargetType.SONG
+    return QualityReport.TargetType.YOUTUBE_SOURCE
+
+
+def _serialize_quality_report(report: QualityReport) -> dict:
+    if report.target_type == QualityReport.TargetType.SONG and report.song_id:
+        return {
+            "report_id": report.id,
+            "target_type": report.target_type,
+            "report_count": report.song.report_count,
+        }
+    if (
+        report.target_type == QualityReport.TargetType.YOUTUBE_SOURCE
+        and report.youtube_source_id
+    ):
+        return {
+            "report_id": report.id,
+            "target_type": report.target_type,
+            "report_count": report.youtube_source.report_count,
+        }
+    return {
+        "report_id": report.id,
+        "target_type": report.target_type,
+        "report_count": 0,
+    }
 
 
 def _get_question_count(settings: dict, approved_count: int) -> int:
@@ -937,3 +989,54 @@ def force_skip_current_round(request, code: str):
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/rounds/current/report", response=QualityReportOut)
+def report_current_round(request, code: str, payload: QualityReportIn):
+    reason = _clean_report_reason(payload.reason)
+    message = " ".join(payload.message.strip().split())[:1000]
+
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.status == Participant.Status.LEFT:
+            raise HttpError(403, "Left participants cannot report rounds.")
+
+        if room.status not in {Room.Status.PLAYING, Room.Status.FINISHED}:
+            raise HttpError(400, "No playable round is available to report.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        round_obj = _get_current_round_or_400(session)
+        question = round_obj.question
+        target_type = _report_target_type(reason)
+        reporter_fingerprint = f"room:{room.code}:participant:{participant.id}"
+
+        duplicate_report = QualityReport.objects.filter(
+            target_type=target_type,
+            reason=reason,
+            reporter_fingerprint=reporter_fingerprint,
+            song=question.song if target_type == QualityReport.TargetType.SONG else None,
+            youtube_source=(
+                question.youtube_source
+                if target_type == QualityReport.TargetType.YOUTUBE_SOURCE
+                else None
+            ),
+        ).first()
+        if duplicate_report:
+            return _serialize_quality_report(duplicate_report)
+
+        report = QualityReport.objects.create(
+            target_type=target_type,
+            song=question.song if target_type == QualityReport.TargetType.SONG else None,
+            youtube_source=(
+                question.youtube_source
+                if target_type == QualityReport.TargetType.YOUTUBE_SOURCE
+                else None
+            ),
+            reason=reason,
+            message=message,
+            reporter_fingerprint=reporter_fingerprint,
+        )
+
+    return _serialize_quality_report(report)

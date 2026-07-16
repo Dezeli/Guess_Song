@@ -113,6 +113,20 @@ export type SubmitAnswerResponse = {
   matched_fields: string[];
 };
 
+export type QualityReportReason =
+  | "wrong_title"
+  | "wrong_artist"
+  | "wrong_audio"
+  | "unavailable"
+  | "unofficial_video"
+  | "other";
+
+export type QualityReportResponse = {
+  report_id: number;
+  target_type: string;
+  report_count: number;
+};
+
 export type ReviewSession = {
   authenticated: boolean;
 };
