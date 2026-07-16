@@ -3,9 +3,13 @@ import type {
   JoinRoomResponse,
   ParticipantIdentityResponse,
   QuizPack,
+  ReviewSession,
   RoomSettings,
   RoomState,
   SubmitAnswerResponse,
+  YoutubeReviewActionResult,
+  YoutubeReviewCandidate,
+  YoutubeReviewCandidateList,
 } from "./types";
 
 type RequestOptions = {
@@ -130,5 +134,46 @@ export function submitAnswer(code: string, participantToken: string, answer: str
     method: "POST",
     headers: { "X-Participant-Token": participantToken },
     body: { answer },
+  });
+}
+
+export function reviewLogin(password: string) {
+  return request<ReviewSession>("/api/review/login", {
+    method: "POST",
+    body: { password },
+  });
+}
+
+export function getReviewSession() {
+  return request<ReviewSession>("/api/review/session");
+}
+
+export function reviewLogout() {
+  return request<ReviewSession>("/api/review/logout", {
+    method: "POST",
+  });
+}
+
+export function listYoutubeReviewCandidates(status: string, limit = 50) {
+  return request<YoutubeReviewCandidateList>(
+    `/api/review/youtube-candidates?status=${encodeURIComponent(status)}&limit=${limit}`,
+  );
+}
+
+export function getYoutubeReviewCandidate(id: number) {
+  return request<YoutubeReviewCandidate>(`/api/review/youtube-candidates/${id}`);
+}
+
+export function approveYoutubeReviewCandidate(id: number, input: { song_title: string; artist_name: string }) {
+  return request<YoutubeReviewActionResult>(`/api/review/youtube-candidates/${id}/approve`, {
+    method: "POST",
+    body: input,
+  });
+}
+
+export function rejectYoutubeReviewCandidate(id: number, reason: string) {
+  return request<YoutubeReviewActionResult>(`/api/review/youtube-candidates/${id}/reject`, {
+    method: "POST",
+    body: { reason },
   });
 }

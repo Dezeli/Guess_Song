@@ -113,6 +113,42 @@ export type SubmitAnswerResponse = {
   matched_fields: string[];
 };
 
+export type ReviewSession = {
+  authenticated: boolean;
+};
+
+export type YoutubeReviewCandidate = {
+  id: number;
+  song_title: string;
+  artist_name: string;
+  youtube_title: string;
+  youtube_url: string;
+  video_id: string;
+  channel_title: string;
+  channel_id: string;
+  uploaded_year: number | null;
+  uploaded_month: number | null;
+  official_score: number;
+  source_type: string;
+  status: string;
+  review_reason: string;
+  duration_seconds: number | null;
+  view_count: number | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export type YoutubeReviewCandidateList = {
+  candidates: YoutubeReviewCandidate[];
+  total: number;
+};
+
+export type YoutubeReviewActionResult = {
+  candidate: YoutubeReviewCandidate;
+  result: string;
+  reason: string;
+};
+
 export type RoomSocketMessage =
   | { type: "room_state"; room: RoomState }
   | { type: "round_started"; round: CurrentRound }

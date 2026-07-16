@@ -251,8 +251,13 @@ def _promote_candidate(
     next_pack_order: int,
     min_score: int,
     question_status: str,
+    allow_manual_review_override: bool = False,
 ) -> PromotionResult:
-    review_reason = _candidate_review_reason(candidate, min_score=min_score)
+    review_reason = _candidate_review_reason(
+        candidate,
+        min_score=min_score,
+        allow_manual_review_override=allow_manual_review_override,
+    )
     if review_reason:
         _mark_candidate_for_review(candidate, job, review_reason)
         return PromotionResult(counter="review", reason=review_reason)
@@ -334,10 +339,17 @@ def _promote_candidate(
     )
 
 
-def _candidate_review_reason(candidate: DiscoveredYoutubeVideo, min_score: int) -> str:
+def _candidate_review_reason(
+    candidate: DiscoveredYoutubeVideo,
+    min_score: int,
+    allow_manual_review_override: bool = False,
+) -> str:
     if candidate.official_score < min_score:
         return "score_below_auto_promotion_threshold"
-    if candidate.status == DiscoveredYoutubeVideo.Status.REVIEW_REQUIRED:
+    if (
+        candidate.status == DiscoveredYoutubeVideo.Status.REVIEW_REQUIRED
+        and not allow_manual_review_override
+    ):
         return "already_marked_review_required"
     if not _clean_display_value(candidate.artist_name):
         return "missing_artist_name"
@@ -353,9 +365,17 @@ def _candidate_review_reason(candidate: DiscoveredYoutubeVideo, min_score: int) 
     if _source_type(candidate.source_type) is None:
         return "unknown_source_type"
     duration_seconds = _duration_seconds(candidate)
-    if duration_seconds is not None and duration_seconds < MIN_PLAYABLE_DURATION_SECONDS:
+    if (
+        duration_seconds is not None
+        and duration_seconds < MIN_PLAYABLE_DURATION_SECONDS
+        and not allow_manual_review_override
+    ):
         return "duration_too_short"
-    if duration_seconds is not None and duration_seconds > MAX_PLAYABLE_DURATION_SECONDS:
+    if (
+        duration_seconds is not None
+        and duration_seconds > MAX_PLAYABLE_DURATION_SECONDS
+        and not allow_manual_review_override
+    ):
         return "duration_too_long"
     return ""
 

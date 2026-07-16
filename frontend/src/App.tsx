@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 import { LobbyView } from "./components/LobbyView";
+import { ReviewView } from "./components/ReviewView";
 import { RoomView } from "./components/RoomView";
 import {
   createRoom,
@@ -35,6 +36,10 @@ import { useRoomStore } from "./stores/roomStore";
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
 
 function App() {
+  if (window.location.pathname === "/review") {
+    return <ReviewView />;
+  }
+
   const {
     room,
     hostToken,

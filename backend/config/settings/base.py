@@ -16,6 +16,7 @@ env = environ.Env(
     YOUTUBE_API_KEY=(str, ""),
     YOUTUBE_API_KEY1=(str, ""),
     YOUTUBE_API_KEY2=(str, ""),
+    REVIEW_ADMIN_PASSWORD=(str, ""),
 )
 
 environ.Env.read_env(ROOT_DIR / ".env")
@@ -97,6 +98,7 @@ YOUTUBE_API_KEYS = [
     ]
     if key
 ]
+REVIEW_ADMIN_PASSWORD = env("REVIEW_ADMIN_PASSWORD")
 
 CHANNEL_LAYERS = {
     "default": {
