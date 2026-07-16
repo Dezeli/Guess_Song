@@ -343,6 +343,32 @@ The table also keeps `youtube_title`, `video_id`, `channel_title`, and
 `official_score` for review and deduplication. The release year/month currently
 comes from the YouTube upload date.
 
+Promote discovered videos into playable quiz questions:
+
+```powershell
+docker compose run --rm backend python manage.py promote_discovered_youtube_videos --dry-run
+docker compose run --rm backend python manage.py promote_discovered_youtube_videos
+```
+
+Default promotion policy:
+
+```text
+source rows: DiscoveredYoutubeVideo.status = discovered
+minimum score: official_score >= 70
+target pack: Auto Discovered Songs
+question status: approved
+```
+
+Promotion creates or reuses `Artist`, `Song`, `YoutubeSource`, `QuizQuestion`,
+`QuizAnswerAlias`, and `QuizPackQuestion`. Rows with missing title/artist,
+unknown source type, too-short videos, very long videos, or YouTube IDs already
+matched to another song are left as `review_required` for admin review.
+
+Quality reports currently use a threshold of 3 reports. When a song or YouTube
+source reaches the threshold, related approved questions are moved back to
+`needs_review` and a `ReviewAction` is created with
+`reason = quality_report_threshold`.
+
 Probe artist query variants without reusing API calls:
 
 ```powershell
@@ -424,6 +450,29 @@ review_required = 83
 cursor status = active
 ```
 
+The first automatic promotion run used:
+
+```powershell
+docker compose exec backend python manage.py promote_discovered_youtube_videos
+```
+
+Result:
+
+```text
+processed discovered videos = 840
+promoted = 831
+duplicates linked to pack = 3
+new songs = 823
+new YouTube sources = 831
+new quiz questions = 831
+Auto Discovered Songs pack questions = 834
+playable approved questions in pack = 834
+review_required after promotion = 89
+```
+
+The 6 rows newly left for review were short videos, very long videos, or a
+YouTube ID already matched to an existing sample song.
+
 Next run can use the same discovery command; it will continue with pending
 artists such as ZICO, DOYOUNG, JAESSBEE, MAKTUB, Taylor Swift, Lee Young Ji,
 GroovyRoom, Mariah Carey, Ariana Grande, and Hanroro.
@@ -432,10 +481,10 @@ Recommended next implementation pass:
 
 1. Build an admin-friendly candidate review loop that lets a reviewer listen,
    guess, approve, edit title/artist, reject, or merge duplicates.
-2. Promote approved `DiscoveredYoutubeVideo` rows into `Artist`, `Song`,
-   `YoutubeSource`, `QuizQuestion`, and `QuizAnswerAlias`.
-3. Strengthen duplicate grouping and answer alias generation before broad
-   automatic promotion.
+2. Test the `Auto Discovered Songs` pack through the live game flow and mark
+   bad items through reports or admin review.
+3. Strengthen duplicate grouping and answer alias generation after observing
+   real quiz misses.
 4. Relax candidate storage around lyric/topic/playable original-audio videos,
    while still strongly excluding cover, karaoke, instrumental, remix, reaction,
    fancam, shorts-like edits, playlists, and medleys.

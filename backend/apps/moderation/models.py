@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class ReviewAction(models.Model):
@@ -73,20 +74,73 @@ class QualityReport(models.Model):
     def apply_report_threshold(self) -> None:
         if self.target_type == self.TargetType.SONG and self.song_id:
             song = self.song
+            was_playable = not song.blocked
             song.report_count = self.__class__.objects.filter(song=song).count()
             if song.report_count >= 3:
                 song.blocked = True
             song.save(update_fields=["report_count", "blocked", "updated_at"])
+            if song.report_count >= 3 and was_playable:
+                self._return_song_questions_to_review(song)
             return
 
         if self.target_type == self.TargetType.YOUTUBE_SOURCE and self.youtube_source_id:
             source = self.youtube_source
+            was_playable = source.status in {
+                source.Status.AUTO_APPROVED,
+                source.Status.APPROVED,
+            }
             source.report_count = self.__class__.objects.filter(youtube_source=source).count()
             update_fields = ["report_count", "updated_at"]
             if source.report_count >= 3:
-                source.status = source.Status.BLOCKED
+                source.status = source.Status.NEEDS_REVIEW
                 update_fields.append("status")
             source.save(update_fields=update_fields)
+            if source.report_count >= 3 and was_playable:
+                self._return_youtube_source_questions_to_review(source)
+
+    def _return_song_questions_to_review(self, song) -> None:
+        from apps.quizzes.models import QuizQuestion
+
+        updated_count = QuizQuestion.objects.filter(
+            song=song,
+            status=QuizQuestion.Status.APPROVED,
+        ).update(
+            status=QuizQuestion.Status.NEEDS_REVIEW,
+            updated_at=timezone.now(),
+        )
+        ReviewAction.objects.create(
+            target_type=self.TargetType.SONG,
+            target_id=song.id,
+            action=ReviewAction.Action.REQUEST_REVIEW,
+            reason="quality_report_threshold",
+            metadata={
+                "quality_report_id": self.id,
+                "report_count": song.report_count,
+                "returned_question_count": updated_count,
+            },
+        )
+
+    def _return_youtube_source_questions_to_review(self, source) -> None:
+        from apps.quizzes.models import QuizQuestion
+
+        updated_count = QuizQuestion.objects.filter(
+            youtube_source=source,
+            status=QuizQuestion.Status.APPROVED,
+        ).update(
+            status=QuizQuestion.Status.NEEDS_REVIEW,
+            updated_at=timezone.now(),
+        )
+        ReviewAction.objects.create(
+            target_type=self.TargetType.YOUTUBE_SOURCE,
+            target_id=source.id,
+            action=ReviewAction.Action.REQUEST_REVIEW,
+            reason="quality_report_threshold",
+            metadata={
+                "quality_report_id": self.id,
+                "report_count": source.report_count,
+                "returned_question_count": updated_count,
+            },
+        )
 
     def __str__(self) -> str:
         return f"{self.reason} report for {self.target_type}"
