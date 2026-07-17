@@ -30,6 +30,7 @@ def get_room_for_state(code: str) -> Room:
             "teams",
             "game_session__rounds__answer_fields",
             "game_session__rounds__question__youtube_source",
+            "game_session__rounds__question__song",
         )
         .select_related("game_session__quiz_pack")
         .get(code=code.upper())
@@ -63,13 +64,44 @@ def serialize_public_round(round_obj: GameRound | None) -> dict | None:
         "youtube_video_id": source.video_id,
         "start_time_seconds": question.start_time_seconds,
         "play_duration_seconds": question.play_duration_seconds,
+        "playback_segments": _playback_segments(round_obj),
         "difficulty": question.difficulty,
         "started_at": round_obj.started_at.isoformat() if round_obj.started_at else None,
         "ended_at": round_obj.ended_at.isoformat() if round_obj.ended_at else None,
         "skip_count": min(manual_skip_count + away_skip_count, skip_target_count),
         "skip_target_count": skip_target_count,
         "answer_fields": answer_fields,
+        "answer_submissions": _serialize_answer_submissions(round_obj),
     }
+
+
+def _playback_segments(round_obj: GameRound) -> list[dict]:
+    question = round_obj.question
+    source = question.youtube_source
+    total_play_seconds = int(
+        round_obj.session.settings.get(
+            "round_time_limit_sec",
+            round_obj.session.room.settings.get("round_time_limit_sec", question.play_duration_seconds),
+        )
+    )
+    segment_duration = max(total_play_seconds // 2, 1)
+    first_start = question.start_time_seconds
+    duration = source.duration_seconds
+    if duration is None and question.song.duration_ms:
+        duration = question.song.duration_ms // 1000
+    second_start = first_start + max(segment_duration + 20, 30)
+
+    if duration:
+        latest_start = max(duration - segment_duration - 2, 0)
+        if second_start > latest_start:
+            second_start = max(first_start - segment_duration - 20, 0)
+        if abs(second_start - first_start) < segment_duration + 5:
+            second_start = min(latest_start, first_start + segment_duration + 5)
+
+    return [
+        {"start_time_seconds": first_start, "duration_seconds": segment_duration},
+        {"start_time_seconds": max(second_start, 0), "duration_seconds": segment_duration},
+    ]
 
 
 def _serialize_answer_fields(round_obj: GameRound) -> list[dict]:
@@ -106,7 +138,60 @@ def _serialize_answer_fields(round_obj: GameRound) -> list[dict]:
             }
         )
 
+    if "artist" not in configured_fields:
+        title_state = states.get(RoundAnswerFieldState.FieldType.TITLE)
+        reveal_artist = bool(round_obj.ended_at or (title_state and title_state.revealed_at))
+        if reveal_artist:
+            payload.append(
+                {
+                    "field_type": RoundAnswerFieldState.FieldType.ARTIST,
+                    "is_open": False,
+                    "is_revealed": True,
+                    "first_correct_at": None,
+                    "closed_at": round_obj.ended_at.isoformat() if round_obj.ended_at else None,
+                    "revealed_at": (
+                        round_obj.ended_at.isoformat()
+                        if round_obj.ended_at
+                        else title_state.revealed_at.isoformat()
+                    ),
+                    "answer": round_obj.question.answer_artist,
+                }
+            )
+
     return payload
+
+
+def _serialize_answer_submissions(round_obj: GameRound) -> list[dict]:
+    submissions = list(
+        round_obj.submissions.select_related("participant")
+        .order_by("-submitted_at", "-id")[:40]
+    )
+    payload = []
+    previous_key = None
+    previous_item = None
+    for submission in reversed(submissions):
+        key = (submission.participant_id, submission.answer_raw, submission.normalized_answer)
+        if key == previous_key and previous_item:
+            previous_item["id"] = max(previous_item["id"], submission.id)
+            previous_item["is_correct"] = previous_item["is_correct"] or submission.is_correct
+            previous_item["is_accepted"] = previous_item["is_accepted"] or submission.is_accepted
+            previous_item["score_awarded"] += submission.score_awarded
+            previous_item["submitted_at"] = submission.submitted_at.isoformat()
+            continue
+        item = {
+            "id": submission.id,
+            "participant_id": submission.participant_id,
+            "nickname": submission.participant.nickname,
+            "answer": submission.answer_raw,
+            "is_correct": submission.is_correct,
+            "is_accepted": submission.is_accepted,
+            "score_awarded": submission.score_awarded,
+            "submitted_at": submission.submitted_at.isoformat(),
+        }
+        previous_key = key
+        previous_item = item
+        payload.append(item)
+    return payload[-20:]
 
 
 def get_current_round(session) -> GameRound | None:
@@ -127,6 +212,8 @@ def serialize_room(room: Room) -> dict:
 
     return {
         "code": room.code,
+        "title": room.title,
+        "share_path": f"/rooms/{room.code}",
         "status": room.status,
         "server_time": timezone.now().isoformat(),
         "quiz_pack": (

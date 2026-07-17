@@ -6,6 +6,17 @@ export type QuizPack = {
   approved_question_count: number;
 };
 
+export type QuestionScopeOption = {
+  value: string;
+  label: string;
+  question_count: number;
+};
+
+export type QuestionScopeOptions = {
+  years: QuestionScopeOption[];
+  artists: QuestionScopeOption[];
+};
+
 export type Participant = {
   id: number;
   nickname: string;
@@ -24,6 +35,10 @@ export type CurrentRound = {
   youtube_video_id: string;
   start_time_seconds: number;
   play_duration_seconds: number;
+  playback_segments: Array<{
+    start_time_seconds: number;
+    duration_seconds: number;
+  }>;
   difficulty: string;
   started_at: string | null;
   ended_at: string | null;
@@ -38,6 +53,16 @@ export type CurrentRound = {
     revealed_at: string | null;
     answer: string | null;
   }>;
+  answer_submissions: Array<{
+    id: number;
+    participant_id: number;
+    nickname: string;
+    answer: string;
+    is_correct: boolean;
+    is_accepted: boolean;
+    score_awarded: number;
+    submitted_at: string;
+  }>;
 };
 
 export type AnswerLimitMode = "FIRST_ONLY" | "FIVE_SECONDS" | "ALL_CORRECT";
@@ -46,9 +71,13 @@ export type TeamAssignMode = "SELF_SELECT" | "RANDOM";
 export type ItemMode = "OFF" | "ON";
 export type AnswerFields = "TITLE_ONLY" | "TITLE_AND_ARTIST";
 export type BalanceMode = "OFF" | "ON";
+export type QuestionScopeType = "ALL_RANDOM" | "YEAR" | "ARTIST";
 
 export type RoomSettings = {
   question_count: number;
+  question_scope_type: QuestionScopeType;
+  question_scope_value: string;
+  target_score: number;
   answer_limit_mode: AnswerLimitMode;
   play_mode: PlayMode;
   team_assign_mode: TeamAssignMode;
@@ -64,6 +93,8 @@ export type RoomSettings = {
 
 export type RoomState = {
   code: string;
+  title: string;
+  share_path: string;
   status: string;
   server_time: string;
   quiz_pack: {
@@ -111,6 +142,11 @@ export type SubmitAnswerResponse = {
   score_awarded: number;
   total_score: number;
   matched_fields: string[];
+  answer_submissions: CurrentRound["answer_submissions"];
+  participant_score: number;
+  team_id: number | null;
+  team_score: number | null;
+  room: RoomState | null;
 };
 
 export type QualityReportReason =

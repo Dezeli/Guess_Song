@@ -3,11 +3,14 @@ import type { FormEvent } from "react";
 import type {
   CurrentRound,
   Participant,
+  QuestionScopeOptions,
   QualityReportReason,
+  RoomSettings,
   RoomState,
   SubmitAnswerResponse,
 } from "../shared/types";
 import { AnswerPanel } from "./AnswerPanel";
+import { HostSettingsPanel } from "./HostSettingsPanel";
 import { PlayersPanel } from "./PlayersPanel";
 import { RoundStage } from "./RoundStage";
 
@@ -27,21 +30,27 @@ type RoomViewProps = {
   message: string;
   orderedParticipants: Participant[];
   reportMessage: string;
-  roundActionHint: string | null;
   room: RoomState;
+  quizScopes: QuestionScopeOptions;
+  shareUrl: string;
   socketStatus: string;
   timerLabel: string | null;
   timerSeconds: number | null;
   onAnswerChange: (answer: string) => void;
   onForceSkipRound: () => void;
   onHostPrimaryAction: () => void;
+  onKickParticipant: (participantId: number) => void;
   onLeaveRoom: () => void;
   onReportRound: (reason: QualityReportReason, detail: string) => void;
-  onReset: () => void;
   onSetActive: () => void;
   onSetAway: () => void;
   onSkipRound: () => void;
   onSubmitAnswer: (event: FormEvent) => void;
+  onTeamChange: (teamId: number) => void;
+  onUpdateRoomSettings: (input: {
+    quiz_pack_id?: number | null;
+    settings: Partial<RoomSettings>;
+  }) => void;
 };
 
 export function RoomView({
@@ -60,113 +69,168 @@ export function RoomView({
   message,
   orderedParticipants,
   reportMessage,
-  roundActionHint,
   room,
+  quizScopes,
+  shareUrl,
   socketStatus,
   timerLabel,
   timerSeconds,
   onAnswerChange,
   onForceSkipRound,
   onHostPrimaryAction,
+  onKickParticipant,
   onLeaveRoom,
   onReportRound,
-  onReset,
   onSetActive,
   onSetAway,
   onSkipRound,
   onSubmitAnswer,
+  onTeamChange,
+  onUpdateRoomSettings,
 }: RoomViewProps) {
   const roundLabel = room.game
     ? `${Math.min(room.game.current_round_index + 1, room.game.total_rounds)} / ${room.game.total_rounds}`
     : "-";
+  const isWaiting = room.status === "waiting";
+  const isFinished = room.status === "finished";
 
   return (
     <main className="app-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">방 {room.code}</p>
-          <h1>{room.quiz_pack?.name ?? "음악 퀴즈"}</h1>
+          <p className="eyebrow">{room.code}</p>
+          <div className="room-title-line">
+            <h1 className="room-title">{room.title}</h1>
+            <button
+              type="button"
+              className="secondary invite-copy-button"
+              onClick={() => void navigator.clipboard?.writeText(shareUrl)}
+            >
+              초대 링크 복사
+            </button>
+          </div>
         </div>
         <div className="button-row">
-          <div className="connection">
-            <span>동기화</span>
-            <strong data-state={socketStatus}>{getSocketLabel(socketStatus)}</strong>
+          <div
+            className="network-status"
+            data-state={socketStatus}
+            role="status"
+            aria-label={`네트워크 ${getNetworkLabel(socketStatus)}`}
+            title={`네트워크 ${getNetworkLabel(socketStatus)}`}
+          >
+            <span className="signal-icon" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
           </div>
-          <button type="button" className="secondary" onClick={onReset}>
-            화면 초기화
-          </button>
-          {currentParticipant ? (
-            currentParticipant.status === "AWAY" ? (
-              <button type="button" className="secondary" onClick={onSetActive}>
-                돌아오기
-              </button>
-            ) : (
-              <button type="button" className="secondary" onClick={onSetAway}>
-                자리비움
-              </button>
-            )
-          ) : null}
-          <button type="button" className="secondary" onClick={onLeaveRoom}>
+          <button type="button" className="leave-text-button" onClick={onLeaveRoom}>
             나가기
           </button>
         </div>
       </header>
 
-      {message ? <p className="message">{message}</p> : null}
-
-      <section className="room-focus">
-        <RoundStage
-          currentRound={currentRound}
-          hostAction={getHostAction(room, currentRound)}
-          hostActionDisabled={hostActionDisabled}
-          isHost={isHost}
-          isRevealed={isRevealed}
-          canForceSkipRound={canForceSkipRound}
-          canSkipRound={canSkipRound}
-          lastRoundStarted={lastRoundStarted}
-          roundLabel={roundLabel}
-          roundActionHint={roundActionHint}
-          roomStatus={room.status}
-          timerLabel={timerLabel}
-          timerSeconds={timerSeconds}
-          onForceSkipRound={onForceSkipRound}
-          onHostPrimaryAction={onHostPrimaryAction}
-          onReportRound={onReportRound}
-          onSkipRound={onSkipRound}
-          reportMessage={reportMessage}
-        />
-        <AnswerPanel
-          answer={answer}
-          canSubmit={canSubmit}
-          hint={answerHint}
-          lastAnswerResult={lastAnswerResult}
-          onAnswerChange={onAnswerChange}
-          onSubmitAnswer={onSubmitAnswer}
-        />
-        <PlayersPanel orderedParticipants={orderedParticipants} room={room} />
-      </section>
+      {isWaiting ? (
+        <section className="room-focus waiting-focus">
+          <HostSettingsPanel
+            editable={isHost}
+            quizScopes={quizScopes}
+            room={room}
+            onUpdate={onUpdateRoomSettings}
+          />
+          <PlayersPanel
+            currentParticipantId={currentParticipant?.id ?? null}
+            lobbyAction={
+              isHost ? (
+                <button
+                  type="button"
+                  className="start-game-button"
+                  onClick={onHostPrimaryAction}
+                  disabled={hostActionDisabled}
+                >
+                  게임 시작
+                </button>
+              ) : (
+                <div className="start-waiting-placeholder">방장이 시작하기를 대기 중</div>
+              )
+            }
+            orderedParticipants={orderedParticipants}
+            room={room}
+            showScores={false}
+            canKick={isHost}
+            onKickParticipant={onKickParticipant}
+            onTeamChange={onTeamChange}
+          />
+        </section>
+      ) : isFinished ? (
+        <section className="room-focus finished-focus">
+          <PlayersPanel
+            currentParticipantId={currentParticipant?.id ?? null}
+            orderedParticipants={orderedParticipants}
+            room={room}
+          />
+          {isHost ? (
+            <div className="finished-action-row">
+              <button
+                type="button"
+                className="start-game-button"
+                onClick={onHostPrimaryAction}
+                disabled={hostActionDisabled}
+              >
+                대기실로
+              </button>
+            </div>
+          ) : null}
+        </section>
+      ) : (
+        <section className="room-focus">
+          <RoundStage
+            currentRound={currentRound}
+            isHost={isHost}
+            isRevealed={isRevealed}
+            currentParticipantStatus={currentParticipant?.status ?? null}
+            canForceSkipRound={canForceSkipRound}
+            canSkipRound={canSkipRound}
+            roundLabel={roundLabel}
+            roomStatus={room.status}
+            timerLabel={timerLabel}
+            timerSeconds={timerSeconds}
+            onForceSkipRound={onForceSkipRound}
+            onReportRound={onReportRound}
+            onSetActive={onSetActive}
+            onSetAway={onSetAway}
+            onSkipRound={onSkipRound}
+            reportMessage={reportMessage}
+          />
+          {room.status === "playing" ? (
+            <AnswerPanel
+              answer={answer}
+              canSubmit={canSubmit}
+              hint={answerHint}
+              submissions={currentRound?.answer_submissions ?? []}
+              onAnswerChange={onAnswerChange}
+              onSubmitAnswer={onSubmitAnswer}
+            />
+          ) : null}
+          <PlayersPanel
+            currentParticipantId={currentParticipant?.id ?? null}
+            orderedParticipants={orderedParticipants}
+            room={room}
+          />
+        </section>
+      )}
+      <footer className="lobby-footer room-footer">
+        <div className="footer-main">
+          <span>© 2026 한소절 · Dezeli</span>
+          <span className="mail-text">✉️ haterecursive@gmail.com</span>
+        </div>
+        <small>YouTube 음악 영상 및 음원은 비상업적 목적으로만 사용됩니다.</small>
+      </footer>
     </main>
   );
 }
 
-function getHostAction(room: RoomState, currentRound: CurrentRound | null) {
-  if (room.status === "waiting") {
-    return "게임 시작";
-  }
-
-  if (room.status === "playing" && currentRound?.ended_at) {
-    const isLastRound = currentRound.round_index + 1 >= (room.game?.total_rounds ?? 0);
-    return isLastRound ? "결과 보기" : "다음 라운드";
-  }
-
-  if (room.status === "playing") {
-    return "게임 진행 중";
-  }
-
-  return "게임 종료";
-}
-
-function getSocketLabel(status: string) {
+function getNetworkLabel(status: string) {
   if (status === "open") {
     return "연결됨";
   }

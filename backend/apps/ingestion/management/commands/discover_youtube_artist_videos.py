@@ -389,6 +389,7 @@ def _serialize_scored_video(video, artist: str) -> dict:
         "duration_seconds": video.duration_seconds,
         "view_count": video.view_count,
         "published_at": video.published_at,
+        "embeddable": video.embeddable,
         "source_type": decision.source_type,
         "official_score": decision.official_score,
         "reason": decision.reason,
@@ -471,6 +472,7 @@ def _upsert_discovered_video(
             "duration_seconds": video["duration_seconds"],
             "view_count": video["view_count"],
             "published_at": video["published_at"],
+            "embeddable": video["embeddable"],
             "discovery_query": discovery_query,
         },
     }

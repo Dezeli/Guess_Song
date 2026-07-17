@@ -7,35 +7,39 @@ import {
   createRoom,
   forceSkipCurrentRound,
   getCurrentParticipant,
+  getRandomNickname,
   getRoom,
   joinRoom,
+  kickParticipant,
   leaveRoom,
+  leaveRoomOnPageExit,
   listQuizPacks,
+  listQuizScopes,
   moveToNextRound,
   reportCurrentRound,
+  returnRoomToLobby,
   setParticipantActive,
   setParticipantAway,
   skipCurrentRound,
   startGame,
   submitAnswer,
+  updateMyTeam,
+  updateRoomSettings,
 } from "./shared/api";
 import { openRoomSocket } from "./shared/roomSocket";
 import type {
-  AnswerFields,
-  AnswerLimitMode,
-  BalanceMode,
   CurrentRound,
-  ItemMode,
-  PlayMode,
   QualityReportReason,
+  QuestionScopeOptions,
   QuizPack,
   RoomSettings,
   RoomSocketMessage,
-  TeamAssignMode,
+  SubmitAnswerResponse,
 } from "./shared/types";
 import { useRoomStore } from "./stores/roomStore";
 
 const savedRoomCode = sessionStorage.getItem("guess_song_room_code") ?? "";
+const initialRouteRoomCode = getRoomCodeFromPath(window.location.pathname);
 
 function App() {
   if (window.location.pathname === "/review") {
@@ -61,26 +65,18 @@ function App() {
   } = useRoomStore();
 
   const [quizPacks, setQuizPacks] = useState<QuizPack[]>([]);
+  const [quizScopes, setQuizScopes] = useState<QuestionScopeOptions>({ years: [], artists: [] });
   const [selectedPackId, setSelectedPackId] = useState<number | null>(null);
+  const [routeRoomCode, setRouteRoomCode] = useState(initialRouteRoomCode);
   const [hostNickname, setHostNickname] = useState("방장");
-  const [joinCode, setJoinCode] = useState(savedRoomCode);
+  const [roomTitle, setRoomTitle] = useState("한소절 방");
+  const [joinCode, setJoinCode] = useState(initialRouteRoomCode ?? "");
   const [joinNickname, setJoinNickname] = useState("참가자");
-  const [joinPreviewRoom, setJoinPreviewRoom] = useState<RoomSettings | null>(null);
-  const [joinPreviewTeams, setJoinPreviewTeams] = useState<Array<{ id: number; name: string }>>([]);
-  const [selectedJoinTeamId, setSelectedJoinTeamId] = useState<number | null>(null);
-  const [questionCount, setQuestionCount] = useState(2);
-  const [answerLimitMode, setAnswerLimitMode] = useState<AnswerLimitMode>("FIVE_SECONDS");
-  const [playMode, setPlayMode] = useState<PlayMode>("SOLO");
-  const [teamAssignMode, setTeamAssignMode] = useState<TeamAssignMode>("SELF_SELECT");
-  const [teamCount, setTeamCount] = useState(2);
-  const [itemMode, setItemMode] = useState<ItemMode>("OFF");
-  const [answerFields, setAnswerFields] = useState<AnswerFields>("TITLE_ONLY");
-  const [balanceMode, setBalanceMode] = useState<BalanceMode>("OFF");
-  const [allowLateJoin, setAllowLateJoin] = useState(true);
-  const [roundTimeLimitSec, setRoundTimeLimitSec] = useState(20);
   const [answer, setAnswer] = useState("");
   const [reportMessage, setReportMessage] = useState("");
   const [message, setMessage] = useState("");
+  const [createMessage, setCreateMessage] = useState("");
+  const [joinMessage, setJoinMessage] = useState("");
   const [nowMs, setNowMs] = useState(Date.now());
   const socketRef = useRef<WebSocket | null>(null);
 
@@ -91,13 +87,12 @@ function App() {
     }
     return room.participants.find((participant) => participant.id === participantId) ?? null;
   }, [participantId, room]);
-  const isHost = Boolean(hostToken && room);
+  const isHost = Boolean(room && currentParticipant?.is_host);
+  const effectiveHostToken = hostToken ?? (isHost ? participantToken : null);
   const isCurrentRoundRevealed = Boolean(currentRound?.ended_at);
   const canSubmit = Boolean(
     participantToken
       && room?.status === "playing"
-      && currentRound?.started_at
-      && !currentRound.ended_at
       && currentParticipant?.status === "ACTIVE",
   );
   const canSkipRound = Boolean(
@@ -108,12 +103,12 @@ function App() {
       && currentParticipant?.status === "ACTIVE",
   );
   const canForceSkipRound = Boolean(
-    hostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
+    effectiveHostToken && room?.status === "playing" && currentRound?.started_at && !currentRound.ended_at,
   );
   const hostActionDisabled = !(
-    hostToken
+    effectiveHostToken
     && room
-    && (room.status === "waiting" || (room.status === "playing" && currentRound?.ended_at))
+    && (room.status === "waiting" || room.status === "finished" || (room.status === "playing" && currentRound?.ended_at))
   );
   const orderedParticipants = useMemo(
     () => [...(room?.participants ?? [])].sort((a, b) => b.score - a.score || Number(b.is_host) - Number(a.is_host)),
@@ -141,9 +136,27 @@ function App() {
     void listQuizPacks()
       .then((packs) => {
         setQuizPacks(packs);
-        setSelectedPackId(packs[0]?.id ?? null);
+        const largestPack = [...packs].sort(
+          (a, b) => b.approved_question_count - a.approved_question_count,
+        )[0];
+        setSelectedPackId(largestPack?.id ?? null);
       })
       .catch((error) => setMessage(error instanceof Error ? error.message : "문제팩을 불러오지 못했습니다."));
+  }, []);
+
+  useEffect(() => {
+    void listQuizScopes()
+      .then(setQuizScopes)
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    void Promise.all([getRandomNickname(), getRandomNickname()])
+      .then(([host, join]) => {
+        setHostNickname(host.nickname);
+        setJoinNickname(join.nickname);
+      })
+      .catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -155,17 +168,29 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!savedRoomCode || room || (!participantToken && !hostToken)) {
+    const codeToLoad = routeRoomCode ?? savedRoomCode;
+    if (!codeToLoad || room || (!participantToken && !hostToken)) {
       return;
     }
 
-    void getRoom(savedRoomCode)
+    void getRoom(codeToLoad)
       .then((loadedRoom) => setRoom(loadedRoom))
       .catch(() => undefined);
-  }, [hostToken, participantToken, room, setRoom]);
+  }, [hostToken, participantToken, room, routeRoomCode, setRoom]);
 
   useEffect(() => {
-    if (!room?.code) {
+    if (!routeRoomCode || room) {
+      return;
+    }
+
+    setJoinCode(routeRoomCode);
+    void getRoom(routeRoomCode)
+      .then(() => undefined)
+      .catch(() => undefined);
+  }, [room, routeRoomCode]);
+
+  useEffect(() => {
+    if (!room?.code || socketStatus === "open") {
       return;
     }
 
@@ -204,7 +229,7 @@ function App() {
     }, 1000);
 
     return () => window.clearInterval(intervalId);
-  }, [room?.code, setRoom]);
+  }, [room?.code, setRoom, socketStatus]);
 
   useEffect(() => {
     if (!room?.code || !participantToken || participantId) {
@@ -216,11 +241,31 @@ function App() {
       .catch(() => undefined);
   }, [participantId, participantToken, room?.code, setParticipantId]);
 
+  useEffect(() => {
+    if (!room?.code || !participantToken) {
+      return;
+    }
+
+    const roomCode = room.code;
+    const token = participantToken;
+
+    function handlePageHide() {
+      leaveRoomOnPageExit(roomCode, token);
+      clearStoredRoomSession();
+    }
+
+    window.addEventListener("pagehide", handlePageHide);
+
+    return () => window.removeEventListener("pagehide", handlePageHide);
+  }, [participantToken, room?.code]);
+
   async function runAction<T>(action: () => Promise<T>, successMessage: string) {
     setMessage("");
     try {
       const result = await action();
-      setMessage(successMessage);
+      if (successMessage) {
+        setMessage(successMessage);
+      }
       return result;
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "요청에 실패했습니다.");
@@ -230,35 +275,24 @@ function App() {
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
+    setCreateMessage("");
+    setJoinMessage("");
     if (!selectedPackId) {
-      setMessage("문제팩을 먼저 선택하세요.");
+      setCreateMessage("출제 범위를 먼저 불러오는 중입니다.");
       return;
     }
 
-    const settings: RoomSettings = {
-      question_count: questionCount,
-      answer_limit_mode: answerLimitMode,
-      play_mode: playMode,
-      team_assign_mode: teamAssignMode,
-      team_count: teamCount,
-      item_mode: itemMode,
-      answer_fields: answerFields,
-      balance_mode: answerLimitMode === "FIRST_ONLY" ? balanceMode : "OFF",
-      allow_late_join: allowLateJoin,
-      round_time_limit_sec: roundTimeLimitSec,
-      reveal_duration_sec: 5,
-      countdown_sec: 3,
-    };
-
-    const created = await runAction(
-      () =>
-        createRoom({
+    let created = null;
+    try {
+      created = await createRoom({
           quiz_pack_id: selectedPackId,
           host_nickname: hostNickname,
-          settings,
-        }),
-      "방을 만들었습니다.",
-    );
+          room_title: roomTitle,
+          settings: getDefaultRoomSettings(),
+        });
+    } catch (error) {
+      setCreateMessage(error instanceof Error ? error.message : "방 만들기에 실패했습니다.");
+    }
 
     if (created) {
       setRoom(created.room);
@@ -266,6 +300,7 @@ function App() {
       setParticipantToken(created.participant_token);
       setParticipantId(created.participant_id);
       setJoinCode(created.room.code);
+      rememberRoomLink(created.room.code);
       setLastAnswerResult(null);
       setLastRoundStarted(null);
     }
@@ -273,48 +308,55 @@ function App() {
 
   async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
-    const joined = await runAction(
-      () => joinRoom(joinCode.trim().toUpperCase(), joinNickname, selectedJoinTeamId),
-      "방에 참가했습니다.",
-    );
+    setJoinMessage("");
+    setCreateMessage("");
+    let joined = null;
+    try {
+      joined = await joinRoom(joinCode.trim().toUpperCase(), joinNickname, null);
+    } catch (error) {
+      setJoinMessage(error instanceof Error ? error.message : "방 참가에 실패했습니다.");
+    }
 
     if (joined) {
       setRoom(joined.room);
       setHostToken(null);
       setParticipantToken(joined.participant_token);
       setParticipantId(joined.participant_id);
+      rememberRoomLink(joined.room.code);
       setLastAnswerResult(null);
       setLastRoundStarted(null);
     }
   }
 
-  async function handleRestoreRoom() {
-    if (!joinCode.trim()) {
-      return;
-    }
-    const loaded = await runAction(() => getRoom(joinCode.trim().toUpperCase()), "방 정보를 불러왔습니다.");
-    if (loaded) {
-      setJoinPreviewRoom(loaded.settings);
-      setJoinPreviewTeams(loaded.teams.map((team) => ({ id: team.id, name: team.name })));
-      setSelectedJoinTeamId(loaded.teams[0]?.id ?? null);
-    }
-  }
-
   async function handleHostPrimaryAction() {
-    if (!room || !hostToken) {
+    if (!room || !effectiveHostToken) {
       return;
     }
 
     if (room.status === "waiting") {
-      const started = await runAction(() => startGame(room.code, hostToken), "게임을 시작했습니다.");
+      const started = await runAction(() => startGame(room.code, effectiveHostToken), "게임을 시작했습니다.");
       if (started) {
         setRoom(started.room);
+        setLastAnswerResult(null);
+        setLastRoundStarted(null);
+        setAnswer("");
+      }
+      return;
+    }
+
+    if (room.status === "finished") {
+      const returned = await runAction(() => returnRoomToLobby(room.code, effectiveHostToken), "");
+      if (returned) {
+        setRoom(returned.room);
+        setLastAnswerResult(null);
+        setLastRoundStarted(null);
+        setAnswer("");
       }
       return;
     }
 
     if (room.status === "playing" && currentRound?.ended_at) {
-      const advanced = await runAction(() => moveToNextRound(room.code, hostToken), "다음 단계로 이동했습니다.");
+      const advanced = await runAction(() => moveToNextRound(room.code, effectiveHostToken), "다음 라운드로 이동했습니다.");
       if (advanced) {
         setRoom(advanced.room);
       }
@@ -327,13 +369,112 @@ function App() {
       return;
     }
 
+    const submittedAnswer = answer.trim();
+    if (!submittedAnswer) {
+      return;
+    }
+    setAnswer("");
+
     const result = await runAction(
-      () => submitAnswer(room.code, participantToken, answer),
+      () => submitAnswer(room.code, participantToken, submittedAnswer),
       "정답을 제출했습니다.",
     );
 
     if (result) {
       setLastAnswerResult(result);
+      if (result.room) {
+        setRoom(result.room);
+      } else {
+        applyFastAnswerResult(result);
+      }
+    }
+  }
+
+  function applyFastAnswerResult(result: SubmitAnswerResponse) {
+    if (!room || !participantId || !room.game?.current_round) {
+      return;
+    }
+
+    const currentRoundId = room.game.current_round.round_id;
+    const nextParticipants = room.participants.map((participant) =>
+      participant.id === participantId
+        ? { ...participant, score: result.participant_score }
+        : participant,
+    );
+    const nextTeams = room.teams.map((team) =>
+      result.team_id && team.id === result.team_id && result.team_score !== null
+        ? { ...team, score: result.team_score }
+        : team,
+    );
+    const nextSubmissions = [
+      ...room.game.current_round.answer_submissions,
+      ...result.answer_submissions,
+    ].slice(-20);
+
+    setRoom({
+      ...room,
+      participants: nextParticipants,
+      teams: nextTeams,
+      game: {
+        ...room.game,
+        current_round: {
+          ...room.game.current_round,
+          answer_submissions:
+            room.game.current_round.round_id === currentRoundId
+              ? nextSubmissions
+              : room.game.current_round.answer_submissions,
+        },
+      },
+    });
+  }
+
+  async function handleRandomHostNickname() {
+    const result = await runAction(() => getRandomNickname(), "");
+    if (result) {
+      setHostNickname(result.nickname);
+    }
+  }
+
+  async function handleRandomJoinNickname() {
+    const result = await runAction(() => getRandomNickname(), "");
+    if (result) {
+      setJoinNickname(result.nickname);
+    }
+  }
+
+  async function handleUpdateRoomSettings(input: {
+    quiz_pack_id?: number | null;
+    settings: Partial<RoomSettings>;
+  }) {
+    if (!room || !effectiveHostToken) {
+      return;
+    }
+    const updated = await runAction(
+      () => updateRoomSettings(room.code, effectiveHostToken, input),
+      "설정을 변경했습니다.",
+    );
+    if (updated) {
+      setRoom(updated.room);
+    }
+  }
+
+  async function handleUpdateMyTeam(teamId: number) {
+    if (!room || !participantToken) {
+      return;
+    }
+    const updated = await runAction(() => updateMyTeam(room.code, participantToken, teamId), "");
+    if (updated) {
+      setRoom(updated.room);
+    }
+  }
+
+  async function handleKickParticipant(participantId: number) {
+    if (!room || !effectiveHostToken) {
+      return;
+    }
+    const updated = await runAction(() => kickParticipant(room.code, effectiveHostToken, participantId), "");
+    if (updated) {
+      setRoom(updated.room);
     }
   }
 
@@ -344,12 +485,10 @@ function App() {
 
     const report = await runAction(
       () => reportCurrentRound(room.code, participantToken, reason, detail),
-      "Report submitted.",
+      "신고를 접수했습니다.",
     );
     if (report) {
-      setReportMessage(
-        `Report recorded for ${report.target_type}. Current count: ${report.report_count}`,
-      );
+      setReportMessage(`신고가 접수되었습니다. 누적 ${report.report_count}건`);
     }
   }
 
@@ -359,7 +498,12 @@ function App() {
     setJoinCode("");
     setAnswer("");
     setReportMessage("");
-    setMessage("현재 화면 상태를 초기화했습니다.");
+    setCreateMessage("");
+    setJoinMessage("");
+    sessionStorage.removeItem("guess_song_room_code");
+    setRouteRoomCode(null);
+    window.history.replaceState(null, "", "/");
+    setMessage("");
   }
 
   async function handleLeaveRoom() {
@@ -401,18 +545,18 @@ function App() {
       return;
     }
 
-    const skipped = await runAction(() => skipCurrentRound(room.code, participantToken), "스킵에 투표했습니다.");
+    const skipped = await runAction(() => skipCurrentRound(room.code, participantToken), "스킵을 투표했습니다.");
     if (skipped) {
       setRoom(skipped.room);
     }
   }
 
   async function handleForceSkipRound() {
-    if (!room || !hostToken) {
+    if (!room || !effectiveHostToken) {
       return;
     }
 
-    const skipped = await runAction(() => forceSkipCurrentRound(room.code, hostToken), "라운드를 스킵했습니다.");
+    const skipped = await runAction(() => forceSkipCurrentRound(room.code, effectiveHostToken), "라운드를 스킵했습니다.");
     if (skipped) {
       setRoom(skipped.room);
     }
@@ -421,43 +565,34 @@ function App() {
   if (!room) {
     return (
       <LobbyView
-        allowLateJoin={allowLateJoin}
-        answerFields={answerFields}
-        answerLimitMode={answerLimitMode}
-        balanceMode={balanceMode}
+        createMessage={createMessage}
         hostNickname={hostNickname}
-        itemMode={itemMode}
+        initialSheet={routeRoomCode ? "join" : null}
         joinCode={joinCode}
+        joinMessage={joinMessage}
         joinNickname={joinNickname}
-        joinPreviewRoom={joinPreviewRoom}
-        joinPreviewTeams={joinPreviewTeams}
         message={message}
-        playMode={playMode}
-        questionCount={questionCount}
-        quizPacks={quizPacks}
-        roundTimeLimitSec={roundTimeLimitSec}
-        selectedJoinTeamId={selectedJoinTeamId}
-        selectedPackId={selectedPackId}
-        teamAssignMode={teamAssignMode}
-        teamCount={teamCount}
-        onAllowLateJoinChange={setAllowLateJoin}
-        onAnswerFieldsChange={setAnswerFields}
-        onAnswerLimitModeChange={setAnswerLimitMode}
-        onBalanceModeChange={setBalanceMode}
+        roomTitle={roomTitle}
         onCreateRoom={handleCreateRoom}
-        onHostNicknameChange={setHostNickname}
-        onItemModeChange={setItemMode}
-        onJoinCodeChange={setJoinCode}
-        onJoinNicknameChange={setJoinNickname}
+        onHostNicknameChange={(nickname) => {
+          setHostNickname(nickname);
+          setCreateMessage("");
+        }}
+        onJoinCodeChange={(code) => {
+          setJoinCode(code);
+          setJoinMessage("");
+        }}
+        onJoinNicknameChange={(nickname) => {
+          setJoinNickname(nickname);
+          setJoinMessage("");
+        }}
         onJoinRoom={handleJoinRoom}
-        onLoadRoom={handleRestoreRoom}
-        onPlayModeChange={setPlayMode}
-        onQuestionCountChange={setQuestionCount}
-        onRoundTimeLimitSecChange={setRoundTimeLimitSec}
-        onSelectedJoinTeamIdChange={setSelectedJoinTeamId}
-        onSelectedPackIdChange={setSelectedPackId}
-        onTeamAssignModeChange={setTeamAssignMode}
-        onTeamCountChange={setTeamCount}
+        onRandomHostNickname={handleRandomHostNickname}
+        onRandomJoinNickname={handleRandomJoinNickname}
+        onRoomTitleChange={(title) => {
+          setRoomTitle(title);
+          setCreateMessage("");
+        }}
       />
     );
   }
@@ -466,13 +601,6 @@ function App() {
     <RoomView
       answer={answer}
       answerHint={getAnswerHint(
-        Boolean(participantToken),
-        room.status,
-        currentRound?.started_at ?? null,
-        currentRound?.ended_at ?? null,
-        currentParticipant?.status ?? null,
-      )}
-      roundActionHint={getRoundActionHint(
         Boolean(participantToken),
         room.status,
         currentRound?.started_at ?? null,
@@ -493,6 +621,8 @@ function App() {
       orderedParticipants={orderedParticipants}
       reportMessage={reportMessage}
       room={room}
+      quizScopes={quizScopes}
+      shareUrl={new URL(room.share_path, window.location.origin).toString()}
       socketStatus={socketStatus}
       timerLabel={roundTimer.label}
       timerSeconds={roundTimer.seconds}
@@ -501,13 +631,35 @@ function App() {
       onHostPrimaryAction={handleHostPrimaryAction}
       onLeaveRoom={handleLeaveRoom}
       onReportRound={handleReportRound}
-      onReset={handleReset}
       onSetActive={handleSetActive}
       onSetAway={handleSetAway}
       onSkipRound={handleSkipRound}
       onSubmitAnswer={handleSubmitAnswer}
+      onKickParticipant={handleKickParticipant}
+      onTeamChange={handleUpdateMyTeam}
+      onUpdateRoomSettings={handleUpdateRoomSettings}
     />
   );
+}
+
+function getDefaultRoomSettings(): RoomSettings {
+  return {
+    question_count: 300,
+    question_scope_type: "ALL_RANDOM",
+    question_scope_value: "",
+    target_score: 10,
+    answer_limit_mode: "FIVE_SECONDS",
+    play_mode: "SOLO",
+    team_assign_mode: "SELF_SELECT",
+    team_count: 2,
+    item_mode: "OFF",
+    answer_fields: "TITLE_ONLY",
+    balance_mode: "OFF",
+    allow_late_join: true,
+    round_time_limit_sec: 8,
+    reveal_duration_sec: 5,
+    countdown_sec: 3,
+  };
 }
 
 function getRoundTimer(
@@ -550,6 +702,24 @@ function getRoundTimer(
   return { label: null, seconds: null };
 }
 
+function getRoomCodeFromPath(pathname: string) {
+  const match = pathname.match(/^\/rooms\/([A-Za-z0-9_-]+)\/?$/);
+  return match ? match[1].toUpperCase() : null;
+}
+
+function rememberRoomLink(code: string) {
+  const normalizedCode = code.trim().toUpperCase();
+  sessionStorage.setItem("guess_song_room_code", normalizedCode);
+  window.history.replaceState(null, "", `/rooms/${normalizedCode}`);
+}
+
+function clearStoredRoomSession() {
+  sessionStorage.removeItem("guess_song_room_code");
+  sessionStorage.removeItem("guess_song_host_token");
+  sessionStorage.removeItem("guess_song_participant_token");
+  sessionStorage.removeItem("guess_song_participant_id");
+}
+
 function getAnswerHint(
   hasToken: boolean,
   status: string,
@@ -558,10 +728,10 @@ function getAnswerHint(
   participantStatus: string | null,
 ) {
   if (!hasToken) {
-    return "방을 만들거나 참가한 뒤 정답을 제출할 수 있습니다.";
+    return "방을 만들거나 참가해야 정답을 제출할 수 있습니다.";
   }
   if (participantStatus === "AWAY") {
-    return "자리비움 상태입니다. 돌아온 뒤 제출하세요.";
+    return "자리비움 상태입니다. 돌아와야 제출할 수 있습니다.";
   }
   if (participantStatus === "LEFT") {
     return "이미 방에서 나갔습니다.";
@@ -576,40 +746,9 @@ function getAnswerHint(
     return "라운드 시작 전입니다. 음악이 시작되면 제출할 수 있습니다.";
   }
   if (endedAt) {
-    return "정답 공개 중입니다. 이 라운드는 제출이 마감됐습니다.";
+    return "정답 공개 중입니다. 이 라운드는 제출이 마감되었습니다.";
   }
-  return "정답 입력이 열려 있습니다.";
-}
-
-function getRoundActionHint(
-  hasToken: boolean,
-  status: string,
-  startedAt: string | null,
-  endedAt: string | null,
-  participantStatus: string | null,
-) {
-  if (!hasToken) {
-    return null;
-  }
-  if (participantStatus === "AWAY") {
-    return "자리비움 상태에서는 스킵 투표를 할 수 없습니다.";
-  }
-  if (participantStatus === "LEFT") {
-    return "방을 나간 상태에서는 라운드 액션을 사용할 수 없습니다.";
-  }
-  if (status === "waiting") {
-    return "게임 시작 전에는 스킵할 수 없습니다.";
-  }
-  if (status === "finished") {
-    return "게임이 종료되어 라운드 액션이 닫혔습니다.";
-  }
-  if (!startedAt) {
-    return "라운드가 시작되면 스킵 투표가 열립니다.";
-  }
-  if (endedAt) {
-    return "정답 공개 중에는 스킵 투표가 마감됩니다.";
-  }
-  return null;
+  return "정답 입력을 기다리고 있습니다.";
 }
 
 export default App;

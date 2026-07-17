@@ -7,6 +7,11 @@ from .services import broadcast_room_state, broadcast_round_started
 
 
 @shared_task
+def broadcast_room_state_task(code: str) -> None:
+    broadcast_room_state(code)
+
+
+@shared_task
 def start_round_task(room_id: int, round_index: int) -> None:
     should_schedule_end = False
     round_time_limit_sec = 0
@@ -37,7 +42,7 @@ def start_round_task(room_id: int, round_index: int) -> None:
                     "round_time_limit_sec",
                     room.settings.get("round_time_limit_sec", 20),
                 )
-            )
+            ) + 1
 
         transaction.on_commit(lambda: broadcast_round_started(room.code, round_obj))
         transaction.on_commit(lambda: broadcast_room_state(room.code))

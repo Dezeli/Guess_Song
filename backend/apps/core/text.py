@@ -10,4 +10,4 @@ def normalize_answer(value: str) -> str:
     normalized = _BRACKETED_TEXT_RE.sub(" ", normalized)
     normalized = normalized.casefold()
     normalized = _PUNCTUATION_RE.sub(" ", normalized)
-    return " ".join(normalized.split())
+    return "".join(normalized.split())

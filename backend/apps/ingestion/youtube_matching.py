@@ -120,6 +120,7 @@ class VideoCandidate:
     duration_seconds: int | None
     view_count: int | None
     published_at: str | None
+    embeddable: bool | None
 
 
 @dataclass(frozen=True)
@@ -192,6 +193,7 @@ def search_videos(title: str, artist: str, max_results: int = 8) -> list[VideoCa
             "q": query,
             "maxResults": max_results,
             "videoEmbeddable": "true",
+            "videoSyndicated": "true",
         },
     )
     video_ids = [
@@ -215,6 +217,7 @@ def search_artist_mv_videos(
         "q": build_artist_mv_query(artist),
         "maxResults": max_results,
         "videoEmbeddable": "true",
+        "videoSyndicated": "true",
     }
     if page_token:
         params["pageToken"] = page_token
@@ -262,7 +265,10 @@ def build_youtube_source_defaults(decision: MatchDecision) -> dict:
         "priority": _source_priority(decision.source_type),
         "official_score": decision.official_score,
         "status": YoutubeSource.Status.APPROVED,
-        "raw_payload": {"match_reason": decision.reason},
+        "raw_payload": {
+            "match_reason": decision.reason,
+            "embeddable": decision.video.embeddable,
+        },
     }
 
 
@@ -283,6 +289,7 @@ def _fetch_video_details(video_ids: list[str]) -> tuple[VideoCandidate, ...]:
         snippet = item.get("snippet", {})
         statistics = item.get("statistics", {})
         content_details = item.get("contentDetails", {})
+        status = item.get("status", {})
         videos.append(
             VideoCandidate(
                 video_id=item["id"],
@@ -292,12 +299,21 @@ def _fetch_video_details(video_ids: list[str]) -> tuple[VideoCandidate, ...]:
                 duration_seconds=_parse_iso8601_duration(content_details.get("duration", "")),
                 view_count=_parse_int(statistics.get("viewCount")),
                 published_at=snippet.get("publishedAt"),
+                embeddable=status.get("embeddable"),
             )
         )
     return tuple(videos)
 
 
 def _score_video(video: VideoCandidate, title: str, artist: str) -> MatchDecision:
+    if video.embeddable is False:
+        return MatchDecision(
+            action="reject",
+            reason="not_embeddable",
+            official_score=0,
+            video=video,
+        )
+
     title_key = _normalize(title)
     artist_aliases = _artist_aliases(artist)
     video_title_key = _normalize(video.title)

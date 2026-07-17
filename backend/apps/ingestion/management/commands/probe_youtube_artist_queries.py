@@ -219,6 +219,7 @@ def _videos_from_search_payload(payload: dict) -> list[VideoCandidate]:
                 duration_seconds=None,
                 view_count=None,
                 published_at=snippet.get("publishedAt"),
+                embeddable=True,
             )
         )
     return videos

@@ -346,6 +346,8 @@ def _candidate_review_reason(
 ) -> str:
     if candidate.official_score < min_score:
         return "score_below_auto_promotion_threshold"
+    if candidate.raw_payload.get("embeddable") is False:
+        return "youtube_video_not_embeddable"
     if (
         candidate.status == DiscoveredYoutubeVideo.Status.REVIEW_REQUIRED
         and not allow_manual_review_override
@@ -756,6 +758,7 @@ def _youtube_source_payload(candidate: DiscoveredYoutubeVideo) -> dict:
         "discovered_youtube_video_id": candidate.id,
         "discovery_reason": candidate.raw_payload.get("reason", ""),
         "discovery_query": candidate.raw_payload.get("discovery_query", ""),
+        "embeddable": candidate.raw_payload.get("embeddable"),
     }
 
 

@@ -4,6 +4,7 @@ import type {
   ParticipantIdentityResponse,
   QualityReportReason,
   QualityReportResponse,
+  QuestionScopeOptions,
   QuizPack,
   ReviewSession,
   RoomSettings,
@@ -47,9 +48,18 @@ export function listQuizPacks() {
   return request<QuizPack[]>("/api/quiz-packs");
 }
 
+export function listQuizScopes() {
+  return request<QuestionScopeOptions>("/api/quiz-scopes");
+}
+
+export function getRandomNickname() {
+  return request<{ nickname: string }>("/api/nicknames/random");
+}
+
 export function createRoom(input: {
   quiz_pack_id: number;
   host_nickname: string;
+  room_title: string;
   settings: RoomSettings;
 }) {
   return request<CreateRoomResponse>("/api/rooms", {
@@ -82,6 +92,21 @@ export function leaveRoom(code: string, participantToken: string) {
   });
 }
 
+export function kickParticipant(code: string, hostToken: string, participantId: number) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/participants/${participantId}/kick`, {
+    method: "POST",
+    headers: { "X-Host-Token": hostToken },
+  });
+}
+
+export function leaveRoomOnPageExit(code: string, participantToken: string) {
+  void fetch(`/api/rooms/${code}/leave`, {
+    method: "POST",
+    keepalive: true,
+    headers: { "X-Participant-Token": participantToken },
+  }).catch(() => undefined);
+}
+
 export function setParticipantAway(code: string, participantToken: string) {
   return request<{ room: RoomState }>(`/api/rooms/${code}/away`, {
     method: "POST",
@@ -96,10 +121,40 @@ export function setParticipantActive(code: string, participantToken: string) {
   });
 }
 
+export function updateMyTeam(code: string, participantToken: string, teamId: number) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/me/team`, {
+    method: "PATCH",
+    headers: { "X-Participant-Token": participantToken },
+    body: { team_id: teamId },
+  });
+}
+
 export function startGame(code: string, hostToken: string) {
   return request<{ room: RoomState }>(`/api/rooms/${code}/start`, {
     method: "POST",
     headers: { "X-Host-Token": hostToken },
+  });
+}
+
+export function returnRoomToLobby(code: string, hostToken: string) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/return-to-lobby`, {
+    method: "POST",
+    headers: { "X-Host-Token": hostToken },
+  });
+}
+
+export function updateRoomSettings(
+  code: string,
+  hostToken: string,
+  input: {
+    quiz_pack_id?: number | null;
+    settings: Partial<RoomSettings>;
+  },
+) {
+  return request<{ room: RoomState }>(`/api/rooms/${code}/settings`, {
+    method: "PATCH",
+    headers: { "X-Host-Token": hostToken },
+    body: input,
   });
 }
 

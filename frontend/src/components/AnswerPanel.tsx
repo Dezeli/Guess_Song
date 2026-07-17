@@ -1,12 +1,12 @@
 import type { FormEvent } from "react";
 
-import type { SubmitAnswerResponse } from "../shared/types";
+import type { CurrentRound } from "../shared/types";
 
 type AnswerPanelProps = {
   answer: string;
   canSubmit: boolean;
   hint: string;
-  lastAnswerResult: SubmitAnswerResponse | null;
+  submissions: CurrentRound["answer_submissions"];
   onAnswerChange: (answer: string) => void;
   onSubmitAnswer: (event: FormEvent) => void;
 };
@@ -15,34 +15,42 @@ export function AnswerPanel({
   answer,
   canSubmit,
   hint,
-  lastAnswerResult,
+  submissions,
   onAnswerChange,
   onSubmitAnswer,
 }: AnswerPanelProps) {
   return (
-    <section className="panel">
-      <h2>정답 제출</h2>
+    <section className="panel answer-panel">
       <p className="muted">{hint}</p>
-      <form onSubmit={onSubmitAnswer} className="stack">
+      <ul className="answer-chat-list" aria-label="정답 채팅">
+        {submissions.length ? (
+          submissions.map((submission) => (
+            <li key={submission.id} className={submission.score_awarded > 0 ? "scored" : undefined}>
+              {submission.score_awarded > 0 ? (
+                <span>{submission.nickname}님이 정답으로 {submission.score_awarded}점 획득하셨습니다</span>
+              ) : (
+                <>
+                  <strong>{submission.nickname}</strong>
+                  <span>{submission.answer}</span>
+                </>
+              )}
+            </li>
+          ))
+        ) : (
+          <li className="empty-chat" aria-hidden="true" />
+        )}
+      </ul>
+      <form onSubmit={onSubmitAnswer} className="answer-chat-form">
         <input
           value={answer}
           onChange={(event) => onAnswerChange(event.target.value)}
-          placeholder={canSubmit ? "정답을 입력하세요" : "제출할 수 없는 상태입니다"}
+          placeholder="정답을 입력하세요"
           disabled={!canSubmit}
         />
         <button type="submit" disabled={!canSubmit || !answer.trim()}>
-          제출
+          전송
         </button>
       </form>
-      {lastAnswerResult ? (
-        <p className={lastAnswerResult.is_correct ? "result correct" : "result wrong"}>
-          {lastAnswerResult.is_correct ? "정답" : "오답"} /{" "}
-          {lastAnswerResult.matched_fields.length
-            ? lastAnswerResult.matched_fields.join(", ")
-            : "인정된 항목 없음"}{" "}
-          / +{lastAnswerResult.score_awarded} / 합계 {lastAnswerResult.total_score}
-        </p>
-      ) : null}
     </section>
   );
 }

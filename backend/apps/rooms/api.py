@@ -1,6 +1,8 @@
 from datetime import timedelta
+from random import choice, randint, shuffle
 
 from django.db import IntegrityError, transaction
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from ninja import Router, Schema
@@ -29,7 +31,13 @@ from .services import (
     serialize_public_round,
     serialize_room,
 )
-from .tasks import advance_round_task, close_answer_field_task, end_round_task, start_round_task
+from .tasks import (
+    advance_round_task,
+    broadcast_room_state_task,
+    close_answer_field_task,
+    end_round_task,
+    start_round_task,
+)
 from .tokens import generate_room_code, generate_token
 
 router = Router(tags=["rooms"])
@@ -38,12 +46,26 @@ router = Router(tags=["rooms"])
 class CreateRoomIn(Schema):
     quiz_pack_id: int
     host_nickname: str
+    room_title: str = "한소절 방"
     settings: dict | None = None
+
+
+class UpdateRoomSettingsIn(Schema):
+    quiz_pack_id: int | None = None
+    settings: dict
+
+
+class RandomNicknameOut(Schema):
+    nickname: str
 
 
 class JoinRoomIn(Schema):
     nickname: str
     team_id: int | None = None
+
+
+class UpdateParticipantTeamIn(Schema):
+    team_id: int
 
 
 class ParticipantOut(Schema):
@@ -78,12 +100,14 @@ class CurrentRoundOut(Schema):
     youtube_video_id: str
     start_time_seconds: int
     play_duration_seconds: int
+    playback_segments: list[dict]
     difficulty: str
     started_at: str | None
     ended_at: str | None
     skip_count: int
     skip_target_count: int
     answer_fields: list[dict]
+    answer_submissions: list[dict]
 
 
 class GameStateOut(Schema):
@@ -96,6 +120,8 @@ class GameStateOut(Schema):
 
 class RoomOut(Schema):
     code: str
+    title: str
+    share_path: str
     status: str
     server_time: str
     quiz_pack: QuizPackSummaryOut | None
@@ -130,6 +156,10 @@ class ParticipantStatusOut(Schema):
     room: RoomOut
 
 
+class UpdateRoomSettingsOut(Schema):
+    room: RoomOut
+
+
 class StartGameOut(Schema):
     room: RoomOut
 
@@ -151,6 +181,11 @@ class SubmitAnswerOut(Schema):
     score_awarded: int
     total_score: int
     matched_fields: list[str]
+    answer_submissions: list[dict]
+    participant_score: int
+    team_id: int | None = None
+    team_score: int | None = None
+    room: RoomOut | None = None
 
 
 class SkipRoundOut(Schema):
@@ -168,12 +203,50 @@ class QualityReportOut(Schema):
     report_count: int
 
 
+NICKNAME_PREFIXES = [
+    "고요한",
+    "날쌘",
+    "반짝이는",
+    "신나는",
+    "엉뚱한",
+    "차분한",
+    "춤추는",
+    "행운의",
+]
+NICKNAME_NAMES = [
+    "멜로디",
+    "비트",
+    "후렴",
+    "리듬",
+    "마이크",
+    "플레이어",
+    "디제이",
+    "싱어",
+]
+
+
+@router.get("/nicknames/random", response=RandomNicknameOut)
+def random_nickname(request):
+    return {
+        "nickname": f"{choice(NICKNAME_PREFIXES)} {choice(NICKNAME_NAMES)} {randint(10, 99)}"
+    }
+
+
 def _clean_nickname(nickname: str) -> str:
     cleaned = " ".join(nickname.strip().split())
     if not cleaned:
         raise HttpError(400, "Nickname is required.")
     if len(cleaned) > 40:
         raise HttpError(400, "Nickname must be 40 characters or fewer.")
+    return cleaned
+
+
+def _clean_room_title(title: str) -> str:
+    cleaned = " ".join(title.strip().split())
+    if not cleaned:
+        return "한소절 방"
+    if len(cleaned) > 40:
+        raise HttpError(400, "Room title must be 40 characters or fewer.")
     return cleaned
 
 
@@ -240,6 +313,32 @@ def _require_host(request, room: Room) -> None:
         raise HttpError(403, "Invalid host token.")
 
 
+def _transfer_host_if_needed(room: Room, participant: Participant) -> None:
+    if not participant.is_host:
+        return
+
+    next_host = (
+        Participant.objects.select_for_update()
+        .filter(room=room)
+        .exclude(id=participant.id)
+        .exclude(status=Participant.Status.LEFT)
+        .order_by("joined_at", "id")
+        .first()
+    )
+    participant.is_host = False
+    participant.save(update_fields=["is_host"])
+
+    if not next_host:
+        room.host_token = None
+        room.save(update_fields=["host_token"])
+        return
+
+    next_host.is_host = True
+    next_host.save(update_fields=["is_host"])
+    room.host_token = next_host.session_token
+    room.save(update_fields=["host_token"])
+
+
 def _require_participant(request, room: Room) -> Participant:
     participant_token = request.headers.get("X-Participant-Token")
 
@@ -301,6 +400,25 @@ def _answer_fields_for_settings(settings: dict) -> list[str]:
     if settings.get("answer_fields") == "TITLE_AND_ARTIST":
         return [RoundAnswerFieldState.FieldType.TITLE, RoundAnswerFieldState.FieldType.ARTIST]
     return [RoundAnswerFieldState.FieldType.TITLE]
+
+
+def _serialize_created_answer_submissions(submissions: list[AnswerSubmission]) -> list[dict]:
+    if not submissions:
+        return []
+
+    first = submissions[0]
+    return [
+        {
+            "id": max(submission.id for submission in submissions),
+            "participant_id": first.participant_id,
+            "nickname": first.participant.nickname,
+            "answer": first.answer_raw,
+            "is_correct": any(submission.is_correct for submission in submissions),
+            "is_accepted": any(submission.is_accepted for submission in submissions),
+            "score_awarded": sum(submission.score_awarded for submission in submissions),
+            "submitted_at": max(submission.submitted_at for submission in submissions).isoformat(),
+        }
+    ]
 
 
 def _get_or_create_field_state(
@@ -388,6 +506,56 @@ def _award_score(
     return 1
 
 
+def _score_target_reached(room: Room, participant: Participant, total_score: int) -> bool:
+    target_score = int(room.settings.get("target_score", 0) or 0)
+    if target_score <= 0:
+        return False
+    if room.settings.get("play_mode") == "TEAM" and participant.team_id:
+        return total_score >= target_score
+    return total_score >= target_score
+
+
+def _approved_question_queryset(quiz_pack: QuizPack):
+    return (
+        QuizQuestion.objects.filter(
+            question_packs__pack=quiz_pack,
+            status=QuizQuestion.Status.APPROVED,
+            song__approved=True,
+            song__playable=True,
+            song__blocked=False,
+            youtube_source__status=YoutubeSource.Status.APPROVED,
+        )
+        .select_related("song__primary_artist", "youtube_source")
+        .order_by("question_packs__order", "id")
+        .distinct()
+    )
+
+
+def _apply_question_scope(questions, settings: dict):
+    scope_type = settings.get("question_scope_type", "ALL_RANDOM")
+    scope_value = settings.get("question_scope_value", "")
+
+    if scope_type == "YEAR":
+        return questions.filter(song__release_year=int(scope_value))
+
+    if scope_type == "ARTIST":
+        normalized_scope = normalize_answer(scope_value)
+        return questions.filter(
+            Q(song__primary_artist__normalized_name__icontains=normalized_scope)
+            | Q(song__primary_artist__name__icontains=scope_value)
+        )
+
+    return questions
+
+
+def _finish_game(room: Room, session: GameSession, now) -> None:
+    session.status = GameSession.Status.FINISHED
+    session.finished_at = now
+    session.save(update_fields=["status", "finished_at"])
+    room.status = Room.Status.FINISHED
+    room.save(update_fields=["status"])
+
+
 def _active_skip_target_count(room: Room) -> int:
     return Participant.objects.filter(
         room=room,
@@ -454,6 +622,19 @@ def _create_room_teams(room: Room, settings: dict) -> None:
         RoomTeam.objects.create(room=room, name=f"Team {index + 1}", order=index + 1)
 
 
+def _sync_waiting_room_teams(room: Room, settings: dict) -> None:
+    Participant.objects.filter(room=room).update(team=None)
+    room.teams.all().delete()
+    _create_room_teams(room, settings)
+    if settings.get("play_mode") != "TEAM":
+        return
+    if settings.get("team_assign_mode") != "SELF_SELECT":
+        return
+    first_team = room.teams.order_by("order", "id").first()
+    if first_team:
+        Participant.objects.filter(room=room).update(team=first_team)
+
+
 def _get_join_team(room: Room, settings: dict, team_id: int | None) -> RoomTeam | None:
     if settings.get("play_mode") != "TEAM":
         return None
@@ -462,7 +643,21 @@ def _get_join_team(room: Room, settings: dict, team_id: int | None) -> RoomTeam 
         return None
 
     if team_id is None:
-        raise HttpError(400, "team_id is required for team self-select rooms.")
+        return room.teams.order_by("order", "id").first()
+
+    team = RoomTeam.objects.filter(room=room, id=team_id).first()
+    if not team:
+        raise HttpError(400, "Invalid team_id for this room.")
+    return team
+
+
+def _get_selectable_team(room: Room, team_id: int) -> RoomTeam:
+    if room.settings.get("play_mode") != "TEAM":
+        raise HttpError(400, "Room is not in team mode.")
+    if room.status != Room.Status.WAITING:
+        raise HttpError(400, "Teams can only be changed before the game starts.")
+    if room.settings.get("team_assign_mode") != "SELF_SELECT":
+        raise HttpError(400, "This room does not allow team selection.")
 
     team = RoomTeam.objects.filter(room=room, id=team_id).first()
     if not team:
@@ -499,6 +694,7 @@ def _assign_random_teams(room: Room) -> None:
 @router.post("/rooms", response=CreateRoomOut)
 def create_room(request, payload: CreateRoomIn):
     nickname = _clean_nickname(payload.host_nickname)
+    room_title = _clean_room_title(payload.room_title)
     quiz_pack = get_object_or_404(QuizPack, id=payload.quiz_pack_id, is_public=True)
     settings = normalize_room_settings(payload.settings)
 
@@ -508,6 +704,7 @@ def create_room(request, payload: CreateRoomIn):
     with transaction.atomic():
         room = Room.objects.create(
             code=generate_room_code(),
+            title=room_title,
             host_token=generate_token("host"),
             settings=settings,
         )
@@ -537,6 +734,41 @@ def create_room(request, payload: CreateRoomIn):
         "participant_token": participant.session_token,
         "participant_id": participant.id,
     }
+
+
+@router.patch("/rooms/{code}/settings", response=UpdateRoomSettingsOut)
+def update_room_settings(request, code: str, payload: UpdateRoomSettingsIn):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.WAITING:
+            raise HttpError(400, "Room settings can only be changed before the game starts.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        settings = normalize_room_settings({**room.settings, **payload.settings})
+
+        if payload.quiz_pack_id is not None and payload.quiz_pack_id != session.quiz_pack_id:
+            quiz_pack = get_object_or_404(QuizPack, id=payload.quiz_pack_id, is_public=True)
+            if approved_question_count(quiz_pack) == 0:
+                raise HttpError(400, "Quiz pack has no approved questions.")
+            session.quiz_pack = quiz_pack
+
+        room.settings = settings
+        room.save(update_fields=["settings"])
+        session.settings = settings
+        session.save(update_fields=["quiz_pack", "settings"])
+        _sync_waiting_room_teams(room, settings)
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "teams",
+        "game_session__rounds__question__youtube_source",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
 
 
 @router.get("/rooms/{code}", response=RoomOut)
@@ -594,11 +826,45 @@ def leave_room(request, code: str):
             participant.is_active = False
             participant.left_at = timezone.now()
             participant.save(update_fields=["status", "is_active", "left_at"])
+            _transfer_host_if_needed(room, participant)
 
         transaction.on_commit(lambda: broadcast_room_state(room.code))
 
     room = Room.objects.prefetch_related(
         "participants",
+        "game_session__rounds__question__youtube_source",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/participants/{participant_id}/kick", response=LeaveRoomOut)
+def kick_participant(request, code: str, participant_id: int):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.WAITING:
+            raise HttpError(400, "Participants can only be kicked before the game starts.")
+
+        participant = get_object_or_404(
+            Participant.objects.select_for_update(),
+            id=participant_id,
+            room=room,
+        )
+        if participant.is_host:
+            raise HttpError(400, "Host cannot be kicked.")
+        if participant.status != Participant.Status.LEFT:
+            participant.status = Participant.Status.LEFT
+            participant.is_active = False
+            participant.left_at = timezone.now()
+            participant.save(update_fields=["status", "is_active", "left_at"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "teams",
         "game_session__rounds__question__youtube_source",
     ).select_related("game_session__quiz_pack").get(id=room.id)
 
@@ -661,6 +927,31 @@ def set_participant_active(request, code: str):
     return {"room": serialize_room(room)}
 
 
+@router.patch("/rooms/{code}/me/team", response=ParticipantStatusOut)
+def update_my_team(request, code: str, payload: UpdateParticipantTeamIn):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        participant = _require_participant(request, room)
+
+        if participant.status == Participant.Status.LEFT:
+            raise HttpError(400, "Left participants cannot change teams.")
+
+        team = _get_selectable_team(room, payload.team_id)
+        if participant.team_id != team.id:
+            participant.team = team
+            participant.save(update_fields=["team"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "teams",
+        "game_session__rounds__question__youtube_source",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
 @router.post("/rooms/{code}/start", response=StartGameOut)
 def start_game(request, code: str):
     with transaction.atomic():
@@ -680,22 +971,14 @@ def start_game(request, code: str):
             raise HttpError(400, "Room has no quiz pack.")
 
         approved_questions = list(
-            QuizQuestion.objects.filter(
-                question_packs__pack=quiz_pack,
-                status=QuizQuestion.Status.APPROVED,
-                song__approved=True,
-                song__playable=True,
-                song__blocked=False,
-                youtube_source__status=YoutubeSource.Status.APPROVED,
-            )
-            .order_by("question_packs__order", "id")
-            .distinct()
+            _apply_question_scope(_approved_question_queryset(quiz_pack), room.settings)
         )
 
         question_count = _get_question_count(room.settings, len(approved_questions))
         if not approved_questions:
-            raise HttpError(400, "Quiz pack has no approved questions.")
+            raise HttpError(400, "No approved questions match the selected scope.")
 
+        shuffle(approved_questions)
         selected_questions = approved_questions[:question_count]
         _assign_random_teams(room)
 
@@ -707,12 +990,14 @@ def start_game(request, code: str):
         now = timezone.now()
         countdown_sec = int(room.settings.get("countdown_sec", 3))
         session.started_at = now
+        session.finished_at = None
         session.first_round_starts_at = now + timedelta(seconds=countdown_sec)
         session.save(
             update_fields=[
                 "status",
                 "current_round_index",
                 "started_at",
+                "finished_at",
                 "first_round_starts_at",
             ]
         )
@@ -734,6 +1019,53 @@ def start_game(request, code: str):
     room = Room.objects.prefetch_related("participants", "game_session__rounds").select_related(
         "game_session__quiz_pack"
     ).get(id=room.id)
+
+    return {"room": serialize_room(room)}
+
+
+@router.post("/rooms/{code}/return-to-lobby", response=StartGameOut)
+def return_room_to_lobby(request, code: str):
+    with transaction.atomic():
+        room = get_object_or_404(Room.objects.select_for_update(), code=code.upper())
+        _require_host(request, room)
+
+        if room.status != Room.Status.FINISHED:
+            raise HttpError(400, "Only finished rooms can return to lobby.")
+
+        session = GameSession.objects.select_for_update().get(room=room)
+        session.rounds.all().delete()
+        session.status = GameSession.Status.WAITING
+        session.current_round_index = 0
+        session.started_at = None
+        session.first_round_starts_at = None
+        session.finished_at = None
+        session.save(
+            update_fields=[
+                "status",
+                "current_round_index",
+                "started_at",
+                "first_round_starts_at",
+                "finished_at",
+            ]
+        )
+
+        Participant.objects.filter(room=room).exclude(status=Participant.Status.LEFT).update(
+            score=0,
+            status=Participant.Status.ACTIVE,
+            is_active=True,
+        )
+        room.teams.update(score=0)
+
+        room.status = Room.Status.WAITING
+        room.save(update_fields=["status"])
+
+        transaction.on_commit(lambda: broadcast_room_state(room.code))
+
+    room = Room.objects.prefetch_related(
+        "participants",
+        "teams",
+        "game_session__rounds",
+    ).select_related("game_session__quiz_pack").get(id=room.id)
 
     return {"room": serialize_room(room)}
 
@@ -827,12 +1159,6 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         if session.status != GameSession.Status.PLAYING:
             raise HttpError(400, "Game session is not playing.")
 
-        round_obj = _get_current_round_or_400(session)
-        if not round_obj.started_at:
-            raise HttpError(400, "Current round has not started.")
-        if round_obj.ended_at:
-            raise HttpError(400, "Current round has already ended.")
-
         normalized_answer = normalize_answer(answer)
         answer_limit_mode = room.settings.get("answer_limit_mode", "FIVE_SECONDS")
         answer_fields = _answer_fields_for_settings(room.settings)
@@ -841,6 +1167,10 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
         matched_fields: list[str] = []
         is_correct = False
         total_score = participant.team.score if participant.team else participant.score
+        created_submissions = []
+        round_obj = _get_current_round_or_400(session)
+        accepts_score = bool(round_obj.started_at and not round_obj.ended_at)
+        finished_game = False
         for field_type in answer_fields:
             _get_or_create_field_state(round_obj, field_type)
 
@@ -855,6 +1185,7 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
 
             if (
                 field_correct
+                and accepts_score
                 and _is_field_open_for_acceptance(field_state, answer_limit_mode, now)
                 and not _participant_already_accepted(round_obj, participant, field_type)
             ):
@@ -870,6 +1201,12 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                         total_score = participant.team.score
                     else:
                         total_score = participant.score
+
+                    if _score_target_reached(room, participant, total_score):
+                        round_obj.ended_at = now
+                        round_obj.save(update_fields=["ended_at"])
+                        _finish_game(room, session, now)
+                        finished_game = True
 
                     if not field_state.first_correct_at:
                         field_state.first_correct_at = now
@@ -894,12 +1231,13 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                         field_state.revealed_at
                         and _configured_field_states_revealed(round_obj, room.settings)
                         and not round_obj.ended_at
+                        and session.status == GameSession.Status.PLAYING
                     ):
                         round_obj.ended_at = now
                         round_obj.save(update_fields=["ended_at"])
                         _schedule_advance_after_reveal(room, session, round_obj)
 
-            AnswerSubmission.objects.create(
+            created_submissions.append(AnswerSubmission.objects.create(
                 round=round_obj,
                 participant=participant,
                 answer_raw=answer,
@@ -908,15 +1246,21 @@ def submit_current_round_answer(request, code: str, payload: SubmitAnswerIn):
                 is_correct=field_correct,
                 is_accepted=field_accepted,
                 score_awarded=field_score_awarded,
-            )
+            ))
 
-        transaction.on_commit(lambda: broadcast_room_state(room.code))
+        transaction.on_commit(lambda: broadcast_room_state_task.delay(room.code))
 
+    room_payload = serialize_room(get_room_for_state(code)) if finished_game else None
     return {
         "is_correct": is_correct,
         "score_awarded": score_awarded,
         "total_score": total_score,
         "matched_fields": matched_fields,
+        "answer_submissions": _serialize_created_answer_submissions(created_submissions),
+        "participant_score": participant.score,
+        "team_id": participant.team_id,
+        "team_score": participant.team.score if participant.team_id else None,
+        "room": room_payload,
     }
 
 
